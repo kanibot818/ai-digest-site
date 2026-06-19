@@ -27,10 +27,12 @@ def fetch_messages(channel_id, token, limit=100):
     req = urllib.request.Request(url, headers={
         "Authorization": f"Bot {token}",
         "Content-Type": "application/json",
+        "User-Agent": "AI-Digest-Bot/1.0 (https://github.com/kanibot818/ai-digest-site)",
     })
 
     with urllib.request.urlopen(req) as resp:
         return json.loads(resp.read())
+
 
 
 def parse_digest(content, timestamp):
@@ -157,7 +159,13 @@ def main():
         sys.exit(1)
 
     print(f"Fetching up to {args.limit} messages from channel {channel}...")
-    messages = fetch_messages(channel, token, args.limit)
+    try:
+        messages = fetch_messages(channel, token, args.limit)
+    except Exception as e:
+        print(f"❌ Discord API error: {e}", file=sys.stderr)
+        # Don't fail the workflow — keep existing data
+        print("⚠️ Keeping existing digests.json unchanged.", file=sys.stderr)
+        sys.exit(0)
 
     digests = []
     seen_ids = set()
