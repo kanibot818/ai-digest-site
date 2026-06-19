@@ -308,7 +308,18 @@ def main():
         print("❌ Set DISCORD_CHANNEL_ID environment variable", file=sys.stderr)
         sys.exit(1)
 
-    # Step 1: Fetch messages
+    # Step 1: Load existing digests for incremental merge
+    existing = {}
+    if os.path.exists(args.output):
+        try:
+            with open(args.output, 'r', encoding='utf-8') as f:
+                old_list = json.load(f)
+            existing = {d['id']: d for d in old_list if 'id' in d}
+            print(f"📦 Loaded {len(existing)} existing digests from {args.output}")
+        except Exception:
+            print("⚠️ Could not parse existing digests.json, starting fresh")
+
+    # Step 2: Fetch messages
     print(f"📡 Fetching up to {args.limit} messages from channel {channel}...")
     try:
         messages = fetch_messages(channel, token, args.limit)
@@ -317,58 +328,78 @@ def main():
         print("⚠️ Keeping existing digests.json unchanged.", file=sys.stderr)
         sys.exit(0)
 
-    # Step 2: Parse digests
-    digests = []
+    # Step 3: Parse digests, separate new vs existing
+    new_digests = []
     seen_ids = set()
 
     for msg in messages:
         if msg.get('author', {}).get('bot') and '## ' in msg.get('content', ''):
             parsed = parse_digest(msg['content'], msg['timestamp'])
             if parsed and parsed['id'] not in seen_ids:
-                digests.append(parsed)
                 seen_ids.add(parsed['id'])
+                if parsed['id'] in existing:
+                    # Already processed — keep existing (preserves editor_note, image)
+                    existing[parsed['id']].update({
+                        k: v for k, v in parsed.items()
+                        if k not in ('editor_note', 'image', 'raw_content')
+                        and v  # only update non-empty values
+                    })
+                else:
+                    # New digest — needs AI + image
+                    new_digests.append(parsed)
 
-    print(f"📋 Parsed {len(digests)} digests")
+    print(f"📋 {len(seen_ids)} digests in channel ({len(new_digests)} new, {len(seen_ids) - len(new_digests)} existing)")
 
-    # Step 3: Generate AI editorial notes
-    if not args.no_ai and glm_key:
-        print(f"✍️ Generating editorial notes (model: {LLM_MODEL})...")
-        for i, d in enumerate(digests):
-            print(f"  [{i+1}/{len(digests)}] {d['title'][:40]}...")
-            d['editor_note'] = generate_editor_note(d, glm_key)
+    # Step 4: Generate AI editorial notes for NEW digests only
+    if new_digests:
+        if not args.no_ai and glm_key:
+            print(f"✍️ Generating editorial notes for {len(new_digests)} new digests (model: {LLM_MODEL})...")
+            for i, d in enumerate(new_digests):
+                print(f"  [{i+1}/{len(new_digests)}] {d['title'][:40]}...")
+                d['editor_note'] = generate_editor_note(d, glm_key)
+        else:
+            if not glm_key:
+                print("⚠️ No GLM_API_KEY — skipping editorial notes")
+            for d in new_digests:
+                d['editor_note'] = d.get('editor_note', '')
+
+        # Step 5: Fetch OG images for NEW digests only
+        if not args.no_images:
+            print("🖼️ Fetching OG images for new digests...")
+            for i, d in enumerate(new_digests):
+                url = d.get('source_url', '')
+                if url:
+                    print(f"  [{i+1}/{len(new_digests)}] {url[:50]}...")
+                    img_path = fetch_og_image(url, d['id'])
+                    d['image'] = img_path
+                else:
+                    d['image'] = d.get('image', '')
     else:
-        if not glm_key:
-            print("⚠️ No GLM_API_KEY — skipping editorial notes")
-        for d in digests:
-            d['editor_note'] = d.get('editor_note', '')
+        print("✅ No new digests — skipping AI and image processing")
 
-    # Step 4: Fetch OG images
-    if not args.no_images:
-        print("🖼️ Fetching OG images...")
-        for i, d in enumerate(digests):
-            url = d.get('source_url', '')
-            if url:
-                print(f"  [{i+1}/{len(digests)}] {url[:50]}...")
-                img_path = fetch_og_image(url, d['id'])
-                d['image'] = img_path
-            else:
-                d['image'] = d.get('image', '')
+    # Step 6: Merge — existing (updated) + new, prune removed-from-channel
+    keep_ids = seen_ids  # only keep digests still in the channel
+    all_digests = []
+    for did in existing:
+        if did in keep_ids:
+            all_digests.append(existing[did])
+    all_digests.extend(new_digests)
 
-    # Step 5: Clean up temporary fields
-    for d in digests:
+    # Clean up temporary fields
+    for d in all_digests:
         d.pop('raw_content', None)
 
     # Sort by date descending
-    digests.sort(key=lambda d: d['date'], reverse=True)
+    all_digests.sort(key=lambda d: d['date'], reverse=True)
 
     # Write output
     os.makedirs(os.path.dirname(args.output) or '.', exist_ok=True)
     with open(args.output, 'w', encoding='utf-8') as f:
-        json.dump(digests, f, ensure_ascii=False, indent=2)
+        json.dump(all_digests, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ Wrote {len(digests)} digests to {args.output}")
-    print(f"   Editorial notes: {sum(1 for d in digests if d.get('editor_note'))}/{len(digests)}")
-    print(f"   Images: {sum(1 for d in digests if d.get('image'))}/{len(digests)}")
+    print(f"\n✅ Wrote {len(all_digests)} digests to {args.output} ({len(new_digests)} new)")
+    print(f"   Editorial notes: {sum(1 for d in all_digests if d.get('editor_note'))}/{len(all_digests)}")
+    print(f"   Images: {sum(1 for d in all_digests if d.get('image'))}/{len(all_digests)}")
 
 
 if __name__ == '__main__':
