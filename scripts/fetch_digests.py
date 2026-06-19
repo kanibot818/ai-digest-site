@@ -212,7 +212,7 @@ def generate_editor_note(digest, api_key):
             "Content-Type": "application/json",
         })
 
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        with urllib.request.urlopen(req, timeout=60) as resp:
             result = json.loads(resp.read())
 
         note = result["choices"][0]["message"]["content"].strip()

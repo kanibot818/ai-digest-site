@@ -3,7 +3,7 @@
     "id": "voxcpm2-無-tokenizer-的多語言-tts-語音合成系統",
     "title": "VoxCPM2 — 無 Tokenizer 的多語言 TTS 語音合成系統",
     "date": "2026-06-19",
-    "category": "AI 語音/音樂",
+    "category": "AI 語音",
     "summary": [
       "核心創新：Tokenizer-Free 架構 — 不經過離散 tokenization，直接透過端到端 diffusion autoregressive 架構生成連續語音表示，實現高度自然且有表現力的合成。最新版 VoxCPM2 為 2B 參數模型，基於 MiniCPM-4 骨幹，在超過 200 萬小時多語言語音數據上訓練。",
       "支援 30 種語言 — 包含中文、英文、日文、韓文、法文等 30 種語言，輸入文字直接合成，不需指定語言標籤。中文還支援四川話、粵語、吳語、東北話、閩南話等方言。",
@@ -24,7 +24,11 @@
         "label": "線上 Demo",
         "url": "https://huggingface.co/spaces/OpenBMB/VoxCPM-Demo"
       }
-    ]
+    ],
+    "source_url": "https://github.com/OpenBMB/VoxCPM",
+    "source_label": "GitHub",
+    "editor_note": "Tokenizer-Free 是真正大膽的架構賭注——放棄離散化直接在連續空間做 diffusion，理論上限遠高於傳統 TTS。2B 參數就做到商用級品質，開源社群正快速逼近閉源方案。",
+    "image": "images/voxcpm2--tokenizer--tts-.png"
   },
   {
     "id": "你不知道的-geo-ai-可見性的原理-實踐與取捨",
@@ -47,7 +51,11 @@
         "label": "原文連結",
         "url": "https://x.com/HiTw93/status/2050189572999618982"
       }
-    ]
+    ],
+    "source_url": "https://x.com/HiTw93",
+    "source_label": "原文",
+    "editor_note": "別再死守傳統 SEO，GEO 才是高轉化流量的新藍海。這篇文教你如何透過技術細節搶佔 AI 搜尋的先機，對於想佈局未來搜尋生態的品牌來說，絕對是關鍵指南。",
+    "image": ""
   },
   {
     "id": "trellis-ai-程式碼工程的開箱即用框架",
@@ -74,6 +82,10 @@
         "label": "快速上手",
         "url": "https://docs.trytrellis.app/start/install-and-first-task"
       }
-    ]
+    ],
+    "source_url": "https://github.com/mindfold-ai/Trellis",
+    "source_label": "GitHub",
+    "editor_note": "它將 AI 寫程式從單次工具提升至標準化工程流程，解決了專案一致性的核心痛點，是團隊協作自動化的關鍵。",
+    "image": "images/trellis-ai-.png"
   }
 ]
