@@ -3,3 +3,15 @@ node_modules/
 .firecrawl/
 *.pyc
 __pycache__/
+
+# Dev artifacts — not needed in repo
+package.json
+package-lock.json
+screenshot-og.js
+og-image.html
+palettes/
+
+# Environment files
+.env
+.env.*
+*.local

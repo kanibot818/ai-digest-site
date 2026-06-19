@@ -14,8 +14,8 @@ import sys
 import argparse
 from datetime import datetime, timezone
 
-# Discord channel ID for 🪜-digest
-DEFAULT_CHANNEL = "1468555564798705828"
+# Discord channel ID — read from env, not hardcoded
+DEFAULT_CHANNEL = os.environ.get("DISCORD_CHANNEL_ID", "")
 
 
 def fetch_messages(channel_id, token, limit=100):
@@ -140,18 +140,24 @@ def guess_category(title, summary):
 
 def main():
     parser = argparse.ArgumentParser(description='Fetch Discord digests → JSON')
-    parser.add_argument('--channel', default=DEFAULT_CHANNEL, help='Discord channel ID')
+    parser.add_argument('--channel', default=DEFAULT_CHANNEL, help='Discord channel ID (or set DISCORD_CHANNEL_ID env)')
     parser.add_argument('--limit', type=int, default=100, help='Max messages to fetch')
-    parser.add_argument('--token', default=os.environ.get('DISCORD_BOT_TOKEN'), help='Discord bot token')
     parser.add_argument('--output', default='data/digests.json', help='Output JSON path')
     args = parser.parse_args()
 
-    if not args.token:
-        print("❌ Need DISCORD_BOT_TOKEN env var or --token", file=sys.stderr)
+    # Token must come from env only — never accept via CLI to avoid process list leak
+    token = os.environ.get('DISCORD_BOT_TOKEN')
+    channel = args.channel or DEFAULT_CHANNEL
+
+    if not token:
+        print("❌ Set DISCORD_BOT_TOKEN environment variable", file=sys.stderr)
+        sys.exit(1)
+    if not channel:
+        print("❌ Set DISCORD_CHANNEL_ID environment variable (or use --channel)", file=sys.stderr)
         sys.exit(1)
 
-    print(f"Fetching up to {args.limit} messages from channel {args.channel}...")
-    messages = fetch_messages(args.channel, args.token, args.limit)
+    print(f"Fetching up to {args.limit} messages from channel {channel}...")
+    messages = fetch_messages(channel, token, args.limit)
 
     digests = []
     seen_ids = set()

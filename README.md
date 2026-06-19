@@ -6,9 +6,10 @@
 
 ```
 ├── index.html          # 主頁面
-├── css/style.css       # 暗色主題樣式
+├── css/style.css       # 莫蘭迪暖灰配色樣式
 ├── js/main.js          # 卡片渲染 + 搜尋 + 篩選
 ├── data/digests.json   # 摘要數據（自動更新）
+├── images/             # 卡片縮圖
 ├── scripts/
 │   └── fetch_digests.py  # Discord → JSON 轉換腳本
 └── .github/workflows/
@@ -21,18 +22,21 @@
 ```bash
 cd ai-digest-site
 python3 -m http.server 8080
-# 打開 http://localhost:8080
 ```
 
 ## 手動更新數據
 
 ```bash
-DISCORD_BOT_TOKEN=your_token python3 scripts/fetch_digests.py
+export DISCORD_BOT_TOKEN="your_token"
+export DISCORD_CHANNEL_ID="your_channel_id"
+python3 scripts/fetch_digests.py
 ```
 
-## 設定
+## 設定（首次部署）
 
 1. Fork / Clone 到你的 GitHub
 2. Settings → Pages → Source: GitHub Actions
-3. Settings → Secrets → 新增 `DISCORD_BOT_TOKEN`
+3. Settings → Secrets → 新增兩個 secret：
+   - `DISCORD_BOT_TOKEN` — Discord Bot 的 token
+   - `DISCORD_CHANNEL_ID` — 要抓取的 Discord 頻道 ID
 4. 自動部署 + 每 6 小時更新
