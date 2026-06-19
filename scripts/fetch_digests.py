@@ -27,7 +27,7 @@ DEFAULT_CHANNEL = os.environ.get("DISCORD_CHANNEL_ID", "")
 
 # LLM config
 LLM_BASE_URL = "https://api.z.ai/api/coding/paas/v4/chat/completions"
-LLM_MODEL = "glm-4.6"
+LLM_MODEL = "glm-5.2"
 
 
 # ============================================================
