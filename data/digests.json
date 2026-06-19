@@ -1,75 +1,50 @@
 [
   {
-    "id": "voxcpm2",
-    "title": "VoxCPM2 — 無 Tokenizer 的多語言 TTS 語音合成系統",
+    "id": "voxcpm2-tts",
+    "title": "VoxCPM2 — 跳過 Tokenizer，直接用 Diffusion 生成語音",
     "date": "2026-06-19",
     "category": "AI 語音",
+    "editor_note": "Tokenizer-Free 是真正大膽的架構賭注——放棄離散化直接在連續空間做 diffusion，理論上限遠高於傳統 TTS。更值得注意的是，2B 參數就做到商用級品質，開源社群正在快速逼近閉源方案。",
     "summary": [
-      "核心創新：Tokenizer-Free 架構 — 不經過離散 tokenization，直接透過端到端 diffusion autoregressive 架構生成連續語音表示，實現高度自然且有表現力的合成。2B 參數模型，基於 MiniCPM-4 骨幹",
-      "支援 30 種語言 — 包含中、英、日、韓、法文等，中文還支援四川話、粵語、吳語、東北話、閩南話等方言",
-      "四大語音模式：Voice Design（自然語言描述創造聲音）、Controllable Cloning（短音檔克隆+情緒控制）、Ultimate Cloning（完美重現音色）、基本 TTS",
-      "48kHz 高品質輸出 + 即時串流，RTX 4090 上 RTF 最低約 0.13，安裝只需 pip install voxcpm",
-      "完全開源、可商用 — Apache-2.0 授權，由 OpenBMB 開發，曾登上 GitHub Trending #1"
+      "Tokenizer-Free 架構，端到端 diffusion autoregressive 生成連續語音表示",
+      "2B 參數基於 MiniCPM-4，訓練數據超過 200 萬小時多語言語音",
+      "支援 30 種語言，中文包含四川話、粵語、吳語等方言",
+      "RTX 4090 上 RTF 0.13，支援即時串流，pip install voxcpm 即裝即用",
+      "Apache-2.0 完全開源可商用，OpenBMB 出品"
     ],
-    "links": [
-      {
-        "label": "GitHub Repo",
-        "url": "https://github.com/OpenBMB/VoxCPM"
-      },
-      {
-        "label": "HuggingFace 模型",
-        "url": "https://huggingface.co/openbmb/VoxCPM2"
-      },
-      {
-        "label": "線上 Demo",
-        "url": "https://huggingface.co/spaces/OpenBMB/VoxCPM-Demo"
-      }
-    ]
+    "source_url": "https://github.com/OpenBMB/VoxCPM",
+    "source_label": "GitHub"
   },
   {
     "id": "geo-ai-visibility",
-    "title": "你不知道的 GEO：AI 可見性的原理、實踐與取捨",
+    "title": "GEO 不是新 SEO — 83% 的 AI 引用來自搜尋前十名以外",
     "date": "2026-06-19",
-    "category": "SEO/AI 搜尋",
+    "category": "AI 行銷",
+    "editor_note": "這篇文章最有價值的是踩了雷：HTML 註釋、User-Agent 嗅探、meta 標籤，這些「AI SEO 技巧」全部沒用。真正影響 AI 引用的是內容結構和數據密度，不是技術 hack。",
     "summary": [
-      "GEO 跟傳統 SEO 完全不同 — 83% 的 AI Overview 引用來自前 10 名以外的頁面。AI 搜尋 2025 上半年同比漲了 527%，引薦流量轉化率是傳統搜尋的 5 倍",
-      "robots.txt 要分類管理爬蟲 — 核心原則：允許搜尋爬蟲，屏蔽訓練爬蟲",
-      "llms.txt 是給 AI 看的新標準 — 類似 robots.txt 但用 Markdown 格式，目前已有 84 萬+ 網站部署",
-      "內容品質的關鍵發現 — 有真實數據和橫向對比的頁面影響力高 50%+；純 FAQ 格式反而有害",
-      "被檢索到 ≠ 被引用 — ChatGPT 搜尋的頁面只有 15% 最終出現在回答中"
+      "AI Overview 引用 83% 來自前 10 名以外的頁面，傳統 SEO 排名策略失效",
+      "robots.txt 核心原則：允許搜尋爬蟲，屏蔽訓練爬蟲",
+      "llms.txt 新標準已有 84 萬+ 網站部署，但採用率仍只有 10%",
+      "有真實數據和橫向對比的頁面影響力高 50%+，純 FAQ 格式反而有害",
+      "ChatGPT 搜尋的頁面只有 15% 最終被引用——被檢索 ≠ 被引用"
     ],
-    "links": [
-      {
-        "label": "原文連結",
-        "url": "https://x.com/HiTw93/status/2050189572999618982"
-      }
-    ]
+    "source_url": "https://x.com/HiTw93/status/2050189572999618982",
+    "source_label": "原文"
   },
   {
-    "id": "trellis",
-    "title": "Trellis — AI 程式碼工程的開箱即用框架",
+    "id": "trellis-framework",
+    "title": "Trellis — 讓 AI Coding Agent 記住你的專案規範",
     "date": "2026-06-19",
     "category": "開發工具",
+    "editor_note": "AI 寫程式的痛點不是速度，是失憶——每次 session 從零開始。Trellis 的思路對：把 specs、tasks、memory 持久化到 repo，讓任何 agent 都能讀到。真正有遠見的是跨 16 個平台的兼容設計，不賭單一工具。",
     "summary": [
-      "解決什麼問題：AI 寫程式式很快，但每次 session 都從零開始——不記得你的專案慣例、團隊規範或需求",
-      "四大核心能力：自動注入規格、任務導向工作流、專案記憶、團隊共享標準",
-      "四階段循環：Plan → Implement → Verify → Finish，全程自動調用 skills 和子代理",
-      "跨平台支援 — 同一套結構可套用到 16 個 AI coding 平台（Claude Code、Cursor、Codex 等）",
-      "⭐ 10.7k Stars，AGPL-3.0 授權，由 Mindfold 開發"
+      "解決 AI coding agent 的失憶問題——規格、任務、記憶持久化到 repo",
+      "自動注入 .trellis/spec/ 慣例，每次 session 自帶 context",
+      "四階段循環：Plan → Implement → Verify → Finish",
+      "同一套結構套用到 16 個平台（Claude Code、Cursor、Codex 等）",
+      "⭐ 10.7k Stars，AGPL-3.0，Mindfold 開發"
     ],
-    "links": [
-      {
-        "label": "GitHub Repo",
-        "url": "https://github.com/mindfold-ai/Trellis"
-      },
-      {
-        "label": "官方文件",
-        "url": "https://docs.trytrellis.app/"
-      },
-      {
-        "label": "快速上手",
-        "url": "https://docs.trytrellis.app/start/install-and-first-task"
-      }
-    ]
+    "source_url": "https://github.com/mindfold-ai/Trellis",
+    "source_label": "GitHub"
   }
 ]

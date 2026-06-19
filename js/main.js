@@ -1,11 +1,11 @@
-// AI Digest Site - Main JS
+// AI Digest Site — Editorial card rendering
 
 let allDigests = [];
 let activeCategory = '全部';
 let searchTerm = '';
 let sortMode = 'newest';
 
-// === Load Data ===
+// === Load ===
 async function loadData() {
   try {
     const res = await fetch('data/digests.json');
@@ -13,88 +13,91 @@ async function loadData() {
     initTabs();
     render();
   } catch (e) {
-    document.getElementById('cardGrid').innerHTML = '<div class="empty">⚠️ 無法載入資料</div>';
+    document.getElementById('cardGrid').innerHTML =
+      '<div class="empty-state"><p>⚠️ 無法載入資料</p></div>';
     console.error(e);
   }
 }
 
-// === Category Tabs ===
+// === Tabs ===
 function initTabs() {
   const categories = ['全部', ...new Set(allDigests.map(d => d.category))];
-  const container = document.getElementById('categoryTabs');
-  container.innerHTML = categories.map(cat =>
-    `<button class="tab ${cat === activeCategory ? 'active' : ''}" onclick="setCategory('${cat}')">${cat}</button>`
+  document.getElementById('categoryTabs').innerHTML = categories.map(cat =>
+    `<button class="tab ${cat === activeCategory ? 'active' : ''}" data-cat="${cat}">${cat}</button>`
   ).join('');
+
+  document.querySelectorAll('.tab').forEach(t => {
+    t.addEventListener('click', () => {
+      activeCategory = t.dataset.cat;
+      initTabs();
+      render();
+    });
+  });
 }
 
-function setCategory(cat) {
-  activeCategory = cat;
-  initTabs();
-  render();
-}
-
-// === Search ===
-document.getElementById('searchInput').addEventListener('input', (e) => {
+// === Search & Sort ===
+document.getElementById('searchInput').addEventListener('input', e => {
   searchTerm = e.target.value.toLowerCase();
   render();
 });
-
-// === Sort ===
-document.getElementById('sortSelect').addEventListener('change', (e) => {
+document.getElementById('sortSelect').addEventListener('change', e => {
   sortMode = e.target.value;
   render();
 });
 
-// === Filter & Render ===
+// === Filter ===
 function getFiltered() {
   let items = [...allDigests];
 
-  // Category filter
-  if (activeCategory !== '全部') {
+  if (activeCategory !== '全部')
     items = items.filter(d => d.category === activeCategory);
-  }
 
-  // Search filter
   if (searchTerm) {
     items = items.filter(d => {
-      const text = (d.title + ' ' + d.summary.join(' ') + ' ' + d.category).toLowerCase();
+      const text = (d.title + ' ' + (d.editor_note || '') + ' ' + (d.summary || []).join(' ') + ' ' + d.category).toLowerCase();
       return text.includes(searchTerm);
     });
   }
 
-  // Sort
   items.sort((a, b) => {
-    const da = new Date(a.date);
-    const db = new Date(b.date);
-    return sortMode === 'newest' ? db - da : da - db;
+    const cmp = new Date(b.date) - new Date(a.date);
+    return sortMode === 'newest' ? cmp : -cmp;
   });
 
   return items;
 }
 
+// === Render ===
 function render() {
   const items = getFiltered();
   const grid = document.getElementById('cardGrid');
 
-  if (items.length === 0) {
-    grid.innerHTML = '<div class="empty">沒有符合條件的內容</div>';
+  if (!items.length) {
+    grid.innerHTML = '<div class="empty-state"><p>沒有符合條件的內容</p></div>';
     return;
   }
 
   grid.innerHTML = items.map(d => `
     <article class="card">
       <div class="card-body">
-        <span class="card-category">${d.category}</span>
+        <span class="card-tag">${d.category}</span>
         <h3 class="card-title">${d.title}</h3>
+
+        ${d.editor_note ? `
+        <div class="card-editor">
+          <div class="card-editor-label">編輯觀點</div>
+          <p class="card-editor-text">${d.editor_note}</p>
+        </div>
+        ` : ''}
+
         <ul class="card-summary">
-          ${d.summary.slice(0, 3).map(s => `<li>${s}</li>`).join('')}
+          ${(d.summary || []).slice(0, 4).map(s => `<li>${s}</li>`).join('')}
         </ul>
       </div>
+
       <div class="card-footer">
         <span class="card-date">${d.date}</span>
-        <div class="card-links">
-          ${(d.links || []).map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('')}
-        </div>
+        ${d.source_url ? `<a class="card-source" href="${d.source_url}" target="_blank" rel="noopener">${d.source_label || '查看原文'} ↗</a>` : ''}
       </div>
     </article>
   `).join('');

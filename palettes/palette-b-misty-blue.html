@@ -1,0 +1,46 @@
+
+<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>配色方案 B — 霧藍莫蘭迪</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F4F5F7;         /* 冷白 */
+  --bg-alt: #E8EBF0;     /* 霧藍灰 */
+  --card: #FFFFFF;
+  --text: #2E3340;       /* 深藍灰 */
+  --text-dim: #7A8294;   /* 灰藍 */
+  --accent: #8DA0B6;     /* 莫蘭迪霧藍 */
+  --accent-soft: #C4D0DD;
+  --accent2: #C4A5A0;    /* 灰玫瑰 (tags/分類用) */
+  --tag-bg: #EEF2F7;
+  --tag-text: #6B7B92;
+  --border: rgba(141,160,182,0.15);
+}
+body { font-family:'Inter','Noto Serif TC',sans-serif; background:var(--bg); color:var(--text); margin:0; padding:2rem; }
+h1 { font-family:'Noto Serif TC',serif; font-size:1.5rem; }
+.swatches { display:flex; gap:1rem; margin:1.5rem 0; }
+.swatch { width:80px; text-align:center; }
+.swatch div { height:60px; border-radius:8px; margin-bottom:0.3rem; }
+.swatch span { font-size:0.65rem; color:var(--text-dim); }
+.card-demo { background:var(--card); border-radius:12px; padding:1.5rem; max-width:340px; box-shadow:0 2px 12px rgba(141,160,182,0.1); border:1px solid var(--border); }
+.tag { display:inline-block; font-size:0.72rem; padding:2px 10px; border-radius:12px; background:var(--tag-bg); color:var(--tag-text); }
+.card-demo h3 { font-family:'Noto Serif TC',serif; font-size:1.05rem; margin:0.6rem 0; }
+.card-demo li { font-size:0.82rem; color:var(--text-dim); margin:0.3rem 0; }
+.label { font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); margin-bottom:0.3rem; }
+</style></head><body>
+<h1>B — 霧藍莫蘭迪 🌫️</h1>
+<p style="color:var(--text-dim);font-size:0.85rem">冷調霧藍配灰玫瑰，清冷中帶溫度，像北歐設計雜誌</p>
+<div class="swatches">
+  <div class="swatch"><div style="background:#F4F5F7"></div><span>背景 #F4F5F7</span></div>
+  <div class="swatch"><div style="background:#8DA0B6"></div><span>主色 #8DA0B6</span></div>
+  <div class="swatch"><div style="background:#C4A5A0"></div><span>副色 #C4A5A0</span></div>
+  <div class="swatch"><div style="background:#2E3340"></div><span>文字 #2E3340</span></div>
+</div>
+<div class="card-demo">
+  <span class="tag">AI 語音</span>
+  <h3>VoxCPM2 — 無 Tokenizer 的多語言 TTS</h3>
+  <div class="label">編輯觀點</div>
+  <p style="font-size:0.85rem;color:var(--text);line-height:1.6">Tokenizer-Free 是真正大膽的架構選擇——跳過離散化直接做 diffusion，理論上上限更高。值得關注的是它用 2B 參數就達到接近商用級品質。</p>
+</div>
+</body></html>

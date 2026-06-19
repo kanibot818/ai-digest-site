@@ -4,41 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Digest — 每日精選</title>
-  <meta name="description" content="AI 領域每日精選摘要">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="AI 領域每日精選摘要，帶編輯觀點的科技資訊站">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI Digest — 每日精選 · 編輯觀點">
+  <meta property="og:description" content="不只是轉載 — 用觀點說出為什麼值得看">
+  <meta property="og:image" content="https://kanibot818.github.io/ai-digest-site/og-image.png">
+  <meta property="og:url" content="https://kanibot818.github.io/ai-digest-site/">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Digest — 每日精選 · 編輯觀點">
+  <meta name="twitter:description" content="不只是轉載 — 用觀點說出為什麼值得看">
+  <meta name="twitter:image" content="https://kanibot818.github.io/ai-digest-site/og-image.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="header-inner">
-      <h1 class="site-title">🤖 AI Digest</h1>
-      <p class="site-subtitle">每日 AI 精選摘要 · 自動更新</p>
-      <div class="header-links">
-        <a href="https://github.com/alexabc/ai-digest-site" target="_blank">GitHub</a>
-      </div>
-    </div>
+    <h1 class="site-title">AI Digest</h1>
+    <p class="site-subtitle">每日精選 · 編輯觀點</p>
+    <nav>
+      <a href="https://github.com/kanibot818/ai-digest-site" target="_blank" rel="noopener">GitHub</a>
+      <a href="#" id="aboutLink">關於</a>
+    </nav>
   </header>
 
-  <nav class="toolbar">
+  <nav class="toolbar" aria-label="篩選與搜尋">
     <div class="toolbar-inner">
       <div class="tabs" id="categoryTabs"></div>
       <div class="toolbar-actions">
-        <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜尋...">
-        <select id="sortSelect" class="sort-select">
-          <option value="newest">最新優先</option>
-          <option value="oldest">最舊優先</option>
+        <input type="text" id="searchInput" class="search-input" placeholder="搜尋..." aria-label="搜尋">
+        <select id="sortSelect" class="sort-select" aria-label="排序">
+          <option value="newest">最新</option>
+          <option value="oldest">最舊</option>
         </select>
       </div>
     </div>
   </nav>
 
   <main class="card-grid" id="cardGrid">
-    <div class="loading">載入中...</div>
+    <div class="empty-state"><p>載入中...</p></div>
   </main>
 
   <footer class="site-footer">
-    <p>Powered by KaniBot Digest Pipeline · <a href="https://github.com/alexabc/ai-digest-site">Source</a></p>
+    <p>AI Digest · 由 KaniBot 摘要管線驅動 · <a href="https://github.com/kanibot818/ai-digest-site">原始碼</a></p>
   </footer>
 
   <script src="js/main.js"></script>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  width: 1200px; height: 630px;
+  background: #F7F4EF;
+  font-family: 'Inter', sans-serif;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.og-card {
+  width: 1080px; height: 510px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid rgba(168,155,134,0.15);
+  box-shadow: 0 8px 40px rgba(168,155,134,0.1);
+  padding: 60px 70px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+/* Decorative circle */
+.og-card::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: #F0EBE3;
+  opacity: 0.7;
+}
+.og-card::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -40px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: #D4C9B8;
+  opacity: 0.3;
+}
+.og-top {
+  display: flex; align-items: center; gap: 16px;
+  position: relative; z-index: 1;
+}
+.og-logo {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: #A89B86;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px;
+}
+.og-brand {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.5rem; font-weight: 700;
+  color: #3A352F;
+}
+.og-main { position: relative; z-index: 1; }
+.og-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 3.4rem; font-weight: 700;
+  line-height: 1.3;
+  color: #3A352F;
+  letter-spacing: 0.02em;
+}
+.og-sub {
+  font-size: 1.35rem;
+  color: #8B8073;
+  margin-top: 16px;
+  font-weight: 400;
+}
+.og-tags {
+  display: flex; gap: 12px;
+  position: relative; z-index: 1;
+}
+.og-tag {
+  font-size: 0.95rem;
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: #F0EBE3;
+  color: #9A8B73;
+  font-weight: 500;
+}
+</style>
+</head>
+<body>
+<div class="og-card">
+  <div class="og-top">
+    <div class="og-logo">🤖</div>
+    <div class="og-brand">AI Digest</div>
+  </div>
+  <div class="og-main">
+    <div class="og-title">每日 AI 精選<br>帶編輯觀點</div>
+    <div class="og-sub">不只是轉載 — 用觀點說出為什麼值得看</div>
+  </div>
+  <div class="og-tags">
+    <span class="og-tag">AI 語音</span>
+    <span class="og-tag">開發工具</span>
+    <span class="og-tag">AI 行銷</span>
+    <span class="og-tag">大模型</span>
+  </div>
+</div>
+</body></html>
