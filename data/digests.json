@@ -1,53 +1,79 @@
 [
   {
-    "id": "voxcpm2-tts",
-    "title": "VoxCPM2 — 跳過 Tokenizer，直接用 Diffusion 生成語音",
+    "id": "voxcpm2-無-tokenizer-的多語言-tts-語音合成系統",
+    "title": "VoxCPM2 — 無 Tokenizer 的多語言 TTS 語音合成系統",
     "date": "2026-06-19",
-    "category": "AI 語音",
-    "image": "images/voxcpm2-tts.png",
-    "editor_note": "Tokenizer-Free 是真正大膽的架構賭注——放棄離散化直接在連續空間做 diffusion，理論上限遠高於傳統 TTS。更值得注意的是，2B 參數就做到商用級品質，開源社群正在快速逼近閉源方案。",
+    "category": "AI 語音/音樂",
     "summary": [
-      "Tokenizer-Free 架構，端到端 diffusion autoregressive 生成連續語音表示",
-      "2B 參數基於 MiniCPM-4，訓練數據超過 200 萬小時多語言語音",
-      "支援 30 種語言，中文包含四川話、粵語、吳語等方言",
-      "RTX 4090 上 RTF 0.13，支援即時串流，pip install voxcpm 即裝即用",
-      "Apache-2.0 完全開源可商用，OpenBMB 出品"
+      "核心創新：Tokenizer-Free 架構 — 不經過離散 tokenization，直接透過端到端 diffusion autoregressive 架構生成連續語音表示，實現高度自然且有表現力的合成。最新版 VoxCPM2 為 2B 參數模型，基於 MiniCPM-4 骨幹，在超過 200 萬小時多語言語音數據上訓練。",
+      "支援 30 種語言 — 包含中文、英文、日文、韓文、法文等 30 種語言，輸入文字直接合成，不需指定語言標籤。中文還支援四川話、粵語、吳語、東北話、閩南話等方言。",
+      "🎨 Voice Design — 用自然語言描述（性別、年齡、語氣、情緒）直接創造全新聲音，不需參考音檔",
+      "🎛️ Controllable Cloning — 短音檔克隆音色，還能用文字指令控制情緒和語速",
+      "🎙️ Ultimate Cloning — 提供參考音檔 + 逐字稿，完美重現音色、節奏、情緒等所有細節"
     ],
-    "source_url": "https://github.com/OpenBMB/VoxCPM",
-    "source_label": "GitHub"
+    "links": [
+      {
+        "label": "GitHub Repo",
+        "url": "https://github.com/OpenBMB/VoxCPM"
+      },
+      {
+        "label": "HuggingFace 模型",
+        "url": "https://huggingface.co/openbmb/VoxCPM2"
+      },
+      {
+        "label": "線上 Demo",
+        "url": "https://huggingface.co/spaces/OpenBMB/VoxCPM-Demo"
+      }
+    ]
   },
   {
-    "id": "geo-ai-visibility",
-    "title": "GEO 不是新 SEO — 83% 的 AI 引用來自搜尋前十名以外",
-    "date": "2026-06-19",
-    "category": "AI 行銷",
-    "image": "images/geo-ai-visibility.png",
-    "editor_note": "這篇文章最有價值的是踩了雷：HTML 註釋、User-Agent 嗅探、meta 標籤，這些「AI SEO 技巧」全部沒用。真正影響 AI 引用的是內容結構和數據密度，不是技術 hack。",
-    "summary": [
-      "AI Overview 引用 83% 來自前 10 名以外的頁面，傳統 SEO 排名策略失效",
-      "robots.txt 核心原則：允許搜尋爬蟲，屏蔽訓練爬蟲",
-      "llms.txt 新標準已有 84 萬+ 網站部署，但採用率仍只有 10%",
-      "有真實數據和橫向對比的頁面影響力高 50%+，純 FAQ 格式反而有害",
-      "ChatGPT 搜尋的頁面只有 15% 最終被引用——被檢索 ≠ 被引用"
-    ],
-    "source_url": "https://x.com/HiTw93/status/2050189572999618982",
-    "source_label": "原文"
-  },
-  {
-    "id": "trellis-framework",
-    "title": "Trellis — 讓 AI Coding Agent 記住你的專案規範",
+    "id": "你不知道的-geo-ai-可見性的原理-實踐與取捨",
+    "title": "你不知道的 GEO：AI 可見性的原理、實踐與取捨",
     "date": "2026-06-19",
     "category": "開發工具",
-    "image": "images/trellis-framework.png",
-    "editor_note": "AI 寫程式的痛點不是速度，是失憶——每次 session 從零開始。Trellis 的思路對：把 specs、tasks、memory 持久化到 repo，讓任何 agent 都能讀到。真正有遠見的是跨 16 個平台的兼容設計，不賭單一工具。",
     "summary": [
-      "解決 AI coding agent 的失憶問題——規格、任務、記憶持久化到 repo",
-      "自動注入 .trellis/spec/ 慣例，每次 session 自帶 context",
-      "四階段循環：Plan → Implement → Verify → Finish",
-      "同一套結構套用到 16 個平台（Claude Code、Cursor、Codex 等）",
-      "⭐ 10.7k Stars，AGPL-3.0，Mindfold 開發"
+      "GEO 跟傳統 SEO 完全不同 — 傳統 SEO 拼的是 Google 前 10 名，但 83% 的 AI Overview 引用來自前 10 名以外的頁面。AI 看的是結構清晰、來源可靠，跟 PageRank 關係不大。AI 搜尋 2025 上半年同比漲了 527%，引薦流量轉化率是傳統搜尋的 5 倍，但目前仍只佔總流量不到 1%，更像品牌可見性策略而非流量策略。",
+      "robots.txt 要分類管理爬蟲 — AI 爬蟲分五類：訓練用（GPTBot、CCBot→建議屏蔽）、搜尋檢索用（OAI-SearchBot、Claude-SearchBot→允許）、用戶觸發（ChatGPT-User→允許）、退出標識（Google-Extended）、未聲明（Bytespider→建議屏蔽）。核心原則：允許搜尋爬蟲，屏蔽訓練爬蟲。",
+      "llms.txt 是給 AI 看的新標準 — 類似 robots.txt 但用 Markdown 格式，放在站點根目錄。目前已有 84 萬+ 網站部署（含 Anthropic、Cloudflare、Stripe），但採用率仍只有 10%，先做有先發優勢。多站點之間互相引用形成網狀結構，AI 不管從哪個入口都能找到其他內容。",
+      "內容品質的關鍵發現 — 有真實數據和橫向對比的頁面影響力高 50%+；被高頻引用的頁面平均近 2000 字、10+ 標題；純 FAQ 格式反而有害（驗證了刪 FAQ 是對的）；所有機械 SEO 指標的預測力都不如「頁面內容跟用戶問題是否相關」。品牌被第三方引用的概率是自己域名的 6.5 倍。",
+      "被檢索到 ≠ 被引用 — ChatGPT 檢索的頁面只有 15% 最終出現在回答中。平台差異明顯：ChatGPT 引用少但深（單條影響力是 Google 的 5 倍），Perplexity 引用量是 ChatGPT 的 2 倍多。作者實測踩坑：`<meta name=\"ai-content-url\">`、`/.well-known/ai.txt`、HTML 註釋放 AI 提示、User-Agent 嗅探返回 Markdown 都沒用。"
     ],
-    "source_url": "https://github.com/mindfold-ai/Trellis",
-    "source_label": "GitHub"
+    "links": [
+      {
+        "label": "Tw93 (@HiTw93)",
+        "url": "https://x.com/HiTw93"
+      },
+      {
+        "label": "原文連結",
+        "url": "https://x.com/HiTw93/status/2050189572999618982"
+      }
+    ]
+  },
+  {
+    "id": "trellis-ai-程式碼工程的開箱即用框架",
+    "title": "Trellis — AI 程式碼工程的開箱即用框架",
+    "date": "2026-06-19",
+    "category": "開發工具",
+    "summary": [
+      "解決什麼問題：AI 寫程式很快，但每次 session 都從零開始——不記得你的專案慣例、團隊規範或需求。Trellis 把規格書（specs）、任務（tasks）和記憶（memory）持久化到 repo 裡，讓任何 AI coding agent 都能遵循你的工程標準。",
+      "自動注入規格 — 在 `.trellis/spec/` 寫一次慣例，每次 session 自動注入相關 context，不用重複說明",
+      "任務導向工作流 — PRD、實作 context、審查 context 都存在 `.trellis/tasks/`，讓 AI 工作結構化",
+      "專案記憶 — `.trellis/workspace/` 保存上次發生了什麼，新 session 帶有真實 context",
+      "團隊共享標準 — 規格書存在 repo，一人整理的流程可以造福整個團隊"
+    ],
+    "links": [
+      {
+        "label": "GitHub Repo",
+        "url": "https://github.com/mindfold-ai/Trellis"
+      },
+      {
+        "label": "官方文件",
+        "url": "https://docs.trytrellis.app/"
+      },
+      {
+        "label": "快速上手",
+        "url": "https://docs.trytrellis.app/start/install-and-first-task"
+      }
+    ]
   }
 ]
