@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Digest — 每日精選</title>
+  <meta name="description" content="AI 領域每日精選摘要">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">🤖 AI Digest</h1>
+      <p class="site-subtitle">每日 AI 精選摘要 · 自動更新</p>
+      <div class="header-links">
+        <a href="https://github.com/alexabc/ai-digest-site" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toolbar">
+    <div class="toolbar-inner">
+      <div class="tabs" id="categoryTabs"></div>
+      <div class="toolbar-actions">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜尋...">
+        <select id="sortSelect" class="sort-select">
+          <option value="newest">最新優先</option>
+          <option value="oldest">最舊優先</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <main class="card-grid" id="cardGrid">
+    <div class="loading">載入中...</div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Powered by KaniBot Digest Pipeline · <a href="https://github.com/alexabc/ai-digest-site">Source</a></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

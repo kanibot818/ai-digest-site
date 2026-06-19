@@ -1,0 +1,32 @@
+name: Auto-Update Digests
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch latest digests
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+        run: python3 scripts/fetch_digests.py --limit 100 --output data/digests.json
+
+      - name: Commit changes
+        run: |
+          git config user.name "KaniBot Digest Bot"
+          git config user.email "actions@github.com"
+          git add data/digests.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🔄 Auto-update digests $(date -u '+%Y-%m-%d %H:%M')"
+            git push
+          fi
