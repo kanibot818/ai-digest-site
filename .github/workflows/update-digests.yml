@@ -18,13 +18,14 @@ jobs:
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
         run: python3 scripts/fetch_digests.py --limit 100 --output data/digests.json
 
       - name: Commit changes
         run: |
           git config user.name "KaniBot Digest Bot"
           git config user.email "actions@github.com"
-          git add data/digests.json
+          git add data/digests.json images/
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
