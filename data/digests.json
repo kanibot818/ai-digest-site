@@ -4,6 +4,7 @@
     "title": "VoxCPM2 — 跳過 Tokenizer，直接用 Diffusion 生成語音",
     "date": "2026-06-19",
     "category": "AI 語音",
+    "image": "images/voxcpm2-tts.png",
     "editor_note": "Tokenizer-Free 是真正大膽的架構賭注——放棄離散化直接在連續空間做 diffusion，理論上限遠高於傳統 TTS。更值得注意的是，2B 參數就做到商用級品質，開源社群正在快速逼近閉源方案。",
     "summary": [
       "Tokenizer-Free 架構，端到端 diffusion autoregressive 生成連續語音表示",
@@ -20,6 +21,7 @@
     "title": "GEO 不是新 SEO — 83% 的 AI 引用來自搜尋前十名以外",
     "date": "2026-06-19",
     "category": "AI 行銷",
+    "image": "images/geo-ai-visibility.png",
     "editor_note": "這篇文章最有價值的是踩了雷：HTML 註釋、User-Agent 嗅探、meta 標籤，這些「AI SEO 技巧」全部沒用。真正影響 AI 引用的是內容結構和數據密度，不是技術 hack。",
     "summary": [
       "AI Overview 引用 83% 來自前 10 名以外的頁面，傳統 SEO 排名策略失效",
@@ -36,6 +38,7 @@
     "title": "Trellis — 讓 AI Coding Agent 記住你的專案規範",
     "date": "2026-06-19",
     "category": "開發工具",
+    "image": "images/trellis-framework.png",
     "editor_note": "AI 寫程式的痛點不是速度，是失憶——每次 session 從零開始。Trellis 的思路對：把 specs、tasks、memory 持久化到 repo，讓任何 agent 都能讀到。真正有遠見的是跨 16 個平台的兼容設計，不賭單一工具。",
     "summary": [
       "解決 AI coding agent 的失憶問題——規格、任務、記憶持久化到 repo",

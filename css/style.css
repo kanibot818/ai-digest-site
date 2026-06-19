@@ -195,6 +195,15 @@ a:hover { color: var(--text); }
   transform: translateY(-3px);
 }
 
+/* Card Image */
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+}
+
 .card-body {
   padding: 1.5rem 1.5rem 1rem;
   flex: 1;

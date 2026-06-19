@@ -79,6 +79,7 @@ function render() {
 
   grid.innerHTML = items.map(d => `
     <article class="card">
+      ${d.image ? `<img class="card-image" src="${d.image}" alt="${d.title}" loading="lazy">` : ''}
       <div class="card-body">
         <span class="card-tag">${d.category}</span>
         <h3 class="card-title">${d.title}</h3>
