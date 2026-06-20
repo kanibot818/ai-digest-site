@@ -15,7 +15,7 @@ async function loadData() {
     handleRoute();
   } catch (e) {
     document.getElementById('cardGrid').innerHTML =
-      '<div class="empty-state"><p>⚠️ 無法載入資料</p></div>';
+      '<div class="empty-state"><p>無法載入資料</p></div>';
     console.error(e);
   }
 }
@@ -165,7 +165,7 @@ function getDomain(url) {
 function linkIcon(url) {
   if (/github\.com/.test(url)) return '⌥';
   if (/x\.com|twitter\.com/.test(url)) return '𝕏';
-  if (/huggingface\.co/.test(url)) return '🤗';
+  if (/huggingface\.co/.test(url)) return 'HF';
   if (/docs\.|documentation/.test(url)) return '☰';
   return '↗';
 }
@@ -264,7 +264,7 @@ function copyShareLink(id) {
   navigator.clipboard.writeText(url).then(() => {
     const btn = document.querySelector('.detail-share-btn');
     const orig = btn.textContent;
-    btn.textContent = '✅ 已複製';
+    btn.textContent = '已複製';
     setTimeout(() => { btn.textContent = orig; }, 2000);
   });
 }
