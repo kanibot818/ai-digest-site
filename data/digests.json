@@ -1,5 +1,41 @@
 [
   {
+    "id": "recordly-開源螢幕錄影與編輯工具",
+    "title": "Recordly — 開源螢幕錄影與編輯工具",
+    "date": "2026-06-20",
+    "category": "AI 影片",
+    "summary": [
+      "定位： 開源桌面錄影 + 編輯工具，專為製作產品 Demo、操作教學、 walkthrough 影片設計。標榜取代付費工具（如 Screen Studio），免費完成錄影到後製全流程。AGPL 3.0 授權，由 CodeRabbit 社群贊助。",
+      "跨平台原生錄製： 支援 macOS、Windows、Linux。macOS 用原生 ScreenCaptureKit、Windows 用原生 WGC，確保高品質畫面與系統音效擷取。可直接錄全螢幕或單一視窗，同步收麥克風與系統音。",
+      "自動縮放與游標美化： 根據滑鼠動作自動建議縮放範圍，游標自動平滑、點擊動畫、動態模糊等效果，省去手 keyframe 的麻煩。",
+      "完整時間軸編輯： 拖曳式時間軸，支援裁剪、手動/自動縮放區間、加速/慢放、文字與圖片標註、額外音軌、裁切畫面。專案可存成 `.recordly` 檔反覆編輯。匯出 MP4 或 GIF。",
+      "Webcam 氣泡 + 框架美化 + 擴充市集： 攝影機畫面以浮動圓角泡泡疊加，可自訂位置與縮放連動；錄製畫面可套用桌布、漸層、圓角、陰影等包裝。另有社群擴充市集，可安裝點擊音效、裝置外框、瀏覽器 mockup 等插件。"
+    ],
+    "links": [],
+    "source_url": "",
+    "source_label": "",
+    "editor_note": "製作高質感產品 Demo 不再需要負擔昂貴的軟體費！Recordly 以原生架構結合自動縮放，讓你免費就能做出媲美 Screen Studio 的專業影片，是開發者與創作者必備的開源神器。",
+    "image": ""
+  },
+  {
+    "id": "chatwoot-開源客服平台",
+    "title": "Chatwoot — 開源客服平台",
+    "date": "2026-06-20",
+    "category": "其他",
+    "summary": [
+      "定位： 開源、可自架的現代客服平台，目標是做 Intercom、Zendesk、Salesforce Service Cloud 的替代品。MIT 授權，2017 年至今持續維護。",
+      "全渠道整合（Omnichannel）： 把網站即時聊天、Email、Facebook、Instagram、Twitter、WhatsApp、Telegram、Line、SMS 等所有管道的對話，統一收進同一個收件匣管理。",
+      "Captain AI 代理： 內建 AI 客服代理，可自動回覆常見問題、減輕客服人員負擔，讓團隊專注處理複雜對話。",
+      "完整營運功能： 內建 Help Center 知識庫、私註與 @提及協作、標籤分類、預存回覆、自動分派、團隊管理、報表分析（CSAT 滿意度、代理績效等）、以及 Slack、Dialogflow、Shopify、Linear 等整合。",
+      "部署簡單： 支援 Heroku 一鍵部署、DigitalOcean Kubernetes 一鍵部署、Docker 自架，也有官方雲端託管方案。GitHub Stars 約 23k+。"
+    ],
+    "links": [],
+    "source_url": "",
+    "source_label": "",
+    "editor_note": "擺脫高昂 SaaS 費用與廠商綁定，Chatwoot 讓企業重新拿回資料自主權。它證明開源自架結合 AI 與全渠道的實力已不輸主流大廠，是團隊升級客服架構、控制成本的聰明解方。",
+    "image": ""
+  },
+  {
     "id": "voxcpm2-無-tokenizer-的多語言-tts-語音合成系統",
     "title": "VoxCPM2 — 無 Tokenizer 的多語言 TTS 語音合成系統",
     "date": "2026-06-19",
