@@ -138,7 +138,7 @@ def parse_digest(content, timestamp):
 
 
 def pick_source_url(links):
-    """Pick the best source URL — prefer GitHub/product over X/Twitter reposts."""
+    """Pick the best source URL — prefer GitHub/product, then X post (not profile)."""
     if not links:
         return "", ""
 
@@ -156,6 +156,14 @@ def pick_source_url(links):
     for domain, label in priority_domains:
         for link in links:
             if domain in link["url"]:
+                # For X/Twitter, prefer the actual post (/status/) over profile page
+                if domain in ("x.com", "twitter.com"):
+                    # Find the status link among ALL x/twitter links
+                    for l in links:
+                        if domain in l["url"] and "/status/" in l["url"]:
+                            return l["url"], label
+                    # Fall back to profile if no status link exists
+                    return link["url"], label
                 return link["url"], label
 
     # Fallback: first link
