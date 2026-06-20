@@ -184,38 +184,63 @@ def guess_category(title, summary):
 # AI EDITORIAL NOTE GENERATION
 # ============================================================
 
+def _call_llm(prompt, api_key, max_tokens=6000):
+    """Call LLM and return content string. Returns empty if reasoning consumed all tokens."""
+    data = json.dumps({
+        "model": LLM_MODEL,
+        "messages": [{"role": "user", "content": prompt}],
+        "max_tokens": max_tokens,
+        "temperature": 0.7,
+    }).encode()
+
+    req = urllib.request.Request(LLM_BASE_URL, data=data, headers={
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+    })
+
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        result = json.loads(resp.read())
+
+    choice = result["choices"][0]
+    note = choice["message"]["content"].strip()
+    if not note:
+        details = result.get("usage", {}).get("completion_tokens_details", {})
+        print(f"  ⚠️ Empty content. finish_reason={choice.get('finish_reason')}, {details}", file=sys.stderr)
+    return note
+
+
 def generate_editor_note(digest, api_key):
     """Call LLM to generate a 1-2 sentence editorial note for a digest."""
     if not api_key:
         return ""
 
+    summary_lines = '\n'.join(f'- {s}' for s in digest['summary'][:3])
+
+    # Primary prompt
     prompt = f"""你是 AI 科技媒體的編輯。用繁體中文寫 1-2 句編輯觀點，說明這則資訊為什麼值得關注。
 要有自己的觀點，不要只是重複摘要。語氣專業但親切。
 
 標題：{digest['title']}
 分類：{digest['category']}
 摘要重點：
-{chr(10).join(f'- {s}' for s in digest['summary'][:3])}
+{summary_lines}
 
 直接輸出編輯觀點文字，不要加引號或前綴。最多 80 字。"""
 
     try:
-        data = json.dumps({
-            "model": LLM_MODEL,
-            "messages": [{"role": "user", "content": prompt}],
-            "max_tokens": 200,
-            "temperature": 0.7,
-        }).encode()
+        note = _call_llm(prompt, api_key)
 
-        req = urllib.request.Request(LLM_BASE_URL, data=data, headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-        })
+        # Retry with ultra-short prompt if reasoning ate all tokens
+        if not note:
+            print("  🔄 Retrying with concise prompt...", file=sys.stderr)
+            short_prompt = f"""用繁體中文，一句話評論「{digest['title']}」的重要性。直接輸出，不超過 60 字。"""
+            note = _call_llm(short_prompt, api_key, max_tokens=8000)
 
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            result = json.loads(resp.read())
+        if not note:
+            print("  🔄 Last try with English prompt...", file=sys.stderr)
+            en_prompt = f"""In Traditional Chinese, write ONE sentence (max 60 chars) about why \"{digest['title']}\" matters. Output only the sentence."""
+            note = _call_llm(en_prompt, api_key, max_tokens=8000)
 
-        note = result["choices"][0]["message"]["content"].strip()
         # Clean up any quotes or prefixes
         note = note.strip('"\'「」""').strip()
         return note
@@ -294,6 +319,7 @@ def main():
     parser.add_argument('--output', default='data/digests.json', help='Output JSON path')
     parser.add_argument('--no-ai', action='store_true', help='Skip AI editorial note generation')
     parser.add_argument('--no-images', action='store_true', help='Skip OG image fetching')
+    parser.add_argument('--fill-missing', action='store_true', help='Regenerate editor_note/image for existing digests that lack them')
     args = parser.parse_args()
 
     # Credentials from env only
@@ -350,26 +376,40 @@ def main():
 
     print(f"📋 {len(seen_ids)} digests in channel ({len(new_digests)} new, {len(seen_ids) - len(new_digests)} existing)")
 
-    # Step 4: Generate AI editorial notes for NEW digests only
-    if new_digests:
+    # Step 4: Identify digests needing AI/image processing
+    need_ai = list(new_digests)
+    need_images = list(new_digests)
+
+    if args.fill_missing:
+        for did, d in existing.items():
+            if did in seen_ids:  # still in channel
+                if not d.get('editor_note'):
+                    need_ai.append(d)
+                if not d.get('image'):
+                    need_images.append(d)
+        if need_ai or need_images:
+            print(f"🔧 --fill-missing: {len(need_ai)} need notes, {len(need_images)} need images")
+
+    # Step 4b: Generate AI editorial notes
+    if need_ai:
         if not args.no_ai and glm_key:
-            print(f"✍️ Generating editorial notes for {len(new_digests)} new digests (model: {LLM_MODEL})...")
-            for i, d in enumerate(new_digests):
-                print(f"  [{i+1}/{len(new_digests)}] {d['title'][:40]}...")
+            print(f"✍️ Generating editorial notes for {len(need_ai)} digests (model: {LLM_MODEL})...")
+            for i, d in enumerate(need_ai):
+                print(f"  [{i+1}/{len(need_ai)}] {d['title'][:40]}...")
                 d['editor_note'] = generate_editor_note(d, glm_key)
         else:
             if not glm_key:
                 print("⚠️ No GLM_API_KEY — skipping editorial notes")
-            for d in new_digests:
+            for d in need_ai:
                 d['editor_note'] = d.get('editor_note', '')
 
-        # Step 5: Fetch OG images for NEW digests only
+        # Step 5: Fetch OG images
         if not args.no_images:
-            print("🖼️ Fetching OG images for new digests...")
-            for i, d in enumerate(new_digests):
+            print("🖼️ Fetching OG images...")
+            for i, d in enumerate(need_images):
                 url = d.get('source_url', '')
                 if url:
-                    print(f"  [{i+1}/{len(new_digests)}] {url[:50]}...")
+                    print(f"  [{i+1}/{len(need_images)}] {url[:50]}...")
                     img_path = fetch_og_image(url, d['id'])
                     d['image'] = img_path
                 else:

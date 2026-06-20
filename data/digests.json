@@ -27,7 +27,7 @@
     ],
     "source_url": "https://github.com/OpenBMB/VoxCPM",
     "source_label": "GitHub",
-    "editor_note": "",
+    "editor_note": "Tokenizer-Free 架構讓 AI 語音告別「機械感」，重現極致細膩的真實情緒。現在連音色都能用文字描述直接「捏」出來，客製化虛擬人聲的應用門檻已被徹底打破。",
     "image": "images/voxcpm2--tokenizer--tts-.png"
   },
   {
@@ -54,7 +54,7 @@
     ],
     "source_url": "https://x.com/HiTw93",
     "source_label": "原文",
-    "editor_note": "",
+    "editor_note": "AI 搜尋正將流量戰轉向品牌能見度戰。與其死守傳統 SEO，開發者更該掌握爬蟲管理與 llms.txt 新標準，為內容在 AI 時代的話語權提前卡位。",
     "image": ""
   },
   {
@@ -85,7 +85,7 @@
     ],
     "source_url": "https://github.com/mindfold-ai/Trellis",
     "source_label": "GitHub",
-    "editor_note": "",
+    "editor_note": "Trellis 點出 AI coding 的真正瓶頸不在速度，而在紀律。把 specs、tasks 和 memory 持久化到 repo，讓 AI 終於能像團隊成員一樣遵守工程標準，而不是每次都從零開始。",
     "image": "images/trellis-ai-.png"
   },
   {
@@ -112,7 +112,7 @@
     ],
     "source_url": "https://x.com/better_christal",
     "source_label": "原文",
-    "editor_note": "",
+    "editor_note": "這不只是工具教學，更是 AIGC 商業變現的絕佳範例。它證明創作者能以極低成本實現量產，並透過長尾效應打造被動收入矩陣，為微型創業提供一條高可複製的捷徑。",
     "image": ""
   }
 ]
