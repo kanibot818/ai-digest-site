@@ -133,7 +133,7 @@ function showGrid() {
 function showDetail() {
   document.getElementById('toolbar').style.display = 'none';
   document.querySelector('.card-grid').style.display = 'none';
-  document.getElementById('detailView').style.display = '';
+  document.getElementById('detailView').style.display = 'block';
   window.scrollTo(0, 0);
 }
 
@@ -150,7 +150,7 @@ function render() {
   grid.innerHTML = items.map(d => {
     const thumb = d.image ? d.image : placeholderThumb(d.title, d.category);
     return `
-    <article class="card" onclick="navigateToDetail('${d.id}')">
+    <article class="card" data-id="${d.id}">
       <div class="card-thumb-wrapper">
         <img class="card-image" src="${thumb}" alt="${d.title}" loading="lazy"
              onerror="this.src='${placeholderThumb(d.title, d.category)}'">
@@ -174,6 +174,11 @@ function render() {
       </div>
     </article>`;
   }).join('');
+
+  // Attach click handlers via event delegation
+  grid.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => navigateToDetail(card.dataset.id));
+  });
 }
 
 // === Render Detail View ===
