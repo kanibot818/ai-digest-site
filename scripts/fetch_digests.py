@@ -440,20 +440,20 @@ def main():
                 print("⚠️ No GLM_API_KEY — skipping editorial notes")
             for d in need_ai:
                 d['editor_note'] = d.get('editor_note', '')
-
-        # Step 5: Fetch OG images
-        if not args.no_images:
-            print("🖼️ Fetching OG images...")
-            for i, d in enumerate(need_images):
-                url = d.get('source_url', '')
-                if url:
-                    print(f"  [{i+1}/{len(need_images)}] {url[:50]}...")
-                    img_path = fetch_og_image(url, d['id'])
-                    d['image'] = img_path
-                else:
-                    d['image'] = d.get('image', '')
     else:
-        print("✅ No new digests — skipping AI and image processing")
+        print("✅ No digests need editorial notes")
+
+    # Step 5: Fetch OG images (independent of AI notes)
+    if need_images and not args.no_images:
+        print(f"🖼️ Fetching OG images for {len(need_images)} digests...")
+        for i, d in enumerate(need_images):
+            url = d.get('source_url', '')
+            if url:
+                print(f"  [{i+1}/{len(need_images)}] {url[:50]}...")
+                img_path = fetch_og_image(url, d['id'])
+                d['image'] = img_path
+            else:
+                d['image'] = d.get('image', '')
 
     # Step 6: Merge — existing (updated) + new, prune removed-from-channel
     keep_ids = seen_ids  # only keep digests still in the channel
