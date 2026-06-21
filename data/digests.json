@@ -43,7 +43,7 @@
     "source_url": "https://github.com/webadderallorg/Recordly",
     "source_label": "GitHub",
     "editor_note": "製作高質感產品 Demo 不再需要負擔昂貴的軟體費！Recordly 以原生架構結合自動縮放，讓你免費就能做出媲美 Screen Studio 的專業影片，是開發者與創作者必備的開源神器。",
-    "image": ""
+    "image": "images/recordly-.png"
   },
   {
     "id": "chatwoot-開源客服平台",
@@ -66,7 +66,7 @@
     "source_url": "https://github.com/chatwoot/chatwoot",
     "source_label": "GitHub",
     "editor_note": "擺脫高昂 SaaS 費用與廠商綁定，Chatwoot 讓企業重新拿回資料自主權。它證明開源自架結合 AI 與全渠道的實力已不輸主流大廠，是團隊升級客服架構、控制成本的聰明解方。",
-    "image": ""
+    "image": "images/chatwoot-.png"
   },
   {
     "id": "voxcpm2-無-tokenizer-的多語言-tts-語音合成系統",
