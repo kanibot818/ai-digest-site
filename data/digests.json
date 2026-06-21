@@ -11,9 +11,14 @@
       "多模態精細控制：文字控制動作、音訊控制情緒、圖片定義角色，三種訊號在單次生成中統一處理。展示涵蓋精準唇型同步、多語言演唱（含阿拉伯語、西班牙語）、細膩的情緒轉換（恐懼、悲傷、懷舊等數十種）。",
       "不開源、不公開：團隊明確表示不會釋放模型權重、原始碼、API 或任何產品。所有展示素材均為合成生成，未使用真實人物肖像，僅供非商業學術用途。"
     ],
-    "links": [],
-    "source_url": "",
-    "source_label": "",
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://large-performance-model.github.io"
+      }
+    ],
+    "source_url": "https://large-performance-model.github.io",
+    "source_label": "來源",
     "editor_note": "這項技術打破了 AI 影片單向播報的瓶頸！結合即時對話與跨風格泛化，讓任何圖像瞬間「活」過來，宣告沉浸式的 AI 陪伴與智慧 NPC 應用已觸手可及。",
     "image": ""
   },
@@ -29,9 +34,14 @@
       "完整時間軸編輯： 拖曳式時間軸，支援裁剪、手動/自動縮放區間、加速/慢放、文字與圖片標註、額外音軌、裁切畫面。專案可存成 `.recordly` 檔反覆編輯。匯出 MP4 或 GIF。",
       "Webcam 氣泡 + 框架美化 + 擴充市集： 攝影機畫面以浮動圓角泡泡疊加，可自訂位置與縮放連動；錄製畫面可套用桌布、漸層、圓角、陰影等包裝。另有社群擴充市集，可安裝點擊音效、裝置外框、瀏覽器 mockup 等插件。"
     ],
-    "links": [],
-    "source_url": "",
-    "source_label": "",
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/webadderallorg/Recordly"
+      }
+    ],
+    "source_url": "https://github.com/webadderallorg/Recordly",
+    "source_label": "GitHub",
     "editor_note": "製作高質感產品 Demo 不再需要負擔昂貴的軟體費！Recordly 以原生架構結合自動縮放，讓你免費就能做出媲美 Screen Studio 的專業影片，是開發者與創作者必備的開源神器。",
     "image": ""
   },
@@ -47,9 +57,14 @@
       "完整營運功能： 內建 Help Center 知識庫、私註與 @提及協作、標籤分類、預存回覆、自動分派、團隊管理、報表分析（CSAT 滿意度、代理績效等）、以及 Slack、Dialogflow、Shopify、Linear 等整合。",
       "部署簡單： 支援 Heroku 一鍵部署、DigitalOcean Kubernetes 一鍵部署、Docker 自架，也有官方雲端託管方案。GitHub Stars 約 23k+。"
     ],
-    "links": [],
-    "source_url": "",
-    "source_label": "",
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/chatwoot/chatwoot"
+      }
+    ],
+    "source_url": "https://github.com/chatwoot/chatwoot",
+    "source_label": "GitHub",
     "editor_note": "擺脫高昂 SaaS 費用與廠商綁定，Chatwoot 讓企業重新拿回資料自主權。它證明開源自架結合 AI 與全渠道的實力已不輸主流大廠，是團隊升級客服架構、控制成本的聰明解方。",
     "image": ""
   },
