@@ -51,6 +51,19 @@ def fetch_messages(channel_id, token, limit=100):
 # MESSAGE PARSING
 # ============================================================
 
+def getDomainInline(url):
+    """Extract a human-friendly domain label from URL for link display."""
+    try:
+        from urllib.parse import urlparse
+        host = urlparse(url).hostname.replace('www.', '')
+        if 'github.com' in host:
+            parts = urlparse(url).path.strip('/').split('/')
+            return parts[0] if parts and parts[0] else 'GitHub'
+        return host
+    except Exception:
+        return '連結'
+
+
 def parse_digest(content, timestamp):
     """Parse a KaniBot digest message into structured data."""
     lines = content.strip().split('\n')
@@ -85,10 +98,19 @@ def parse_digest(content, timestamp):
         if line.startswith(('terminal', '🌐', '💻', '📸', '```')):
             continue
 
-        # Extract links: 📎 [label](url) or [label](url)
+        # Extract links: markdown [label](url) format
         link_matches = re.findall(r'\[([^\]]+)\]\(([^)]+)\)', line)
         for label, url in link_matches:
             links.append({"label": label, "url": url})
+
+        # Also extract plain URLs (📎 來源：https://... or > 📍 來源：https://...)
+        if not link_matches and ('http' in line):
+            plain_urls = re.findall(r'(https?://[^\s\)>]+)', line)
+            for url in plain_urls:
+                # Derive label from line context
+                label_match = re.search(r'(來源|原文|GitHub Repo|官方)', line)
+                label = label_match.group(0) if label_match else getDomainInline(url)
+                links.append({"label": label, "url": url})
 
         # Clean bullet points
         if line.startswith('- '):
@@ -372,10 +394,18 @@ def main():
             if parsed and parsed['id'] not in seen_ids:
                 seen_ids.add(parsed['id'])
                 if parsed['id'] in existing:
-                    # Already processed — keep existing (preserves editor_note, image)
-                    existing[parsed['id']].update({
+                    # Already processed — re-parse links/summary if existing has none
+                    old = existing[parsed['id']]
+                    if not old.get('links') and parsed.get('links'):
+                        old['links'] = parsed['links']
+                        old['source_url'] = old.get('source_url') or parsed.get('source_url', '')
+                        old['source_label'] = old.get('source_label') or parsed.get('source_label', '')
+                        if not old.get('summary'):
+                            old['summary'] = parsed.get('summary', [])
+                    # Update other non-AI fields
+                    old.update({
                         k: v for k, v in parsed.items()
-                        if k not in ('editor_note', 'image', 'raw_content')
+                        if k not in ('editor_note', 'image', 'raw_content', 'links', 'source_url', 'source_label', 'summary')
                         and v  # only update non-empty values
                     })
                 else:
@@ -393,7 +423,7 @@ def main():
             if did in seen_ids:  # still in channel
                 if not d.get('editor_note'):
                     need_ai.append(d)
-                if not d.get('image'):
+                if not d.get('image') and d.get('source_url'):
                     need_images.append(d)
         if need_ai or need_images:
             print(f"🔧 --fill-missing: {len(need_ai)} need notes, {len(need_images)} need images")
