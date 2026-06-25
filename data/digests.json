@@ -1,5 +1,26 @@
 [
   {
+    "id": "loop-engineering-別再手動-prompt-了-設計一個會自己跑的迴圈",
+    "title": "Loop Engineering：別再手動 prompt 了，設計一個會自己跑的迴圈",
+    "date": "2026-06-25",
+    "category": "開發工具",
+    "summary": [
+      "驗證仍然是你的責任 — 無人監督的迴圈也會無人監督地犯錯",
+      "理解力會衰退 — loop 越快出 code 你沒讀過，comprehension debt 越深",
+      "認知投降的風險 — 同一個迴圈，懂的人用來加速，不懂的人用來逃避理解。結果天差地遠"
+    ],
+    "links": [
+      {
+        "label": "x.com",
+        "url": "https://x.com/addyosmani/status/2064127981161959567"
+      }
+    ],
+    "source_url": "https://x.com/addyosmani/status/2064127981161959567",
+    "source_label": "原文",
+    "editor_note": "這篇最值得讀的不是怎麼搭 Loop，而是「認知投降」這個概念——自動化是放大鏡，同時放大能力與無知。真正的風險從來不是 bug，而是你心甘情願把理解力外包出去的那一刻。",
+    "image": ""
+  },
+  {
     "id": "lpm-1-0-基於影片的角色表演模型",
     "title": "LPM 1.0 — 基於影片的角色表演模型",
     "date": "2026-06-21",
