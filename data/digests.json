@@ -1,5 +1,28 @@
 [
   {
+    "id": "t3mp3st-把你的-ai-coding-agent-變成全自動紅隊攻擊工具",
+    "title": "T3MP3ST：把你的 AI Coding Agent 變成全自動紅隊攻擊工具",
+    "date": "2026-07-08",
+    "category": "開發工具",
+    "summary": [
+      "「Harness of harnesses」架構 — 在你已有的 coding agent 上掛載完整的攻擊性安全工具鏈，支援 Web/API、OWASP Top 10、網路偵察（nmap/DNS/HTTP）、白盒原始碼審計、CTF、智慧合約漏洞重現、IoT/SCADA 等場景",
+      "單兵或蜂群模式 — 可以單一 agent 獨立作業，也能啟動「Op Admiral」規劃整個攻擊行動，指揮數十個專精 operator（依 Cyber Kill Chain + MITRE ATT&CK 分工：偵察 → 掃描 → 利用 → 橫向移動 → 資料竊取 → 持久化 → C2 → 報告）",
+      "Benchmark 表現驚人：",
+      "XBEN（104 題）：黑盒 90.1% pass@1，白盒 98.7%",
+      "Cybench（40 題學術測試）：58% 無提示 pass@1，全是真實漏洞利用"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/elder_plinius/status/2073579120135664102"
+      }
+    ],
+    "source_url": "https://x.com/elder_plinius/status/2073579120135664102",
+    "source_label": "原文",
+    "editor_note": "亮點在於它把寫程式助手，進化成具備「蜂群思維」的全自動攻擊指揮官。這不僅大幅降低紅隊測試門檻，更預示資安攻防將邁入 AI 軍備競賽，非常值得開發者提早關注。",
+    "image": ""
+  },
+  {
     "id": "loop-engineering-別再手動-prompt-了-設計一個會自己跑的迴圈",
     "title": "Loop Engineering：別再手動 prompt 了，設計一個會自己跑的迴圈",
     "date": "2026-06-25",
