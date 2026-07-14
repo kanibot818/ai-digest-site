@@ -1,5 +1,28 @@
 [
   {
+    "id": "anthropic-發布-loop-engineering-免費課程-hux-推薦學習",
+    "title": "Anthropic 發布 Loop Engineering 免費課程，Hux 推薦學習",
+    "date": "2026-07-14",
+    "category": "開發工具",
+    "summary": [
+      "Anthropic 推出免費課程：主題為 Loop Engineering（迴圈工程），已正式對外開放，Hux（@huxlab）在推特上公開推薦",
+      "Loop Engineering 是什麼：這是一種以迭代迴圈為核心的 AI 工程方法論，強調透過不斷測試、修正、再驗證的流程來構建可靠系統，適合正在做 LLM 應用開發的工程師學習",
+      "由 Anthropic 官方出品：作為 Claude 的開發公司，Anthropic 的課程通常會結合自家模型的最佳實踐，具備實戰參考價值",
+      "社群反應熱烈：推文獲得 463 個讚、118 次轉發，顯示社群對此主題關注度相當高",
+      "目標受眾：適合 AI 應用開發者、Prompt 工程師、以及對 LLM 系統可靠性感興趣的技術人員"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/huxlab/status/2076536809534951540"
+      }
+    ],
+    "source_url": "https://x.com/huxlab/status/2076536809534951540",
+    "source_label": "原文",
+    "editor_note": "隨著 LLM 應用進入深水區，單靠 Prompt 已經不夠了。Anthropic 親授的迴圈工程補足了開發者最缺的系統化方法論，是將 AI 從實驗品打造成穩定產品的必讀指南。",
+    "image": ""
+  },
+  {
     "id": "t3mp3st-把你的-ai-coding-agent-變成全自動紅隊攻擊工具",
     "title": "T3MP3ST：把你的 AI Coding Agent 變成全自動紅隊攻擊工具",
     "date": "2026-07-08",
