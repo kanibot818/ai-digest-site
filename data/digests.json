@@ -20,7 +20,7 @@
     "source_url": "https://x.com/huxlab/status/2076536809534951540",
     "source_label": "原文",
     "editor_note": "隨著 LLM 應用進入深水區，單靠 Prompt 已經不夠了。Anthropic 親授的迴圈工程補足了開發者最缺的系統化方法論，是將 AI 從實驗品打造成穩定產品的必讀指南。",
-    "image": ""
+    "image": "images/anthropic--loop-engineering--hux-.png"
   },
   {
     "id": "t3mp3st-把你的-ai-coding-agent-變成全自動紅隊攻擊工具",
@@ -249,6 +249,6 @@
     "source_url": "https://x.com/better_christal/status/2063104267100250460",
     "source_label": "原文",
     "editor_note": "這不只是工具教學，更是 AIGC 商業變現的絕佳範例。它證明創作者能以極低成本實現量產，並透過長尾效應打造被動收入矩陣，為微型創業提供一條高可複製的捷徑。",
-    "image": ""
+    "image": "images/ai--amazon--2000-.png"
   }
 ]
