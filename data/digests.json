@@ -1,5 +1,28 @@
 [
   {
+    "id": "github-萬能-agent-項目屠榜整理",
+    "title": "GitHub 萬能 Agent 項目屠榜整理",
+    "date": "2026-08-22",
+    "category": "AI 影片",
+    "summary": [
+      "情報獲取層：Agent-Reach 讓 Agent 一鍵讀取 Twitter、Reddit、YouTube 等，零 API 費用；微軟 markitdown 把 PDF/Word/影音全部轉成乾淨 Markdown 餵給 LLM",
+      "打工經濟：HKUDS/ClawWork 是 Agent 真實賺錢測試框架，ATIC+Qwen3.5-Plus 組合 8 小時賺近 2 萬美元，時薪 2,285 美元",
+      "內容自動化：MoneyPrinterPlus、MoneyPrinterTurbo（10.8 萬星）實現短影片一鍵批量生成、自動發布到抖音/小紅書；AiToEarn 四層架構打通 13 個平台創作→分發→互動→變現",
+      "AI 編程：block/goose 幾天暴漲 8 萬星，一句話搭項目、寫代碼、跑測試，支援本地模型；obra/superpowers（26.2 萬星）把頂級工程師方法論 Skill 化",
+      "賺錢方法論：MakeMoneyWithAI 收錄 380+ 個可變現開源項目；awesome-OpenClaw-Money-Maker 內含 ClawRouter 路由 71 個 LLM 省成本 87%"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/fred834567/status/2090476415661830285"
+      }
+    ],
+    "source_url": "https://x.com/fred834567/status/2090476415661830285",
+    "source_label": "原文",
+    "editor_note": "Agent 正從輔助工具跨入「自己賺錢」的階段，時薪 2,285 美元的實測極具指標意義；但內容印鈔機普及後，平台生態能否消化這波自動化洪流，恐怕才是真正的考驗。",
+    "image": ""
+  },
+  {
     "id": "anthropic-發布-loop-engineering-免費課程-hux-推薦學習",
     "title": "Anthropic 發布 Loop Engineering 免費課程，Hux 推薦學習",
     "date": "2026-07-14",
@@ -64,7 +87,7 @@
     "source_url": "https://x.com/addyosmani/status/2064127981161959567",
     "source_label": "原文",
     "editor_note": "這篇最值得讀的不是怎麼搭 Loop，而是「認知投降」這個概念——自動化是放大鏡，同時放大能力與無知。真正的風險從來不是 bug，而是你心甘情願把理解力外包出去的那一刻。",
-    "image": ""
+    "image": "images/loop-engineering--prompt--.png"
   },
   {
     "id": "lpm-1-0-基於影片的角色表演模型",
