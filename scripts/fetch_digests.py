@@ -475,6 +475,7 @@ def main():
     print(f"📋 {len(seen_ids)} digests in channel ({len(new_digests)} new, {len(seen_ids) - len(new_digests)} existing)")
 
     # Step 3b: Merge learning items into the new/existing tracking
+    from parse_learning import resolve_original_url
     for item in learning_items:
         if item['id'] in seen_ids:
             continue
@@ -487,6 +488,8 @@ def main():
                 if k not in ('editor_note', 'image') and v
             })
         else:
+            # X cards: resolve the tweet's attached link card to the original article
+            item['original_url'] = resolve_original_url(item.get('source_url', ''))
             new_digests.append(item)
 
     print(f"📋 {len(seen_ids)} items total ({len(new_digests)} new, {len(seen_ids) - len(new_digests)} existing)")

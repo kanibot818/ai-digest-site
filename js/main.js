@@ -252,8 +252,13 @@ function renderDetail(d) {
       </div>`;
   }).join('');
 
-  // Links: with domain + type icon
-  const allLinks = (d.links || []).map(l => {
+  // Links: with domain + type icon; X cards with a resolved original article get it first
+  let linkList = d.links || [];
+  if (d.original_url) {
+    linkList = [{ label: '原文出處', url: d.original_url },
+                ...linkList.filter(l => l.url !== d.original_url)];
+  }
+  const allLinks = linkList.map(l => {
     const domain = getDomain(l.url);
     const icon = linkIcon(l.url);
     return `
@@ -297,8 +302,8 @@ function renderDetail(d) {
       </section>` : ''}
 
       <div class="d-actions">
-        ${d.source_url ? `
-        <a href="${d.source_url}" target="_blank" rel="noopener" class="d-btn-primary">
+        ${d.original_url || d.source_url ? `
+        <a href="${d.original_url || d.source_url}" target="_blank" rel="noopener" class="d-btn-primary">
           查看原文 ↗
         </a>` : ''}
         <button class="d-btn-ghost" onclick="copyShareLink('${d.id}')">複製分享連結</button>

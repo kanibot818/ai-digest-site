@@ -15,6 +15,7 @@ Failure messages ("⚠️ Cron job ... failed") are skipped.
 Output items match the digests.json schema plus a "source" field.
 """
 
+import json
 import re
 from datetime import datetime, timezone
 
@@ -169,6 +170,42 @@ def _parse_section(block):
         'source_url': source_url,
         'source_label': '來源' if source_url else '',
     }
+
+
+def resolve_original_url(source_url):
+    """For X status links, resolve the attached link-card's landing URL (the
+    original article). Returns '' when the tweet has no card or links to X itself."""
+    if not source_url or 'x.com/' not in source_url or '/status/' not in source_url:
+        return ''
+    import urllib.request, urllib.error
+    tweet_id = source_url.split('/status/')[1].split('?')[0].rstrip('/')
+    if not tweet_id.isdigit():
+        return ''
+    ua = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+
+    class _NoRedirect(urllib.request.HTTPRedirectHandler):
+        def redirect_request(self, *args, **kwargs):
+            return None
+
+    opener = urllib.request.build_opener(_NoRedirect)
+    try:
+        su = f"https://cdn.syndication.twimg.com/tweet-result?id={tweet_id}&lang=en&token=x"
+        with urllib.request.urlopen(urllib.request.Request(su, headers=ua), timeout=15) as r:
+            tj = json.load(r)
+        card = tj.get('card') or {}
+        bv = card.get('binding_values') or {}
+        card_url = (bv.get('card_url') or {}).get('string_value') or card.get('url') or ''
+        if 't.co' not in card_url:
+            return ''
+        req2 = urllib.request.Request(card_url, headers=ua, method="HEAD")
+        try:
+            opener.open(req2, timeout=15)
+            return ''
+        except urllib.error.HTTPError as e:
+            loc = e.headers.get('Location', '')
+            return loc if loc.startswith('http') and 'x.com' not in loc and 'twitter.com' not in loc else ''
+    except Exception:
+        return ''
 
 
 def parse_report(report, limit_per_report=10):
