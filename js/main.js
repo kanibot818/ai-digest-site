@@ -222,34 +222,36 @@ function linkIcon(url) {
 function renderDetail(d) {
   showDetail();
 
-  // Hero: image with overlay, or clean typographic header
+  // Plan A (magazine layout): image is a clean 16:9 visual band, title lives
+  // below it as standalone serif headline; category tag sits above the title.
   const heroHTML = d.image
-    ? `<div class="d-hero d-hero-img">
-        <img src="${d.image}" alt="${d.title}">
-        <div class="d-hero-overlay"></div>
-        <div class="d-hero-content">
-          <span class="d-hero-tag">${d.category}</span>
-          <h1 class="d-hero-title">${d.title}</h1>
-        </div>
-      </div>`
-    : `<div class="d-hero d-hero-text">
-        <span class="d-hero-tag">${d.category}</span>
-        <h1 class="d-hero-title">${d.title}</h1>
-      </div>`;
+    ? `<figure class="d-hero"><img src="${d.image}" alt="${d.title}"></figure>`
+    : '';
 
-  // Summary: numbered points with bold lead
-  const summaryHTML = (d.summary || []).map((s, i) => {
+  // Meta row: date · category · source domain · read time
+  const readingTime = Math.max(1, Math.ceil(
+    ((d.summary || []).join('') + (d.editor_note || '')).length / 400));
+  const srcDomain = d.source_url ? getDomain(d.source_url) : '';
+  const metaHTML = `
+      <div class="d-meta">
+        <span class="d-meta-item">${d.date}</span>
+        <span class="d-meta-dot">·</span>
+        <span class="d-meta-item">${d.category}</span>
+        ${srcDomain ? `<span class="d-meta-dot">·</span>
+          <span class="d-meta-item">${srcDomain}</span>` : ''}
+        <span class="d-meta-item d-meta-right">約 ${readingTime} 分鐘</span>
+      </div>
+
+      <span class="d-cat-tag">${d.category}</span>
+      <h1 class="d-headline">${d.title}</h1>`;
+
+  // Summary: paragraph flow with hairline dividers (Plan A — no numbering)
+  const summaryHTML = (d.summary || []).map(s => {
     // Split at first "—" or "：" to bold the lead phrase
     const parts = s.split(/(—|：)/);
     const lead = parts.length > 2 ? parts[0] : '';
     const rest = parts.length > 2 ? parts.slice(1).join('') : s;
-    return `
-      <div class="d-point">
-        <span class="d-point-num">${String(i + 1).padStart(2, '0')}</span>
-        <div class="d-point-text">
-          ${lead ? `<strong>${lead}</strong>${rest}` : s}
-        </div>
-      </div>`;
+    return `<p class="d-para">${lead ? `<strong>${lead}</strong>${rest}` : s}</p>`;
   }).join('');
 
   // Links: with domain + type icon; X cards with a resolved original article get it first
@@ -277,35 +279,30 @@ function renderDetail(d) {
       <button class="d-back" onclick="backToGrid()">← 返回列表</button>
 
       ${heroHTML}
-
-      <div class="d-meta">
-        <span class="d-meta-item">${d.date}</span>
-        ${d.source_url ? `<span class="d-meta-dot">·</span>
-          <span class="d-meta-item">來源：${d.source_label || getDomain(d.source_url)}</span>` : ''}
-      </div>
-
-      ${d.editor_note ? `
-      <blockquote class="d-pullquote">
-        <p>${d.editor_note}</p>
-        <cite>編輯觀點</cite>
-      </blockquote>` : ''}
+      ${metaHTML}
 
       <section class="d-section">
         <h2 class="d-section-title">摘要重點</h2>
-        <div class="d-points">${summaryHTML}</div>
+        <div class="d-paras">${summaryHTML}</div>
       </section>
+
+      ${d.editor_note ? `
+      <aside class="d-editor-note">
+        <span class="d-editor-note-label">編輯觀點</span>
+        <p>${d.editor_note}</p>
+      </aside>` : ''}
 
       ${allLinks ? `
       <section class="d-section">
         <h2 class="d-section-title">相關連結</h2>
         <div class="d-links">${allLinks}</div>
+        ${d.original_url || d.source_url ? `
+        <a href="${d.original_url || d.source_url}" target="_blank" rel="noopener" class="d-cta">
+          前往原文 <span class="d-cta-arrow">→</span>
+        </a>` : ''}
       </section>` : ''}
 
       <div class="d-actions">
-        ${d.original_url || d.source_url ? `
-        <a href="${d.original_url || d.source_url}" target="_blank" rel="noopener" class="d-btn-primary">
-          查看原文 ↗
-        </a>` : ''}
         <button class="d-btn-ghost" onclick="copyShareLink('${d.id}')">複製分享連結</button>
       </div>
     </div>
