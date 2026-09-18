@@ -20,10 +20,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch latest digests
+      - name: Fetch latest digests (digest + learning channels)
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
+          DISCORD_LEARNING_CHANNEL_ID: ${{ secrets.DISCORD_LEARNING_CHANNEL_ID }}
           GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
         run: python3 scripts/fetch_digests.py --fill-missing --limit 100 --output data/digests.json
 

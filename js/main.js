@@ -1,17 +1,27 @@
 // AI Digest — Card list + Detail view with hash routing
 // Design: Notion-inspired warm minimalism
+// v2: dual-source (digest + learning daily reports), month filter
 
 let allDigests = [];
 let activeCategory = '全部';
+let activeSource = '全部';
+let activeMonth = 'all';
 let searchTerm = '';
 let sortMode = 'newest';
+
+const SOURCE_LABELS = {
+  'digest': '每日精選',
+  'learning': '學習日報',
+};
 
 // === Load ===
 async function loadData() {
   try {
     const res = await fetch('data/digests.json');
     allDigests = await res.json();
+    initSourceTabs();
     initTabs();
+    initMonthSelect();
     handleRoute();
   } catch (e) {
     document.getElementById('cardGrid').innerHTML =
@@ -46,9 +56,42 @@ function backToGrid() {
   window.location.hash = '';
 }
 
+// === Source Tabs ===
+function initSourceTabs() {
+  const sources = ['全部', ...new Set(allDigests.map(d => d.source || 'digest'))];
+  const el = document.getElementById('sourceTabs');
+  el.innerHTML = sources.map(src => {
+    const label = src === '全部' ? '全部' : (SOURCE_LABELS[src] || src);
+    return `<button class="source-tab ${src === activeSource ? 'active' : ''}" data-src="${src}">${label}</button>`;
+  }).join('');
+  el.querySelectorAll('.source-tab').forEach(t => {
+    t.addEventListener('click', () => {
+      activeSource = t.dataset.src;
+      initSourceTabs();
+      initTabs();
+      render();
+    });
+  });
+}
+
+// === Month Filter ===
+function initMonthSelect() {
+  const months = [...new Set(allDigests.map(d => d.date.slice(0, 7)))].sort().reverse();
+  const el = document.getElementById('monthSelect');
+  el.innerHTML = '<option value="all">全部月份</option>' +
+    months.map(m => `<option value="${m}" ${m === activeMonth ? 'selected' : ''}>${m}</option>`).join('');
+}
+document.getElementById('monthSelect').addEventListener('change', e => {
+  activeMonth = e.target.value;
+  render();
+});
+
 // === Tabs ===
 function initTabs() {
-  const categories = ['全部', ...new Set(allDigests.map(d => d.category))];
+  let items = allDigests;
+  if (activeSource !== '全部')
+    items = items.filter(d => (d.source || 'digest') === activeSource);
+  const categories = ['全部', ...new Set(items.map(d => d.category))];
   document.getElementById('categoryTabs').innerHTML = categories.map(cat =>
     `<button class="tab ${cat === activeCategory ? 'active' : ''}" data-cat="${cat}">${cat}</button>`
   ).join('');
@@ -59,6 +102,7 @@ function initTabs() {
       render();
     });
   });
+  if (!categories.includes(activeCategory)) activeCategory = '全部';
 }
 
 // === Search & Sort ===
@@ -74,8 +118,12 @@ document.getElementById('sortSelect').addEventListener('change', e => {
 // === Filter ===
 function getFiltered() {
   let items = [...allDigests];
+  if (activeSource !== '全部')
+    items = items.filter(d => (d.source || 'digest') === activeSource);
   if (activeCategory !== '全部')
     items = items.filter(d => d.category === activeCategory);
+  if (activeMonth !== 'all')
+    items = items.filter(d => d.date.slice(0, 7) === activeMonth);
   if (searchTerm) {
     items = items.filter(d => {
       const text = (d.title + ' ' + (d.editor_note || '') + ' ' + (d.summary || []).join(' ') + ' ' + d.category).toLowerCase();

@@ -35,9 +35,13 @@
 
   <nav class="toolbar" id="toolbar" aria-label="篩選與搜尋">
     <div class="toolbar-inner">
+      <div class="source-tabs" id="sourceTabs" role="tablist" aria-label="內容來源"></div>
       <div class="tabs" id="categoryTabs"></div>
       <div class="toolbar-actions">
         <input type="text" id="searchInput" class="search-input" placeholder="搜尋..." aria-label="搜尋">
+        <select id="monthSelect" class="sort-select" aria-label="月份">
+          <option value="all">全部月份</option>
+        </select>
         <select id="sortSelect" class="sort-select" aria-label="排序">
           <option value="newest">最新</option>
           <option value="oldest">最舊</option>

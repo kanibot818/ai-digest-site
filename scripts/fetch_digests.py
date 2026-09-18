@@ -151,6 +151,7 @@ def parse_digest(content, timestamp):
         "title": title,
         "date": date_str,
         "category": category,
+        "source": "digest",
         "summary": summary[:5],
         "links": links[:5],
         "source_url": source_url,
@@ -350,6 +351,7 @@ def main():
     parser.add_argument('--no-ai', action='store_true', help='Skip AI editorial note generation')
     parser.add_argument('--no-images', action='store_true', help='Skip OG image fetching')
     parser.add_argument('--fill-missing', action='store_true', help='Regenerate editor_note/image for existing digests that lack them')
+    parser.add_argument('--prune-missing', action='store_true', help='Drop digests no longer present in the channel window (default: merge-only, never drop)')
     args = parser.parse_args()
 
     # Credentials from env only
@@ -375,23 +377,75 @@ def main():
         except Exception:
             print("⚠️ Could not parse existing digests.json, starting fresh")
 
-    # Step 2: Fetch messages
-    print(f"📡 Fetching up to {args.limit} messages from channel {channel}...")
+    # Step 2: Fetch messages (digest channel + optional learning channel)
+    all_messages = []
     try:
-        messages = fetch_messages(channel, token, args.limit)
+        print(f"📡 Fetching up to {args.limit} messages from digest channel {channel}...")
+        all_messages.extend(fetch_messages(channel, token, args.limit))
     except Exception as e:
-        print(f"❌ Discord API error: {e}", file=sys.stderr)
+        print(f"❌ Discord API error (digest): {e}", file=sys.stderr)
         print("⚠️ Keeping existing digests.json unchanged.", file=sys.stderr)
         sys.exit(0)
+
+    learning_channel = os.environ.get('DISCORD_LEARNING_CHANNEL_ID', '')
+    if learning_channel:
+        try:
+            print(f"📡 Fetching up to {args.limit} messages from learning channel {learning_channel}...")
+            all_messages.extend(fetch_messages(learning_channel, token, args.limit))
+        except Exception as e:
+            print(f"⚠️ Learning channel fetch failed (continuing with digest only): {e}", file=sys.stderr)
+
+    # Parse learning reports into digest items (needs full channel history,
+    # so also accept pre-fetched archives via LEARNING_ARCHIVE_JSON for backfill)
+    archive_path = os.environ.get('LEARNING_ARCHIVE_JSON', '')
+    if archive_path and os.path.exists(archive_path):
+        with open(archive_path, 'r', encoding='utf-8') as f:
+            archived = json.load(f)
+        print(f"📚 Loaded {len(archived)} archived learning messages from {archive_path}")
+        all_messages.extend(archived)
+
+    learning_items = []
+    if learning_channel or archive_path:
+        from parse_learning import parse_all_reports
+        # archive entries have author.username; API entries have author.username too
+        learning_msgs = [m for m in all_messages if m.get('content', '').startswith('Cronjob Response: AI Agent 學習日報')
+                         or (m.get('author', {}).get('bot') and '(2/2)' in m.get('content', ''))]
+        # also include neutral continuations: keep chronological, parse_all_reports handles grouping
+        learning_items = parse_all_reports(all_messages)
+        print(f"🧠 Parsed {len(learning_items)} learning items")
+
+    # Learning archive may contain non-report bot noise; parse_digest only fires
+    # on '## ' heading messages (real digest posts), learning reports use '**N.'
+    # so the two parsers don't overlap. The old OpenClaw-era daily reports
+    # (April–May, '# OpenClaw ...' format) are noisy logs, not digest cards —
+    # require a proper '## ' top-level heading to count as a card.
+    def is_digest_card(msg):
+        content = msg.get('content', '')
+        if '# OpenClaw' in content or 'Cronjob Response' in content:
+            return False
+        return any(line.startswith('## ') for line in content.split('\n'))
 
     # Step 3: Parse digests, separate new vs existing
     new_digests = []
     seen_ids = set()
 
-    for msg in messages:
-        if msg.get('author', {}).get('bot') and '## ' in msg.get('content', ''):
-            parsed = parse_digest(msg['content'], msg['timestamp'])
-            if parsed and parsed['id'] not in seen_ids:
+    for msg in all_messages:
+        if not msg.get('author', {}).get('bot') or not is_digest_card(msg):
+            continue
+        parsed = parse_digest(msg['content'], msg['timestamp'])
+        if parsed:
+            # Quality gate: title must look like a headline, not a fragment
+            # (the OpenClaw era emitted noisy logs that parse into junk cards)
+            t = parsed['title']
+            if (t.startswith(('**', '-', '###', '#', '📊', '💡', '🔵', '✅', '⭐', '📉', '---'))
+                    or re.match(r'^\d+\.', t)
+                    or t.startswith('用戶報告')
+                    or t.endswith(('：', ':', '。'))
+                    or 'Search Results' in t
+                    or 'OpenClaw' in t
+                    or len(parsed.get('summary', [])) < 2):
+                parsed = None
+        if parsed:
                 seen_ids.add(parsed['id'])
                 if parsed['id'] in existing:
                     # Already processed — re-parse links/summary if existing has none
@@ -413,6 +467,23 @@ def main():
                     new_digests.append(parsed)
 
     print(f"📋 {len(seen_ids)} digests in channel ({len(new_digests)} new, {len(seen_ids) - len(new_digests)} existing)")
+
+    # Step 3b: Merge learning items into the new/existing tracking
+    for item in learning_items:
+        if item['id'] in seen_ids:
+            continue
+        seen_ids.add(item['id'])
+        if item['id'] in existing:
+            old = existing[item['id']]
+            # refresh non-AI fields only
+            old.update({
+                k: v for k, v in item.items()
+                if k not in ('editor_note', 'image') and v
+            })
+        else:
+            new_digests.append(item)
+
+    print(f"📋 {len(seen_ids)} items total ({len(new_digests)} new, {len(seen_ids) - len(new_digests)} existing)")
 
     # Step 4: Identify digests needing AI/image processing
     need_ai = list(new_digests)
@@ -455,12 +526,13 @@ def main():
             else:
                 d['image'] = d.get('image', '')
 
-    # Step 6: Merge — existing (updated) + new, prune removed-from-channel
-    keep_ids = seen_ids  # only keep digests still in the channel
+    # Step 6: Merge — merge-only: never drop existing digests that fell out of
+    # the recent-fetch window. Deletion is manual (--prune-missing) if ever wanted.
+    keep_ids = seen_ids  # digests still visible in the channel (refresh these)
     all_digests = []
-    for did in existing:
-        if did in keep_ids:
-            all_digests.append(existing[did])
+    for did, d in existing.items():
+        if did in keep_ids or not args.prune_missing:
+            all_digests.append(d)
     all_digests.extend(new_digests)
 
     # Clean up temporary fields
