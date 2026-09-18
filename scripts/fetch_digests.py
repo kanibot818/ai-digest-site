@@ -21,6 +21,7 @@ import hashlib
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
+from html import unescape as html_unescape
 
 # Discord channel ID — read from env, not hardcoded
 DEFAULT_CHANNEL = os.environ.get("DISCORD_CHANNEL_ID", "")
@@ -292,16 +293,21 @@ def fetch_og_image(url, digest_id, images_dir="images"):
 
     try:
         req = urllib.request.Request(url, headers={
-            "User-Agent": "Mozilla/5.0 (compatible; AI-Digest-Bot/1.0)",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         })
         with urllib.request.urlopen(req, timeout=15) as resp:
             html = resp.read().decode('utf-8', errors='ignore')[:50000]
 
-        # Extract og:image
+        # Extract og:image (attribute order varies — match property and content independently)
         match = re.search(
             r'<meta\s+[^>]*property=["\']og:image["\']\s+[^>]*content=["\']([^"\']+)["\']',
             html, re.IGNORECASE
         )
+        if not match:
+            match = re.search(
+                r'<meta\s+[^>]*content=["\']([^"\']+)["\']\s+[^>]*property=["\']og:image["\']',
+                html, re.IGNORECASE
+            )
         if not match:
             # Try twitter:image
             match = re.search(
@@ -312,11 +318,11 @@ def fetch_og_image(url, digest_id, images_dir="images"):
         if not match:
             return ""
 
-        img_url = match.group(1)
+        img_url = html_unescape(match.group(1)).strip()
 
         # Download image
         img_req = urllib.request.Request(img_url, headers={
-            "User-Agent": "Mozilla/5.0 (compatible; AI-Digest-Bot/1.0)",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
         })
         with urllib.request.urlopen(img_req, timeout=15) as img_resp:
             img_data = img_resp.read()
