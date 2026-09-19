@@ -1,5 +1,115 @@
 [
   {
+    "title": "Claude Code 2.1.277 正式支援 AGENTS.md 標準",
+    "category": "工具",
+    "summary": [
+      "Anthropic 拒絕支援 AGENTS.md 長達一年，在 Shopify CEO Tobi Lütke 放話禁用 Claude Code 的 25 天後鬆手。現在手上有 CLAUDE.md 時優先讀取，否則自動回退讀 AGENTS.md，可在 /config 開關。",
+      "意義：Codex、Cursor、Claude Code 終於共用同一份專案指令檔，「一個 repo 維護三份 agent 設定」的怪現象開始收斂，跨 agent 的專案設定標準大體底定。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/lianyanshe/status/2101121574929875355"
+      }
+    ],
+    "source_url": "https://x.com/lianyanshe/status/2101121574929875355",
+    "source_label": "來源",
+    "id": "lrn-2026-09-19-claude-code-2-1-277-正式支援-agents-md-標準",
+    "date": "2026-09-19",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "這次讓步靠的是客戶壓力而非技術共識，恰好凸顯 agent 生態的權力現實。但無論過程如何，專案設定走向可攜，開發者被單一工具綁架的時代總算開始鬆動。",
+    "image": "images/lrn-2026-09-19-claude-code-2-1-277--agen.png"
+  },
+  {
+    "title": "Qwen 推出 Qwen3.8-Omni-Flash：原生音視訊全模態 Agent 模型",
+    "category": "工具",
+    "summary": [
+      "阿里 Qwen 發布原生 audio-video 全模態模型，主打 agentic 能力、1M context window，並大幅降低影片輸入成本，可跑在裝置端。",
+      "直接對標 Gemini Flash 的速度級距，代表全模態+低延遲的「即時互動 agent」賽道正式進入價格戰。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/Alibaba_Qwen"
+      }
+    ],
+    "source_url": "https://x.com/Alibaba_Qwen",
+    "source_label": "來源",
+    "id": "lrn-2026-09-19-qwen-推出-qwen3-8-omni-flash-原生音視訊全模態-agen",
+    "date": "2026-09-19",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當「能看能聽」的全模態殺進 Flash 級價格帶、還能跑在裝置端，即時互動 Agent 便從 demo 炫技走向日常標配——這一步考驗的不只是各家技術，更是對手的定價底線與商業模式。",
+    "image": ""
+  },
+  {
+    "title": "wigolo：Local-first 的 Agent Web 情報層（MCP）",
+    "category": "工具",
+    "summary": [
+      "5.3k stars 的開源專案，把 search、fetch、crawl、extract、cache、find-similar、research 與自主 gather loop 統一成一個 MCP 介面。免 API key、不上雲、每次查詢零邊際成本。",
+      "核心觀點值得記住：Agent 的網頁存取不該是散落的膠水程式碼，而該是可編排的本地基礎設施——「迭代式 gather loop」比傳統單次 Top-K RAG 更接近真實研究流程。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/ChuckBass14291/status/2101119574716678455"
+      }
+    ],
+    "source_url": "https://x.com/ChuckBass14291/status/2101119574716678455",
+    "source_label": "來源",
+    "id": "lrn-2026-09-19-wigolo-local-first-的-agent-web-情報層-mcp",
+    "date": "2026-09-19",
+    "source": "learning",
+    "original_url": "https://github.com/KnockOutEZ/wigolo",
+    "editor_note": "wigolo 的亮點在於改寫了 Agent 研究的經濟學：查詢零成本、資料不出本機，反覆搜集與驗證的 gather loop 才能從奢侈品變成預設行為，而不只是功能清單又多一項。",
+    "image": "images/lrn-2026-09-19-wigolo-local-first--agent.png"
+  },
+  {
+    "title": "Anthropic 發布 Agent 記憶體五層架構指南",
+    "category": "教程",
+    "summary": [
+      "把 agent 資料拆進 working、episodic、semantic 等 store，官方宣稱可砍掉九成 token 成本。同日 arXiv 上的 AgentZip 論文也呼應：88.55% 的平行 sandbox 記憶體是重複狀態，可在 LLM 等待時間壓縮共享模板。",
+      "記憶體檢索正從「每個 agent 自己解」變成獨立的最佳化層，這是 context engineering 成熟化的明確訊號。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/qronoya/status/2101121600737210694"
+      }
+    ],
+    "source_url": "https://x.com/qronoya/status/2101121600737210694",
+    "source_label": "來源",
+    "id": "lrn-2026-09-19-anthropic-發布-agent-記憶體五層架構指南",
+    "date": "2026-09-19",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "真正的重點不是省 token，而是記憶體管理正成為 agent 的基礎工程，成本砍掉九成後，能長期駐留、持續累積經驗的 agent 才真正跨入實用階段。",
+    "image": "images/lrn-2026-09-19-anthropic--agent-.png"
+  },
+  {
+    "title": "DoorDash 用多 Agent 系統清理 6 萬個 feature flags",
+    "category": "產業",
+    "summary": [
+      "以 Claude + MCP 打造多 agent 系統自動清理過期 feature flags，平均清理時間從 1.5 小時降到 13.8 分鐘。",
+      "這是「無聊但規模巨大」的工程債案例：agent 的價值不在炫技，而在把沒人想碰的維運雜務變成可自動化的 pipeline。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/BestBlogsDev/status/2101093166770463199"
+      }
+    ],
+    "source_url": "https://x.com/BestBlogsDev/status/2101093166770463199",
+    "source_label": "來源",
+    "id": "lrn-2026-09-19-doordash-用多-agent-系統清理-6-萬個-feature-flag",
+    "date": "2026-09-19",
+    "source": "learning",
+    "original_url": "https://anthropic.com/",
+    "editor_note": "AI 讓我們出貨更快，工程債也累積得更快，DoorDash 示範的「用 agent 還債」閉環，很可能成為下一代開發流程的標配。想說服管理層投資 AI 的團隊，這就是最好的範本。",
+    "image": "images/lrn-2026-09-19-doordash--agent--6--featu.png"
+  },
+  {
     "title": "Mapbox 推出 AI Agent 位置情報平台",
     "category": "工具",
     "summary": [
