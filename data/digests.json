@@ -1,5 +1,84 @@
 [
   {
+    "title": "designlang（design-extract）：把網站設計系統變成 Agent 可讀的機器介面",
+    "category": "工具",
+    "summary": [
+      "用 Playwright 驅動 headless Chromium 讀取真實 DOM（最多 5,000 元素、25+ computed properties），一次輸出 17+ 檔案：W3C DTCG tokens（分 primitive/semantic/composite 三層）、Tailwind v4、shadcn 主題、Figma Variables，甚至能編譯到 iOS SwiftUI / Android Compose / Flutter。最關鍵的是內建 MCP server——Claude Code、Cursor、Windsurf 拿到的不再是截圖，而是 tokens、components、對比度配對等結構化上下文。GitHub 已 4.1k+ stars，「網頁 → Design System → MCP → Coding Agent」這條 machine interface 首次完整閉環。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/Manavarya09/design-extract"
+      }
+    ],
+    "source_url": "https://github.com/Manavarya09/design-extract",
+    "source_label": "來源",
+    "id": "lrn-2026-09-22-designlang-design-extract-把網站設計系統變成-agen",
+    "date": "2026-09-22",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "價值不在輸出多少檔案，而在讓 Agent 從「看截圖猜」升級成「讀結構懂」；當設計系統成為機器可讀的一級上下文，AI 前端還原度的遊戲規則正在改寫。",
+    "image": "images/lrn-2026-09-22-designlang-design-extract.png"
+  },
+  {
+    "title": "BuilderIO 開源 Agent-Native：一次 defineAction 同時餵 UI 和 Agent",
+    "category": "工具",
+    "summary": [
+      "核心主張：不要讓 Agent 去點 UI，也不要把業務邏輯在工具層和前端各寫一遍。用 `defineAction` + zod schema 定義一次，自動變成 agent tool、React hook、HTTP endpoint、MCP tool、A2A 介面和 CLI 指令——七個消費端共用同一份驗證、權限與實作。Agent 還能拿到應用狀態（當前頁面、選中記錄）作為上下文。附帶聊天、認證、skills/memory、排程 automations、multi-agent teams。約 4.7k stars，今日 +89。知識工作終於有了 coding agent 等級的可見、可編輯工作環境。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/BuilderIO/agent-native"
+      }
+    ],
+    "source_url": "https://github.com/BuilderIO/agent-native",
+    "source_label": "來源",
+    "id": "lrn-2026-09-22-builderio-開源-agent-native-一次-defineactio",
+    "date": "2026-09-22",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "亮點不在一次定義、七端消費，而是把「別讓 Agent 模擬人類點擊 UI」從口號變成預設架構：action 成為單一事實來源，工具層與前端的邏輯漂移才有根治解方。",
+    "image": "images/lrn-2026-09-22-builderio--agent-native--.png"
+  },
+  {
+    "title": "Grok Build 1.0.39：coding agent 的「上下文衛生」更新",
+    "category": "工具",
+    "summary": [
+      "這版全是在修 agent 長時間運行的痛點：壓縮（compact）後圖片附件不再消失（改用持久化路徑清單）；記憶體存檔不再混入人類讀不懂的 reasoning blob；子代理可固定使用父模型且不隨 /model 切換而動搖；JSON 形狀錯誤的 MCP tool 呼叫在語義明確時自動修正。另外 agent 的暫存腳本改放系統 temp 目錄，不再弄髒 repo。方向很明確：各家 harness 的競爭已經進入上下文管理與恢復能力的細節戰。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.ai/build/changelog"
+      }
+    ],
+    "source_url": "https://x.ai/build/changelog",
+    "source_label": "來源",
+    "id": "lrn-2026-09-22-grok-build-1-0-39-coding-agent-的-上下文衛生-更",
+    "date": "2026-09-22",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當各家模型能力逐漸拉近，coding agent 的決戰點正悄悄移向上下文紀律這類不起眼的工程細節——讓 agent 長跑不失憶、不弄髒 repo，才是開發者日常真正感受得到的可靠度。",
+    "image": "images/lrn-2026-09-22-grok-build-1-0-39-coding-.png"
+  },
+  {
+    "title": "Goldman Sachs 報告：AI 對白領就業的衝擊已可量化",
+    "category": "產業",
+    "summary": [
+      "報告《Is AI Impacting Global Labor Markets?》指出：美國客服中心就業已低於長期趨勢 39%、加拿大 33%、德國 27%；軟體出版、管理顧問、廣告服務等高暴露行業自 2022 下半年起在所有主要發達市場同步收縮，美國科技業就業已跌破長期趨勢。關鍵結論：受衝擊最深的是白領知識工作與創意服務，而非藍領自動化。Agent 能力每升級一輪，這條曲線的斜率都值得重新檢視。"
+    ],
+    "links": [],
+    "source_url": "",
+    "source_label": "",
+    "id": "lrn-2026-09-22-goldman-sachs-報告-ai-對白領就業的衝擊已可量化",
+    "date": "2026-09-22",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "數十年的自動化敘事都假定藍領先倒下，高盛數據卻指向相反方向：白領知識工作首當其衝。當衝擊從臆測變成統計事實、Agent 還在加速進化，這條下彎曲線恐怕只是起點。",
+    "image": ""
+  },
+  {
     "title": "Plugin4Shell：零點擊 RCE 繞過各大 AI coding agent 的 Git SHA 釘選",
     "category": "產業",
     "summary": [
