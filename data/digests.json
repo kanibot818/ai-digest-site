@@ -1,5 +1,135 @@
 [
   {
+    "title": "Coding agent 新創 Factory 融資 2 億美元，估值 50 億",
+    "category": "產業",
+    "summary": [
+      "五個月內估值翻三倍，Nvidia、Adobe 都是客戶。投資人押注自主 coding agent 會成為標準基礎設施而非噱頭——這個年輕賽道的資本化速度已經超過當年的 DevOps 工具。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/fijpolic/status/2102571135573327982"
+      }
+    ],
+    "source_url": "https://x.com/fijpolic/status/2102571135573327982",
+    "source_label": "來源",
+    "id": "lrn-2026-09-23-coding-agent-新創-factory-融資-2-億美元-估值-50-億",
+    "date": "2026-09-23",
+    "source": "learning",
+    "original_url": "https://dealroom.co/news/151015-factory-raises-200m-at-5b-valuation-to-build-autonomous-coding-agents/",
+    "editor_note": "估值五個月翻三倍固然搶眼，但 Nvidia、Adobe 願意付費才是關鍵訊號——coding agent 正從噱頭走向企業標配，接下來就看續約率能否撐起這些數字。",
+    "image": "images/lrn-2026-09-23-coding-agent--factory--2-.png"
+  },
+  {
+    "title": "MCP 規範大改版：刪除 Session 機制",
+    "category": "工具",
+    "summary": [
+      "2026-07-28 修訂版是 2025-11-25 以來首次更新：移除 Streamable HTTP 的 protocol-level session 與 Mcp-Session-Id、刪掉 initialize handshake，改為每個請求自帶版本與 capabilities，跨請求狀態改用明確的 handle（會留在日誌裡，證據鏈更好）。同時導入 12 個月起的最小棄用週期，Roots/Sampling/Logging 與 OAuth Dynamic Client Registration 都被標記棄用。做 MCP server 的人要認真對照改動。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/TheAICommand/status/2102522096727228723"
+      }
+    ],
+    "source_url": "https://x.com/TheAICommand/status/2102522096727228723",
+    "source_label": "來源",
+    "id": "lrn-2026-09-23-mcp-規範大改版-刪除-session-機制",
+    "date": "2026-09-23",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "揮別 session、改走無狀態路線，顯示 MCP 正為大規模 agent 部署與水平擴展做準備；正式棄用週期的導入，更代表它從新興規範邁向企業級成熟。",
+    "image": "images/lrn-2026-09-23-mcp---session-.png"
+  },
+  {
+    "title": "Amazon 封鎖 Meta 的 Muse Agent 代購",
+    "category": "產業",
+    "summary": [
+      "Muse 能替用戶在 Amazon 下單，但 Amazon 以「未經許可的 agent 存取」為由直接遮斷。這是 Agent Economy 的關鍵判例：技術上操作得了網站，不代表網站同意。未來 agent 需要能自我聲明身份、並被對方平台正規授權的機制。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/kii__1981/status/2102568956351668727"
+      }
+    ],
+    "source_url": "https://x.com/kii__1981/status/2102568956351668727",
+    "source_label": "來源",
+    "id": "lrn-2026-09-23-amazon-封鎖-meta-的-muse-agent-代購",
+    "date": "2026-09-23",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "這場封鎖的本質是「介面權」之爭：Meta 想成為用戶與電商之間的新中間層，Amazon 則拒絕淪為被代理呼叫的後台。Agent 經濟的遊戲規則，正由這類平台拉扯中成形。",
+    "image": "images/lrn-2026-09-23-amazon--meta--muse-agent-.png"
+  },
+  {
+    "title": "ActGov：用策略約束驗證框架治理 LLM agent 的每一步動作",
+    "category": "研究",
+    "summary": [
+      "針對長程工作流中間接 prompt injection 的問題，ActGov 在每個 tool call 產生外部效果前做逐動作驗證：用 SMT 反例檢查迭代建構策略集，執行時把每次工具呼叫抽象成有限策略紀錄，超出授權邊界就擋下。在 AgentDojo/AgentDyn 上顯著降低注入攻擊成功率且不犧牲任務效用——不依賴 LLM 自己辨別惡意指令。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/gastronomy/status/2102567189903478902"
+      }
+    ],
+    "source_url": "https://x.com/gastronomy/status/2102567189903478902",
+    "source_label": "來源",
+    "id": "lrn-2026-09-23-actgov-用策略約束驗證框架治理-llm-agent-的每一步動作",
+    "date": "2026-09-23",
+    "source": "learning",
+    "original_url": "https://ift.tt/vtmpwzx",
+    "editor_note": "亮點在於範式轉移：安全不再靠 LLM 自我把關，而是交給形式化驗證的外部防線。當 agent 逐步接管真實工作流，這種可驗證的治理思路，比「更強的模型」更值得信賴。",
+    "image": "images/lrn-2026-09-23-actgov--llm-agent-.png"
+  },
+  {
+    "title": "Unreal Agent：非同步工具呼叫框架，宣稱比 Codex 省 40% 成本",
+    "category": "工具",
+    "summary": [
+      "讓 agent 平行執行多個工具呼叫（開發環境、程式碼搜尋、網路查詢同時跑），模型不用等待或輪詢，降低 token 開銷。在 GPT-6 Astra (xhigh) 的 coding benchmark 上比 Codex 最多省 40%、比 Pi 省 20%。「harness 效率」正成為與模型能力同等重要的成本槓桿。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/NewsTongueX/status/2102522749692342572"
+      },
+      {
+        "label": "來源",
+        "url": "https://republicworld.com/business/ai-is-killing-white-collar-jobs-first-tech-hiring-freezes-globally-since-2022-call-center-jobs-39-below-trend-in-us-goldman-sachs-report-says-2026-09-21-137433"
+      }
+    ],
+    "source_url": "https://x.com/NewsTongueX/status/2102522749692342572",
+    "source_label": "來源",
+    "id": "lrn-2026-09-23-unreal-agent-非同步工具呼叫框架-宣稱比-codex-省-40-成本",
+    "date": "2026-09-23",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "值得關注的不是省了多少，而是戰場轉移：當模型能力差距縮小，harness 工程效率成了新的成本護城河。與其苦等更強的模型，開發者更該先檢視自家 agent 迴圈的設計。",
+    "image": "images/lrn-2026-09-23-unreal-agent---codex--40-.png"
+  },
+  {
+    "title": "Google ADK Callbacks 實戰：不動框架核心實作 guardrail、快取與驗證",
+    "category": "教程",
+    "summary": [
+      "ADK 提供六種 callback（before/after 的 agent、model、tool 共六個切入點），透過回傳值控制流程：回傳 None 照常執行，回傳特定物件就整段跳過。實用組合技：`before_model_callback` 做 PII 過濾 + 回應快取（命中直接回傳省 token）、`before_tool_callback` 做參數預驗證或 mock。注意事項：callback 是同步的別塞重活、跨 agent 的安全防護建議用 Plugins 而非逐 agent 掛 callback。是入門 agent 可觀測性與防護很紮實的一篇教程。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/cv_usk/status/2102187873684672623"
+      }
+    ],
+    "source_url": "https://x.com/cv_usk/status/2102187873684672623",
+    "source_label": "來源",
+    "id": "lrn-2026-09-23-google-adk-callbacks-實戰-不動框架核心實作-guardra",
+    "date": "2026-09-23",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent 開發正從調 prompt 轉向設計攔截點。這篇示範的「不動核心就能掛上防護與快取」，正是 demo 與生產環境之間最常被忽略的一哩路，值得收藏細讀。",
+    "image": "images/lrn-2026-09-23-google-adk-callbacks---gu.png"
+  },
+  {
     "title": "designlang（design-extract）：把網站設計系統變成 Agent 可讀的機器介面",
     "category": "工具",
     "summary": [
