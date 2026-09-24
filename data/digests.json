@@ -1,5 +1,110 @@
 [
   {
+    "title": "Anthropic 開源可 fork 的購物代理與商家代理",
+    "category": "工具",
+    "summary": [
+      "同一套函式庫上跑四個垂直場景（零售、旅遊、電信、娛樂），結帳只到「畫出購物車」為止，商家端寫入（定價、活動、上架修改）全部暫存、需人工核准。README 明講：repo 裡沒有任何工具呼叫能真的扣款或改線上架。多數電商 demo 都是事後才補安全，這個把安全當架構設計。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/vikrantshukla/status/2102933774170501137"
+      }
+    ],
+    "source_url": "https://x.com/vikrantshukla/status/2102933774170501137",
+    "source_label": "來源",
+    "id": "lrn-2026-09-24-anthropic-開源可-fork-的購物代理與商家代理",
+    "date": "2026-09-24",
+    "source": "learning",
+    "original_url": "https://github.com/anthropics/commerce-agents",
+    "editor_note": "亮點不是功能多完整，而是「辦不到」被刻意寫進架構。當 agent demo 競相炫耀能力，這種把紅線放進程式碼的克制，反而是代理真正落地商務的前置條件。",
+    "image": "images/lrn-2026-09-24-anthropic--fork-.png"
+  },
+  {
+    "title": "Cua 推出 Cua-S1-4B-0.2：電腦操作的「小動作模型」",
+    "category": "工具",
+    "summary": [
+      "用 RLOO 直接在真實 computer-use 任務上訓練、以任務完成度當 reward，Apache 2.0 開源。思路是分工：小模型處理點擊打字層，大模型只負責規劃——對照 OSWorld 上 OpenAI Operator 也才約 38% 成功率，業界共識正在形成：瓶頸不是智力而是「每次動作的成本」，點擊層會像物件儲存一樣被商品化，規劃層才是護城河。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/trycua/status/2102800643794591833"
+      }
+    ],
+    "source_url": "https://x.com/trycua/status/2102800643794591833",
+    "source_label": "來源",
+    "id": "lrn-2026-09-24-cua-推出-cua-s1-4b-0-2-電腦操作的-小動作模型",
+    "date": "2026-09-24",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "真正值得看的不只是這個 4B 模型，而是「動作層商品化」正在成真；不過要留意，長鏈任務裡小模型的失誤會層層放大——分工架構的成敗，最終取決於錯誤恢復而非單步準確率。",
+    "image": "images/lrn-2026-09-24-cua--cua-s1-4b-0-2--.png"
+  },
+  {
+    "title": "CARBONATO 殭屍網路：把開源 agent 框架變成攻擊載具",
+    "category": "產業",
+    "summary": [
+      "針對暴露在 TCP 2375 的無驗證 Docker daemon，植入後不改 Hermes Agent 框架本體，只替換 `SOUL.md` 為名為 GH0ST 的 persona，指示 agent 維持持久化、經 Telegram 收指令、蒐集 AI API key 與憑證。首見以「改 persona 檔」劫持合法 agent 框架的攻擊鏈——`SOUL.md` 等人格設定檔從此要當敏感檔案管理。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/rst_cloud/status/2102930151038177589"
+      }
+    ],
+    "source_url": "https://x.com/rst_cloud/status/2102930151038177589",
+    "source_label": "來源",
+    "id": "lrn-2026-09-24-carbonato-殭屍網路-把開源-agent-框架變成攻擊載具",
+    "date": "2026-09-24",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當一份文字檔就能重塑 agent 行為，攻擊面已從程式碼延伸到「設定即指令」——人格檔完整性該比照程式碼嚴格管理，這是 Agent 供應鏈安全無法迴避的新課題。",
+    "image": "images/lrn-2026-09-24-carbonato---agent-.png"
+  },
+  {
+    "title": "Vercel 如何打造代理：從手貼 SQL 到檔案系統架構（Eve 框架）",
+    "category": "教程",
+    "summary": [
+      "AI Engineer 大會演講整理：他們試過 mega-prompt、多 agent 串接，最後受 Claude Code 啟發，改成沙箱內只給 list file / read file / bash 三個最小工具的單 agent，eval 分數直接翻倍；再將重複問題蒸餾成約 100 個 skills，沉澱為 Eve 框架（agent 即檔案系統：skills/tools/channels 資料夾）。最小工具集 + 檔案系統作為狀態載體，再次驗證是 agent 架構的最強基底。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/CoreyGallon/status/2102911003079966952"
+      }
+    ],
+    "source_url": "https://x.com/CoreyGallon/status/2102911003079966952",
+    "source_label": "來源",
+    "id": "lrn-2026-09-24-vercel-如何打造代理-從手貼-sql-到檔案系統架構-eve-框架",
+    "date": "2026-09-24",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當多 agent 編排成顯學，Vercel 反其道砍到三個工具、eval 反而翻倍，證明 agent 成敗關鍵在狀態架構而非工具堆疊——值得還在拼命加功能的團隊深思。",
+    "image": "images/lrn-2026-09-24-vercel---sql--eve-.png"
+  },
+  {
+    "title": "Stop That Shit：幫 AI coding agent 煞車的 Skill + Guard",
+    "category": "工具",
+    "summary": [
+      "開源（MIT）、支援 Codex / Claude Code / OpenCode / Hermes Agent CLI 等。定義四種失敗模式：scope creep、無人要的防禦性加工（例如沒人用的 checksum）、意圖違規、任務空轉；以 task mode（review/answer/monitor/change/watch）區分觀察與修改，並可實際攔截越權寫檔、超編 subagent、清單外檔案操作。Agent 自律不夠，就要外掛邊界。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/DanKornas/status/2102929505765523916"
+      }
+    ],
+    "source_url": "https://x.com/DanKornas/status/2102929505765523916",
+    "source_label": "來源",
+    "id": "lrn-2026-09-24-stop-that-shit-幫-ai-coding-agent-煞車的-ski",
+    "date": "2026-09-24",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent 能力狂奔，煞車反而成了剛需。這套工具最值錢的不是攔截本身，而是把「agent 亂搞」歸納成可定義、可防堵的失敗模式——要信任之前，先畫好邊界。",
+    "image": "images/lrn-2026-09-24-stop-that-shit--ai-coding.png"
+  },
+  {
     "title": "Coding agent 新創 Factory 融資 2 億美元，估值 50 億",
     "category": "產業",
     "summary": [
