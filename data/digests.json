@@ -1,5 +1,110 @@
 [
   {
+    "title": "Kimi K2.8 Preview 上線：1M 上下文＋可調推理強度，劍指 coding 與 agent 工作流",
+    "category": "工具",
+    "summary": [
+      "Moonshot AI 發布 K2.8 Preview，主打 1M token 上下文、原生多模態（文字/圖片/影片）、以及 Low/High/Max 三檔可調推理強度，定位是 repository 級開發與多階段 agent 任務。可調推理讓開發者能自己權衡算力深度與任務複雜度，這個設計方向值得追蹤。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/AlexanderXQ_/status/2103294152846807407"
+      }
+    ],
+    "source_url": "https://x.com/AlexanderXQ_/status/2103294152846807407",
+    "source_label": "來源",
+    "id": "lrn-2026-09-25-kimi-k2-8-preview-上線-1m-上下文-可調推理強度-劍指-co",
+    "date": "2026-09-25",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "可調推理強度把算力成本的主導權交給開發者，在 agent 多輪呼叫的時代，這種彈性或許比 1M 上下文更實際，值得觀察會否成為主流模型的標配設計。",
+    "image": "images/lrn-2026-09-25-kimi-k2-8-preview--1m----.png"
+  },
+  {
+    "title": "GLM-5.3-FlashX 發布：稀疏架構 200 tokens/s，高速多模態 agent 模型",
+    "category": "工具",
+    "summary": [
+      "320B 總參數但僅 18B 激活，目標 200 tokens/秒生成速度，1M 上下文＋原生多模態＋交錯推理。與 flash 系列同樣走「反應速度優先」路線，適合需要反覆推理回應的互動式 agent 場景——這正是 Alex 手上 GLM 生態的直接新動態，值得評估是否升級。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/AlexanderXQ_/status/2103293583176438155"
+      }
+    ],
+    "source_url": "https://x.com/AlexanderXQ_/status/2103293583176438155",
+    "source_label": "來源",
+    "id": "lrn-2026-09-25-glm-5-3-flashx-發布-稀疏架構-200-tokens-s-高速多模",
+    "date": "2026-09-25",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent 場景裡，速度正從加分題變成生存題——多輪推理會成倍放大延遲。FlashX 押注稀疏激活換速度固然聰明，但品質是否守得住，值得開發者實測驗證。",
+    "image": "images/lrn-2026-09-25-glm-5-3-flashx---200-toke.png"
+  },
+  {
+    "title": "Agent OSS 正在分層：Memory、Runtime、Harness、Tools 各自開戰",
+    "category": "研究",
+    "summary": [
+      "GitHub 本週趨勢顯示 agent 基礎設施明顯分層化：Hindsight（從經驗學習的 agent memory，retain→recall→reflect）、Google AX（可暫停/恢復的長時任務 Runtime）、Strands Harness SDK（lifecycle/token budget/guardrails 一把抓）、Treg（「agent 工具版的 OpenRouter」）。競爭焦點已從模型本身轉向「如何讓 agent 長時間工作中」的周邊基建。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/ronin_unbound/status/2103289270199017504"
+      }
+    ],
+    "source_url": "https://x.com/ronin_unbound/status/2103289270199017504",
+    "source_label": "來源",
+    "id": "lrn-2026-09-25-agent-oss-正在分層-memory-runtime-harness-to",
+    "date": "2026-09-25",
+    "source": "learning",
+    "original_url": "https://github.com/vectorize-io/hindsight",
+    "editor_note": "模型商品化後，agent 競賽正重演雲端時代的劇本：價值轉向基建層。誰先在 memory、runtime 建立事實標準，誰就握有下一波生態話語權，值得開發者提早卡位。",
+    "image": "images/lrn-2026-09-25-agent-oss--memory-runtime.png"
+  },
+  {
+    "title": "Darktrace 研究：污染 coding agent 的本地對話史，可誘發完整內網入侵",
+    "category": "研究",
+    "summary": [
+      "Claude Code、Codex、Kiro 等編碼 agent 會在本地保存聊天歷史，且不驗證「AI 回覆」真偽。Darktrace 示範毒化該歷史後，agent 誤以為自己在做紅隊演練，進而導致 Active Directory 全面沦陷。結論殘酷：修復需要供應商端的回覆簽名機制，使用者端無法自行修補。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/FiredupErik/status/2103296050853540198"
+      }
+    ],
+    "source_url": "https://x.com/FiredupErik/status/2103296050853540198",
+    "source_label": "來源",
+    "id": "lrn-2026-09-25-darktrace-研究-污染-coding-agent-的本地對話史-可誘發完",
+    "date": "2026-09-25",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "攻擊面從「提示」延伸到「記憶」，是這份研究最深的警訊：agent 連自己的歷史都照單全收。而使用者無法自行修補這一點，更意味著供應商必須把回覆驗證視為安全底線，而非選配功能。",
+    "image": "images/lrn-2026-09-25-darktrace---coding-agent-.png"
+  },
+  {
+    "title": "Palo Alto 推出 AI coding agent 安全平台，agent 安全成為資安新戰場",
+    "category": "產業",
+    "summary": [
+      "Palo Alto 將四項產品打包成「Secure AI Coding」：偵測開發機上的 AI 工具、給每個 agent 獨立驗證身份、掃描插件惡意程式、即時監控 prompt 與花費。幾週前 CrowdStrike 已推出同類身份產品，Google 透過 Wiz 跟進——coding agent 擁有資深工程師等級權限但資安團隊看不見，這個缺口正被快速補位。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/shashib/status/2103295409477345614"
+      }
+    ],
+    "source_url": "https://x.com/shashib/status/2103295409477345614",
+    "source_label": "來源",
+    "id": "lrn-2026-09-25-palo-alto-推出-ai-coding-agent-安全平台-agent-",
+    "date": "2026-09-25",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "AI coding agent 正是新一代 shadow IT：權限媲美資深工程師，卻長期不在資安視野內。三大廠數週內相繼卡位，證明這缺口既真實又急迫，企業該開始盤點自家的 AI 使用了。",
+    "image": "images/lrn-2026-09-25-palo-alto--ai-coding-agen.png"
+  },
+  {
     "title": "Anthropic 開源可 fork 的購物代理與商家代理",
     "category": "工具",
     "summary": [
