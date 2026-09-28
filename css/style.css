@@ -525,6 +525,23 @@ a:hover { color: var(--ink); }
   margin: 0;
 }
 
+/* Deep-read badge — quiet provenance mark when a card was deep-read */
+.d-deep-badge {
+  display: inline-block;
+  margin-right: 0.7rem;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--bg-tint);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 999px;
+  vertical-align: middle;
+}
+.d-meta-right.d-deep-time { margin-left: auto; }
+
 /* Sections */
 .d-section { margin-bottom: 2.2rem; }
 .d-section-title {

@@ -231,6 +231,8 @@ function renderDetail(d) {
   // Meta row: date · category · source domain · read time
   const readingTime = Math.max(1, Math.ceil(
     ((d.summary || []).join('') + (d.editor_note || '')).length / 400));
+  const deepBadge = d.deep_status === 'ok'
+    ? `<span class="d-deep-badge">深讀</span>` : '';
   const srcDomain = d.source_url ? getDomain(d.source_url) : '';
   const metaHTML = `
       <div class="d-meta">
@@ -239,6 +241,7 @@ function renderDetail(d) {
         <span class="d-meta-item">${d.category}</span>
         ${srcDomain ? `<span class="d-meta-dot">·</span>
           <span class="d-meta-item">${srcDomain}</span>` : ''}
+        ${deepBadge ? `<span class="d-meta-dot">·</span>${deepBadge}` : ''}
         <span class="d-meta-item d-meta-right">約 ${readingTime} 分鐘</span>
       </div>
 
@@ -274,6 +277,9 @@ function renderDetail(d) {
       </a>`;
   }).join('');
 
+  // Section heading: deep-read items get the richer label
+  const sectionTitle = d.deep_status === 'ok' ? '深摘' : '摘要重點';
+
   document.getElementById('detailView').innerHTML = `
     <div class="d-container">
       <button class="d-back" onclick="backToGrid()">← 返回列表</button>
@@ -282,7 +288,7 @@ function renderDetail(d) {
       ${metaHTML}
 
       <section class="d-section">
-        <h2 class="d-section-title">摘要重點</h2>
+        <h2 class="d-section-title">${sectionTitle}</h2>
         <div class="d-paras">${summaryHTML}</div>
       </section>
 
