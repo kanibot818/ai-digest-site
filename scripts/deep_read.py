@@ -18,6 +18,7 @@ Appends items incrementally to data/deep_read_state.json so progress
 survives interruption; digests.json is written only at the end.
 """
 import argparse
+import datetime
 import json
 import os
 import re
@@ -138,6 +139,7 @@ def rewrite_editor(d, api_key):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="max items to process this run")
+    ap.add_argument("--days", type=int, default=0, help="only items dated within the last N days (0 = all)")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--refetch", action="store_true", help="redo even items already processed")
     args = ap.parse_args()
@@ -152,9 +154,14 @@ def main():
     state = load_state()
 
     todo = []
+    cutoff = ""
+    if args.days:
+        cutoff = (datetime.date.today() - datetime.timedelta(days=args.days)).isoformat()
     for d in data:
         if not args.refetch and d["id"] in state:
             continue
+        if cutoff and d.get("date", "") < cutoff:
+            continue  # old item — let it go
         url = article_url_for(d)
         if url:
             todo.append(d)
