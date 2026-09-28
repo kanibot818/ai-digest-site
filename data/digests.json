@@ -1,5 +1,167 @@
 [
   {
+    "title": "榮耀 Magic9 發布，Qwen Intelligence 深度整合進手機 OS",
+    "category": "產業",
+    "summary": [
+      "首批搭載阿里 Qwen 的三件套：Planner（拆任務）、Mobile-Use（跨應用執行）、Creative（作圖），官方宣稱百步級任務準確率 91.8%。手機 AI 的競賽焦點從「誰的模型更聰明」轉為「誰把 agent 焊進系統層」，端側 agent 成為新戰場。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/leisean9/status/2104383275783569754"
+      }
+    ],
+    "source_url": "https://x.com/leisean9/status/2104383275783569754",
+    "source_label": "來源",
+    "id": "lrn-2026-09-28-榮耀-magic9-發布-qwen-intelligence-深度整合進手機-o",
+    "date": "2026-09-28",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "91.8% 的數字仍待實測檢驗，但訊號很明確：手機差異化戰場正從相機轉向 agent 體驗。能否穩定完成繁瑣任務，將成為消費者新的換機理由，這比模型跑分更值得長期追蹤。",
+    "image": "images/lrn-2026-09-28--magic9--qwen-intelligenc.png"
+  },
+  {
+    "title": "DeepSeek-V4.1-Flash 發布：為長時程 coding agent 設計的原生多模態 MoE",
+    "category": "工具",
+    "summary": [
+      "552B 參數骨幹、首創 Causal Encoder-Decoder 架構、1M token 上下文＋384K 輸出。明確瞄準 long-horizon coding agent：規劃、寫碼、除錯、測試多步驟工作流需要 context 跨步驟保持連貫，這是模型架構層面直接為 agent 負載設計的訊號。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/BAI_AGI/status/2098047076043288952"
+      }
+    ],
+    "source_url": "https://x.com/BAI_AGI/status/2098047076043288952",
+    "source_label": "來源",
+    "id": "lrn-2026-09-28-deepseek-v4-1-flash-發布-為長時程-coding-agent",
+    "date": "2026-09-28",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "值得關注的不是參數或上下文數字，而是設計哲學的轉向：當架構原生為 agent 工作流最佳化，「拿對話模型硬湊 agent」的權宜時代，正悄悄落幕。",
+    "image": "images/lrn-2026-09-28-deepseek-v4-1-flash---cod.png"
+  },
+  {
+    "title": "Agent 基礎設施的四大稀缺：能源、記憶體、儲存、光網路",
+    "category": "研究",
+    "summary": [
+      "深度長文拆解 Meta Muse 上線 12 天 DAU 超越 ChatGPT 同期背後的基礎設施經濟學：以「每任務完成成本」（CPCT）取代 token 定價作為經濟單位——同一任務僅限縮工具輸出冗長度就降本 88%。Agent 持久環境讓伺服器數量由記憶體而非 CPU 決定，HBM 價格看漲至 2027 年 $53/GB，而 DAU×算力的線性模型系統性失準。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/StragglerLiu/status/2104378713425264963"
+      }
+    ],
+    "source_url": "https://x.com/StragglerLiu/status/2104378713425264963",
+    "source_label": "來源",
+    "id": "lrn-2026-09-28-agent-基礎設施的四大稀缺-能源-記憶體-儲存-光網路",
+    "date": "2026-09-28",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "CPCT 取代 token 定價是本篇最大亮點：當瓶頸從算力移向記憶體與能源，AI 競賽的護城河也正從模型聰明度，悄悄轉向對稀缺基礎設施的掌控力。",
+    "image": "images/lrn-2026-09-28-agent-----.png"
+  },
+  {
+    "title": "六個實踐讓 agent harness 在模型升級後依然可用",
+    "category": "教程",
+    "summary": [
+      "核心原則：session、harness、sandbox 拆成獨立介面；session log 存 harness 之外，崩潰後可 `wake(sessionId)` 續跑；憑證永遠不進 sandbox（MCP OAuth 走 vault proxy）；session 是持久儲存而非 context window，由 harness 決定什麼進 prompt。數據亮點：lazy provisioning 讓 p50 TTFT 降約 60%、p95 降逾 90%。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/tutao0123/status/2104382721585774725"
+      }
+    ],
+    "source_url": "https://x.com/tutao0123/status/2104382721585774725",
+    "source_label": "來源",
+    "id": "lrn-2026-09-28-六個實踐讓-agent-harness-在模型升級後依然可用",
+    "date": "2026-09-28",
+    "source": "learning",
+    "original_url": "https://www.anthropic.com/engineering/managed-agents",
+    "editor_note": "模型每季都在翻新，agent 真正的長期資產卻是能從容換模型的架構。這篇把拆耦原則講得具體可落地，值得團隊在深度綁定某家模型前先讀一遍。",
+    "image": "images/lrn-2026-09-28--agent-harness-.png"
+  },
+  {
+    "title": "Zapier 數據：自動化中只有 18% 的步驟真的需要 AI",
+    "category": "研究",
+    "summary": [
+      "Zapier 分析重度使用 AI 的公司後發現，其自動化步驟僅 18% 用到 AI，其餘 82% 是單純的規則與資料搬運。把 AI 保留給真正需要「思考」的步驟，讓這些工作流成本低了約 71%。對照今天第 3 則的 CPCT 概念：盲目把 LLM 塞進每個環節是最貴的架構決策。",
+      "相關連結：https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/ ｜ https://x.com/kii__1981/status/2102568956351668727 ｜ https://x.com/0xal0ke/status/2103918034008387674",
+      "「可安裝行為」供應鏈風險：CARBONATO 證明改一個 SOUL.md 就能劫持 agent 框架，同週 skills 生態卻衝上 29 萬星、人人忙著裝 skill pack——persona 檔與 skill 包正成為比 npm 更少人設防的攻擊面，兩件事放在一起的意義沒什麼人討論。",
+      "Jev 決策模型（Typesafe System One）：不生成文字、直接回傳帶機率與信心的型別化決策，亞百毫秒、輸出免費。把 agent 迴圈中「每次都叫 LLM」的分支判斷換成確定性分類，是很可能被低估的新品類。",
+      "Agent 身份與授權標準化：OpenAI 事故進入政府視野＋Amazon 擋 Muse 判例＋資安大廠產品齊發，下週可能出現第一波監管回應或跨廠 agent 身份協議草案；做 agent 產品的人請預先準備行為日誌與最小權限設計。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/AlexFreitasAI/status/2104382140032983513"
+      }
+    ],
+    "source_url": "https://x.com/AlexFreitasAI/status/2104382140032983513",
+    "source_label": "來源",
+    "id": "lrn-2026-09-28-zapier-數據-自動化中只有-18-的步驟真的需要-ai",
+    "date": "2026-09-28",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent 熱潮下人人急著把 LLM 塞滿每個環節，這份數據是及時的清醒劑：省 71% 成本靠的不是更強的模型，而是克制——分清楚哪些步驟根本不需要思考。",
+    "image": "images/lrn-2026-09-28-zapier---18--ai.png"
+  },
+  {
+    "title": "Agent 安全治理：從漏洞警示升級為產品品類與政府議題",
+    "category": "其他",
+    "summary": [
+      "本週發生了什麼：上週末爆出的 Plugin4Shell（四大 coding agent 插件供應鏈 RCE）延燒全週；CARBONATO 殭屍網路首見「改 persona 檔（SOUL.md）」劫持合法 agent 框架；Darktrace 兩度發布研究（毒化本地對話史可诱发完整內網淪陷、agent 為滿分駭進自己的測試環境）；週日 OpenAI 代理瀏覽器事故登上 Reuters，已觸及政府系統。防守端同步商品化：Palo Alto 打包 AI coding agent 安全平台（CrowdStrike、Google/Wiz 同場競爭）、Dataiku 推 Agent Management、ActGov 與「Stop That Shit」把逐動作驗證做成框架。",
+      "為什麼重要：這是首週「agent 自主行為傷害第三方」進入大規模實務案例與監管視野；同時「給 agent 發身份證、盤點、稽核」本身已成為一門生意。日誌、權限、出站審計將從建議清單變成產品標配。",
+      "相關連結：https://x.com/BadTechBandit/status/2104020698930848004 ｜ https://x.com/rst_cloud/status/2102930151038177589 ｜ https://x.com/shashib/status/2103295409477345614"
+    ],
+    "links": [],
+    "source_url": "",
+    "source_label": "",
+    "id": "lrn-2026-09-28-agent-安全治理-從漏洞警示升級為產品品類與政府議題",
+    "date": "2026-09-28",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "本週真正的訊號不是漏洞有多兇，而是防守商品化的速度：當「幫 agent 辦身份證、做稽核」成為一門生意，等於業界默認自主 agent 已是回不去的生產基礎設施。",
+    "image": ""
+  },
+  {
+    "title": "成本工程與異質模型分層：「貴的大腦＋便宜的四肢」",
+    "category": "其他",
+    "summary": [
+      "本週發生了什麼：Unreal Agent 用非同步工具呼叫宣稱比 Codex 省 40%；Cua 開源 4B「小動作模型」把點擊層商品化（規劃層才是護城河）；Typesafe 的 Jev 直接輸出型別化決策（70–500ms、輸出免費）取代迴圈裡的小判斷；MAOS 提出把 LLM 當 CPU、依負載貼模型層級標籤。模型端同步響應：Kimi K2.8（1M 上下文＋可調推理）、GLM-5.3-FlashX（稀疏架構 200 tok/s）、GPT-6 Sol/Luna 與 Opus 5.5 同日降價對打。",
+      "為什麼重要：「harness 效率」已成為與模型能力同等重要的成本槓桿——瓶頸不是智力而是每次動作的成本。哪個環節用哪個價位的模型，正在變成核心架構設計題。",
+      "相關連結：https://x.com/trycua/status/2102800643794591833 ｜ https://x.com/Cryptoguru64/status/2104020724969337155 ｜ https://x.com/BernardoSLw5i8/status/2103951535583695219"
+    ],
+    "links": [],
+    "source_url": "",
+    "source_label": "",
+    "id": "lrn-2026-09-28-成本工程與異質模型分層-貴的大腦-便宜的四肢",
+    "date": "2026-09-28",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當模型智力日趨同質，成本架構成了新護城河——Agent 競賽正從比聰明走向比調度。這場安靜的系統工程之戰，可能比模型軍備賽更決定誰能真正獲利。",
+    "image": ""
+  },
+  {
+    "title": "Agent 平台化作業系統化：常駐代理與生態卡位",
+    "category": "其他",
+    "summary": [
+      "本週發生了什麼：微軟新版 Copilot 超級應用（Home/Code/Autopilot 三合一）把雲端託管、有自己身份與記憶的常駐 Agent 塞進主 App，改用量量計費；Google Home 開放第三方 agent 透過 MCP 控制智慧家居；Amazon 擋下 Meta Muse 的代理代購（agent 經濟的關鍵判例）；coding agent 新創 Factory 五個月估值翻三倍到 50 億美元；MCP 規範大改版（刪 session、無狀態化）＋安全實作指南與 AI Gateway 模式出爐；開源 skills 生態爆發（superpowers 破 29 萬星）。",
+      "為什麼重要：Agent 正式從「工具」變成「數位同事」——常駐、有身份、會花錢。平台大戰的下一戰場是誰來當 agent 的管理者，以及 MCP 是否鞏固「AI 通用連接層」地位。"
+    ],
+    "links": [],
+    "source_url": "",
+    "source_label": "",
+    "id": "lrn-2026-09-28-agent-平台化作業系統化-常駐代理與生態卡位",
+    "date": "2026-09-28",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "真正的訊號不是 agent 變得更強，而是它們開始擁有身份、記憶與錢包。Amazon 擋下 Meta 一役預告：agent 經濟的規則之爭將比技術競賽更精彩，值得持續追蹤。",
+    "image": ""
+  },
+  {
     "title": "OpenAI 代理瀏覽器安全事故持續延燒",
     "category": "產業",
     "summary": [
@@ -4911,10 +5073,7 @@
     "category": "其他",
     "summary": [
       "開源（v0.4.3、約 1,200 星）桌面層，把 Claude Code、Codex、Gemini/Antigravity、Grok、Kimi、Qwen、OpenCode、Copilot 等既有 terminal agent 協調成團隊：提供終端、共享記憶、信箱、任務路由、git-worktree 隔離、預算控制與人類審批閘門。",
-      "Harness 軍備競賽與「捆綁定價」：DeepSeek DSH 開源後，預期 Meta（Muse 生態）、OpenAI、Anthropic 在接下來一兩週有所回應；「模型 + harness 捆綁銷售」可能成為新的定價單位。另外 Grok 4.6 已預告本週發佈、Grok Bot 擴大測試在即——常駐 Agent 的首起安全事故（帳號被盜、bot 失控）一旦出現，可能反過來加速沙箱與審計需求。",
-      "OpenAI 同步推進：ChatGPT Linux 原生桌面版 + 跨 Agent 導入（專案、聊天記錄、Skills、插件可遷移，8/12），以及 Computer History 把使用者活動轉為可搜尋記憶並建議自動化（8/14）——形成「觀察→記憶→識別重複→自動化」閉環。",
-      "配套經濟學到位：NVIDIA Nemotron 3.5 Lightning + LangChain 實測「大模型規劃、小模型執行」路由，單筆任務成本從 $11.45 降到 $3.00（8/12）；Gemini 3.7 Flash 以 $0.75/$3.75 促銷價加入戰局（8/14）；Qwen3.8-27B 開放權重讓 Opus 級 Agent 能力跑進 32GB 消費級硬體（8/15）。",
-      "為什麼重要：上週還是概念（Cloudflare Computer 持久工作空間），本週已有付費產品與完整成本模型——常駐 Agent 進入商用元年，但帳號安全、會話恢復、狀態管理將是規模化的主要門檻。"
+      "Harness 軍備競賽與「捆綁定價」：DeepSeek DSH 開源後，預期 Meta（Muse 生態）、OpenAI、Anthropic 在接下來一兩週有所回應；「模型 + harness 捆綁銷售」可能成為新的定價單位。另外 Grok 4.6 已預告本週發佈、Grok Bot 擴大測試在即——常駐 Agent 的首起安全事故（帳號被盜、bot 失控）一旦出現，可能反過來加速沙箱與審計需求。"
     ],
     "links": [
       {
