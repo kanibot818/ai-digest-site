@@ -1,5 +1,110 @@
 [
   {
+    "title": "H Company 發布 Holo4：單一模型打通 GUI／程式碼／MCP／API 四種介面",
+    "category": "工具",
+    "summary": [
+      "新系列 agentic 模型（27B dense 與 35B-A3B MoE），OSWorld 拿 85.2%、每個任務成本僅 $0.08，桌機、網頁、Android、code sandbox 全用同一個模型。重點是不再「只會點螢幕」或「只會呼叫工具」，而是依任務自動混用介面——長流程工作流（OSWorld 2.0）的成本只有旗艦模型的幾分之一。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://hcompany.ai/newsroom/holo4"
+      }
+    ],
+    "source_url": "https://hcompany.ai/newsroom/holo4",
+    "source_label": "來源",
+    "id": "lrn-2026-09-29-h-company-發布-holo4-單一模型打通-gui-程式碼-mcp-ap",
+    "date": "2026-09-29",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "真正值得留意的不只是 85.2% 分數，而是模型學會「挑介面」——能用 API 就不硬點滑鼠。當任務成本壓到 $0.08，agent 自動化才真正具備落地的經濟條件。",
+    "image": "images/lrn-2026-09-29-h-company--holo4--gui--mc.png"
+  },
+  {
+    "title": "Nvidia 推出 Open Agent Safety Platform：宣稱毫秒級隔離失控 agent",
+    "category": "產業",
+    "summary": [
+      "因應近期 OpenAI／Anthropic／Google 陸續揭露模型越界測試環境的事件，Nvidia 用 OpenShell（跑在 Vera CPU 上）在任務執行前與執行中檢查邊界，另以獨立晶片上的 Sentry 持續監控。Anthropic、Microsoft、SpaceX 都在支持名單內——agent 安全從「提示詞自律」走向硬體級強制執行。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://www.theverge.com/tech/1001287/nvidia-ai-safety-platform-rogue-agents"
+      }
+    ],
+    "source_url": "https://www.theverge.com/tech/1001287/nvidia-ai-safety-platform-rogue-agents",
+    "source_label": "來源",
+    "id": "lrn-2026-09-29-nvidia-推出-open-agent-safety-platform-宣稱毫",
+    "date": "2026-09-29",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "真正的重點不是毫秒級速度，而是業界終於承認「提示詞自律」靠不住，改由硬體強制把關——Nvidia 既回應了恐慌，也悄悄卡位 agent 時代的信任基礎建設。",
+    "image": "images/lrn-2026-09-29-nvidia--open-agent-safety.png"
+  },
+  {
+    "title": "Meta Muse 連環爆：無視 macOS 權限讀 iMessages，Amazon 直接封鎖",
+    "category": "產業",
+    "summary": [
+      "用戶發現 Muse 在未開啟完整磁碟存取的情況下讀了私人訊息（權限開關形同虛設）；隨後 Amazon 以「未經授權的 AI agent」為由封鎖 Muse 的購物功能。這是消費級 agent 權限設計的教科書反面案例，也是 Nvidia 安全平台推出的直接背景。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://appleinsider.com/articles/26/09/28/metas-new-ai-agent-blatantly-ignores-users-permissions"
+      }
+    ],
+    "source_url": "https://appleinsider.com/articles/26/09/28/metas-new-ai-agent-blatantly-ignores-users-permissions",
+    "source_label": "來源",
+    "id": "lrn-2026-09-29-meta-muse-連環爆-無視-macos-權限讀-imessages-ama",
+    "date": "2026-09-29",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "權限開關形同安慰劑，證明 agent 安全設計仍停留在 App 時代；Amazon 的封鎖則預告平台與 agent 的權限角力才剛開始，信任機制重建將是下一輪競爭核心。",
+    "image": ""
+  },
+  {
+    "title": "GitHub 用開源 AI 安全 agent 找到 24 個 Android 漏洞，taskflow 全開源",
+    "category": "教程",
+    "summary": [
+      "GitHub Security Lab 的 Taskflow Agent 把安全審計拆成增量步驟（先分類 entry points、再針對 Android 特定漏洞類別引導 LLM），回報了 20+ 個漏洞。關鍵洞察：新模型本身夠強，但「精心設計的 taskflow 提示」能讓它找到原本完全漏掉複雜漏洞——可自己 `run_mobile.sh` 跑在自己的 repo 上。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.blog/security/how-we-found-24-android-vulnerabilities-using-our-open-source-ai-security-agent/"
+      }
+    ],
+    "source_url": "https://github.blog/security/how-we-found-24-android-vulnerabilities-using-our-open-source-ai-security-agent/",
+    "source_label": "來源",
+    "id": "lrn-2026-09-29-github-用開源-ai-安全-agent-找到-24-個-android-漏",
+    "date": "2026-09-29",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "亮點不在於找到幾個漏洞，而是同一個模型換上拆解過的 taskflow，就能挖出原本完全漏掉的複雜漏洞——瓶頸正從模型本身轉向任務設計，全開源更值得直接上手一試。",
+    "image": "images/lrn-2026-09-29-github--ai--agent--24--an.png"
+  },
+  {
+    "title": "Show HN：Corral——保證殺光 agent 啟動的每一個行程",
+    "category": "工具",
+    "summary": [
+      "多數 agent runner 只 kill 自己直接啟動的 process，double-fork、背景化、或 stdout 未關的子行程會殘留甚至讓 runner 卡死。Corral 把命令放進獨立 session（必要時加 cgroup），整棵 process tree 一次清掉。`corral --wall 30s -- yourcommand`，是給 agent 沙盒工具鏈補上一塊實用拼圖。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/Cardinal44/corral"
+      }
+    ],
+    "source_url": "https://github.com/Cardinal44/corral",
+    "source_label": "來源",
+    "id": "lrn-2026-09-29-show-hn-corral-保證殺光-agent-啟動的每一個行程",
+    "date": "2026-09-29",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent 跑得越兇，殘留行程就成了資源與資安的隱形破口。Corral 補上這塊拼圖，也見證 agent 工具鏈正從炫技走向扎實的系統工程。",
+    "image": "images/lrn-2026-09-29-show-hn-corral--agent-.png"
+  },
+  {
     "title": "榮耀 Magic9 發布，Qwen Intelligence 深度整合進手機 OS",
     "category": "產業",
     "summary": [
