@@ -1,5 +1,110 @@
 [
   {
+    "title": "NVIDIA 開源 Open Agent Safety Platform",
+    "category": "產業",
+    "summary": [
+      "包含開源 runtime「OpenShell」與基於 BlueField DPU 的硬體監控層「Sentry」，能在毫秒級隔離越界 Agent。獲 Anthropic、Microsoft、Salesforce 等 100+ 家支持。Agent 安全從模型層下沉到「軟體+硬體」棧，方向是「監視中放行」而非「禁止使用」。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/geekaigc/status/2105107996586205420"
+      }
+    ],
+    "source_url": "https://x.com/geekaigc/status/2105107996586205420",
+    "source_label": "來源",
+    "id": "lrn-2026-09-30-nvidia-開源-open-agent-safety-platform",
+    "date": "2026-09-30",
+    "source": "learning",
+    "original_url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform",
+    "editor_note": "NVIDIA 把安全變成硬體生意：防護下沉到 DPU，BlueField 可望成 Agent 標配；「監視放行」務實勝於圍堵，也給企業部署 Agent 吃下定心丸。",
+    "image": "images/lrn-2026-09-30-nvidia--open-agent-safety.png"
+  },
+  {
+    "title": "OpenAI 推出「Sign in with ChatGPT」，訂閱額度跨工具通用",
+    "category": "工具",
+    "summary": [
+      "DevDay 重點遺珠：首批 16+ 合作產品幾乎被 Coding Agent 包場（Devin、Warp、Amp、Kilo Code、Notion、Vercel、OpenCode 等），用 ChatGPT 帳號登入即可直接消耗套餐內的 Work/Codex 配額，免配 API key。ChatGPT 訂閱正從「自家產品門票」變成「跨 AI 工具的通用額度」。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/thsottiaux/status/2105006253986738615"
+      }
+    ],
+    "source_url": "https://x.com/thsottiaux/status/2105006253986738615",
+    "source_label": "來源",
+    "id": "lrn-2026-09-30-openai-推出-sign-in-with-chatgpt-訂閱額度跨工具通用",
+    "date": "2026-09-30",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "值得玩味的是「額度可攜」：ChatGPT 帳號一旦兼具身分與錢包功能，OpenAI 等於把訂閱變成 AI 時代的通行貨幣——用戶黏得更深，開發者也更難繞開它的軌道。",
+    "image": "images/lrn-2026-09-30-openai--sign-in-with-chat.png"
+  },
+  {
+    "title": "MongoDB 發布 Atlas Agent Engine",
+    "category": "工具",
+    "summary": [
+      "在既有 Atlas 棧上提供統一的執行、記憶體與治理層，內建 Voyage AI 檢索，支援 MCP + A2A 協議避免單一模型/雲鎖定，公開預覽中。Paysafe 已在上面建支付詐騙偵測 agent——資料庫廠商直接把「PoC 到生產」的治理稅一次收走。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/saiitoshii/status/2105107383848427936"
+      }
+    ],
+    "source_url": "https://x.com/saiitoshii/status/2105107383848427936",
+    "source_label": "來源",
+    "id": "lrn-2026-09-30-mongodb-發布-atlas-agent-engine",
+    "date": "2026-09-30",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "真正的訊號不在功能本身，而是資料庫廠商正式下場搶 agent 執行層——當記憶、檢索與治理都被收進資料庫，企業選的將不只是資料庫，而是 agent 的生產環境。",
+    "image": "images/lrn-2026-09-30-mongodb--atlas-agent-engi.png"
+  },
+  {
+    "title": "Salt 推出 Claude Connect：MCP 伺服器資產盤點",
+    "category": "工具",
+    "summary": [
+      "透過 Claude Compliance API，安全團隊可取得企業組織內所有接入的 MCP server 即時清單（唯讀），且不需讀取任何 prompt 或對話內容。企業 MCP 攻擊面管理（inventory-first security）開始變成標準需求。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/BadSignalAI/status/2105097886463639771"
+      }
+    ],
+    "source_url": "https://x.com/BadSignalAI/status/2105097886463639771",
+    "source_label": "來源",
+    "id": "lrn-2026-09-30-salt-推出-claude-connect-mcp-伺服器資產盤點",
+    "date": "2026-09-30",
+    "source": "learning",
+    "original_url": "https://badsignal.ai/stories/salt-claude-connect",
+    "editor_note": "當企業 agent 紛紛接入 MCP，最大的風險往往是「根本不知道連了什麼」。Salt 以唯讀盤點切入、不碰對話內容，是隱私與安全間的聰明平衡，也宣告 inventory-first 將成為 AI 安全的基本功。",
+    "image": "images/lrn-2026-09-30-salt--claude-connect-mcp-.png"
+  },
+  {
+    "title": "精簡 7 個 MCP server 勝過 30 工具大雜燴",
+    "category": "教程",
+    "summary": [
+      "實務案例：Filesystem、Memory、Browser、GitHub、Postgres、Slack、Sequential Thinking 各司一職的精簡棧，推論速度與決策品質都優於 30 工具配置——工具過多導致選擇模糊，延遲與 token 消耗複利式膨脹。答案不是加法，是減法。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/robertmcpcio/status/2105096778131423721"
+      }
+    ],
+    "source_url": "https://x.com/robertmcpcio/status/2105096778131423721",
+    "source_label": "來源",
+    "id": "lrn-2026-09-30-精簡-7-個-mcp-server-勝過-30-工具大雜燴",
+    "date": "2026-09-30",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當「接越多工具越強」成為顯學，這篇實測點破 LLM 也會選擇障礙——Agent 競爭的下一步，不在誰接得多，而在誰刪得準。",
+    "image": "images/lrn-2026-09-30--7--mcp-server--30-.png"
+  },
+  {
     "title": "H Company 發布 Holo4：單一模型打通 GUI／程式碼／MCP／API 四種介面",
     "category": "工具",
     "summary": [
@@ -5461,11 +5566,10 @@
   },
   {
     "title": "「Prompting 將死，Graph 取而代之」：Agent 架構辯論今夏全面升溫",
-    "category": "工具",
+    "category": "其他",
     "summary": [
       "Stanford 談話與 Peter Steinberger 的 loop-vs-graph 論戰（270 萬瀏覽）引發架構反思：loop 外化「修正」、chain 外化「順序」、graph 外化「共享狀態與關係」——而共享狀態才是多 agent 系統的真正瓶頸。",
-      "工具面印證趨勢：LangGraph 原生以圖結構做編排並跨步驟持久化狀態、Neo4j 將圖資料庫重新定位為 agentic 工作負載、Google ADK 用圖邊在 agent 角色間傳遞上下文、微軟 GraphRAG 以實體連結取代碎片檢索。",
-      "定位在模型供應商之上的中立治理層，自帶訂閱/API key 即可用，解決安全與採用摩擦；但商用化（團隊收費僅 contact-us、依賴第三方 CLI）仍是觀察點。"
+      "工具面印證趨勢：LangGraph 原生以圖結構做編排並跨步驟持久化狀態、Neo4j 將圖資料庫重新定位為 agentic 工作負載、Google ADK 用圖邊在 agent 角色間傳遞上下文、微軟 GraphRAG 以實體連結取代碎片檢索。"
     ],
     "links": [
       {
