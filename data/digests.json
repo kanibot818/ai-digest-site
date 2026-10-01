@@ -1,5 +1,110 @@
 [
   {
+    "title": "OpenAI 把 Computer Use 直接帶進 Agents API",
+    "category": "工具",
+    "summary": [
+      "Agent 現在能用跟人類一樣的方式操作任何軟體 UI（點擊、打字、導航），包括沒有 API 的 15 年老 ERP、內部後台等「沒人想碰的系統」。這代表「沒有 API」不再等於「無法自動化」，數百萬軟體工具一夜之間變成可自動化目標。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/mario_builds/status/2105393053875748868"
+      }
+    ],
+    "source_url": "https://x.com/mario_builds/status/2105393053875748868",
+    "source_label": "來源",
+    "id": "lrn-2026-10-01-openai-把-computer-use-直接帶進-agents-api",
+    "date": "2026-10-01",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當「沒有 API」不再是自動化的死路，難題也跟著轉移：敢讓 AI 直接操作核心系統嗎？技術整合之後，信任與治理才是企業要過的下一關。",
+    "image": "images/lrn-2026-10-01-openai--computer-use--age.png"
+  },
+  {
+    "title": "Google 發表 Gemini 4 Argon：agent 任務表現異常均衡",
+    "category": "產業",
+    "summary": [
+      "19 個 benchmark 領先 13 個，最大優勢正是企業會付錢的 agent 場景：finance agent 65.4%（GPT-6 為 53.5%）、法律（Harvey）19.6%（GPT-6 僅 5.4%）。先開放給資安防禦者，再開 API 與 AI Ultra，intro 價 $2/$10 per 1M tokens、1M 輸出。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/BrarFinance/status/2105468190222340444"
+      }
+    ],
+    "source_url": "https://x.com/BrarFinance/status/2105468190222340444",
+    "source_label": "來源",
+    "id": "lrn-2026-10-01-google-發表-gemini-4-argon-agent-任務表現異常均衡",
+    "date": "2026-10-01",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "模型競賽的焦點已從通用能力轉向企業真正願付費的垂直 agent 場景，法律類近四倍的差距尤其值得玩味；先開放資安防禦者的做法，也預告安全先行正成前沿模型的標配。",
+    "image": "images/lrn-2026-10-01-google--gemini-4-argon-ag.png"
+  },
+  {
+    "title": "TrustProbe：技能型 LLM Agent 的信任鏈系統性破洞",
+    "category": "研究",
+    "summary": [
+      "研究針對 11 個開源 agent（8 個 stars 超過 1 萬）分析 skill 控制輸入到安全敏感操作的污染路徑，找到 104 個漏洞；對公開 skill hub 的實測顯示 25.1% 的 skill-agent 執行會踩到脆弱路徑，其中 15 個可被 payload injection 武器化。核心問題：用戶委授的權限會被不可信的 skill 內容挪用。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/gastronomy/status/2105468859092205665"
+      }
+    ],
+    "source_url": "https://x.com/gastronomy/status/2105468859092205665",
+    "source_label": "來源",
+    "id": "lrn-2026-10-01-trustprobe-技能型-llm-agent-的信任鏈系統性破洞",
+    "date": "2026-10-01",
+    "source": "learning",
+    "original_url": "https://ift.tt/d1mSk5E",
+    "editor_note": "真正的警訊不是 104 個漏洞，而是 25% 的命中率——這是 skill 市集信任模型的結構性缺陷。當用戶委授的權限能被第三方內容挪用，agent 平台的安全設計已到必須重構的時刻。",
+    "image": "images/lrn-2026-10-01-trustprobe--llm-agent-.png"
+  },
+  {
+    "title": "PixelLeak：300+ 組織的 13,000 張內部截圖被丟在公開 GitHub repo",
+    "category": "產業",
+    "summary": [
+      "大量來自無人看管的 coding agent 的截圖與錄影被開發者原封不動推上公開 repo，裡面常含內部系統畫面與敏感資訊。教訓：讓 agent 自主跑任務時，出站（outbound）控制與產物留存政策必須是正式需求，不是事後補救。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/Flextor97/status/2105469543300649123"
+      }
+    ],
+    "source_url": "https://x.com/Flextor97/status/2105469543300649123",
+    "source_label": "來源",
+    "id": "lrn-2026-10-01-pixelleak-300-組織的-13-000-張內部截圖被丟在公開-gith",
+    "date": "2026-10-01",
+    "source": "learning",
+    "original_url": "https://www.coreweave.com/news/coreweave-forge-launches-turning-the-ai-loop-production-run-into-a-better-model-and-agent",
+    "editor_note": "值得警惕的是，這些 agent 沒被駭、只是照常工作就洩了密。當自主代理把開發者的一時疏忽放大成規模化外洩，產物治理就必須從個人習慣升級為正式規範。",
+    "image": "images/lrn-2026-10-01-pixelleak-300--13-000--gi.png"
+  },
+  {
+    "title": "新一代 benchmark 揭示：知識多 ≠ 會操作終端",
+    "category": "研究",
+    "summary": [
+      "Terminal-bench 4.0（Opus 5.5 66.4% vs Gemini 57.4%）、FrontierSWE v2（GPT-6 65.5% vs 55.0%）、OSWorld-2.0（GPT-6 72.6% vs 69.2%）的分歧顯示：模型在知識型評測的排名，跟實際動手完成任務的能力明顯脫鉤。選 agent 模型時該看的是操作型 benchmark，不是聊天榜。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/Summer_ikiki/status/2105470420455763974"
+      }
+    ],
+    "source_url": "https://x.com/Summer_ikiki/status/2105470420455763974",
+    "source_label": "來源",
+    "id": "lrn-2026-10-01-新一代-benchmark-揭示-知識多-會操作終端",
+    "date": "2026-10-01",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "會考試不等於會上工——當操作型 benchmark 與知識榜排名明顯分歧，模型選型的遊戲規則正在改寫：企業部署 agent 前，該看的是「動手完成率」，而不是聊天分數。",
+    "image": "images/lrn-2026-10-01--benchmark---.png"
+  },
+  {
     "title": "NVIDIA 開源 Open Agent Safety Platform",
     "category": "產業",
     "summary": [
