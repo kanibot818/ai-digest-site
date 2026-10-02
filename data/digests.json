@@ -1,5 +1,110 @@
 [
   {
+    "title": "Google 發布 Gemini 4 Argon：1M token 輸出＋自主資安修補，分階段發布",
+    "category": "工具",
+    "summary": [
+      "Google 新旗艦主打長推理工作流：輸出上限從 64K 拉到 100 萬 tokens（業界最高），DeepSWE v1.1 新 SOTA（77.9%），可自主找出、驗證並修補關鍵漏洞（CWE-bench 並列第一 68%）。",
+      "更值得觀察的是發布策略：先透過 Fairwind 計畫限定信任的資安防禦者使用、配合美國政府預發布安全評估，再逐步開放 API——「先給防禦者、再給大眾」可能成為前沿資安能力的發布範本。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon"
+      }
+    ],
+    "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon",
+    "source_label": "來源",
+    "id": "lrn-2026-10-02-google-發布-gemini-4-argon-1m-token-輸出-自主資",
+    "date": "2026-10-02",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "規格固然驚人，但真正的訊號是發布策略——當 AI 具備自主資安能力，「先給防禦者」讓開放節奏本身成為治理工具，前沿模型的競賽可能從「比快」轉向「比穩健」。",
+    "image": "images/lrn-2026-10-02-google--gemini-4-argon-1m.png"
+  },
+  {
+    "title": "AWS 開源 Strands Decider 2B：不寫文字、只做選擇的 agent 決策模型",
+    "category": "工具",
+    "summary": [
+      "以 Qwen3.5-2B 為基底改造成「指標頭」架構：從預定選項中挑一個並附上校準信心分數，不產生自由文字。Apache-2.0，權重、訓練資料、訓練腳本全開源。",
+      "實測數字：RTX 3090 中位延遲約 115ms、M3 MacBook 約 153ms。對 agent 裡大量的路由、工具選擇、分類分流小決策，可以不用再燒一次大模型 API——「大模型推理＋小模型決策」的分層模式又多一個現成零件。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/BTC_Cracker/status/2105768823882231861"
+      }
+    ],
+    "source_url": "https://x.com/BTC_Cracker/status/2105768823882231861",
+    "source_label": "來源",
+    "id": "lrn-2026-10-02-aws-開源-strands-decider-2b-不寫文字-只做選擇的-age",
+    "date": "2026-10-02",
+    "source": "learning",
+    "original_url": "https://strandsagents.com/blog/introducing-strands-decider/",
+    "editor_note": "只選不寫」看似功能縮水，實則打中 agent 的成本真相：多數微決策根本不必勞駕大模型。agent 工程正從提示堆疊走向分層系統設計，這類專用小模型只會越來越多。",
+    "image": "images/lrn-2026-10-02-aws--strands-decider-2b--.png"
+  },
+  {
+    "title": "Meta Superintelligence Labs：agent meta-reasoning——讓 controller 決定下一步該做什麼",
+    "category": "研究",
+    "summary": [
+      "新論文把「控制」從「做事」中拆出來：worker 負責任務計算，controller 維護精簡進度摘要、提出下一步選項、在剩餘預算下估價再派工，完整 worker 輸出留在持久記憶體。",
+      "同樣的 worker 與預算下，ProgramBench（GPT-5.5）從 63.7% 升到 71.5%（Codex 為 58.0%）；其他三個 bench 平均加 3.6–4.2 分。核心洞察：agent 跑得越長，「花算力在結構化控制上」的報酬越高，直接控制會先撞牆。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://arxiv.org/abs/2609.38147"
+      }
+    ],
+    "source_url": "https://arxiv.org/abs/2609.38147",
+    "source_label": "來源",
+    "id": "lrn-2026-10-02-meta-superintelligence-labs-agent-meta-r",
+    "date": "2026-10-02",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "這篇論文最有趣的不是分數提升，而是把「管理」從執行中拆出來的思路：任務越長，花算力在調度上越划算。agent 的下一步，或許是長出自己的組織架構。",
+    "image": ""
+  },
+  {
+    "title": "xAI Team Bots：共享角色 agent＋每人私有記憶",
+    "category": "產業",
+    "summary": [
+      "Grok Bot 升級為團隊共享版：圍繞一個角色/工作流建立，整個團隊共用同一份 context、技能與累積記憶，但每個人的對話與私人筆記互相隔離、連 owner 都看不到。",
+      "搭配 Slack 全天運作、接 Salesforce/Notion/GitHub 等 plugin，案例裡保險公司 24 小時內建好、救回超過 12 萬美元理賠。這代表 agent 產品正從「個人助理」往「組織記憶載體」移動——離職交接、新人上手變成 agent 的內建功能。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.ai/news/team-bots"
+      }
+    ],
+    "source_url": "https://x.ai/news/team-bots",
+    "source_label": "來源",
+    "id": "lrn-2026-10-02-xai-team-bots-共享角色-agent-每人私有記憶",
+    "date": "2026-10-02",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "隱私隔離做到「連 owner 都看不到」，才是企業敢把組織記憶交給 agent 的信任基石。知識管理喊了二十年，最後可能由默默做事的 agent 順手實現。",
+    "image": "images/lrn-2026-10-02-xai-team-bots--agent-.png"
+  },
+  {
+    "title": "Cohere 發布 Embed 5：為 agentic RAG 而生的雙檔 embedding",
+    "category": "研究",
+    "summary": [
+      "Pro／Fast 兩級共用同一個向量空間：用 Pro 建索引、查詢時可自由切換兩者而不需重建索引。Pro 在 ViDoRe V3 平均 85.8 分超越 Voyage 4 Large，財務文件與視覺豐富文件（PDF、表格）尤其強。",
+      "Fast 每百萬 token 只要 $0.08、吞吐量是 Pro 的 2.4 倍，128K context＋100+ 語言＋多模態輸入，明顯是衝著企業級 agent 檢索工作負載設計的。"
+    ],
+    "links": [],
+    "source_url": "",
+    "source_label": "",
+    "id": "lrn-2026-10-02-cohere-發布-embed-5-為-agentic-rag-而生的雙檔-em",
+    "date": "2026-10-02",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Embed 5 最聰明的一步是共用向量空間：索引建好後，查詢端可依成本自由切換，「一次索引、動態調速」正是 agent 檢索規模化的關鍵工程解法。",
+    "image": ""
+  },
+  {
     "title": "OpenAI 把 Computer Use 直接帶進 Agents API",
     "category": "工具",
     "summary": [
