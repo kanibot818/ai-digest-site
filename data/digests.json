@@ -1,5 +1,124 @@
 [
   {
+    "id": "karpathy-我們會花更多時間-理解-llm-的輸出",
+    "title": "Karpathy：我們會花更多時間「理解 LLM 的輸出」",
+    "date": "2026-10-03",
+    "category": "AI 影片",
+    "source": "digest",
+    "summary": [
+      "寫作：請 LLM 用 ASD-STE100（航太維護文件的受控語言規範）來解釋，LLM 對它很熟、風格乾淨易讀；因為規範太嚴，他常用「80% 接近 ASD-STE100」來軟化",
+      "圖表：與其寫文字，不如請 LLM 畫圖，更容易處理和理解",
+      "網頁：要求「用 HTML 輸出」，LLM 前端能力很強，能做出漂亮、可互動的頁面與動畫",
+      "客製化解說影片（他最看好）：在任何主題上生成 fully bespoke 的 3b1b 風格解說影片，旁白可用 ElevenLabs API key（或請它找用本地算力的免費替代方案）——這已經真的可以運作了",
+      "總結：智能和代碼越來越充足後，可以要求大型、客製、用完即丟的軟體產物（網頁、影片）——這在以前從來不合理，值得去探索極限"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/karpathy/status/2105819303471976479"
+      }
+    ],
+    "source_url": "https://x.com/karpathy/status/2105819303471976479",
+    "source_label": "原文",
+    "editor_note": "當生成內容不再是瓶頸，人類的消化力反成短板。Karpathy 的啟示不在把問題問得更好，而在為輸出選對形式——這種「格式工程」將是下一派人機協作的核心技能。",
+    "image": "images/karpathy---llm-.png"
+  },
+  {
+    "title": "GitLab 披露「ConfigPoisoning」：看個 git diff 就會執行攻擊者程式碼",
+    "category": "工具",
+    "summary": [
+      "CVE-2026-102437：惡意 repo 的 `.git/config` 可定義含攻擊指令的 Git clean filter，coding agent 一叫 git 就中招。GitLab 強調這不是單一產品 bug，多家主流 coding agent 都有同類弱點（協調披露中）。更值得警惕的是：已被 prompt injection 的 agent 可以自己寫入毒化設定，繞過「分發惡意 repo」的限制。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/DailyDarkWeb/status/2106195141388063089"
+      }
+    ],
+    "source_url": "https://x.com/DailyDarkWeb/status/2106195141388063089",
+    "source_label": "來源",
+    "id": "lrn-2026-10-03-gitlab-披露-configpoisoning-看個-git-diff-就會",
+    "date": "2026-10-03",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "看個 diff 就中招，暴露的不是單一 bug，而是 coding agent 對工具鏈全然信任的設計缺陷；再串上 prompt injection 自動鋪路，修一個 CVE 恐怕只是故事的開始。",
+    "image": "images/lrn-2026-10-03-gitlab--configpoisoning--.png"
+  },
+  {
+    "title": "Apple 將收紧 macOS 完全磁碟存取權限，直接點名 AI Agent 風險",
+    "category": "產業",
+    "summary": [
+      "Apple 宣布為「完全磁碟存取」增加更明確的授權流程，理由是 Agent 自主性增強後，存取檔案、郵件、訊息的風險大幅上升。這是 OS 層級首次為 agent 時代重新設計權限模型——未來 coding agent 想預設拿到整台機器的存取權會越來越難。"
+    ],
+    "links": [],
+    "source_url": "",
+    "source_label": "",
+    "id": "lrn-2026-10-03-apple-將收紧-macos-完全磁碟存取權限-直接點名-ai-agent-風",
+    "date": "2026-10-03",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Apple 首度在作業系統層向 Agent 劃出紅線，宣告便利不該以交出整台電腦為代價。平台與 AI 陣營的權限主導權之爭才剛開打，這步棋很可能成為全產業的安全基準。",
+    "image": ""
+  },
+  {
+    "title": "MIT + Sakana AI 推出 SIFT：用 LLM judge 篩掉不值得跑的 benchmark",
+    "category": "研究",
+    "summary": [
+      "SIFT 讓一個 LLM judge 先評估 coding agent 的 patch 值不值得進真正的 benchmark，一次 run 在 5 小時內、約 $150 API 成本達到 Polyglot 35.1%，且無 judge 時分數更差。Agent 評估成本正在成為新瓶頸，這是「用小模型替大模型省錢」思路的 benchmark 版。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/VentureBeat/status/2106154818087579887"
+      }
+    ],
+    "source_url": "https://x.com/VentureBeat/status/2106154818087579887",
+    "source_label": "來源",
+    "id": "lrn-2026-10-03-mit-sakana-ai-推出-sift-用-llm-judge-篩掉不值得跑",
+    "date": "2026-10-03",
+    "source": "learning",
+    "original_url": "https://venturebeat.com/ai/new-mit-and-sakana-ai-framework-uses-an-llm-judge-to-cut-evaluation-costs-for-self-improving-coding-agents",
+    "editor_note": "加了 judge 篩選，分數不降反升——這透露過去大量評測預算燒在無望的 patch 上。當評測成本成為新瓶頸，跑 benchmark 也得講投資報酬率了。",
+    "image": "images/lrn-2026-10-03-mit-sakana-ai--sift--llm-.png"
+  },
+  {
+    "title": "AWS 開放 Well-Architected Agent 預覽：Agent 開始直接審查雲架構",
+    "category": "工具",
+    "summary": [
+      "可自動分析 AWS 環境，從成本、安全、性能、可靠性四面向找問題，還能讀 Terraform / CloudFormation / CDK 並生成可執行的修復腳本。流程設計接近生產級：讀真實基礎設施 → 按影響排序 → 人工確認 → 執行。Agent 從「幫忙寫 code」正式推進到 DevOps / 架構層。"
+    ],
+    "links": [],
+    "source_url": "",
+    "source_label": "",
+    "id": "lrn-2026-10-03-aws-開放-well-architected-agent-預覽-agent-開",
+    "date": "2026-10-03",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent 從寫程式的副手，升格為能直接觸碰生產環境的架構審查員，這一步比任何單一功能都值得留意。而 AWS 堅持保留人工確認關卡，也暗示自動化修復的下一步瓶頸不是技術，而是信任。",
+    "image": ""
+  },
+  {
+    "title": "Anthropic 投 1 亿美元建 Claude Frontier Academy，目標培養 1 萬名落地工程師",
+    "category": "產業",
+    "summary": [
+      "首批包含 Accenture、Deloitte、McKinsey、Morgan Stanley 等機構，學員須在企業內完成真實 Claude 專案。訊號很明確：企業缺的不再是「會呼叫 API 的人」，而是能把 AI 接進現有系統與業務流程的人——agent 落地已成獨立職缺。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://cohere.com/blog/embed-5"
+      }
+    ],
+    "source_url": "https://cohere.com/blog/embed-5",
+    "source_label": "來源",
+    "id": "lrn-2026-10-03-anthropic-投-1-亿美元建-claude-frontier-acade",
+    "date": "2026-10-03",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "1 億美元買的不只是人才，更是職缺定義權——當顧問與金融龍頭的落地能力都由 Claude 體系養成，企業 AI 標準也將悄悄向 Anthropic 靠攏。",
+    "image": "images/lrn-2026-10-03-anthropic--1--claude-fron.png"
+  },
+  {
     "title": "Google 發布 Gemini 4 Argon：1M token 輸出＋自主資安修補，分階段發布",
     "category": "工具",
     "summary": [
@@ -5541,20 +5660,15 @@
   },
   {
     "title": "新論文：量化多 Agent 協作編碼中的協調行為",
-    "category": "產業",
+    "category": "研究",
     "summary": [
       "《When Agents Coordinate: Measuring Coordination in Multi-Agent AI Coding》（Giuseppe Destefanis、Tomoaso Aste，arXiv cs.AI/cs.SE）提出度量多代理系統協調效率的方法。",
-      "當多 Agent 並行開發成為主流（見今日 Warp Factories），「Agent 之間如何分工、溝通、避免互相踩腳」急需可量化的科學指標，這篇論文補上了這塊研究空白。",
-      "官方坦承前沿模型需求異常強勁、算力容量未來數週持續吃緊——coding agent 大戰已從模型能力打到「額度與算力承載」的博弈。"
+      "當多 Agent 並行開發成為主流（見今日 Warp Factories），「Agent 之間如何分工、溝通、避免互相踩腳」急需可量化的科學指標，這篇論文補上了這塊研究空白。"
     ],
     "links": [
       {
         "label": "來源",
         "url": "https://x.com/SciFi/status/2090249452984381846"
-      },
-      {
-        "label": "來源",
-        "url": "https://x.com/LiuweijiaVip/status/2089886675644399725"
       }
     ],
     "source_url": "https://x.com/SciFi/status/2090249452984381846",
