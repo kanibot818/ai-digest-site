@@ -1,5 +1,90 @@
 [
   {
+    "title": "Pi 1.0 登上 HN 第一：當年反 MCP 最力的 agent 現在原生支援了",
+    "category": "工具",
+    "summary": [
+      "Pi（Earendil 接手、Zechner 創立的極簡 terminal coding agent）發布 1.0，HN 衝上 1,200+ 分。關鍵是 Codemode：模型在 WASM sandbox 裡寫 JS 呼叫 MCP 工具如 SDK，只有蒸餾後的結果回到 context——解決了「三個 MCP server 吃掉 143k/200k context」的老問題。MCP 退居線路協議，模型介面變成「可程式化環境」。",
+      "同日還推出實驗性的 Pi Durable：每步都是 durable checkpoint、工具宣告 replay 政策、crash 後不重複詢問審批——直指生產級 agent 的「可恢復性」缺口。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://dev.to/ashraf_chowdury09/pi-10-just-hit-1-on-hacker-news-the-agent-that-hated-mcp-now-ships-it-1nkp"
+      }
+    ],
+    "source_url": "https://dev.to/ashraf_chowdury09/pi-10-just-hit-1-on-hacker-news-the-agent-that-hated-mcp-now-ships-it-1nkp",
+    "source_label": "來源",
+    "id": "lrn-2026-10-04-pi-1-0-登上-hn-第一-當年反-mcp-最力的-agent-現在原生支援",
+    "date": "2026-10-04",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "立場逆轉只是花絮，架構翻轉才是主戲：當 context 成為最稀缺資源，讓模型寫程式馴服工具、MCP 退居線路協議——這套設計思路值得所有 agent 開發者偷師。",
+    "image": "images/lrn-2026-10-04-pi-1-0--hn---mcp--agent-.png"
+  },
+  {
+    "title": "MIT + Sakana AI 的 SIFT：自我改進 coding agent 的評估成本砍到十分之一",
+    "category": "研究",
+    "summary": [
+      "自我改進 agent 最貴的是驗證每個 patch。SIFT 用 LLM judge 做候選 agent 兩兩比較，以 Bradley-Terry 模型聚合排名，只有 promising 分支才跑完整 benchmark。o3-mini 在 Polyglot 拿 35.1%（5 小時內、約 $150 API 費），勝過 DGM 的 30.7%（80 節點）；Qwen3-Coder-30B 配置整輪搜尋只要 $34。且改進可遷移到其他模型。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://arxiv.org/pdf/2609.19526"
+      }
+    ],
+    "source_url": "https://arxiv.org/pdf/2609.19526",
+    "source_label": "來源",
+    "id": "lrn-2026-10-04-mit-sakana-ai-的-sift-自我改進-coding-agent-的",
+    "date": "2026-10-04",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "自我改進的瓶頸從來在驗證、不在生成。SIFT 用相對排名取代逐題跑分，把演化搜尋壓到幾十美元就能跑，加上成果可跨模型遷移，這條路線不再是大廠專利。",
+    "image": ""
+  },
+  {
+    "title": "Agent 自動化進入「事件驅動 + 專屬身分」時代：Manus 2.0、OpenAI Dots、Perplexity 同週開火",
+    "category": "產業",
+    "summary": [
+      "Manus 重寫平台：Cascade 編排層按需啟動專業能力（實測 token -23.2%、成本 -32%）；新 app「Cue」給每個 agent 專屬 email、電話、錢包和電腦。加上 9/28-9/29 OpenAI Dots（always-on 雲端電腦 agent）與 Perplexity Computer Automations（事件觸發），業界正從「排程任務」轉向「描述結果、劃定邊界、agent 自行運作」——B2B 架構師開始質疑 iPaaS 中介層的商業模型是否被動搖。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/thefounderspack/status/2106444772923629963"
+      }
+    ],
+    "source_url": "https://x.com/thefounderspack/status/2106444772923629963",
+    "source_label": "來源",
+    "id": "lrn-2026-10-04-agent-自動化進入-事件驅動-專屬身分-時代-manus-2-0-opena",
+    "date": "2026-10-04",
+    "source": "learning",
+    "original_url": "https://automateandgrow.beehiiv.com/",
+    "editor_note": "當 agent 擁有專屬信箱、電話與錢包，它已從工具升格為可互動、可問責的商業主體；而當協調權回到 agent 手上，iPaaS 的難題已不是被不被動搖，而是得證明自己不會被整層繞過。",
+    "image": "images/lrn-2026-10-04-agent-----manus-2-0-opena.png"
+  },
+  {
+    "title": "Comet 0.4.0：把「會寫 code」變成「穩定交付」的工程控制層",
+    "category": "工具",
+    "summary": [
+      "開源項目 rpamis/comet 針對 coding agent 長任務的痛點：Runtime 管約束邊界、agent 自主決定怎麼做（Native 路線），複雜需求拆成 DAG 子任務跑獨立 Git Worktree 再依賴序整合。最被低估的是把 Skill 當可測試資產——用 Rubric、Pass@k/Pass^k 做評測閉環。官方實驗：Native 路線 token 減 76.8%、耗時減 47.4%。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/ChuckBass14291/status/2106555305899499986"
+      }
+    ],
+    "source_url": "https://x.com/ChuckBass14291/status/2106555305899499986",
+    "source_label": "來源",
+    "id": "lrn-2026-10-04-comet-0-4-0-把-會寫-code-變成-穩定交付-的工程控制層",
+    "date": "2026-10-04",
+    "source": "learning",
+    "original_url": "https://github.com/rpamis/comet",
+    "editor_note": "當眾人競逐更強的模型，Comet 反其道證明工程化控制才是落地關鍵——把 Skill 視為可測評資產的思路，很可能決定 coding agent 能否從炫技 demo 走進真正的生產流程。",
+    "image": "images/lrn-2026-10-04-comet-0-4-0---code---.png"
+  },
+  {
     "id": "karpathy-我們會花更多時間-理解-llm-的輸出",
     "title": "Karpathy：我們會花更多時間「理解 LLM 的輸出」",
     "date": "2026-10-03",
