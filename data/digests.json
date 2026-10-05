@@ -1,5 +1,156 @@
 [
   {
+    "title": "GitHub 首頁全面改版：Agent 成為待辦看板上的「正式同事」",
+    "category": "產業",
+    "summary": [
+      "10 月 1 日起 GitHub 首頁預設切換新版：Agent 會話、Issue、PR 聚合在同一個單頁，且 Issue 可以直接指派給 Copilot coding agent。平台級整合代表「派工作給 agent → 審核收回」將成為工程師的日常工作流，純手寫 code 的比重加速下降。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/liangzhu_AI/status/2106916346093015489"
+      }
+    ],
+    "source_url": "https://x.com/liangzhu_AI/status/2106916346093015489",
+    "source_label": "來源",
+    "id": "lrn-2026-10-05-github-首頁全面改版-agent-成為待辦看板上的-正式同事",
+    "date": "2026-10-05",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "真正的看點不是 UI，而是「預設」二字——GitHub 正用平台影響力把 agent 變成標配，工程師的核心技能也將從寫 code 加速轉向審 code 與管理產出。",
+    "image": "images/lrn-2026-10-05-github--agent--.png"
+  },
+  {
+    "title": "同一個模型換 harness，SWE-bench Pro 從 23% 變 52%",
+    "category": "研究",
+    "summary": [
+      "Hugging Face 與 Liquid AI 10/1 發布 multi-harness RL 指南，引用對 GLM-5.2 的實測：10 個 harness 中排名波動劇烈（Codex 配 GLM-5.2 排第 2，配 Gemma 4 排第 9）。結論：選型時模型和 harness 必須當成一整套來測，用「每個驗收通過任務的實際成本」當唯一指標。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/zouyanjian/status/2106909907341439077"
+      }
+    ],
+    "source_url": "https://x.com/zouyanjian/status/2106909907341439077",
+    "source_label": "來源",
+    "id": "lrn-2026-10-05-同一個模型換-harness-swe-bench-pro-從-23-變-52",
+    "date": "2026-10-05",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "同一模型分數翻倍，排行榜量到的早已不是模型本身，而是整條工具鏈；harness不再是中立基礎設施，而是隱形競爭變數。聰明的選型是整套實測、以單位成本衡量。",
+    "image": "images/lrn-2026-10-05--harness-swe-bench-pro--2.png"
+  },
+  {
+    "title": "AgentSecGraph + AgentSecBench：LLM Agent 的安全感知靜態分析框架",
+    "category": "研究",
+    "summary": [
+      "針對 agent 連接命令執行、檔案系統、瀏覽器等敏感操作的安全分析。核心論點：只看「操作身分」不足以判斷風險，需加入依賴證據、信任邊界、guard 證據。Bench 涵蓋 67 個真實 agent repo、11 個生態系、37,542 個檔案，在 held-out 測試中上下文保留率 91.1%（sink-only 只有 20%）。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/gastronomy/status/2106917176925909440"
+      }
+    ],
+    "source_url": "https://x.com/gastronomy/status/2106917176925909440",
+    "source_label": "來源",
+    "id": "lrn-2026-10-05-agentsecgraph-agentsecbench-llm-agent-的安",
+    "date": "2026-10-05",
+    "source": "learning",
+    "original_url": "https://ift.tt/VOCH2PT",
+    "editor_note": "91% 對 20% 的落差證明：只看操作本身的傳統分析在 agent 場景近乎失明。這份研究把風險判斷從「做了什麼」推進到「憑什麼信任」，正是 agent 權限愈來愈大時迫切需要的安全思維。",
+    "image": "images/lrn-2026-10-05-agentsecgraph-agentsecben.png"
+  },
+  {
+    "title": "JEV Evidence MCP：local-first 的 coding agent 網路研究伺服器",
+    "category": "工具",
+    "summary": [
+      "自架式 MCP server，賣點是「語義選證」：不是把 20 條搜尋結果整包塞進下游 LLM 的 context，而是先挑出相關證據再餵入，節省 token 又降低雜訊。對自己跑 coding agent 的人來說是實用的 context 工程範例。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/MertHemedan/status/2106829938363961836"
+      }
+    ],
+    "source_url": "https://x.com/MertHemedan/status/2106829938363961836",
+    "source_label": "來源",
+    "id": "lrn-2026-10-05-jev-evidence-mcp-local-first-的-coding-ag",
+    "date": "2026-10-05",
+    "source": "learning",
+    "original_url": "https://modelcontextprotocol.io/",
+    "editor_note": "MCP 工具越接越多，瓶頸早已不是找不找得到資料，而是什麼該進 context。這個專案示範了語義選證的價值——對 agent 來說，會挑證據比會搜尋更關鍵。",
+    "image": "images/lrn-2026-10-05-jev-evidence-mcp-local-fi.png"
+  },
+  {
+    "title": "Datawhale「Hello-Agents」開源教程突破 7.6 萬 Star",
+    "category": "教程",
+    "summary": [
+      "從 Agent 核心原理、Memory/RAG/上下文工程，一路到 Agentic RL（SFT/GRPO）與多智能體實戰，免費且完整串成學習路線。7.6 萬 star 顯示社群對「系統化 agent 學習路徑」的需求遠大於零散教程。",
+      "OpenAI 把 Computer Use 直接帶進 Agents API，任何沒有 API 的老 ERP、內部後台一夜之間變成可自動化目標（10/1）；H Company Holo4 用單一模型打通 GUI／程式碼／MCP／API 四種介面，OSWorld 85.2%、每任務 $0.08（9/29）；操作型 benchmark（Terminal-bench 4.0、FrontierSWE、OSWorld-2.0）排名與知識型榜單明顯脫鉤，選模型該看動手能力（10/1）。週末 Manus 2.0 更把這條線推到新階段：Cascade 編排層（token -23.2%）+ 新 app Cue 給每個 agent 專屬 email、電話、錢包和電腦，與 OpenAI Dots、Perplexity 事件驅動自動化同週開火——從「排程任務」走向「描述結果、agent 自行運作」（10/4）。",
+      "為什麼重要：agent 的「手」變長的同時開始擁有獨立身分與帳戶，這既是商業模式轉變（B2B 開始質疑 iPaaS 中介層），也直接餵養了主線 1 的治理需求。",
+      "相關連結：https://x.com/mario_builds/status/2105393053875748868 ｜ https://x.com/thefounderspack/status/2106444772923629963",
+      "GitHub Security Lab 的 Taskflow Agent（9/29）：用開源 AI 安全 agent 找到 24 個 Android 漏洞。關鍵洞察不是模型多強，而是「精心設計的 taskflow 提示」能讓模型找到原本完全漏掉的複雜漏洞——把安全審計拆成增量步驟的思路可遷移到任何領域的 agent 設計。全開源可直接跑在自己 repo 上。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/kfhshl/status/2106596422522995151"
+      }
+    ],
+    "source_url": "https://x.com/kfhshl/status/2106596422522995151",
+    "source_label": "來源",
+    "id": "lrn-2026-10-05-datawhale-hello-agents-開源教程突破-7-6-萬-star",
+    "date": "2026-10-05",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當 agent 一夜之間擁有帳號、錢包與電腦，「會用」與「懂原理」的差距正被急速拉開——7.6 萬顆 Star 見證的是開發者的補課焦慮。Datawhale 把零散知識串成系統路線，卡位相當精準。",
+    "image": "images/lrn-2026-10-05-datawhale-hello-agents--7.png"
+  },
+  {
+    "title": "Agent 安全與權限治理：從個案新聞升級為系統性防線",
+    "category": "其他",
+    "summary": [
+      "本週 7 天中至少 6 天出現安全相關報導，且從「事故」快速演化為「產品化防線」：NVIDIA 開源 Open Agent Safety Platform（OpenShell runtime + BlueField DPU 硬體監控，毫秒級隔離失控 agent，9/29-9/30 連兩天追蹤，Anthropic/Microsoft 等 100+ 家背書）；Meta Muse 無視 macOS 權限讀 iMessages、遭 Amazon 封鎖（9/29）；TrustProbe 揭露 skill 供應鏈 104 個漏洞、25.1% 執行會踩雷（10/1）；PixelLeak 发现 300+ 組織共 13,000 張內部截圖被 coding agent 推上公開 GitHub（10/1）；GitLab 披露 ConfigPoisoning（CVE-2026-102437，看 git diff 即中招，多家主流 coding agent 都有同類弱點，10/3）；Apple 宣布收緊 macOS 完全磁碟存取並直接點名 AI Agent 風險（10/3）；15 個高採用 MCP server 有 40% 落入 CRITICAL 等級（10/4）。",
+      "為什麼重要：這是 OS 層（Apple）、硬體層（NVIDIA）、供應鏈層（GitLab/TrustProbe）、協議層（MCP 掃描）首次同時為 agent 時代重新設計信任邊界。「sandbox 隔離 + 最小權限 + 出站審計」正從加分項變成上線門檻。",
+      "相關連結：https://www.theverge.com/tech/1001287/nvidia-ai-safety-platform-rogue-agents ｜ https://x.com/DailyDarkWeb/status/2106195141388063089"
+    ],
+    "links": [],
+    "source_url": "",
+    "source_label": "",
+    "id": "lrn-2026-10-05-agent-安全與權限治理-從個案新聞升級為系統性防線",
+    "date": "2026-10-05",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "一週內 OS、硬體、供應鏈、協議四層同步築牆，真正的訊號是：產業已默認 agent 遲早失控，比的是誰兜底最快——安全從加分題正式變成 agent 市場的入場券。",
+    "image": ""
+  },
+  {
+    "title": "分層架構成為顯學：大模型推理 + 小模型決策 + LLM judge 篩選",
+    "category": "產業",
+    "summary": [
+      "上週還是社群概念（MAOS、Jev router），本週大廠正式接班：AWS 開源 Strands Decider 2B——不寫文字、只做選擇的 2B 決策模型，中位延遲 115ms（10/2）；Meta Superintelligence Labs 發表 controller/worker meta-reasoning 論文，把「控制」從「做事」拆出來，ProgramBench 從 63.7% 升到 71.5%（10/2）；MIT + Sakana 的 SIFT 用 LLM judge 先篩 patch 再跑完整 benchmark，把自我改進 agent 的評估成本砍到十分之一（o3-mini 五小時 $150 拿 Polyglot 35.1%，10/3-10/4 連兩天追蹤）。呼應 9/28 的兩則地基：Zapier 數據顯示自動化中只有 18% 步驟真的需要 AI，以及「CPCT（每任務完成成本）取代 token 定價」的基礎設施經濟學。",
+      "為什麼重要：「哪個環節用哪個價位的模型」已從架構哲學變成有現成零件的工程實踐——盲目把大模型塞進每一步是最貴的設計。",
+      "相關連結：https://arxiv.org/pdf/2609.19526 ｜ https://arxiv.org/abs/2609.38147",
+      "安全研究者對 15 個高採用 MCP server（共 167 個工具定義）做確定性安全掃描，6 個評為 CRITICAL，已向維護者開 issue。這呼應本週另一則討論（Box x OpenAI 整合中 MCP 權限治理）：MCP 企業採用越廣，per-tool 權限控制、輸入輸出驗證就越不可省。與第 1 則 Pi 的 Codemode sandbox 對照來看，「sandbox 隔離 + 最小權限」正在成為 agent 基礎設施的標配。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/zariffromlatif/status/2106496977764798522"
+      }
+    ],
+    "source_url": "https://x.com/zariffromlatif/status/2106496977764798522",
+    "source_label": "來源",
+    "id": "lrn-2026-10-05-分層架構成為顯學-大模型推理-小模型決策-llm-judge-篩選",
+    "date": "2026-10-05",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "真正值得注意的是擴散速度——從社群概念到 AWS、Meta 交出成品只花一週。當分工零件成為開源標配，每步硬塞大模型很快就會從「浪費」變成「落後」。",
+    "image": "images/lrn-2026-10-05----llm-judge-.png"
+  },
+  {
     "title": "Pi 1.0 登上 HN 第一：當年反 MCP 最力的 agent 現在原生支援了",
     "category": "工具",
     "summary": [
