@@ -88,6 +88,194 @@
     "image": "images/lrn-2026-10-06-gpt-6-astra--.png"
   },
   {
+    "id": "糾正-agent-後別急著改提示詞-錯誤該落在哪一層",
+    "title": "糾正 Agent 後別急著改提示詞：錯誤該落在哪一層？",
+    "date": "2026-10-06",
+    "category": "開發工具",
+    "source": "digest",
+    "summary": [
+      "第一層：代碼庫。代碼庫是 Agent 最好的記憶，它會照著上下文既有的寫法擴展。優先考慮改數據結構、型別或模組邊界，讓這類錯誤「從根上寫不出來」",
+      "第二層：靜態分析。lint、編譯器報錯、CI 檢查。同一個錯反覆出現，就寫成能自動攔截的規則——聊天裡糾正一句只影響本次對話，寫成檢查之後每次都能擋住",
+      "第三層：rules 和 BugBot；第四層：skills。從這裡開始由「強制」轉為「引導」——Agent 多數時候會遵守，但可能忘了讀或操作者不理會",
+      "第五層：style guide。作者明確不建議只靠它：PR 來得太快、人記不住所有規矩。它的真正用途是幫你發現前四層還缺什麼",
+      "附帶一段可直接貼給 Agent 的提示詞：糾正後讓它自己按五層順序判斷落點、選最靠前可行的一層、說明理由、等你確認再動手。另外若專案連 lint／CI 都沒有，先把可重複的檢查補上再談後面幾層"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/lukasen_xyz/status/2107236868446425460"
+      }
+    ],
+    "source_url": "https://x.com/lukasen_xyz/status/2107236868446425460",
+    "source_label": "原文",
+    "editor_note": "這篇最值得深思的，是把 Agent 糾錯從「對話層」拉回「工程層」：與其在提示詞苦口婆心，不如讓代碼庫與 CI 從結構上杜絕錯誤，把一次性糾正沉澱為長期資產。",
+    "image": "images/-agent--.png"
+  },
+  {
+    "id": "graph-engineering-用-agent-圖-取代單-agent-迴圈",
+    "title": "Graph Engineering：用「Agent 圖」取代單 Agent 迴圈",
+    "date": "2026-10-06",
+    "category": "開發工具",
+    "source": "digest",
+    "summary": [
+      "三個原語：Node（專家 Agent，一個 node 一個動詞，各自有獨立 context 和工具）、Edge（路由規則，決定誰接手）、State（沿著邊流動的共享檔案，如 STATE.md）。圖不取代迴圈，是疊在迴圈上面的一層",
+      "先過四問篩選：失敗會重複出現嗎？不同類型需要不同處理嗎？寫修復的不該自己批准嗎？單 Agent 真的搞不定了嗎？——任何一題答「否」，就繼續用迴圈。「迴圈沒壞就不要用圖去弄壞它」",
+      "硬約束寫在 Edge，不寫在 prompt：例如「永遠不要自動修 src/auth/ 和 src/billing/」「信心 < 0.7 一律上報人類」要用程式碼強制。Prompt 是建議、可能被忽略；Edge 是程式碼、不會忘記",
+      "Gate 是唯一說「done / not done」的節點：硬 gate（測試套件、型別檢查）> 軟 gate（第二模型審查）> 人類 gate（PR 審核）。Anthropic 數據：給 Claude 有效的驗證方法，產出品質提升 2-3 倍。Gate 會腐爛，要定期抽查它是否還抓得到該抓的失敗",
+      "三級自主升級：手動 /goal 跑至少 5 次、讀完每個 diff → /loop 排程 → 雲端 Routines（webhook/cron 觸發）。跳級是圖在生產環境安靜失效的主因"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/0xshoopy/status/2085383231554171098"
+      }
+    ],
+    "source_url": "https://x.com/0xshoopy/status/2085383231554171098",
+    "source_label": "原文",
+    "editor_note": "這篇最值得記的不是圖架構，而是工程紀律：把硬約束寫成 Edge 程式碼而非依賴 prompt，再用四問擋下過度設計，替多 Agent 熱潮適時降溫——簡單迴圈往往已經夠用。",
+    "image": "images/graph-engineering--agent---agent-.png"
+  },
+  {
+    "id": "agents-md-加一條規則-claude-長報告突然變好讀",
+    "title": "AGENTS.md 加一條規則，Claude 長報告突然變好讀",
+    "date": "2026-10-06",
+    "category": "開發工具",
+    "source": "digest",
+    "summary": [
+      "痛點：Claude Code 跑完長任務後回報一大面文字牆，真正「需要你做的事」埋在中間，得滾半天",
+      "解法：在 AGENTS.md 加一節「Lead with what you need from me」——任務完成或卡住時，把「需要我做的事」列在回覆最頂端，一項一行、編號，寫明做什麼、在哪做、完成後回傳什麼（例如「登入 Stripe，匯出九月退款 CSV，放進 inbox/」），最阻塞的排最前面；沒有需要就直說",
+      "附帶說明：Codex 原生讀 AGENTS.md；新版 Claude Code 在沒有 CLAUDE.md 時也會讀它"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/voxyz_ai/status/2107123654219743712"
+      }
+    ],
+    "source_url": "https://x.com/voxyz_ai/status/2107123654219743712",
+    "source_label": "原文",
+    "editor_note": "Agent 能跑的任務越長，瓶頸反而從「會不會做」變成「讀不讀得懂」。這條規則用最低成本修好了人機協作介面，而 AGENTS.md 逐漸跨工具通用，這類經驗還能帶著走。",
+    "image": "images/agents-md--claude-.png"
+  },
+  {
+    "id": "grok-bot-團隊版記憶工程-一個-agent-如何-跟整個團隊學習",
+    "title": "Grok Bot 團隊版記憶工程：一個 Agent 如何「跟整個團隊學習」",
+    "date": "2026-10-06",
+    "category": "開發工具",
+    "source": "digest",
+    "summary": [
+      "五個 context 分流：Live Source（即時數據）／Team Skill（可重複流程）／Team Memory（共享決策與定義）／Private Note（個人偏好）／Task State（本次任務狀態）。放錯桶就出事：把會變動的指標放進團隊記憶會過期，把個人偏好放進共享記憶會被強加給所有人",
+      "晉升事實，不是晉升對話：要寫進共享記憶的內容先過審核卡——claim、source、owner、scope、status、review_after（到期複查日）。「記憶是指標和工作規則，不是公司知識的永久拷貝」，最後一行永遠要寫「流程變了以原始文件為準」",
+      "兩個時鐘：慢時鐘（語氣、定義、流程）可以記住；快時鐘（狀態、餘額、價格、權限）必須即時抓。判斷規則很簡單：搞錯了會改變行動的東西，行動前先查源頭系統",
+      "共享知識 ≠ 共享身份：個人 OAuth 用請求者的帳號跑，Bot 級 service key 等於整隊共用一把鑰匙，兩種信任模型完全不同。另外 Slack 頻道是共享環境——「Bot 知道」和「Bot 可以做／可以說」是三件事，敏感調查留在私聊、頻道只發團隊安全的結論",
+      "發布前先測邊界，不是測記憶力：跑五個案例——私對團洩漏、明確晉升、過期事實、矛盾指正、共享頻道邊界——而且要用兩個真實團隊帳號測，不能用 owner 帳號測兩次。最被低估的指標是「修正一條壞記憶要多久」：壞記憶一定會出現，重點是它活多久、影響了誰"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/0xwhrrari/status/2107093781807775896"
+      }
+    ],
+    "source_url": "https://x.com/0xwhrrari/status/2107093781807775896",
+    "source_label": "原文",
+    "editor_note": "當 Agent 記憶從個人走向團隊，它就不再是功能，而是知識治理工程。「快慢時鐘」一條規則就切開該記住與該即時查證的界線，是記憶工程少見的務實解法。",
+    "image": "images/grok-bot---agent--.png"
+  },
+  {
+    "id": "mattpocock-skills-v1-3-發布",
+    "title": "mattpocock/skills v1.3 發布",
+    "date": "2026-10-06",
+    "category": "開發工具",
+    "source": "digest",
+    "summary": [
+      "/pr（新）：自動撰寫易讀的 PR 描述，附上「改動真的有效」的硬證據，並評估合併風險",
+      "/implement-spec（新）：接收 spec 與 tickets，用 subagents 分頭實作",
+      "CONTEXT.md 改名為 GLOSSARY.md（術語表）",
+      "/retro（新）：回顧近期的 coding agent 工作階段，建議 repo 層面的改進——作者自己認為這是最大升級"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/mattpocockuk/status/2107062474914550098"
+      }
+    ],
+    "source_url": "https://x.com/mattpocockuk/status/2107062474914550098",
+    "source_label": "原文",
+    "editor_note": "值得關注的不是指令本身，而是 AI 角色從產碼推進到「自證改動有效」——PR 附上硬證據與合併風險評估，正打中 AI 協作開發最大的痛點：信任與審查成本。",
+    "image": "images/mattpocock-skills-v1-3-.png"
+  },
+  {
+    "id": "claude-opus-5-5-動態圖像作品集",
+    "title": "Claude Opus 5.5 動態圖像作品集",
+    "date": "2026-10-06",
+    "category": "AI 圖像",
+    "source": "digest",
+    "summary": [
+      "作者 p4nthera_ 建了一個持續增長的 motion graphics 畫廊，全部用 Claude Opus 5.5 製作",
+      "目前收錄 226 件作品，每件都附上當初生成的 prompt 或 skill",
+      "作品從 X 上的貼文收集而來，並標註原作者 credit",
+      "對想學「怎麼下 prompt 做動態設計」的人來說是現成的教材庫"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/p4nthera_/status/2107175720086589633"
+      }
+    ],
+    "source_url": "https://x.com/p4nthera_/status/2107175720086589633",
+    "source_label": "原文",
+    "editor_note": "難得的是每件作品都附上 prompt，讓畫廊成了可複現、可學習的活教材；隨著作品持續累積，它也將成為追蹤 Claude 視覺創作能力演進的社群級檔案。",
+    "image": "images/claude-opus-5-5-.png"
+  },
+  {
+    "id": "用-claude-opus-自動化-seo-完整教程",
+    "title": "用 Claude Opus 自動化 SEO 完整教程",
+    "date": "2026-10-06",
+    "category": "AI 語音",
+    "source": "digest",
+    "summary": [
+      "選詞先行：Claude 不知道搜尋量和難度，直接問只會得到「瞎猜的 20 個關鍵字」。要用 ChatSEO MCP 這類數據工具撈真實數據（難度 ≤30、月搜尋 100+），存成 keywords.csv。遊戲目標不是「擠進第一頁」而是「在贏得了的關鍵字上進前 3 名」（第 1 名拿約 40% 點擊，第 10 名只剩 1.6%）",
+      "殺掉 AI 味：初稿一定「technically fine 但完全沒人讀得下去」。建 voice.md / humor.md / opinions.md / stats.md / stories.md 五個參考檔餵給模型；並複製該關鍵字前 3 名的結構（字數、標題、子題）當模板，再補一個沒人寫過的角度",
+      "技術 SEO 三件事：CLAUDE.md 強制靜態站生成（客戶端渲染會讓 Google 拿到空頁、白忙一年）＋sitemap.xml＋robots.txt；效能報告直接貼進 Claude Code 修到四項滿分",
+      "第二引擎：服務頁：「怎麼通馬桶」是學習者，「多倫多通管服務」是有信用卡的人。按 CPC 排序挑值得建的組合頁，一個模板套用、幾十個優質頁勝過 900 個薄頁。順序很重要：部落格先建立 topical authority，再用內部連結拉抬服務頁",
+      "最後打包成 /blog 一鍵指令，並且切忌第一天發 500 篇——Google 的 spam 政策明確打擊規模化內容；像正常生意一樣一天一篇慢慢加。外鏈只做乾淨方法（換死鏈、客座文、記者引述），「$5 買 100 條外鏈」是私人博客網絡，更新一來整站消失"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/nicholasdulait/status/2103032501383889298"
+      }
+    ],
+    "source_url": "https://x.com/nicholasdulait/status/2103032501383889298",
+    "source_label": "原文",
+    "editor_note": "這篇最可貴的是打破「AI 一鍵搞定 SEO」的幻覺——數據選詞在前、人格化調教在後，AI 只是執行者而非軍師。這套流程思維，比任何提示詞都值得搬回家。",
+    "image": "images/-claude-opus--seo-.png"
+  },
+  {
+    "id": "雇用你的第一個-ai-員工-grok-bot-完整指南",
+    "title": "雇用你的第一個 AI 員工（Grok Bot 完整指南）",
+    "date": "2026-10-06",
+    "category": "AI 行銷",
+    "source": "digest",
+    "summary": [
+      "雇職位，不是雇任務：一句話定義它「擁有什麼」（如「你負責每週競品監控，每五交出一份有引用的變化報告」），並寫清五欄：擁有什麼、可用什麼輸入、可自主做什麼、哪些必須先問、怎樣算完成",
+      "第一份工作要無聊：選頻繁且可逆的任務（彙整客訴、抓競品變化），錯誤一分鐘可見、成本為零；絕不先給發送、發布、購買、刪除類權限。上線前先要求「用文字演練你會怎麼做」，九十秒抓出九成誤解",
+      "給一把鑰匙，不是整串：權限以「可否逆轉」畫線——搜尋、草稿可自由完成；發送、發布、付款、刪除一律先問。好的自主是「可逆的 90% 做完，不可逆的 staged 等批准」。共用電腦上的 Bot 共享登入環境，「別開財務」的指令不是安全邊界",
+      "試用期三輪，升遷憑證據：第 1 輪觀察、第 2 輪修正後測規則有沒有修好、第 3 輪放手。連續五次乾淨運行＋回滾測試過才能升級自主等級（Level 0 觀察 → Level 4 協調多 Bot）；品質下滑就降級",
+      "每週績效審查：常駐自動化不會大聲壞掉，只會安靜劣化。每週收運行收據、親自抽查產出，並問「這若明天消失我會發現嗎」——不會就刪掉。P.S. 最重要的一句話：第一次運行前就寫下「不確定時要停下來問」"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/distortgeekin/status/2105275395901726845"
+      }
+    ],
+    "source_url": "https://x.com/distortgeekin/status/2105275395901726845",
+    "source_label": "原文",
+    "editor_note": "這篇的價值不在 Grok 本身，而在視角轉換：與其鑽研提示詞，不如學會界定職責與分級授權。「可逆的放手、不可逆的把關」既是 AI 治理原則，也是經典管理智慧，帶人的主管同樣受用。",
+    "image": "images/-ai--grok-bot-.png"
+  },
+  {
     "title": "GitHub 首頁全面改版：Agent 成為待辦看板上的「正式同事」",
     "category": "產業",
     "summary": [
