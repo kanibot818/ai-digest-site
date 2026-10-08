@@ -1,5 +1,120 @@
 [
   {
+    "title": "Anthropic 推出 Claude Haiku 5.5，三款 Claude 5.5 系列補齊",
+    "category": "工具",
+    "summary": [
+      "定位高速低價：$0.10/M 輸入、$0.50/M 輸出，官方宣稱平均運行成本比 Haiku 4.5 低約 75%，同時 coding/reasoning/computer use/agent 基準全線進步。社群數據顯示 computer use 從 4.5 的 15.7% 跳到 72.4%，這對 Haiku 級小模型是非常大的躍進。",
+      "戰略意涵：AI 競爭已從「誰的旗艦最強」轉向「為每種 workload 配對正確的模型」，高頻大量任務不再需要旗艦。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/tchsignal/status/2108005681991418073"
+      }
+    ],
+    "source_url": "https://x.com/tchsignal/status/2108005681991418073",
+    "source_label": "來源",
+    "id": "lrn-2026-10-08-anthropic-推出-claude-haiku-5-5-三款-claude-",
+    "date": "2026-10-08",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "別只看降價 75%，computer use 從 15.7% 躍升到 72.4% 才是真正的訊號：當便宜的小模型也能扛起 agent 重活，AI 自動化的單位成本將跌破規模化門檻，應用落地才正要加速。",
+    "image": "images/lrn-2026-10-08-anthropic--claude-haiku-5.png"
+  },
+  {
+    "title": "Reflection AI（Nvidia 投資）發布 Beam：501B 參數開源權重模型",
+    "category": "工具",
+    "summary": [
+      "Beam 的核心賭注是稀疏設計——每個 token 只有約 1/22 的參數實際運作，因此推理成本更低。目標是給西方開發者一個能在 coding 與 agent 工作上對抗中國領先開源模型的選擇。",
+      "開源權重 + 稀疏 MoE + 主打 agent workload，這是西方陣營首次系統性地針對這個組合出招。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/widthness/status/2108006885618037019"
+      }
+    ],
+    "source_url": "https://x.com/widthness/status/2108006885618037019",
+    "source_label": "來源",
+    "id": "lrn-2026-10-08-reflection-ai-nvidia-投資-發布-beam-501b-參數開",
+    "date": "2026-10-08",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "開源戰場長期由中國隊稱霸，Beam 把競爭焦點從跑分轉向推理成本與 agent 實戰，稀疏設計讓「用得起」成了新賣點——西方陣營終於認真應戰，這場仗才剛開打。",
+    "image": "images/lrn-2026-10-08-reflection-ai-nvidia---be.png"
+  },
+  {
+    "title": "JAZ：只用一個 `invoke` 原語的極簡 agent 框架，打贏專門記憶系統",
+    "category": "研究",
+    "summary": [
+      "核心假設挑戰主流：長期記憶和自我改進不需要 MemGPT 式的專門系統。JAZ 只暴露一個 `invoke` 原語，讓 LLM 寫任意可執行程式碼（含遞迴呼叫自己），互動歷史全部作為變數可用。",
+      "實測：長程回憶任務比 Letta (MemGPT) 高 8% 且成本減半；持續自我改進基準比 ACE 高 4%、成本更低。「The model is not the agent, the loop is」這派觀點又拿到新證據。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/gravity7/status/2107903702006919554"
+      }
+    ],
+    "source_url": "https://x.com/gravity7/status/2107903702006919554",
+    "source_label": "來源",
+    "id": "lrn-2026-10-08-jaz-只用一個-invoke-原語的極簡-agent-框架-打贏專門記憶系統",
+    "date": "2026-10-08",
+    "source": "learning",
+    "original_url": "https://inquiringlines.com/related/harness-as-a-language-a-minimalist-agent-framework-with-maximal-expressivity/",
+    "editor_note": "耐人尋味的是「減法」贏了「加法」：專門記憶系統或許只是在彌補模型弱點，而非剛性需求。當基礎模型持續變強，繁複的 agent 腳手架恐將淪為技術債，這份研究給了框架極簡派一記強力背書。",
+    "image": "images/lrn-2026-10-08-jaz--invoke--agent--.png"
+  },
+  {
+    "title": "勒索軟體組織把 MCP 當 C2 指令通道——agent 工具鏈成為新的攻擊面",
+    "category": "產業",
+    "summary": [
+      "一起真實入侵事件中，勒索軟體附屬組織透過 AI coding assistant 的 MCP 工具介面下達指令。這代表「給開發者的 agent 工具」正式被威脅者視為可利用的基礎設施。",
+      "對自架 agent runtime（如 Hermes、各種 gateway）的人來說：MCP server 的認證、審計、權限邊界不能再是事後補丁。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/MarketRadioX/status/2107986135414923539"
+      }
+    ],
+    "source_url": "https://x.com/MarketRadioX/status/2107986135414923539",
+    "source_label": "來源",
+    "id": "lrn-2026-10-08-勒索軟體組織把-mcp-當-c2-指令通道-agent-工具鏈成為新的攻擊面",
+    "date": "2026-10-08",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "最諷刺的一幕：幫開發者提效的 agent 工具，竟成了勒索組織的指揮管道。這起事件宣告安全邊界已從應用層下移至工具鏈，MCP 防護再拖延，等於替攻擊者留後門。",
+    "image": "images/lrn-2026-10-08--mcp--c2--agent-.png"
+  },
+  {
+    "title": "Nous Research 融資 $90M、估值 $15 億，開源 agent Hermes 進軍企業市場",
+    "category": "產業",
+    "summary": [
+      "投資方含 Nvidia、Microsoft、Samsung。開源 AI agent 路線首次拿到這個量級的企業級資金背書，與閉源實驗室正面競爭企業部署市場。",
+      "訊號：開源 agent 不再是 hobbyist 遊樂場，資本市場開始為「可自架、可審計的 agent」定價。",
+      "為什麼重要：agent 經濟的缺口一直缺「可控的金流層」——把 spending policy 做在鏈上協議層而非 prompt 層，是比「相信模型不亂花錢」更可靠的設計。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/UNI_NetworkGrp/status/2108006966991942063"
+      },
+      {
+        "label": "來源",
+        "url": "https://hedera.com/agent-accounts/"
+      }
+    ],
+    "source_url": "https://x.com/UNI_NetworkGrp/status/2108006966991942063",
+    "source_label": "來源",
+    "id": "lrn-2026-10-08-nous-research-融資-90m-估值-15-億-開源-agent-he",
+    "date": "2026-10-08",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "微軟、輝達一手扶植閉源實驗室、一手投資開源對手，這種兩面下注最誠實：企業 agent 市場的決勝點已不是模型多強，而是可自架、可審計的掌控權——信任本身正成為可購買的商品。",
+    "image": "images/lrn-2026-10-08-nous-research--90m--15---.png"
+  },
+  {
     "title": "GitHub 為 Agent 級開發重建 Git 基礎設施",
     "category": "產業",
     "summary": [
@@ -432,16 +547,7 @@
     "title": "AgentSecGraph + AgentSecBench：LLM Agent 的安全感知靜態分析框架",
     "category": "研究",
     "summary": [
-      "AgentSecGraph 是一套針對 LLM agent 的安全感知靜態分析框架。",
-      "它為每個安全敏感操作建立以候選為中心的 Security-ADG 依賴圖。",
-      "核心主張是：只看操作身分不足以判斷風險。",
-      "框架因此疊加 agent 相關性、來源與依賴證據、信任邊界、guard 證據與外部效應語意。",
-      "配套的 AgentSecBench 涵蓋 67 個真實 agent 儲存庫、11 個生態系、37,542 個原始碼檔案。",
-      "分析器在 65 個儲存庫中找出 23,866 個候選操作，全語料跑完僅需 50.8 分鐘。",
-      "在 9 個 held-out 案例上，Security-ADG 保留 91.1% 的參考上下文，並涵蓋全部 5 個觀察到的 guard。",
-      "對比之下，sink-only 分析只保留 20%，簡化版 ADG 為 40%。",
-      "另以可重現的驗證層在 13 個儲存庫確認 22 個安全敏感行為，含 1 個確認漏洞、1 個待揭露候選與 20 個已防護行為。",
-      "正在打造 agent 框架、開發 SAST 工具，或需要審計 agent 程式碼的安全團隊，是這套依賴圖定義的直接使用者。"
+      "針對 agent 連接命令執行、檔案系統、瀏覽器等敏感操作的安全分析。核心論點：只看「操作身分」不足以判斷風險，需加入依賴證據、信任邊界、guard 證據。Bench 涵蓋 67 個真實 agent repo、11 個生態系、37,542 個檔案，在 held-out 測試中上下文保留率 91.1%（sink-only 只有 20%）。"
     ],
     "links": [
       {
@@ -476,12 +582,7 @@
     "title": "JEV Evidence MCP：local-first 的 coding agent 網路研究伺服器",
     "category": "工具",
     "summary": [
-      "來源說明：你提供的「原文全文」是 MCP 官方介紹，並未包含 JEV Evidence 的工具細節；以下摘要的工具事實以標題與既有粗摘要為據，MCP 生態資訊取自原文。若原文貼錯，建議補上工具原文再校一次。",
-      "JEV Evidence 是一套 local-first 的自架 MCP server，專門幫 coding agent 做網路研究。",
-      "核心做法是「語義選證」：搜尋完成後先篩出相關證據，只把選中內容送進下游 LLM 的 context。",
-      "相較於把 20 條結果整批倒入，這條路徑同時壓低 token 開銷與雜訊。",
-      "MCP 本身是開放協議，Claude、ChatGPT、VS Code、Cursor 等客戶端都支援，server 寫一次即可到處接入。",
-      "適合自己架 coding agent、想同時控制證據品質與 context 預算的開發者，也可當 context 工程的參考實作。"
+      "自架式 MCP server，賣點是「語義選證」：不是把 20 條搜尋結果整包塞進下游 LLM 的 context，而是先挑出相關證據再餵入，節省 token 又降低雜訊。對自己跑 coding agent 的人來說是實用的 context 工程範例。"
     ],
     "links": [
       {
@@ -5753,9 +5854,7 @@
     "summary": [
       "OpenAI 推出由 Cerebras 晶片驅動的 GPT-5.6 Sol 級，輸出速度最高可達每秒 750 tokens。以往快模型不聰明、聰明模型不快，如今前沿智慧與速度首次在同一檔位收斂。",
       "實際意義：多步推理與深度自主循環（deep autonomous loops）的體感變成「即時」，對長鏈 agent 任務是體驗上的質變。",
-      "同週產業動態：Slack 推出專屬頻道讓 Claude Code、Devin、Copilot 直接在團隊聊天中執行；微軟則整併 Copilot 消費版與企業版、砍掉獨立小眾功能，企業 AI 回歸乾淨軟體路線。",
-      "dsh 插件生態的第一批安全事件：「一切皆插件」+ 一週 9 萬星 = 龐大且未經審查的安裝基數。供應鏈攻擊者不會放過這個面積，預期下週可能出現惡意插件、供應鏈投毒的實案或激烈的安全強化討論；同時其他廠商（含 OpenAI、阿里）可能被迫跟進推出自己的插件/harness 市集。",
-      "MCP 認證層商品化：21,000 個無 OAuth 的暴露伺服器（91.8%）+ WriteGuard 私有測試 + X Ads MCP 接入高價值營運工作流，三件事疊加預告下週 MCP 治理會成焦點——OAuth-by-default、閘道類產品 GA、甚至一起被迫披露的大型 MCP 相關入侵事件，都值得盯緊。"
+      "同週產業動態：Slack 推出專屬頻道讓 Claude Code、Devin、Copilot 直接在團隊聊天中執行；微軟則整併 Copilot 消費版與企業版、砍掉獨立小眾功能，企業 AI 回歸乾淨軟體路線。"
     ],
     "links": [
       {
