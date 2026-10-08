@@ -115,6 +115,54 @@
     "image": "images/lrn-2026-10-08-nous-research--90m--15---.png"
   },
   {
+    "id": "opus-5-5-jev-雙模型分流-判斷交給便宜模型-思考留給強模型",
+    "title": "Opus 5.5 + Jev 雙模型分流：判斷交給便宜模型，思考留給強模型",
+    "date": "2026-10-08",
+    "category": "開發工具",
+    "source": "digest",
+    "summary": [
+      "Jev 只答三種題：Choice（從選項挑一個）、Score（1-10 評分）、True/false。輸入就是「狀態＋問題」，輸出帶信心分數。例如收件箱分診：Jev 掃幾千封信評優先級，Opus 只讀值得回的 5 封並代擬回覆",
+      "設計原則：①自動化前先畫工作流，每步標註是「判斷（Jev）／思考（Opus）／動作（code）」；②問題要原子化——「這封信重要嗎」是壞問題，「urgent/needs reply/FYI/ignore 挑一個＋是否真人發的＋是否要我做動作＋寄件者重要性評分」是好的；③按信心路由：高信心→代碼自動執行、中→Opus 細看、低→標記給人",
+      "所有問題和閾值放同一個 config 檔並記錄每次決策的信心分數，出錯時好改",
+      "示範工作流：收件箱分診＋代擬回覆（不經批准不發送）、研究過濾器（相關度加權排序、只精讀前 5 名寫一頁簡報）、內容評級器（Jev 評鉤子清晰度／具體性／是否任何人都能寫，Opus 只重寫不及格的下半部）",
+      "Pro tips：可反向加一道「Jev → Opus → Jev」品質檢查；過濾流程加「uncertain」選項；先在 Playground（jevplayground.com）測好問題再寫自動化；其他模型（Fable、Codex）也適用"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/aiedge_/status/2107835983735787568"
+      }
+    ],
+    "source_url": "https://x.com/aiedge_/status/2107835983735787568",
+    "source_label": "原文",
+    "editor_note": "亮點不在省錢，而在「判斷也能外包給便宜模型」的範式轉移——當結構化判斷變得廉價，拆問題、設閾值的工作流設計力，正取代 prompt 技巧成為開發者的新核心能力。",
+    "image": "images/opus-5-5-jev---.png"
+  },
+  {
+    "id": "claude-code-新功能-advisor-工具-卡關時自動諮詢更強的模型",
+    "title": "Claude Code 新功能：Advisor 工具——卡關時自動諮詢更強的模型",
+    "date": "2026-10-08",
+    "category": "開發工具",
+    "source": "digest",
+    "summary": [
+      "適用場景：長的多人步任務、大型重構、錯誤反覆出現的除錯、想要獨立檢查後才宣稱完成的工作。短任務或每一步都需要最強模型的任務不划算——那不如直接換主模型",
+      "開啟方式：`/advisor` 指令（存成預設）、`advisorModel` 設定檔、或 `--advisor` 啟動旗標。顧問模型必須「能力排名 ≥ 主模型」，例如 Sonnet 主＋Opus 顧問、Haiku 主＋Opus 顧問、Opus 主＋Opus 顧問（第二個 Opus 獨立審查）",
+      "時機由模型自己決定，不是規則驅動；可以在 prompt 裡明確要求「continue 前先諮詢 advisor」。沒有上限或強制呼叫的設定",
+      "與相關功能的差異：advisor 是「決策點上」找強模型；opusplan 是計畫階段用 Opus、執行換回 Sonnet；subagent 是整個子任務都交給強模型。Advisor 讓例行工作用便宜模型跑、只在關鍵處升級，省錢又保計畫品質",
+      "注意事項：僅限 Anthropic API（Bedrock／GCP／Foundry 不支援）；advisor 每次呼叫都重新讀完整對話、不快取——長任務多次諮詢 token 成本會明顯增加；Claude 通常遵循顧問意見，但若自己驗證發現矛盾會回報衝突而非盲目服從"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://code.claude.com/docs/en/advisor"
+      }
+    ],
+    "source_url": "https://code.claude.com/docs/en/advisor",
+    "source_label": "來源",
+    "editor_note": "亮點不在省 token，而是「何時求助」交給模型自己判斷——這種自覺升級的能力，正悄悄把多模型協作從工程技巧變成預設架構，成本結構也隨之改寫。",
+    "image": "images/claude-code--advisor--.png"
+  },
+  {
     "title": "GitHub 為 Agent 級開發重建 Git 基礎設施",
     "category": "產業",
     "summary": [
