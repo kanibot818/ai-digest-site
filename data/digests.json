@@ -1,5 +1,115 @@
 [
   {
+    "title": "Microsoft Research 發布 Agent Lightning v1.0：輕量級 Agentic RL 訓練框架",
+    "category": "工具",
+    "summary": [
+      "透過 LLM proxy 直接訓練真實世界的 agent harness，不需改動 agent 本身的程式碼，官方宣稱以極少程式碼帶來顯著 coding 性能提升，並原生支援 Kubernetes。",
+      "意義在於：agent 的「工具使用行為」終於可以用 RL 端到端優化，而不是只靠 prompt 工程。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/BestBlogsDev/status/2108343302395506801"
+      }
+    ],
+    "source_url": "https://x.com/BestBlogsDev/status/2108343302395506801",
+    "source_label": "來源",
+    "id": "lrn-2026-10-09-microsoft-research-發布-agent-lightning-v1",
+    "date": "2026-10-09",
+    "source": "learning",
+    "original_url": "https://www.bestblogs.dev/video/4d734a4ff",
+    "editor_note": "這則發布標誌著 agent 優化從 prompt 工程走向行為訓練的分水嶺，免改碼即可導入 RL 的低門檻設計尤其聰明；不過官方宣稱的效能提升，仍待社群實測檢驗。",
+    "image": "images/lrn-2026-10-09-microsoft-research--agent.png"
+  },
+  {
+    "title": "ALERT-BENCH：LLM SOC 告警分派 agent 全數漏掉逾 40% 攻擊，AIDA 多 agent 框架把漏報降到 3.1%",
+    "category": "研究",
+    "summary": [
+      "研究比較五種 tool-using agent 推理策略（單次、迭代檢索、抽樣調查、自我審查、顯式驗證），在 1,247 條企業遙測告警上每種都至少漏掉 40.4% 的攻擊告警。",
+      "提出的 AIDA 框架用「提案→獨立質疑→Judge 仲裁」的辯證結構 + 僅附加式調查日誌，F1 從 0.371-0.744 拉到 0.958。核心教訓：單一 agent 自我複查不可靠，結構化對抗審查才有效。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/gastronomy/status/2108369204030083128"
+      }
+    ],
+    "source_url": "https://x.com/gastronomy/status/2108369204030083128",
+    "source_label": "來源",
+    "id": "lrn-2026-10-09-alert-bench-llm-soc-告警分派-agent-全數漏掉逾-40-",
+    "date": "2026-10-09",
+    "source": "learning",
+    "original_url": "https://ift.tt/FBqVePz",
+    "editor_note": "真正的警訊不是模型不夠聰明，而是「自我複查」在高風險場域根本不可靠。這對所有 agent 開發者的啟示是：與其一味強化單一 agent，不如建立結構化的對抗審查機制。",
+    "image": "images/lrn-2026-10-09-alert-bench-llm-soc--agen.png"
+  },
+  {
+    "title": "只有 23% 組織有正式的 AI agent 身份策略（CSA/Strata 調查）",
+    "category": "產業",
+    "summary": [
+      "僅 18% 安全主管信任自家 IAM 能處理 agent，其餘組織的 agent 在共用 human credentials——agent 以你的身份行動、以你的身份被審計、也以你的身份背鍋。",
+      "呼應本週 AWS Bedrock AgentCore 被 Zenity 聊天誘騙交出 AWS 憑證的案例：agent identity 不是理論問題，是當下缺口。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/hikari_signal/status/2108369420640829672"
+      }
+    ],
+    "source_url": "https://x.com/hikari_signal/status/2108369420640829672",
+    "source_label": "來源",
+    "id": "lrn-2026-10-09-只有-23-組織有正式的-ai-agent-身份策略-csa-strata-調查",
+    "date": "2026-10-09",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent 共用人類憑證，等於親手拆掉稽核與究責的根基——出事時連「是人還是機器」都分不清。23% 揭露的不只是技術缺口，更是治理速度遠落後部署速度的警訊。",
+    "image": "images/lrn-2026-10-09--23--ai-agent--csa-strata.png"
+  },
+  {
+    "title": "Reducto：為什麼刪掉 endpoint-per-tool 的 MCP Server 並重建",
+    "category": "工具",
+    "summary": [
+      "團隊把「每個端點一個工具」的 MCP server 推倒重來，改為圍繞結構化 workflow 設計，並內建不確定性可視化與人工確認點，讓 agent 每個動作都對用戶可歸責。",
+      "這是 MCP 實戰設計的重要風向：工具粒度太細反而傷害 agent 可靠性，粗粒度 workflow + 驗證關卡是更好的模式。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/BestBlogsDev/status/2108343302395506801"
+      }
+    ],
+    "source_url": "https://x.com/BestBlogsDev/status/2108343302395506801",
+    "source_label": "來源",
+    "id": "lrn-2026-10-09-reducto-為什麼刪掉-endpoint-per-tool-的-mcp-se",
+    "date": "2026-10-09",
+    "source": "learning",
+    "original_url": "https://www.bestblogs.dev/video/4d734a4ff",
+    "editor_note": "當大家急著往 MCP 塞更多工具，Reducto 卻砍掉重練，證明 agent 可靠性來自 workflow 結構與人工把關，而非工具數量——這個反直覺結論值得每位開發者深思。",
+    "image": "images/lrn-2026-10-09-reducto--endpoint-per-too.png"
+  },
+  {
+    "title": "Neo4j：把 Agent Memory 蒸餾成可追蹤的 Skills",
+    "category": "教程",
+    "summary": [
+      "Will Lyon 示範將 agent 記憶轉為 typed、可追溯的執行技能：以 canonical entities 與決策軌跡把行動連回證據，配合 coverage/coherence 檢查與治理式 registry，讓技能在資料變動後仍可用。",
+      "對「記憶只是無結構 notes」的常見做法是有力修正——memory 要變成有 schema 的資產才能複用。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/BestBlogsDev/status/2108343302395506801"
+      }
+    ],
+    "source_url": "https://x.com/BestBlogsDev/status/2108343302395506801",
+    "source_label": "來源",
+    "id": "lrn-2026-10-09-neo4j-把-agent-memory-蒸餾成可追蹤的-skills",
+    "date": "2026-10-09",
+    "source": "learning",
+    "original_url": "https://www.bestblogs.dev/video/4d734a4ff",
+    "editor_note": "Agent memory 常被浪漫化為「記得越多越聰明」，這篇務實地指出：沒有 schema 與治理的記憶只是負債。把記憶工程化，才是 agent 從 demo 走進生產的真正門檻。",
+    "image": "images/lrn-2026-10-09-neo4j--agent-memory--skil.png"
+  },
+  {
     "title": "Anthropic 推出 Claude Haiku 5.5，三款 Claude 5.5 系列補齊",
     "category": "工具",
     "summary": [
@@ -166,11 +276,8 @@
     "title": "GitHub 為 Agent 級開發重建 Git 基礎設施",
     "category": "產業",
     "summary": [
-      "GitHub 宣布在不中斷服務的前提下重建 Git 後端，為 agent 級軟體開發打底。",
-      "壓力來自數據：月 Git 事件一年內從 2,182 億增至 4,733 億，push 年增 4.9 倍至每月 33.5 億次，9 月單月 commit 達 73.8 億筆，是去年同期的五倍以上。",
-      "現行 Spokes 架構把持久副本與讀取擴展綁在同一組檔案伺服器，加副本反而拖慢寫入；新架構把權威資料移入 Azure Blob Storage，讀取交給輕量快取 worker，維護工作移出服務路徑，內部測試寫入吞吐最高提升 35 倍。",
-      "關鍵在於 agent 幾乎每個動作後都要 commit 或 checkpoint，單次 push 的延遲直接限制 agent 迴圈速度，人類無感的延遲會變成瓶頸。",
-      "在同一個 repo 跑數千個 agent、搭配密集 CI 管線的工程團隊，以及依賴分支保護、稽核日誌等控制項的企業 DevOps，是這次重建直接影響的對象。"
+      "GitHub 官方宣布重寫 Git 後端：月 Git 事件量一年內從 2,182 億暴增到 4,733 億，push 數年增 4.9 倍（月 33.5 億次），9 月單月 commit 數達 73.8 億、是一年前的五倍以上——主要由 agent 高頻 checkpoint 推動。新架構把「持久儲存（Azure Blob Storage）」與「快取運算 worker」分離，讀寫各自獨立擴展，內部測試寫入吞吐提升最高 35 倍。",
+      "為什麼重要：agent 的速度被單次 push 延遲綁死，這是第一個大型平台公開承認「人類工作流的架構撐不住 agent 工作流」並動手重構。"
     ],
     "links": [
       {
@@ -200,15 +307,8 @@
     "title": "OpenAI 推出 Secure MCP Tunnel：私有 MCP 伺服器免開防火牆",
     "category": "工具",
     "summary": [
-      "OpenAI 公開釋出 tunnel-client，這是 Secure MCP Tunnel 背後跑在使用者端的代理程式。",
-      "它能把筆電、VM、Kubernetes 叢集或私有網路上的 MCP 伺服器接上 ChatGPT、Codex、Responses API 和 AgentKit，全程不把伺服器暴露到公網。",
-      "連線走 OpenAI 代管的 tunnel endpoint，企業不必新增 inbound 防火牆規則或公開端點。",
-      "程式以常駐 daemon 形式運作，提供 /healthz、/readyz、/metrics 和 /ui，維運者可以在 connector 依賴它之前先確認健康狀態。",
-      "macOS 用 Homebrew 官方 tap 安裝，Formula 會連同 cloudflared 一起裝。",
-      "權限分層：runtime 使用者要 Tunnels Read + Use，管理者要 Read + Manage；admin key 只供 tunnel 建立與管理，不用於常駐 daemon。",
-      "stdio 模式下每個 tunnel ID 只能有一個運作中實例，換新前要先停掉舊的。",
-      "原本卡在「安全團隊不准開 inbound 規則」的內網 MCP 工具，現在不必暴露公網就能被 ChatGPT 或 Codex 呼叫。",
-      "適合要在 Docker、Kubernetes 或 VM 部署、並負責設定 ChatGPT connector 的平台與維運團隊。"
+      "開源 `tunnel-client` 讓企業內網或 localhost 上的 MCP 伺服器連到 ChatGPT、Codex、Responses API 和 AgentKit——不需要公開 IP 或開 inbound port。client 在內網 outbound HTTPS 輪詢任務、本地轉發 JSON-RPC、原路回傳，支援 mTLS 與企業代理。",
+      "為什麼重要：MCP 最大的企業採用障礙就是「內網工具不能暴露」，這等於官方給出了零信任的標準解法，on-prem agent 整合門檻大幅下降。"
     ],
     "links": [
       {
