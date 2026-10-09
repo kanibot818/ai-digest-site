@@ -166,8 +166,11 @@
     "title": "GitHub 為 Agent 級開發重建 Git 基礎設施",
     "category": "產業",
     "summary": [
-      "GitHub 官方宣布重寫 Git 後端：月 Git 事件量一年內從 2,182 億暴增到 4,733 億，push 數年增 4.9 倍（月 33.5 億次），9 月單月 commit 數達 73.8 億、是一年前的五倍以上——主要由 agent 高頻 checkpoint 推動。新架構把「持久儲存（Azure Blob Storage）」與「快取運算 worker」分離，讀寫各自獨立擴展，內部測試寫入吞吐提升最高 35 倍。",
-      "為什麼重要：agent 的速度被單次 push 延遲綁死，這是第一個大型平台公開承認「人類工作流的架構撐不住 agent 工作流」並動手重構。"
+      "GitHub 宣布在不中斷服務的前提下重建 Git 後端，為 agent 級軟體開發打底。",
+      "壓力來自數據：月 Git 事件一年內從 2,182 億增至 4,733 億，push 年增 4.9 倍至每月 33.5 億次，9 月單月 commit 達 73.8 億筆，是去年同期的五倍以上。",
+      "現行 Spokes 架構把持久副本與讀取擴展綁在同一組檔案伺服器，加副本反而拖慢寫入；新架構把權威資料移入 Azure Blob Storage，讀取交給輕量快取 worker，維護工作移出服務路徑，內部測試寫入吞吐最高提升 35 倍。",
+      "關鍵在於 agent 幾乎每個動作後都要 commit 或 checkpoint，單次 push 的延遲直接限制 agent 迴圈速度，人類無感的延遲會變成瓶頸。",
+      "在同一個 repo 跑數千個 agent、搭配密集 CI 管線的工程團隊，以及依賴分支保護、稽核日誌等控制項的企業 DevOps，是這次重建直接影響的對象。"
     ],
     "links": [
       {
@@ -181,15 +184,31 @@
     "date": "2026-10-07",
     "source": "learning",
     "original_url": "",
-    "editor_note": "Git 二十年來為人類協作而生，如今卻被 agent 的 checkpoint 洪流逼著重生。當版本控制從「人的記憶」變成「機器的狀態儲存」，AI 原生基礎設施的改寫已從最底層悄悄展開——開發工具鏈的遊戲規則正在變。",
-    "image": "images/lrn-2026-10-07-github--agent--git-.png"
+    "editor_note": "實驗室數字固然亮眼，但 agent 開發的瓶頸未必只在儲存層：併發提交的語意衝突、審查佇列與 CI 排程，重寫後端一概沒解。更深層的訊號是，當版本控制開始為機器而非人類最佳化，開放 Git 協議正淪為平台門面，自架方案與託管平台的差距只會愈拉愈大。",
+    "image": "images/lrn-2026-10-07-github--agent--git-.png",
+    "deep_summary": [
+      "GitHub 宣布在不中斷服務的前提下重建 Git 後端，為 agent 級軟體開發打底。",
+      "壓力來自數據：月 Git 事件一年內從 2,182 億增至 4,733 億，push 年增 4.9 倍至每月 33.5 億次，9 月單月 commit 達 73.8 億筆，是去年同期的五倍以上。",
+      "現行 Spokes 架構把持久副本與讀取擴展綁在同一組檔案伺服器，加副本反而拖慢寫入；新架構把權威資料移入 Azure Blob Storage，讀取交給輕量快取 worker，維護工作移出服務路徑，內部測試寫入吞吐最高提升 35 倍。",
+      "關鍵在於 agent 幾乎每個動作後都要 commit 或 checkpoint，單次 push 的延遲直接限制 agent 迴圈速度，人類無感的延遲會變成瓶頸。",
+      "在同一個 repo 跑數千個 agent、搭配密集 CI 管線的工程團隊，以及依賴分支保護、稽核日誌等控制項的企業 DevOps，是這次重建直接影響的對象。"
+    ],
+    "deep_source_chars": 11910,
+    "deep_status": "ok"
   },
   {
     "title": "OpenAI 推出 Secure MCP Tunnel：私有 MCP 伺服器免開防火牆",
     "category": "工具",
     "summary": [
-      "開源 `tunnel-client` 讓企業內網或 localhost 上的 MCP 伺服器連到 ChatGPT、Codex、Responses API 和 AgentKit——不需要公開 IP 或開 inbound port。client 在內網 outbound HTTPS 輪詢任務、本地轉發 JSON-RPC、原路回傳，支援 mTLS 與企業代理。",
-      "為什麼重要：MCP 最大的企業採用障礙就是「內網工具不能暴露」，這等於官方給出了零信任的標準解法，on-prem agent 整合門檻大幅下降。"
+      "OpenAI 公開釋出 tunnel-client，這是 Secure MCP Tunnel 背後跑在使用者端的代理程式。",
+      "它能把筆電、VM、Kubernetes 叢集或私有網路上的 MCP 伺服器接上 ChatGPT、Codex、Responses API 和 AgentKit，全程不把伺服器暴露到公網。",
+      "連線走 OpenAI 代管的 tunnel endpoint，企業不必新增 inbound 防火牆規則或公開端點。",
+      "程式以常駐 daemon 形式運作，提供 /healthz、/readyz、/metrics 和 /ui，維運者可以在 connector 依賴它之前先確認健康狀態。",
+      "macOS 用 Homebrew 官方 tap 安裝，Formula 會連同 cloudflared 一起裝。",
+      "權限分層：runtime 使用者要 Tunnels Read + Use，管理者要 Read + Manage；admin key 只供 tunnel 建立與管理，不用於常駐 daemon。",
+      "stdio 模式下每個 tunnel ID 只能有一個運作中實例，換新前要先停掉舊的。",
+      "原本卡在「安全團隊不准開 inbound 規則」的內網 MCP 工具，現在不必暴露公網就能被 ChatGPT 或 Codex 呼叫。",
+      "適合要在 Docker、Kubernetes 或 VM 部署、並負責設定 ChatGPT connector 的平台與維運團隊。"
     ],
     "links": [
       {
@@ -203,8 +222,21 @@
     "date": "2026-10-07",
     "source": "learning",
     "original_url": "",
-    "editor_note": "MCP 標準出自 Anthropic，OpenAI 卻搶先開源企業級連線方案，卡位 agent 通訊層的意圖相當明顯。誰掌握地基誰就贏得生態，這步棋值得持續追蹤。",
-    "image": "images/lrn-2026-10-07-openai--secure-mcp-tunnel.png"
+    "editor_note": "免開防火牆看似解了痛點，實際是把信任邊界移到 OpenAI 代管的 endpoint：內網工具的呼叫流量與 metadata 全經第三方，安全團隊該問的是資料路徑依賴，而非只看防火牆規則。MCP 競局也從協議之爭轉向閘道之爭，誰掌握連線入口，誰就握有 agent 生態的主導權。",
+    "image": "images/lrn-2026-10-07-openai--secure-mcp-tunnel.png",
+    "deep_summary": [
+      "OpenAI 公開釋出 tunnel-client，這是 Secure MCP Tunnel 背後跑在使用者端的代理程式。",
+      "它能把筆電、VM、Kubernetes 叢集或私有網路上的 MCP 伺服器接上 ChatGPT、Codex、Responses API 和 AgentKit，全程不把伺服器暴露到公網。",
+      "連線走 OpenAI 代管的 tunnel endpoint，企業不必新增 inbound 防火牆規則或公開端點。",
+      "程式以常駐 daemon 形式運作，提供 /healthz、/readyz、/metrics 和 /ui，維運者可以在 connector 依賴它之前先確認健康狀態。",
+      "macOS 用 Homebrew 官方 tap 安裝，Formula 會連同 cloudflared 一起裝。",
+      "權限分層：runtime 使用者要 Tunnels Read + Use，管理者要 Read + Manage；admin key 只供 tunnel 建立與管理，不用於常駐 daemon。",
+      "stdio 模式下每個 tunnel ID 只能有一個運作中實例，換新前要先停掉舊的。",
+      "原本卡在「安全團隊不准開 inbound 規則」的內網 MCP 工具，現在不必暴露公網就能被 ChatGPT 或 Codex 呼叫。",
+      "適合要在 Docker、Kubernetes 或 VM 部署、並負責設定 ChatGPT connector 的平台與維運團隊。"
+    ],
+    "deep_source_chars": 34055,
+    "deep_status": "ok"
   },
   {
     "title": "answer-me-with-html：讓 Agent 用一頁 HTML 回答複雜問題",
@@ -226,7 +258,8 @@
     "source": "learning",
     "original_url": "",
     "editor_note": "別只看 6.1 倍的省 token 數字，真正的啟發是「機械工作還給程式、思考留給模型」——當 token 就是成本，這種 skill 分工思維很可能成為 agent 工具設計的通用範式。",
-    "image": "images/lrn-2026-10-07-answer-me-with-html--agen.png"
+    "image": "images/lrn-2026-10-07-answer-me-with-html--agen.png",
+    "deep_status": "no_source"
   },
   {
     "title": "Show-Harness：純視覺語言模型即可驅動機器人，不需 policy 網路",
@@ -248,7 +281,8 @@
     "source": "learning",
     "original_url": "",
     "editor_note": "若純 VLM 就能驅動機器人，關鍵不在省下 policy 訓練，而是機器人正重演軟體 agent 的劇本——與其為每個任務苦練專用模型，不如做好一個會看、會想的通用模型。",
-    "image": ""
+    "image": "",
+    "deep_status": "no_source"
   },
   {
     "title": "Hedera「Agent Accounts」：給 AI agent 專屬帳戶管錢，附消費政策",
