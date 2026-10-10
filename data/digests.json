@@ -1,5 +1,105 @@
 [
   {
+    "title": "Anthropic 發布 Claude Haiku 5.5：最快、最便宜的小模型",
+    "category": "工具",
+    "summary": [
+      "針對高流量、延遲敏感工作負載（分類、路由、子 agent 任務）。10 萬 token 以下請求定價 $0.10/$0.50 每百萬 token，比 Haiku 4.5 大幅降價；支援 1M context、adaptive thinking、瀏覽器操作。同步調降 Sonnet 5.5 cache read 半價，並給 Max/Team 用戶每月 API credit——明顯是在搶 agentic 工作量的成本市場。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://www.anthropic.com/claude-haiku-5-5"
+      }
+    ],
+    "source_url": "https://www.anthropic.com/claude-haiku-5-5",
+    "source_label": "來源",
+    "id": "lrn-2026-10-10-anthropic-發布-claude-haiku-5-5-最快-最便宜的小模型",
+    "date": "2026-10-10",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "小模型之爭已從聰明度轉向單價——當 agent 架構動輒呼叫數十次模型，成本就是新的護城河。Anthropic 降價加補貼，擺明要搶食 agentic 工作量的大餅。",
+    "image": "images/lrn-2026-10-10-anthropic--claude-haiku-5.png"
+  },
+  {
+    "title": "OX Security 報告：15,465 個公開 MCP 伺服器，零審查",
+    "category": "產業",
+    "summary": [
+      "掃描五個 registry 的 15,465 個公開 MCP 伺服器（5,095 個唯一 hostname），沒有任何一個經過審查。2.3% 掛在已失效網域上（6 個網域已過期、可低價買下劫持身份），0.45% 跑在個人機器的 ngrok 通道上，遠端伺服器實際執行的程式碼可以和公開 repo 完全不同。加上今年 1-4 月已通報 40+ 個 MCP 相關 CVE（含 9.6 分的 mcp-remote 指令注入），agent 供應鏈安全是當前最裸露的風險面。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://thedailytechfeed.com/15465-mcp-servers-0-oversight-what-we-found-inside"
+      }
+    ],
+    "source_url": "https://thedailytechfeed.com/15465-mcp-servers-0-oversight-what-we-found-inside",
+    "source_label": "來源",
+    "id": "lrn-2026-10-10-ox-security-報告-15-465-個公開-mcp-伺服器-零審查",
+    "date": "2026-10-10",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "MCP 生態狂奔，信任機制卻完全缺席。當 agent 拿著你的權限呼叫零審查的工具，攻擊不是風險、而是時間問題，這筆安全債，越晚還越貴。",
+    "image": ""
+  },
+  {
+    "title": "ALERT-BENCH 論文：LLM SOC agent 全數漏掉 40%+ 攻擊警報，AIDA 框架把漏報壓到 3.1%",
+    "category": "研究",
+    "summary": [
+      "研究五種常見 triage 策略（單輪工具呼叫、迭代檢索、自我審查等），在 1,247 則企業警報上每一種都漏掉至少 40.4% 的攻擊警報。根因很有啟發：搜尋無結果時 agent 傾向直接結案、同 context 自我審查的淨修正率是負的。AIDA 用「提案→獨立挑戰→Judge 仲裁」的辯證結構＋append-only 調查日誌，F1 從 0.371-0.744 拉到 0.958。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://arxiv.org/abs/2610.10608"
+      }
+    ],
+    "source_url": "https://arxiv.org/abs/2610.10608",
+    "source_label": "來源",
+    "id": "lrn-2026-10-10-alert-bench-論文-llm-soc-agent-全數漏掉-40-攻擊警",
+    "date": "2026-10-10",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "自我審查淨修正率為負」是最反直覺的發現——戳破了「讓模型多想幾遍就會更好」的迷思，證明把關得靠外部對抗結構。這堂課屬於所有 agent 應用，不只 SOC。",
+    "image": ""
+  },
+  {
+    "title": "Trace2Env：不需要訓練、從互動軌跡重建「語言世界模型」",
+    "category": "研究",
+    "summary": [
+      "NTU 團隊的 framework：拿歷史 action-observation 軌跡離線重建一份「worldbook」（schema、證據、行為知識），線上由 world-model agent 搭配 episode 狀態與 episodic memory 當作環境，供任務 agent 操作。九個環境上，next-observation 保真度與多輪一致性都勝過純 prompt 式世界模型，模擬中產生的動作重放到真實環境仍有效。應用：無真實環境下訓練/測試 agent、stateful API/MCP mock、重建私有或 legacy 系統。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://arxiv.org/abs/2610.06100"
+      }
+    ],
+    "source_url": "https://arxiv.org/abs/2610.06100",
+    "source_label": "來源",
+    "id": "lrn-2026-10-10-trace2env-不需要訓練-從互動軌跡重建-語言世界模型",
+    "date": "2026-10-10",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "亮點不在效能數字，而是把「環境」變成可保存、可重複操作的資產：只要一份互動軌跡，就能替私有或 legacy 系統造出可測試的替身，正中 agent 開發最缺環境的痛點。",
+    "image": ""
+  },
+  {
+    "title": "AI agent 自動註冊 SaaS：Extend 遭遇 Instinct agent 自行完成 onboarding",
+    "category": "其他",
+    "summary": [
+      "一個 Instinct agent 自主完成註冊、onboarding、取得 API key 並開始使用 Extend 的產品——SaaS 的「下一個客戶可能不是人」。Extend 已建 agent-friendly 路徑：MCP server、CLI 安裝 SKILL.md、機器可讀文件。對開發者工具的三點建議：API 易被 agent 發現、機器身分驗證用 scoped credentials、結構化錯誤讓 agent 能自我修復。"
+    ],
+    "links": [],
+    "source_url": "",
+    "source_label": "",
+    "id": "lrn-2026-10-10-ai-agent-自動註冊-saas-extend-遭遇-instinct-ag",
+    "date": "2026-10-10",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當註冊、onboarding 到付款都由 agent 代勞，SaaS 的獲客流程與身分驗證設計都得重新思考；誰先做好 agent-friendly，誰就握有下一波流量紅利。",
+    "image": ""
+  },
+  {
     "title": "Microsoft Research 發布 Agent Lightning v1.0：輕量級 Agentic RL 訓練框架",
     "category": "工具",
     "summary": [
@@ -157,14 +257,8 @@
     "title": "JAZ：只用一個 `invoke` 原語的極簡 agent 框架，打贏專門記憶系統",
     "category": "研究",
     "summary": [
-      "JAZ 是一個極簡 agent 框架，對 LLM 只暴露一個 invoke 原語。",
-      "模型用它寫任意可執行程式碼，可遞迴呼叫自己，互動歷史全以變數取用。",
-      "長程回憶任務上，JAZ 比 Letta（MemGPT）高 8%，成本砍半。",
-      "持續自我改進基準上，它比 ACE 高 4%，成本同樣更低。",
-      "這組數據挑戰「長期記憶和自我改進需要專門系統」的主流假設。",
-      "記憶、規劃、自我改進被壓進同一個遞迴介面，替「the model is not the agent, the loop is」補了實證。",
-      "未解問題也明擺著：迴圈能否解鎖固定深度架構做不到的推理，agent 能否可靠評估自己寫的修改，兩者都還是爭議點。",
-      "正在做 agent 記憶層的工程師、追 MemGPT 與 ACE 路線的研究者，以及要在專門系統與極簡迴圈之間做取捨的團隊，可以直接拿這組對比數據當決策素材。"
+      "核心假設挑戰主流：長期記憶和自我改進不需要 MemGPT 式的專門系統。JAZ 只暴露一個 `invoke` 原語，讓 LLM 寫任意可執行程式碼（含遞迴呼叫自己），互動歷史全部作為變數可用。",
+      "實測：長程回憶任務比 Letta (MemGPT) 高 8% 且成本減半；持續自我改進基準比 ACE 高 4%、成本更低。「The model is not the agent, the loop is」這派觀點又拿到新證據。"
     ],
     "links": [
       {
