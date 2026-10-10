@@ -157,8 +157,14 @@
     "title": "JAZ：只用一個 `invoke` 原語的極簡 agent 框架，打贏專門記憶系統",
     "category": "研究",
     "summary": [
-      "核心假設挑戰主流：長期記憶和自我改進不需要 MemGPT 式的專門系統。JAZ 只暴露一個 `invoke` 原語，讓 LLM 寫任意可執行程式碼（含遞迴呼叫自己），互動歷史全部作為變數可用。",
-      "實測：長程回憶任務比 Letta (MemGPT) 高 8% 且成本減半；持續自我改進基準比 ACE 高 4%、成本更低。「The model is not the agent, the loop is」這派觀點又拿到新證據。"
+      "JAZ 是一個極簡 agent 框架，對 LLM 只暴露一個 invoke 原語。",
+      "模型用它寫任意可執行程式碼，可遞迴呼叫自己，互動歷史全以變數取用。",
+      "長程回憶任務上，JAZ 比 Letta（MemGPT）高 8%，成本砍半。",
+      "持續自我改進基準上，它比 ACE 高 4%，成本同樣更低。",
+      "這組數據挑戰「長期記憶和自我改進需要專門系統」的主流假設。",
+      "記憶、規劃、自我改進被壓進同一個遞迴介面，替「the model is not the agent, the loop is」補了實證。",
+      "未解問題也明擺著：迴圈能否解鎖固定深度架構做不到的推理，agent 能否可靠評估自己寫的修改，兩者都還是爭議點。",
+      "正在做 agent 記憶層的工程師、追 MemGPT 與 ACE 路線的研究者，以及要在專門系統與極簡迴圈之間做取捨的團隊，可以直接拿這組對比數據當決策素材。"
     ],
     "links": [
       {
@@ -172,8 +178,20 @@
     "date": "2026-10-08",
     "source": "learning",
     "original_url": "https://inquiringlines.com/related/harness-as-a-language-a-minimalist-agent-framework-with-maximal-expressivity/",
-    "editor_note": "耐人尋味的是「減法」贏了「加法」：專門記憶系統或許只是在彌補模型弱點，而非剛性需求。當基礎模型持續變強，繁複的 agent 腳手架恐將淪為技術債，這份研究給了框架極簡派一記強力背書。",
-    "image": "images/lrn-2026-10-08-jaz--invoke--agent--.png"
+    "editor_note": "極簡路線贏的是基準分數，賭上的卻是可控性。遞迴自改一旦出錯，狀態污染會層層放大，在生產環境比召回率更致命。JAZ 隱含的前提是模型會持續變強、鷹架越薄越受益；若這個前提成立，專門記憶系統的價值就必須轉向治理、稽核與安全——而這些恰恰是基準測不出來的東西。",
+    "image": "images/lrn-2026-10-08-jaz--invoke--agent--.png",
+    "deep_summary": [
+      "JAZ 是一個極簡 agent 框架，對 LLM 只暴露一個 invoke 原語。",
+      "模型用它寫任意可執行程式碼，可遞迴呼叫自己，互動歷史全以變數取用。",
+      "長程回憶任務上，JAZ 比 Letta（MemGPT）高 8%，成本砍半。",
+      "持續自我改進基準上，它比 ACE 高 4%，成本同樣更低。",
+      "這組數據挑戰「長期記憶和自我改進需要專門系統」的主流假設。",
+      "記憶、規劃、自我改進被壓進同一個遞迴介面，替「the model is not the agent, the loop is」補了實證。",
+      "未解問題也明擺著：迴圈能否解鎖固定深度架構做不到的推理，agent 能否可靠評估自己寫的修改，兩者都還是爭議點。",
+      "正在做 agent 記憶層的工程師、追 MemGPT 與 ACE 路線的研究者，以及要在專門系統與極簡迴圈之間做取捨的團隊，可以直接拿這組對比數據當決策素材。"
+    ],
+    "deep_source_chars": 1291,
+    "deep_status": "ok"
   },
   {
     "title": "勒索軟體組織把 MCP 當 C2 指令通道——agent 工具鏈成為新的攻擊面",
@@ -270,7 +288,8 @@
     "source_url": "https://code.claude.com/docs/en/advisor",
     "source_label": "來源",
     "editor_note": "亮點不在省 token，而是「何時求助」交給模型自己判斷——這種自覺升級的能力，正悄悄把多模型協作從工程技巧變成預設架構，成本結構也隨之改寫。",
-    "image": "images/claude-code--advisor--.png"
+    "image": "images/claude-code--advisor--.png",
+    "deep_status": "no_source"
   },
   {
     "title": "GitHub 為 Agent 級開發重建 Git 基礎設施",
