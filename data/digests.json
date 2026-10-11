@@ -1,5 +1,119 @@
 [
   {
+    "title": "context-mode：給 AI 編程助手省上下文的 MCP 工具",
+    "category": "工具",
+    "summary": [
+      "GitHub Trending 日榜約 2.6 萬星，走 MCP/鉤子整合 17 個平台，號稱工具輸出可壓縮約 98%。長任務時把工具輸出沙箱化、記錄會話，避免上下文被重複讀取的日誌刷爆。",
+      "為什麼重要：token 成本已是 agent 長任務的最大瓶頸，「上下文經濟學」正成為獨立的工程問題。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/AfengWeb3/status/2109094301850652886"
+      }
+    ],
+    "source_url": "https://x.com/AfengWeb3/status/2109094301850652886",
+    "source_label": "來源",
+    "id": "lrn-2026-10-11-context-mode-給-ai-編程助手省上下文的-mcp-工具",
+    "date": "2026-10-11",
+    "source": "learning",
+    "original_url": "https://github.com/mksglu/context-mode",
+    "editor_note": "context-mode 爆紅印證：卡住 agent 的不再是模型智力，而是記憶帳單。當上下文管理從優化技巧升級為基礎設施，Agent 開發的遊戲規則正在改寫。",
+    "image": "images/lrn-2026-10-11-context-mode--ai--mcp-.png"
+  },
+  {
+    "title": "Prime Intellect 用 2,209 個 agent 把自家 coding agent 從 TypeScript 重寫成 Rust",
+    "category": "產業",
+    "summary": [
+      "兩週內 2,209 個 agent、16,758 條訊息、2,280 億 token，幾乎全部由 agent 自己完成重寫。這是「agent 開發 agent」迄今最大規模的公開實戰案例之一。",
+      "為什麼重要：驗證了大規模 agent 協作可以交付生產級系統重構，而不只是 demo。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/itisjiwan/status/2109089773692551227"
+      }
+    ],
+    "source_url": "https://x.com/itisjiwan/status/2109089773692551227",
+    "source_label": "來源",
+    "id": "lrn-2026-10-11-prime-intellect-用-2-209-個-agent-把自家-codi",
+    "date": "2026-10-11",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "值得關注的不是 agent 會寫程式，而是人類角色已上移至調度與審核。當大規模重構成本驟降，技術債的經濟學將被改寫，工程團隊現在就該思考自己的新定位。",
+    "image": "images/lrn-2026-10-11-prime-intellect--2-209--a.png"
+  },
+  {
+    "title": "MIT + Sakana AI 的 SIFT：讓 coding agent 改進自己的 harness",
+    "category": "研究",
+    "summary": [
+      "概念是讓 agent 對自己的系統（工具描述、壓縮規則、規劃行為）提出修改候選，再用 LLM judge 在跑昂貴 benchmark 之前先比較候選方案，大幅壓低評估成本。",
+      "為什麼重要：agent 自我改進的最大障礙是評估成本，SIFT 提供了可行的折衷；難點在避免對 benchmark 過擬合。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/al3rez/status/2109094132425564200"
+      }
+    ],
+    "source_url": "https://x.com/al3rez/status/2109094132425564200",
+    "source_label": "來源",
+    "id": "lrn-2026-10-11-mit-sakana-ai-的-sift-讓-coding-agent-改進自己",
+    "date": "2026-10-11",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "SIFT 妙在視角轉換：agent 自我改進的瓶頸不是能力，而是評估成本。用 LLM judge 換取迭代速度是務實折衷，但過擬合會否反噬，值得持續追蹤。",
+    "image": "images/lrn-2026-10-11-mit-sakana-ai--sift--codi.png"
+  },
+  {
+    "title": "11 個生產級 coding harness 源碼深度分析（含首個 meta-harness Omnigent）",
+    "category": "教程",
+    "summary": [
+      "把 Claude Code、Codex CLI、Gemini CLI 等 11 個生產系統源碼扒透，總結出七大子系統、29 個設計模式、18 條設計建議，附 90 行最小可行 harness。",
+      "關鍵發現：真實生產系統大多不用 LangChain 式通用框架、也沒有向量檢索，而是手寫 async loop 加 ripgrep/tree-sitter 確定性檢索——想抄生產級架構的必讀地圖。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/wubin28/status/2109086919221182668"
+      }
+    ],
+    "source_url": "https://x.com/wubin28/status/2109086919221182668",
+    "source_label": "來源",
+    "id": "lrn-2026-10-11-11-個生產級-coding-harness-源碼深度分析-含首個-meta-h",
+    "date": "2026-10-11",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "最可貴的是用源碼實證打破框架神話：生產級 agent 靠樸素 async loop 與確定性檢索取勝，而非向量檢索。當眾人還在追捧框架，頂級團隊早已回歸工程本質。",
+    "image": "images/lrn-2026-10-11-11--coding-harness---meta.png"
+  },
+  {
+    "title": "arXiv 2610.09021：home-automation agent 中，本地小模型 5 個呼叫點有 4 個不輸旗艦模型",
+    "category": "產業",
+    "summary": [
+      "測了 0.8B 到 hosted frontier 共 9 個模型在真實部署 agent 的 5 個 LLM 呼叫點（280 案例、2,520 次評分呼叫）。全部用 Sonnet 5 要 95.4% 準確率、$12.13；只在生成步驟用雲端是 92.5%、$0.56；全本地 91.8%、$0。",
+      "但有個安全警訊：Gemma4 E2B 會對網站不擁有的裝置執行 87.2% 的操作——聚合準確率會掩蓋安全問題。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://arxiv.org/abs/2610.09021"
+      },
+      {
+        "label": "來源",
+        "url": "https://x.com/al3rez/status/2108731743025102959"
+      }
+    ],
+    "source_url": "https://arxiv.org/abs/2610.09021",
+    "source_label": "來源",
+    "id": "lrn-2026-10-11-arxiv-2610-09021-home-automation-agent-中",
+    "date": "2026-10-11",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "混合部署省下 95 倍成本固然誘人，但更值得警惕的是安全面：總分不輸旗艦的小模型，竟會越權操作不該碰的裝置。評測 agent 不能只看平均分，安全必須逐項檢驗。",
+    "image": ""
+  },
+  {
     "title": "Anthropic 發布 Claude Haiku 5.5：最快、最便宜的小模型",
     "category": "工具",
     "summary": [
