@@ -1,5 +1,150 @@
 [
   {
+    "title": "Karpathy：LLM 能力認知鴻溝已從「各說各話」變成尖銳漏斗",
+    "category": "產業",
+    "summary": [
+      "Karpathy 重發並更新他四月的觀察：約 60 億人幾乎沒碰過 LLM、1-2 億人只用免費版看到「笨聊天機器人」、約 2,000 萬專業用戶目睹 agent 把週/月級工作壓縮到幾小時、而數千內部人看到的是數千 agent 協作做多年級專案。原因：問題規模、可驗證獎勵領域（程式/數學）、存取權限。多數人體驗的 AI 和前沿正在發生的事，已不是同一個世界。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/karpathy/status/2109361546505966046"
+      }
+    ],
+    "source_url": "https://x.com/karpathy/status/2109361546505966046",
+    "source_label": "來源",
+    "id": "lrn-2026-10-12-karpathy-llm-能力認知鴻溝已從-各說各話-變成尖銳漏斗",
+    "date": "2026-10-12",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "這個漏斗是解讀 AI 輿論的新濾鏡：與其爭論誰對誰錯，不如先問發言者站在哪一層。更值得警惕的不是泡沫與否，而是社會理解與技術前線的時差正持續擴大。",
+    "image": "images/lrn-2026-10-12-karpathy-llm---.png"
+  },
+  {
+    "title": "Google DeepMind 以約 15 億美元網羅 Epoch AI 評測團隊，成立 Polaris",
+    "category": "產業",
+    "summary": [
+      "Epoch AI 共同創辦人 Tamay Besiroglu 被 Google 以「人才與技術移轉」（非直接收購 Mechanize，避開併購審查）帶進 DeepMind，任務是打造定義 AI coding agent 未來的評測框架。Besiroglu 直言：Gemini 已經夠好，下一跳大部分來自他們在做的東西，而非更大的模型。評測從實驗室的「交作業」變成價值九位數的組織級戰力。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/tamaybes/status/2105408224879116790"
+      }
+    ],
+    "source_url": "https://x.com/tamaybes/status/2105408224879116790",
+    "source_label": "來源",
+    "id": "lrn-2026-10-12-google-deepmind-以約-15-億美元網羅-epoch-ai-評測團",
+    "date": "2026-10-12",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當「誰來打分數」本身成了九位數資產，評測已從中立裁判變成戰略武器；原本獨立客觀的 Epoch 加入 DeepMind，這種球員兼裁判的轉變，比交易金額更值得玩味。",
+    "image": "images/lrn-2026-10-12-google-deepmind--15--epoc.png"
+  },
+  {
+    "title": "agent-workspace-linux：給 computer-use agent 一個專屬隱形桌面",
+    "category": "工具",
+    "summary": [
+      "開源 Linux 工具：無頭 X11 顯示器＋獨立視窗管理器、應用、剪貼簿和瀏覽器，透過 MCP 暴露給 agent。附小型浮動檢視器可觀看與暫停。解決電腦使用 agent 最惱人的問題——它直接操作你登入中的瀏覽器和滑鼠。適合 GUI 測試與用完即丟的自動化瀏覽任務。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/AverageAiBro/status/2109425564557959387"
+      }
+    ],
+    "source_url": "https://x.com/AverageAiBro/status/2109425564557959387",
+    "source_label": "來源",
+    "id": "lrn-2026-10-12-agent-workspace-linux-給-computer-use-age",
+    "date": "2026-10-12",
+    "source": "learning",
+    "original_url": "https://github.com/agent-sh/agent-workspace-linux",
+    "editor_note": "當 agent 能直接操作你的滑鼠與瀏覽器，隔離沙箱就該是標配而非加分題。這類工具的出現，標誌 agent 基礎設施的焦點正從「能做到」轉向「夠安全」。",
+    "image": "images/lrn-2026-10-12-agent-workspace-linux--co.png"
+  },
+  {
+    "title": "Arcjet Guard API：在 agent 碰真實工具前加上執行期防護欄",
+    "category": "工具",
+    "summary": [
+      "開源（Apache 2.0）JS monorepo，針對 agent 工具呼叫、MCP handler、佇列 worker 和背景工作提供 Guard API。功能含 prompt injection 偵測、PII／信用卡等敏感資訊偵測、token bucket／滑動窗口限流。補上「agent 有權限行動但沒有 HTTP request 物件」這段長期缺口的安全治理層。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/DanKornas/status/2109259962559901718"
+      }
+    ],
+    "source_url": "https://x.com/DanKornas/status/2109259962559901718",
+    "source_label": "來源",
+    "id": "lrn-2026-10-12-arcjet-guard-api-在-agent-碰真實工具前加上執行期防護欄",
+    "date": "2026-10-12",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "多數 AI 資安聚焦在過濾模型輸入輸出，Arcjet 卻守住更關鍵的一環：agent 呼叫工具的瞬間。治理下沉到執行層，才是 agent 走進生產環境的分水嶺。",
+    "image": "images/lrn-2026-10-12-arcjet-guard-api--agent-.png"
+  },
+  {
+    "title": "十個幫 agent 省 token 帳單的 GitHub 專案",
+    "category": "教程",
+    "summary": [
+      "實用清單：LiteLLM（一個門戶接 100+ 模型、各專案獨立 key 與花費上限）、Langfuse（逐步記錄 agent 每步成本）、Repomix（只送程式碼大綱而非全文）、GPTCache（換句話問同樣問題也吃快取）、Semantic Router（依品質/速度/成本挑模型）等。最實用的一條建議：先開 prompt caching——Claude/OpenAI/Gemini 的重複輸入可省 90%。",
+      "兩條降價路線本週正面交鋒。開源側：Nvidia 投資的 Reflection AI 發表 Beam，501B 參數稀疏 MoE（每 token 只有 1/22 參數活躍），對標 DeepSeek/Qwen 直攻 coding 與 agent 任務（10-06 發表、10-08 詳細規格，權重月底釋出）；Nous Research 同日宣布 $90M 融資、估值 $15 億，開源 agent 路線首次拿到企業級資金背書。閉源側：Anthropic 補齊 Claude 5.5 家族最後一塊——Haiku 5.5 以 $0.10/$0.50 每百萬 token 的地板價，把 computer use 從 15.7% 拉到 72.4%（10-08、10-10 兩天追蹤）。壓軸的是 10-11 的路由實測：home-automation agent 五個 LLM 呼叫點有四個本地小模型不輸旗艦——全 Sonnet 5 是 95.4% 準確率/$12.13，混合路由 92.5%/$0.56，全本地 91.8%/$0。",
+      "為什麼重要：「每個呼叫點該用什麼價位的模型」從上週的架構直覺，本週變成了有具體數字的成本科學。高頻 agent 任務的定價天花板正在塌方。",
+      "Trace2Env：從互動軌跡離線重建「語言世界模型」（10-10，NTU）：拿歷史 action-observation 軌跡重建一份可操作的 worldbook，讓 agent 在模擬環境裡訓練測試、mock stateful API/MCP。在 MCP 供應鏈風險吵翻天的本週，這其實是另一面的解法——不用把 agent 連上不可信的真實環境，也能完成大部分開發驗證。開源可跑。",
+      "agent-wow：不看螢幕、讀網路封包打完魔獸新手區（10-06）：GPT-6 Astra 自己解析 WoW 伺服器協議建立世界狀態，40 分鐘零死亡。對 computer use 路線的反向啟發——與其教模型看 UI，不如讓它在結構化協議層工作。對 agent 開發者的通則：能給原始結構化資料就不要給螢幕截圖。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/victor_explore/status/2109455421337739552"
+      }
+    ],
+    "source_url": "https://x.com/victor_explore/status/2109455421337739552",
+    "source_label": "來源",
+    "id": "lrn-2026-10-12-十個幫-agent-省-token-帳單的-github-專案",
+    "date": "2026-10-12",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當混合路由能用 $0.56 達到旗艦 96% 的效果，全用最強模型就不再是穩妥而是浪費——省 token 該從事後優化，變成 agent 上線前的基本功，這份清單正好是入門起點。",
+    "image": "images/lrn-2026-10-12--agent--token--github-.png"
+  },
+  {
+    "title": "Harness 工程獨立成戰線：「模型不是 agent，迴圈才是」",
+    "category": "其他",
+    "summary": [
+      "本週從數據、框架到源碼分析三路夾擊，證明 agent 的成敗取決於模型外的一圈工程。10-05 HF/Liquid AI 的 multi-harness 實測：同一個 GLM-5.2 換 10 個 harness，SWE-bench Pro 從 23% 排到 52%，結論是「模型+harness 必須當一整套測」。10-08 的 JAZ 框架只用一個 `invoke` 原語，長程回憶贏 Letta 8% 且成本減半。週日（10-11）三連發收官：context-mode 把工具輸出壓縮 98%、MIT+Sakana 的 SIFT 讓 agent 自己改進自己的 harness、11 個生產級 harness 源碼分析發現真實系統根本不用 LangChain 式框架——手寫 async loop + ripgrep 確定性檢索才是王道。",
+      "為什麼重要：上週「分層架構」還只是選型哲學，本週已經變成有 benchmark、有開源實作、有源碼地圖的完整工程學科。對自架 agent（如 Hermes/KaniBot）的人來說，這是投入產出比最高的一層。",
+      "相關連結：https://x.com/zouyanjian/status/2106909907341439077 ｜ https://x.com/gravity7/status/2107903702006919554 ｜ https://x.com/wubin28/status/2109086919221182668"
+    ],
+    "links": [],
+    "source_url": "",
+    "source_label": "",
+    "id": "lrn-2026-10-12-harness-工程獨立成戰線-模型不是-agent-迴圈才是",
+    "date": "2026-10-12",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "同一個模型換個 harness，分數就能差 29 分——比多數模型迭代一整年的幅度還大。Agent 的勝負不在追最強模型，而在工程師真正能掌控的那圈迴圈。",
+    "image": ""
+  },
+  {
+    "title": "MCP 生態極端擴張與安全債務同時爆表",
+    "category": "其他",
+    "summary": [
+      "MCP 幾乎每天都在版上：好的方向——OpenAI Secure MCP Tunnel 解決企業內網免開防火牆的接入（10-07）、Reducto 證明粗粒度 workflow 設計勝過 endpoint-per-tool（10-09）、context-mode 用 MCP/鉤子省 token（10-11）。壞的方向更怵目：MCP「protocol pivoting」讓一個被攻陷的 agent 變成內網滲透跳板，Google/JPMorgan 等 5 家認了（10-06）、勒索軟體組織直接把 MCP 當 C2 指令通道（10-08）、OX Security 掃出 15,465 個公開 MCP 伺服器零審查、2.3% 掛在已失效可劫持的網域上（10-10）。",
+      "為什麼重要：MCP 正在重演早期 npm/Docker Hub 的供應鏈信任危機，但 agent 的 MCP 有執行權——後果不是偷資料而是代理人為操作。Rapid7 的結論本週被反覆引用：「LLM 遞給工具的任何東西，都要當成陌生人從網路上傳來的輸入。」",
+      "相關連結：https://github.com/openai/tunnel-client ｜ https://thedailytechfeed.com/15465-mcp-servers-0-oversight-what-we-found-inside"
+    ],
+    "links": [],
+    "source_url": "",
+    "source_label": "",
+    "id": "lrn-2026-10-12-mcp-生態極端擴張與安全債務同時爆表",
+    "date": "2026-10-12",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "本週 MCP 好消息全是體驗優化、壞消息卻全是安全失守——這種反差本身就是警訊。當野蠻生長的生態遇上 agent 執行權，安全債的利息將以「被代操作」計價。",
+    "image": ""
+  },
+  {
     "title": "context-mode：給 AI 編程助手省上下文的 MCP 工具",
     "category": "工具",
     "summary": [
