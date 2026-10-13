@@ -1,5 +1,93 @@
 [
   {
+    "title": "Meta 發表 Muse Wonder 前沿模型：Active Memory + Active Focus",
+    "category": "產業",
+    "summary": [
+      "Meta 在 Prometheus 資料中心訓練的新旗艦，主打兩個 agent 導向能力：Active Memory（跨對話保留相關脈絡）與 Active Focus（在複雜任務中持續推進、嘗試替代方案、向用戶確認關鍵動作）。宣稱在 agent、memory、coding 三類 benchmark 達 SOTA，已可透過 Meta Model API 與 Muse Code 使用，1M token 上下文。",
+      "觀察點：第三方實測發現 Wonder 傾向推薦 Anthropic/OpenAI 而非 Meta 自家模型，且一半情況會選現成工具而非自己造輪子——新 agent 的「工具選擇權」正在改變開發者生態的分配。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/finkd/status/2109689305073614918"
+      }
+    ],
+    "source_url": "https://x.com/finkd/status/2109689305073614918",
+    "source_label": "來源",
+    "id": "lrn-2026-10-13-meta-發表-muse-wonder-前沿模型-active-memory-a",
+    "date": "2026-10-13",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "比 SOTA 更耐人尋味的是：Meta 自家 agent 竟推薦對手模型。當工具選擇權落到 agent 手上，模型廠苦心築起的生態護城河，可能正被自家產品悄悄掏空。",
+    "image": "images/lrn-2026-10-13-meta--muse-wonder--active.png"
+  },
+  {
+    "title": "OpenCode 2.0 推出 Code Mode：把 41 次工具呼叫壓成一段腳本",
+    "category": "工具",
+    "summary": [
+      "新套件 codemode 給 agent 一個 `execute()` 工具，讓模型直接寫 JavaScript 迴圈操作由 MCP server / OpenAPI 生成的型別化 API。一個真實案例從 41 次工具呼叫（每次都是完整模型往返、context 被自己的歷史塞爆）變成一次腳本執行。Cloudflare 和 Anthropic 幾個月內各自獨立提出同樣模式，三家不約而同收敛，是方向性訊號。",
+      "代價要記住：一次 `execute()` 換掉四十次可審計的呼叫，沙箱（無檔案系統、egress allowlist、憑證限縮）從選配變必配，否則一次 prompt injection 就夠把 API key 帶走。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/stretchcloud/status/2109750203133632543"
+      }
+    ],
+    "source_url": "https://x.com/stretchcloud/status/2109750203133632543",
+    "source_label": "來源",
+    "id": "lrn-2026-10-13-opencode-2-0-推出-code-mode-把-41-次工具呼叫壓成一段",
+    "date": "2026-10-13",
+    "source": "learning",
+    "original_url": "https://models.dev/",
+    "editor_note": "重點不在 41 變 1 的效率數字，而是三家獨立收斂揭示的範式轉移：agent 的行動單位正從工具呼叫變成程式碼。屆時沙箱不再是工程細節，而是安全設計的核心戰場。",
+    "image": "images/lrn-2026-10-13-opencode-2-0--code-mode--.png"
+  },
+  {
+    "title": "QwenGyre：解 agent RL 訓練的 GPU 閒置問題",
+    "category": "研究",
+    "summary": [
+      "長時間跑的 agent 每個 rollout 可吃 70 萬+ token、數小時的瀏覽與等待，訓練 GPU 大量閒置。QwenGyre 用 Elastic Scheduler 在 agent 執行與訓練間動態重分配 GPU（不中斷進行中的任務），加上 Trajectory Processor 共享分支路徑的共同步驟、timeout 後保留部分進度。報告數字：NL2RepoBench 52.5%→58.5%（僅 48 個訓練步）、端到端訓練時間省約 44%。",
+      "啟示：agent 規模化的瓶頸不只是更聰明的模型，還有訓練基礎設施的排程效率。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/ronith_012/status/2109815025150124510"
+      }
+    ],
+    "source_url": "https://x.com/ronith_012/status/2109815025150124510",
+    "source_label": "來源",
+    "id": "lrn-2026-10-13-qwengyre-解-agent-rl-訓練的-gpu-閒置問題",
+    "date": "2026-10-13",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent RL 的 GPU 竟有大半時間在「等」而非「算」——這篇的價值在於點破：agent 規模化的下一道瓶頸在系統排程工程，而非一味堆大模型，對算力有限的團隊尤其有參考價值。",
+    "image": "images/lrn-2026-10-13-qwengyre--agent-rl--gpu-.png"
+  },
+  {
+    "title": "「副作用三明治」：agent 崩潰後無縫續做的架構模式",
+    "category": "教程",
+    "summary": [
+      "Pi 作者 Mario Zechner 與 Flask 作者 Armin Ronacher 提出的容錯模式，每個操作分三段：先持久化意圖與參數 → 冪等地執行外部副作用 → 立即記錄結果。Pi Durable 把這套套用在模型查詢與工具呼叫上，process 意外重啟後任務可無縫恢復。",
+      "對任何要跑超過一次 API 呼叫的 agent 都適用——這正是 Hermes cron / 長任務場景最該內化的設計。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/SaitoWu/status/2109581368900620368"
+      }
+    ],
+    "source_url": "https://x.com/SaitoWu/status/2109581368900620368",
+    "source_label": "來源",
+    "id": "lrn-2026-10-13-副作用三明治-agent-崩潰後無縫續做的架構模式",
+    "date": "2026-10-13",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent 圈常談聰明，但 demo 與生產的真正差距在容錯。這個借鑑 write-ahead log 思維的三段式模式提醒我們：agent 工程終究是系統工程。",
+    "image": "images/lrn-2026-10-13--agent-.png"
+  },
+  {
     "title": "Karpathy：LLM 能力認知鴻溝已從「各說各話」變成尖銳漏斗",
     "category": "產業",
     "summary": [
