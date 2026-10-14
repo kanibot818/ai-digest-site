@@ -1,5 +1,103 @@
 [
   {
+    "title": "Google Gemini 4 Argon 無人監督跑 11 小時，自動修復 20 萬行 agent 框架",
+    "category": "工具",
+    "summary": [
+      "Google 團隊讓 Argon 在自家 205,000 行的 Python agent 框架（ADK）上無人值守跑 11 小時，提出 6 項效能優化、2 項經人類審查後合併。用 Antigravity 的 /goal 模式在 context 重置間維持任務目標。",
+      "實測成果：過濾對話歷史讓長會話 pre-model 開銷降約 40%，懶加載砍掉 21% 的 import 時間。值得注意的教訓：公開單元測試全過，但 25 個內部測試目標仍失敗——人類審查依然不可省。",
+      "這是「agent 長時間自主工作 + 人類只做最終把關」模式的具體數據樣本。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/CalatheaAI/status/2110180795831001243"
+      }
+    ],
+    "source_url": "https://x.com/CalatheaAI/status/2110180795831001243",
+    "source_label": "來源",
+    "id": "lrn-2026-10-14-google-gemini-4-argon-無人監督跑-11-小時-自動修復-2",
+    "date": "2026-10-14",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "比起效能提升，更難得的是 Google 誠實揭露內部測試失敗的教訓。自主 agent 的故事聽多了，這種含挫折記錄的真實數據，才是業界最需要的參考。",
+    "image": "images/lrn-2026-10-14-google-gemini-4-argon--11.png"
+  },
+  {
+    "title": "Agent Memory 已解決，Agent Learning 還沒——Yugabyte 的失敗复盘",
+    "category": "研究",
+    "summary": [
+      "Yugabyte 共同創辦人 Karthik R 複盤四個內部 agent 全數卡住的原因：agent 能交付輸出（文件、PDF），卻無法傳遞「背後的推理與死胡同」，下一個 agent 只好用 token 重新推導一遍。這是資料架構問題，不是模型問題。",
+      "具體數字：第一版 RAG 管線 faithfulness 只有 14–20%，逐項調優後拉到 65–74%、context precision 82%，關鍵之一是把 chunk 從 7,000+ 縮到約 1,000。",
+      "他們的 Mako 系統讓 agent 先寫入私有 data pack，經人工審核「升級」後才成為共享知識——每次人工核准同時也是未來自改進編排的訓練訊號。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/CoreyGallon/status/2110038491950137775"
+      }
+    ],
+    "source_url": "https://x.com/CoreyGallon/status/2110038491950137775",
+    "source_label": "來源",
+    "id": "lrn-2026-10-14-agent-memory-已解決-agent-learning-還沒-yugab",
+    "date": "2026-10-14",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "大家都在等更強的模型，這篇複盤卻提醒我們：瓶頸其實在資料架構。輸出傳得走、推理傳不走——而把人工審核化為訓練訊號，正是讓 agent 從「記住」走向「學會」的關鍵一步。",
+    "image": "images/lrn-2026-10-14-agent-memory--agent-learn.png"
+  },
+  {
+    "title": "Velocity Local Services：4B 模型 + 6GB VRAM 本地控制 Windows PC",
+    "category": "工具",
+    "summary": [
+      "VLS 用 Qwen3.5-4B 在 6GB VRAM 的 GPU 上實現本地 computer use：開應用、點按鈕、填表單、聽語音指令，且 AI 有獨立游標可追蹤其動作。",
+      "關鍵設計：不依賴截圖視覺推理，而是直接讀取原生 UI 元素（按鈕、文字框）的結構化資訊，截圖只在必要時使用——大幅降低小模型 doing computer use 的出錯率。",
+      "限制：仍是 preview，實測集中在記事本、小算盤等簡單應用，但「小模型 + 結構化 UI」路線讓本地桌面自動化的門檻大幅下降。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/Oluwaphilemon1/status/2110157398212227388"
+      }
+    ],
+    "source_url": "https://x.com/Oluwaphilemon1/status/2110157398212227388",
+    "source_label": "來源",
+    "id": "lrn-2026-10-14-velocity-local-services-4b-模型-6gb-vram-本",
+    "date": "2026-10-14",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當大廠競相用視覺大模型做 computer use，VLS 證明直接讀 UI 結構才是小模型的捷徑——本地自動化的瓶頸原來不在算力，而在方法。",
+    "image": "images/lrn-2026-10-14-velocity-local-services-4.png"
+  },
+  {
+    "title": "apriso-mcp：把 AI agent 帶進製造業 MES 開發流程",
+    "category": "產業",
+    "summary": [
+      "IACF 團隊為 DELMIA Apriso（製造執行系統）打造 MCP server + Claude Code skills，共 102 個工具：AI 能直接產出可匯入 GPM 的真實 .gpm 套件，不是偽代碼。",
+      "亮點是「先驗證再生成」（65+ 條規則檢查）、內建 2,763 個 Business Component 方法目錄與各版本 DB schema 做 grounding，還能用 SF 模擬器在瀏覽器本地預覽成果。",
+      "對 MCP 生態的啟示：MCP 最有價值的場景不在通用工具，而是把深耕多年的垂直領域知識（製造、MES）封裝成 agent 可用的原生 artifact 管線。",
+      "微軟第三代自研 AI 晶片，計畫 2027 投產，目標成為其產品線主力推理平台。優化重點直指 agent 工作負載：長上下文、低延遲對話、多步驟 agent 任務。宣稱每兆瓦 token 交付量比領先 GPU 高 40%，Maia 200 已在美歐澳部署支撐 Teams 與 Copilot。",
+      "訊號明確：雲端巨頭開始為「agent 的 token 消耗曲線」專門設計硬體，推理成本戰從軟體延伸到矽。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/Rocwng/status/2110176829797769271"
+      },
+      {
+        "label": "來源",
+        "url": "https://x.com/Awesome_AI_News/status/2109818922820407641"
+      }
+    ],
+    "source_url": "https://x.com/Rocwng/status/2110176829797769271",
+    "source_label": "來源",
+    "id": "lrn-2026-10-14-apriso-mcp-把-ai-agent-帶進製造業-mes-開發流程",
+    "date": "2026-10-14",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "apriso-mcp 印證了 MCP 的價值轉向：通用工具不稀缺，稀缺的是把垂直領域深耕多年的 know-how 化為 AI 可直接落地的管線——這才是企業 AI 的真護城河。",
+    "image": "images/lrn-2026-10-14-apriso-mcp--ai-agent--mes.png"
+  },
+  {
     "title": "Meta 發表 Muse Wonder 前沿模型：Active Memory + Active Focus",
     "category": "產業",
     "summary": [
