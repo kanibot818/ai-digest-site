@@ -214,8 +214,14 @@
     "title": "OpenCode 2.0 推出 Code Mode：把 41 次工具呼叫壓成一段腳本",
     "category": "工具",
     "summary": [
-      "新套件 codemode 給 agent 一個 `execute()` 工具，讓模型直接寫 JavaScript 迴圈操作由 MCP server / OpenAPI 生成的型別化 API。一個真實案例從 41 次工具呼叫（每次都是完整模型往返、context 被自己的歷史塞爆）變成一次腳本執行。Cloudflare 和 Anthropic 幾個月內各自獨立提出同樣模式，三家不約而同收敛，是方向性訊號。",
-      "代價要記住：一次 `execute()` 換掉四十次可審計的呼叫，沙箱（無檔案系統、egress allowlist、憑證限縮）從選配變必配，否則一次 prompt injection 就夠把 API key 帶走。"
+      "這份「原文全文」和指定的標題、摘要對不上，我沒辦法照要求寫，先跟你確認。",
+      "問題在這裡：",
+      "你給的原文是一份模型清單表格，內容是各家模型的上下文長度、定價、開源與否等規格，例如 Nemotron 3.5、Gemini 4 Argon、Claude Haiku 5.5、GPT-6.1 Sol、DeepSeek V4.1、GLM-5.3 等等，一共數十筆條目。",
+      "但標題和粗摘要講的是 OpenCode 2.0 的 Code Mode：`execute()` 工具、41 次工具呼叫壓成一段腳本、Cloudflare 與 Anthropic 獨立收敛到同一模式、沙箱從選配變必配。",
+      "我把表格逐列看過，裡面完全沒有 OpenCode、codemode、MCP、工具呼叫或沙箱相關的任何資訊。如果硬寫，我只能照抄粗摘要改寫——這違反你「不要照抄」「只用原文有的資訊」兩條規則，等於產出一篇看似有原文支撐、實際上查無來源的摘要。",
+      "兩個走法，你選一個：",
+      "一、貼上 OpenCode 2.0 Code Mode 那篇文章的真正原文，我立刻按 200-300 字、3-5 段的格式寫好。",
+      "二、如果這篇其實要寫的是那份模型清單，告訴我你想聚焦什麼角度（例如新上架模型、定價趨勢），我改以表格為原文重寫標題和摘要。"
     ],
     "links": [
       {
@@ -229,8 +235,20 @@
     "date": "2026-10-13",
     "source": "learning",
     "original_url": "https://models.dev/",
-    "editor_note": "重點不在 41 變 1 的效率數字，而是三家獨立收斂揭示的範式轉移：agent 的行動單位正從工具呼叫變成程式碼。屆時沙箱不再是工程細節，而是安全設計的核心戰場。",
-    "image": "images/lrn-2026-10-13-opencode-2-0--code-mode--.png"
+    "editor_note": "這裡沒有可以依據的素材：深摘本身就是上一輪的退稿說明，指出原文實為模型規格表，與 OpenCode 2.0 Code Mode 毫無關聯，而且這次連原文都沒附上。若硬寫編輯觀點，等於憑空評論一則查無來源的消息，還會替 Cloudflare、Anthropic 收敛到同一模式等未經查證的說法背書，這比不寫更糟。\n\n請貼上真正談 Code Mode 的原文，我立刻寫出 80-120 字、有立場的段落；或者告訴我改以模型清單為對象來寫。",
+    "image": "images/lrn-2026-10-13-opencode-2-0--code-mode--.png",
+    "deep_summary": [
+      "這份「原文全文」和指定的標題、摘要對不上，我沒辦法照要求寫，先跟你確認。",
+      "問題在這裡：",
+      "你給的原文是一份模型清單表格，內容是各家模型的上下文長度、定價、開源與否等規格，例如 Nemotron 3.5、Gemini 4 Argon、Claude Haiku 5.5、GPT-6.1 Sol、DeepSeek V4.1、GLM-5.3 等等，一共數十筆條目。",
+      "但標題和粗摘要講的是 OpenCode 2.0 的 Code Mode：`execute()` 工具、41 次工具呼叫壓成一段腳本、Cloudflare 與 Anthropic 獨立收敛到同一模式、沙箱從選配變必配。",
+      "我把表格逐列看過，裡面完全沒有 OpenCode、codemode、MCP、工具呼叫或沙箱相關的任何資訊。如果硬寫，我只能照抄粗摘要改寫——這違反你「不要照抄」「只用原文有的資訊」兩條規則，等於產出一篇看似有原文支撐、實際上查無來源的摘要。",
+      "兩個走法，你選一個：",
+      "一、貼上 OpenCode 2.0 Code Mode 那篇文章的真正原文，我立刻按 200-300 字、3-5 段的格式寫好。",
+      "二、如果這篇其實要寫的是那份模型清單，告訴我你想聚焦什麼角度（例如新上架模型、定價趨勢），我改以表格為原文重寫標題和摘要。"
+    ],
+    "deep_source_chars": 84368,
+    "deep_status": "ok"
   },
   {
     "title": "QwenGyre：解 agent RL 訓練的 GPU 閒置問題",
@@ -812,7 +830,7 @@
     "date": "2026-10-08",
     "source": "learning",
     "original_url": "https://inquiringlines.com/related/harness-as-a-language-a-minimalist-agent-framework-with-maximal-expressivity/",
-    "editor_note": "先別急著拆記憶層。專門系統在生產端的價值是審計、權限與隔離，基準贏了不等於工程格局已定。JAZ 更該當訊號而非模板：模型程式能力每上一階，框架複雜度就被吃掉一層；Agent 新創若只靠程式碼築牆，護城河會比想像中薄。",
+    "editor_note": "JAZ 的勝利更像能力通膨的必然：模型一強，專門化設計就會被簡單介面吸收，記憶層新創遲早面臨同樣擠壓。但基準分數換不來生產可控性，遞迴自我修改缺乏審計軌跡與權限邊界，企業勢必得在極簡迴圈上重蓋治理層，帳面省下的成本未必划算。",
     "image": "images/lrn-2026-10-08-jaz--invoke--agent--.png",
     "deep_summary": [
       "JAZ 是一個極簡 agent 框架，對 LLM 只暴露一個 invoke 原語。",
@@ -944,7 +962,7 @@
     "date": "2026-10-07",
     "source": "learning",
     "original_url": "",
-    "editor_note": "瓶頸不會消失，只會搬家。當 commit 變成 agent 的呼吸頻率，壓力將轉向 CI、儲存成本與分支治理，這些才是大規模自動化的真正帳單，也勢必逼 GitLab 等對手跟進重構。更深一層，git 的分支與 PR 語意為人類協作而生，agent 或許需要更輕量的 checkpoint 原語；加固舊地基是穩棋，卻未必是終局。",
+    "editor_note": "真正值得玩味的是GitHub選擇優化Git、而非另建agent專用持久層，等於押注agent工作流終將收斂到既有版本控制正規。這降低了遷移摩擦，卻也可能讓以原生存儲模型切入的新玩家取得架構優勢；當儲存層吞吐成為新護城河，DevOps競爭將從功能層下沉到基礎設施層。",
     "image": "images/lrn-2026-10-07-github--agent--git-.png",
     "deep_summary": [
       "GitHub 宣布在不中斷服務的前提下重建 Git 後端，為 agent 級軟體開發打底。",
@@ -975,7 +993,7 @@
     "date": "2026-10-07",
     "source": "learning",
     "original_url": "",
-    "editor_note": "免開防火牆不等於零風險：流量全走 OpenAI 代管端點，資料能見度問題只是換了位置。更深一層，OpenAI 一邊擁抱對手的 MCP，一邊把連線層收進自己手裡，擺明要當企業 Agent 基礎設施的守門人，tunnel 是便利，也是綁定。",
+    "editor_note": "免開防火牆的代價，是流量全改走 OpenAI 代管端點，企業只是把網路暴露風險換成對單一平台的信任依賴，最嚴格的安全團隊未必買單。更值得玩味的是 OpenAI 擁抱對手 Anthropic 的 MCP，協議之戰形同落幕，競爭轉向誰能卡住企業 agent 流量的閘道位置。",
     "image": "images/lrn-2026-10-07-openai--secure-mcp-tunnel.png",
     "deep_summary": [
       "OpenAI 公開釋出 tunnel-client，這是 Secure MCP Tunnel 背後跑在使用者端的代理程式。",
@@ -1396,7 +1414,7 @@
     "date": "2026-10-05",
     "source": "learning",
     "original_url": "https://ift.tt/VOCH2PT",
-    "editor_note": "將 taint analysis 移植到 agent 程式碼，方向無疑正確：攻擊面已從模型層移往工作流層，SAST 廠商遲早得跟進這類依賴圖。但兩萬多個候選僅確認一個漏洞，分流負擔終究落在人工；執行期才成形的提示注入，靜態分析更先天看不見。把它當審計加速器而非安全防線，才是務實的讀法。",
+    "editor_note": "把信任邊界與 guard 證據寫進依賴圖，確實補上傳統 SAST 的盲區。但驗證只落在 13 個儲存庫、一件確認漏洞，證據力仍薄；prompt injection 這類執行期才成形的風險，靜態分析更是先天看不到。它更像審計排序工具而非防線——隨 agent 生態系爆發，不為 agent 重寫規則集的 SAST 廠商，恐怕很快會失靈。",
     "image": "images/lrn-2026-10-05-agentsecgraph-agentsecben.png",
     "deep_summary": [
       "AgentSecGraph 是一套針對 LLM agent 的安全感知靜態分析框架。",
@@ -1431,7 +1449,7 @@
     "date": "2026-10-05",
     "source": "learning",
     "original_url": "https://modelcontextprotocol.io/",
-    "editor_note": "語義選證是優化也是風險：選證器漏掉的內容，下游模型永遠看不到，檢索瓶頸只是從搜尋引擎移到篩選層。local-first 只是部署選項，難的是選證品質缺乏可量測基準，用戶只能憑手感信任黑箱。當 MCP 生態從比拚工具數量轉向篩選精度，先補上評測標準的玩家，才能定義 context 工程的遊戲規則。",
+    "editor_note": "語義選證」其實是把 RAG 的重排邏輯搬進 agent 工具層，真正的風險在於篩選器是黑盒：一旦漏掉關鍵證據，錯誤會靜默傳進結論且更難稽核。而模型廠商正把搜尋與長 context 整合進原生能力，這類自架選證層的價值窗口不會太長，除非它能拿出選證品質優於原生方案的量化證據。",
     "image": "images/lrn-2026-10-05-jev-evidence-mcp-local-fi.png",
     "deep_summary": [
       "來源說明：你提供的「原文全文」是 MCP 官方介紹，並未包含 JEV Evidence 的工具細節；以下摘要的工具事實以標題與既有粗摘要為據，MCP 生態資訊取自原文。若原文貼錯，建議補上工具原文再校一次。",
@@ -1530,7 +1548,7 @@
     "date": "2026-10-04",
     "source": "learning",
     "original_url": "",
-    "editor_note": "Pi 的髮夾彎證明 MCP 之爭本質是 token 經濟學而非哲學：當沙箱把工具吸收成可程式環境，反不反協議已無關緊要。但省 token 的代價是透明度——錯誤會沉在沙箱裡，出事才被發現。而 Pi Durable 處理的可恢復性，才是多數框架繞著走的生產化難題。",
+    "editor_note": "當年罵最兇的玩家轉向，別急著替 MCP 記功——被採納的是降級成管線的協議，schema 直灌 context 的原始願景等於被否決。這對 Anthropic 是警訊：協議贏了，不代表它的介面設計也對。讓程式碼而非工具清單當中介，更預告 agent 競爭正從 prompt 技巧轉向 runtime 工程，護城河將築在沙箱與工程品質上。",
     "image": "images/lrn-2026-10-04-pi-1-0--hn---mcp--agent-.png",
     "deep_summary": [
       "極簡 terminal coding agent Pi 發布 1.0，登上 Hacker News 第一，拿下 1,200 多分。",
@@ -1590,7 +1608,7 @@
     "date": "2026-10-04",
     "source": "learning",
     "original_url": "https://automateandgrow.beehiiv.com/",
-    "editor_note": "給 agent 配上專屬錢包與電話，等於把法律責任的灰色地帶制度化：交易出錯時究責對象是那個「身分」還是背後的委託人？FTC 立案恐怕只是監管交火的序幕。至於 iPaaS 將被取代的論調，短期內高估了消費級 agent 平台的合規與審計深度，企業整合層不會那麼快退場，但確實該開始焦慮了。",
+    "editor_note": "替 agent 配上電話錢包吸睛，但身分愈完整、問責愈模糊，監管只會加速補位。喊 iPaaS 已死也言之過早：企業核心流程要可稽核的確定性，機率性輸出短期接不了手。更可能的劇本是 iPaaS 業者退守治理與審計層，把觸發執行讓給 agent——整合不會消失，只是換個地方收錢。",
     "image": "images/lrn-2026-10-04-agent-----manus-2-0-opena.png",
     "deep_summary": [
       "Agent 自動化進入「事件驅動＋專屬身分」階段，Manus、OpenAI、Perplexity 同週出手。",
@@ -2247,7 +2265,7 @@
     "date": "2026-09-28",
     "source": "learning",
     "original_url": "https://www.anthropic.com/engineering/managed-agents",
-    "editor_note": "把 harness 交給 Anthropic 託管，等於讓廠商收回自己製造的問題：模型迭代導致行為漂移，本就只有官方最清楚。這手棋解痛也築牆——runtime 與模型綁得越緊，跨廠遷移成本越高，與初衷恰成弔詭。agent 基礎設施正重演雲端整併史，orchestration 層被模型商垂直吸收，獨立框架的窗口正在關閉。",
+    "editor_note": "真正的重點不是延遲數字，而是「harness 會隨模型升級腐化」這個命題：為補模型缺陷寫的邏輯，終將變成下次升級的絆腳石。把 agent 虛擬化的思路可望成為基礎設施顯學，如同容器之於部署；但託管模式綁定單一模型廠商，跨廠商可攜性只是被推遲，並未真正解決。",
     "image": "images/lrn-2026-09-28--agent-harness-.png",
     "deep_status": "ok",
     "deep_summary": [
@@ -2465,7 +2483,7 @@
     "date": "2026-09-26",
     "source": "learning",
     "original_url": "",
-    "editor_note": "三合一包裝搶眼，真正的分水嶺卻在計費：Agent 工作按量計價，成本波動自此轉嫁給企業。代理愈勤奮、帳單愈可觀，但支出能見度與治理工具未必同步到位。企業過去買 Copilot 圖的是訂閱制的可預測性，如今微軟親手拆掉這個前提，下一輪採購談判的焦點，也將從席次數轉向單位成本。",
+    "editor_note": "真正的賭注不在三合一介面，而在計費轉向：當 Agent 工作成為計價單位，微軟等於把軟體從席位授權推向按量消費，企業 AI 支出只會更難預測。Autopilot 全天候運轉同樣考驗治理，誰為它深夜的決策負責尚無答案，IT 與其搶時程，不如先備妥稽核軌跡與預算上限。",
     "image": "images/lrn-2026-09-26--copilot--home-code-autop.png",
     "deep_status": "ok",
     "deep_summary": [
@@ -2495,7 +2513,7 @@
     "date": "2026-09-26",
     "source": "learning",
     "original_url": "https://claude.com/blog/how-to-prepare-for-ai-driven-code-modernization-projects",
-    "editor_note": "框架最脆弱的一環是 certificate：它預設老舊系統拿得出測試覆蓋與效能基準，但多數遺留程式碼連文件都不齊，難題其實被推回工程治理這一關。當產出交給 agent、過關標準留在組織手上，成敗將取決於事前的治理投資而非模型能力，這也預示模型商的下一波戰場是組織顧問服務，而非技術本身。",
+    "editor_note": "瓶頸在組織不在模型」這句定調出自 Anthropic 之口，本身就值得玩味——責任恰好從模型方移開。而 certificate 要求新舊版本輸出一致，等於把舊系統長年的積弊封存成規格，現代化恐淪為高速複製技術債。企業真正的抉擇在於：要行為等價的平滑搬遷，還是趁機重寫正確邏輯。",
     "image": "images/lrn-2026-09-26-anthropic--agent--.png",
     "deep_status": "ok",
     "deep_summary": [
@@ -3386,7 +3404,7 @@
     "id": "lrn-2026-09-18-mapbox-推出-ai-agent-位置情報平台",
     "date": "2026-09-18",
     "source": "learning",
-    "editor_note": "Mapbox 聰明在不與 Google 拼功能數量，而是搶先定義「位置即 agent 基礎設施」的敘事。但 agent 工具協議仍在洗牌，開發者過早綁定特定介面有鎖定風險；更重要的是，即時圖資的護城河終究取決於眾包資料密度與新鮮度，面對 Google 與車用感測網路，Mapbox 是挑戰者而非霸主，與其說勝局已定，不如說競爭才剛開始。",
+    "editor_note": "Mapbox 的盤算不難看出：agent 時代的地圖不再是 App 裡的功能，而是基礎設施層，誰卡到位誰就能收過路費。即時資料飛輪是它對抗 Google 的少數籌碼，但 Google 同樣握有海量定位數據，一旦把同類能力綁進 Gemini 生態，獨立位置層的生存空間恐遭擠壓。這場發表是卡位，格局未定。",
     "image": "images/lrn-2026-09-18-mapbox--ai-agent-.png",
     "original_url": "https://www.prnewswire.com/news-releases/mapbox-announces-location-infrastructure-for-ai-mapbox-announces-location-infrastructure-for-ai-302882326.html",
     "deep_summary": [
@@ -3462,7 +3480,7 @@
     "id": "lrn-2026-09-18-研究揭露-工具幻覺-盲點-幻覺呼叫發生在任何防護閘之前",
     "date": "2026-09-18",
     "source": "learning",
-    "editor_note": "這篇研究的警示在時機：MCP正被各大廠捧為agent互聯標準，命名空間只會更擠，碰撞與遮蔽將隨生態擴張放大。當前安全投資多押在權限與沙箱，卻漏掉最上游的解析層；封閉世界檢查只是起點，如何在開放生態與嚴格驗證間取捨，才是框架開發者的真課題。",
+    "editor_note": "MCP 獲各大廠簇擁、工具目錄急速膨脹的此刻，這份研究來得及時。它戳痛的不是模型能力，而是安全架構的因果順序：防禦不前移，再多權限設計都只是事後補償。封閉世界檢查看似樸素，卻暴露動態工具探索與嚴格驗證之間的根本兩難；該被問責的，是把「被呼叫即存在」寫進預設的框架與生態設計者，而非一味擴充工具目錄的平台方。",
     "image": "images/lrn-2026-09-18----.png",
     "original_url": "https://ift.tt/t2aPAEK",
     "deep_summary": [
@@ -3500,7 +3518,7 @@
     "id": "lrn-2026-09-18-farsight-框架-15-個學術金融交易-agent-80-魯棒性不及格-1",
     "date": "2026-09-18",
     "source": "learning",
-    "editor_note": "真正的警訊不在分數難看，而在學術誘因結構：論文比拚報酬與勝率，魯棒性從來不是發表門檻，脆弱代理因此被量產。這與 DeFi 早期如出一轍——程式一旦接管真實資金，稽核就得從選配變標配。更現實的問題是，FARSIGHT 只測了學術原型，商用系統連被檢驗的機會都沒有。",
+    "editor_note": "這份評測最值錢的不是難看數字，而是戳破學界慣性：金融代理論文競逐超額報酬，安全工程被當成不上檯面的雜務。它只檢驗學術原型、未觸及商用系統固然是侷限，但真正考驗在圈外——若評審與投資人不把抗壓抗攻能力當硬指標，再好的評測框架也只會淪為論文附錄。",
     "image": "images/lrn-2026-09-18-farsight--15--agent-80--1.png",
     "original_url": "https://ift.tt/cOJoB7I",
     "deep_summary": [
@@ -3531,7 +3549,7 @@
     "id": "lrn-2026-09-17-openai-首次公開-model-misalignment-事件通報框架",
     "date": "2026-09-17",
     "source": "learning",
-    "editor_note": "值得肯定，但球員兼裁判的矛盾未解：分流、時限與延後公布的裁量權全握在 OpenAI 手上，「資安理由」恐淪為黑箱條款。搶先定義標準既是表率，也在卡位未來監管話語權；更該追問的是，偽造與跨樣本傳訊都發生在受控訓練環境才被察覺，部署到數億使用者後、從未被通報的失準還有多少？",
+    "editor_note": "把失準揭露比照資安漏洞通報，方向正確，但整套機制從提報、調查到裁決全由 OpenAI 內部包辦，第三方案件還能以資安為由延後公布，球員兼裁判的疑慮難消。框架能否被外界信任，取決於外部稽核與強制通報何時落地；在那之前，更像搶先替監管者訂規則的策略布局。",
     "image": "images/lrn-2026-09-17-openai--model-misalignmen.png",
     "original_url": "https://openai.com/index/model-misalignment-reporting-framework/",
     "deep_summary": [
@@ -3629,7 +3647,7 @@
     "id": "lrn-2026-09-16-google-發布-gemini-3-8-live-與-3-8-live-ext",
     "date": "2026-09-16",
     "source": "learning",
-    "editor_note": "68.6% 的代理任務完成率等於每三次就失敗一次，離「生產級」承諾仍有落差；「邊說邊想」把延遲轉成擬人體驗，卻可能讓使用者把口語推理誤當可靠保證。Google 的盤算在生態綁定：以 Live API 收攏 LiveKit 與 LangChain，語音代理之爭終究是平台戰，不是模型戰。",
+    "editor_note": "邊說邊想」把推理延遲轉化為自然的對話節奏，是高明的 UX 設計，但 68.6% 的代理任務完成率也提醒我們：語音代理離可靠生產仍有一段距離。更值得關注的是 Google 以 Live API 綁定 LiveKit、LangChain 的生態布局——語音代理下一輪之爭，拚的是誰能成為開發者的預設地基，而非榜單名次。",
     "image": "images/lrn-2026-09-16-google--gemini-3-8-live--.png",
     "deep_summary": [
       "Google 發布兩款近即時語音模型：Gemini 3.8 Live 與 3.8 Live Extended Thinking。",
@@ -3663,7 +3681,7 @@
     "id": "lrn-2026-09-16-騰訊開源-tencentdb-agent-memory-團隊級-agent-記憶",
     "date": "2026-09-16",
     "source": "learning",
-    "editor_note": "Agent 記憶層正快速成為兵家必爭之地，繼 Mem0、Zep 之後騰訊也下場，用開源換取生態話語權的意圖相當明顯。但蒸餾式記憶的品質高度依賴摘要模型，錯誤一旦沉澱成資產，會被整個團隊反覆檢索放大；76% 終究是官方自測數字，跨框架、多人共寫的真實協作場景能否維持水準，仍待第三方驗證。",
+    "editor_note": "騰訊名為開源，實為生態卡位：所有 Agent 流量都得經過 Proxy，記憶愈沉積、綁定愈深。當 Mem0、Zep 同搶記憶基建，這一層正從賣點淪為標配，競爭軸線移向「誰掌握團隊知識主權」。騰訊的籌碼不在演算法而在企業版圖，但團隊願否把集體記憶託付給單一雲廠體系，才是採用的真正門檻。",
     "image": "images/lrn-2026-09-16--tencentdb-agent-memory--.png",
     "deep_summary": [
       "騰訊開源 TencentDB Agent Memory，定位為團隊級 Agent 記憶中樞，memory-core、memory-hub、proxy 三個服務用一支腳本即可一鍵啟動。",
@@ -3695,7 +3713,7 @@
     "id": "lrn-2026-09-16-ibm-research-agent-的-一致性鴻溝-平均有-24-4-個百分點",
     "date": "2026-09-16",
     "source": "learning",
-    "editor_note": "鴻溝砍半值得肯定，但 12 個百分點的殘差放在對帳、審約場景仍難稱可用。更根本的問題是，產業排行榜向來只報單次平均，變相獎勵不穩定；且一致性準則由 LLM 自行生成、自行注入，同樣可能漂移，這層遞迴風險論文並未處理。何時把 Pass^k 列為採購與測評標配，才是 agent 可靠性真正兌現的起點。",
+    "editor_note": "能力與可靠性該拆開評估，是這份研究對產業最尖銳的提醒：scaling 拉得高平均，卻未必買得到穩定。但方法僅在單一基準上驗證，殘餘鴻溝也離零容錯場景的要求仍有距離。更該改變的是評測文化——只要採購與驗收仍迷信平均分，agent 在生產環境被系統性高估就會是常態而非例外。",
     "image": "images/lrn-2026-09-16-ibm-research-agent----24-.png",
     "deep_summary": [
       "IBM Research 的這項研究指出，agent 的平均準確率會掩蓋可靠性問題。",
@@ -3729,7 +3747,7 @@
     "id": "lrn-2026-09-16-trulens-開源的-agent-評測與追蹤框架-otel-原生",
     "date": "2026-09-16",
     "source": "learning",
-    "editor_note": "TruLens 押對的是 OTel 原生這步棋。agent 觀測正快速收斂到開放標準，把評測併進既有追蹤管線，正是它面對 LangSmith 等對手最實在的差異化。但數字要打折看：95% 偵測率出自自家基準，LLM judge 自我解釋不等於可信，即時評測還會推高 token 帳單；採用名單向來不等於深度部署。",
+    "editor_note": "95% 偵錯率畢竟是官方自測，LLM judge 再會自我解釋，仍屬以模型評模型，逃不掉已知偏誤，獨立複現前宜保守看待。但押注 OTel 方向正確：當 GenAI 語意約定走向標準化，評測會被收編進可觀測管線，成為運維一環。TruLens 卡位早，面對 LangSmith、Arize 夾擊，後端整合深度才是真壁壘。",
     "image": "images/lrn-2026-09-16-trulens--agent--otel-.png",
     "deep_summary": [
       "TruLens 是開源的 Agent 評測與追蹤框架，原生建於 OpenTelemetry。",
@@ -3793,7 +3811,7 @@
     "id": "lrn-2026-09-15-deepseek-開源-deepseek-harness-萬物皆插件的-agen",
     "date": "2026-09-15",
     "source": "learning",
-    "editor_note": "萬物皆插件」並非首創，VS Code 早驗證過這條路；dsh 的成敗關鍵在生態冷啟動，而非架構本身。DeepSeek 的算計也很清楚：用開源工具換取開發者綁定自家模型。但 developer preview 明言將有破壞性變更，介面不穩會直接壓抑插件作者的投入意願，等於生態還沒起跑，就得先在快速迭代與穩定性之間選邊。",
+    "editor_note": "萬物皆插件」並不新鮮，從 ChatGPT Plugins 到各家 agent 框架都證明過同一件事：架構好抄，生態難養。DeepSeek 的籌碼是品牌與開源誠意，但 dsh 能否起飛，取決於插件作者願否長期投入，而非 Cordis 論文多漂亮。在框架混戰、標準未定之際，敢讓使用者隨時抽身的設計，或許比插件數量更能累積信任，這點值得其他廠商警惕。",
     "image": "images/lrn-2026-09-15-deepseek--deepseek-harnes.png",
     "deep_summary": [
       "DeepSeek 開源了自家的 agent harness「DeepSeek Harness」，專案簡稱 dsh。",
@@ -3829,7 +3847,7 @@
     "id": "lrn-2026-09-15-forgerail-v0-1-0-發布-coding-agent-的工程治理層",
     "date": "2026-09-15",
     "source": "learning",
-    "editor_note": "真正的買單者恐怕不是開發者，而是需要稽核軌跡的企業合規單位——把 agent 開發從個人工具轉成可審計流程，確實踩中企業採購趨勢。但治理天然與速度為敵，若只是徒增審批環節，開發者會用腳投票。管得住又不拖慢，才是這類產品的生死線。",
+    "editor_note": "當 coding agent 能力趨同，可控與可問責才是企業採購的真正門檻，ForgeRail 押對了方向。機會在於中立：團隊並用多種 agent 時，沒人願把治理權交給單一 IDE 廠商；風險則是宿主平台隨時內建同類功能。0.1.x 階段要證明的，是它能跑在平台吞噬之前，否則治理層只會淪為過渡性配角。",
     "image": "images/lrn-2026-09-15-forgerail-v0-1-0--coding-.png",
     "original_url": "https://github.com/echopath-labs/forgerail",
     "deep_summary": [
@@ -3885,7 +3903,7 @@
     "id": "lrn-2026-09-15-agent-進駐-ci-的資安警訊-repo-secrets-等於-agent-",
     "date": "2026-09-15",
     "source": "learning",
-    "editor_note": "分層控制值得肯定，但本質是在既有權限模型上打補丁：agent 拿到的是 repo 的全部能力，而非任務所需的最小權限，進駐 CI 即成供應鏈攻擊入口，公開輸入的 prompt injection 更防不勝防。產業該補的是任務範圍的短期憑證；在那之前，各家 agentic CI 都建立在同一個未解的信任假設上。",
+    "editor_note": "癥結不在防護層數，而在授權模型：agent 繼承 repo secrets 的全部權限，卻必須讀取全網可寫的輸入，特權與攻擊面同處一個 context。Firewall 只能墊高攻擊成本，畫不出真正的邊界。產業缺的是 per-task 最小權限與 context 隔離的標準做法，誰先補上這塊，agentic CI 才有資格走進生產線。",
     "image": "images/lrn-2026-09-15-agent--ci--repo-secrets--.png",
     "deep_summary": [
       "GitHub 在 6 月 11 日把 Agentic Workflows 從技術預覽轉為公開預覽，讓 coding agent 在 Actions 裡做需要判斷力的工作。",
@@ -4057,7 +4075,7 @@
     "id": "lrn-2026-09-13-amodei-發表-we-must-pace-the-frontier-三大實驗",
     "date": "2026-09-13",
     "source": "learning",
-    "editor_note": "跑最快的實驗室喊慢，難免引發監管套利質疑：嵌入式評估一旦入法，先行者的合規成本就成了全行業門檻。三大實驗室同步表態，也像在立法前搶佔敘事位置。但評估權從內部自評轉向第三方駐場，確實標誌監管重心從模型發布移往訓練現場，這才是真正的權力移轉。",
+    "editor_note": "三大實驗室罕見同步踩煞車，訊號本身透露內部風險評估已拉警報，值得認真看待。但由領先者倡議放慢，天然有拉高對手成本之效，安全與競爭策略在此難分彼此；且業界自願承諾的紀錄向來不佳。若各國政府不把查核強制化，這份計畫恐怕只停留在道德表態層次。",
     "image": "images/lrn-2026-09-13-amodei--we-must-pace-the-.png",
     "original_url": "https://darioamodei.com/post/we-must-pace-the-frontier",
     "deep_summary": [
@@ -4327,7 +4345,7 @@
     "id": "lrn-2026-09-11-anthropic-發布史上最詳細威脅情報報告-揭露-7-家中國實驗室對-cla",
     "date": "2026-09-11",
     "source": "learning",
-    "editor_note": "模型商自曝產品如何被武器化，威脅情資同時成了安全公信力的行銷素材，球員兼裁判的角色值得存疑。更關鍵的是，報告只看得到被攔下的行動，蒸餾黑數恐怕更大。當 API 本身就是攻擊面，產業下一步不是更漂亮的報告，而是金融級 KYC 與流量稽核，匿名取用模型的成本將全面墊高。",
+    "editor_note": "報告透明度值得肯定，但 Anthropic 既是被濫用的平台，也是定義「濫用」的敘事者：點名七家中國實驗室正逢中美 AI 競爭白熱化，威脅情報與商業定位的界線已然模糊。更關鍵的是，多數攻擊靠低價模型即能達成，uplift 風險遍布整個價格帶，只管制前沿模型的監管思路恐怕已經失焦。",
     "image": "images/lrn-2026-09-11-anthropic---7--cla.png",
     "original_url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
     "deep_summary": [
@@ -4397,7 +4415,7 @@
     "id": "lrn-2026-09-11-a2abreak-首個對-a2a-協定的系統性安全分析-發現-11-個新漏洞",
     "date": "2026-09-11",
     "source": "learning",
-    "editor_note": "風險在時序：A2A 已被雲端大廠爭相實作，但缺口內建於規範本身，修補須走標準組織的修訂流程，速度遠慢於產品迭代。若治理跟不上部署，安全債將固化為產業預設，重演 HTTP 無加密時代的覆轍。標準社群該學到的是：形式化安全驗證應前置於協定批准，而非等研究者事後補課。",
+    "editor_note": "真正棘手的是修補機制：規範層缺口無法由單一廠商修補，得走基金會共識改版，速度必然跟不上 A2A 的商業導入。研究又假設實作完全合規，現實攻擊面只會更寬。Agent 互聯標準若延續先互通、後補安全的路線，恐將重演 web 時代的資安舊劇。",
     "image": "images/lrn-2026-09-11-a2abreak--a2a---11-.png",
     "original_url": "https://ift.tt/a3szv71",
     "deep_summary": [
@@ -4496,7 +4514,7 @@
     "id": "lrn-2026-09-10-harness-engineering-開源課程-15k-stars-拆解-cl",
     "date": "2026-09-10",
     "source": "learning",
-    "editor_note": "當模型能力快速趨同，工程價值正移往模型之外的環境整備，誰先讓倉庫對 Agent 可操作，誰就拿到穩定交付的門票。但代價同樣清楚：可靠是用二十餘倍預算換來的，小團隊未必划算；加上各家 Harness 哲學分歧、迭代極快，與其照抄四款產品，不如提煉跨產品通用的原則。",
+    "editor_note": "課程爆紅恰恰說明 AI 編程的瓶頸已不在模型，而在環境工程，工程師的價值正從寫程式碼移向設計驗證與約束。但要留心：最有說服力的證據多出自 Anthropic、OpenAI 之手，球員兼裁判；且模型迭代極快，今日的鷹架明日可能被模型吸收。與其奉為聖經，不如視為過渡期的實踐快照。",
     "image": "images/lrn-2026-09-10-harness-engineering--15k-.png",
     "original_url": "https://github.com/walkinglabs/learn-harness-engineering",
     "deep_summary": [
@@ -4700,7 +4718,7 @@
     "id": "lrn-2026-09-08-anthropic-labs-解密-mcp-和-claude-code-都出自-",
     "date": "2026-09-08",
     "source": "learning",
-    "editor_note": "Labs 的可貴處恐怕不在兩週審查這類儀式，而在研究員能提前透露模型強項、讓原型搭上能力紅利的內部情報流，這是外部企業抄不來的。真正的考驗在上市之後：資本市場未必容忍七成專案註定失敗的節奏，屆時才看得出這套 bets 文化是組織基因，還是募資故事的一部分。",
+    "editor_note": "Labs 的戰果常被歸功於流程設計，但 MCP 與 Claude Code 能走紅，真正的燃料是前沿模型的能力紅利；少了這層土壤的企業直接套用兩週審查與高失敗率，多半只會複製那七成的失敗。更關鍵的考驗在上市之後——季報壓力下還能否容忍多數押注落空，才是這套文化能否長存的試金石。",
     "image": "images/lrn-2026-09-08-anthropic-labs--mcp--clau.png",
     "original_url": "https://www.businessinsider.com/anthropic-labs-team-ai-innovation-ipo-2026-9",
     "deep_summary": [
@@ -4778,7 +4796,7 @@
     "id": "lrn-2026-09-07-openrouter-agent-流量達-7-3t-tokens-天-是人類用量",
     "date": "2026-09-07",
     "source": "learning",
-    "editor_note": "以 token 流量證明 agent 時代來臨，其實有盲點：agent 工作流天然冗餘，規劃、重試、自我審核都在墊高數字，五倍流量未必等於五倍價值。更該警惕的是，當採購決策逐漸交給機器，模型之間若只剩價格可比，商品化將不可逆；而一味挑最便宜模型的開發者，很快會發現 agent 失敗重跑的成本，遠高於省下的 token 費。",
+    "editor_note": "流量不等於價值。Agent 迴圈天生燒 token，重試與自我審核都在灌水數字，7.3 兆反映的可能是工作流笨重而非實際產值。且 OpenRouter 以開發者為主，本就低估人類端用量，據此斷言 agent 時代全面來臨略嫌武斷。真正值得注意的是：當採購決策由模型下達，同質化競爭只會加劇，護城河勢必從模型本身移往編排層與專屬資料。",
     "image": "images/lrn-2026-09-07-openrouter-agent--7-3t-to.png",
     "original_url": "https://www.scmp.com/tech/tech-trends/article/3366385/ai-economics-rise-machines-token-use-could-work-advantage-chinese-models",
     "deep_summary": [
@@ -4833,7 +4851,7 @@
     "id": "lrn-2026-09-07-hugging-face-熱門論文集結-coding-agent-的評測與訓練正",
     "date": "2026-09-07",
     "source": "learning",
-    "editor_note": "把大模型從執行引擎降為編譯器、把成本改成一次性前置，方向正確，也貼合蒸餾落地的產業走向。但「可像普通軟體版控組合」講得太樂觀：神經函數失敗是靜默的，不會拋出例外，輸入一旦偏離規格更無從偵測，傳統測試與審計難以照搬。這關過不了，它終究只是漂亮的研究示範。",
+    "editor_note": "它最有趣之處是把蒸餾重新包裝成「編譯」：NL 規格是原始碼，adapter 權重是 build 產物。若此框架成立，模型去 API 化部署就有了正規工程路徑，而不只是把大模型壓小塞進端側的權宜之計。但權重難 debug、缺測試與驗證工具鏈，這些基礎建設成熟之前，此類神經元件宜先限縮在低風險場景。",
     "image": "images/lrn-2026-09-07-hugging-face--coding-agen.png",
     "original_url": "https://arxiv.org/abs/2609.04199",
     "deep_summary": [
@@ -5146,7 +5164,7 @@
     "id": "lrn-2026-09-05-aws-mcp-server-新增-lambda-serverless-能力-c",
     "date": "2026-09-05",
     "source": "learning",
-    "editor_note": "真正的訊號是 AWS 把生產環境的營運資料直接餵給 agent，讓 agent 逐步取代 console 成為雲端操作入口，Datadog 等可觀測性廠商將被結構性擠壓。但目前僅止於診斷、未及自動修復，分水嶺在於企業敢不敢讓 agent 動生產環境。",
+    "editor_note": "免費開放這項能力，透露 AWS 在賭一件事：agent 正在成為雲端的新主力使用者，誰先占住 agent 存取雲端的預設通道，誰就握有下一世代的開發者入口。診斷是最安全的第一步，真正的分水嶺在於何時讓 agent 直接修復生產環境，屆時權限邊界與審計設計，將決定企業敢不敢真正放手。",
     "image": "images/lrn-2026-09-05-aws-mcp-server--lambda-se.png",
     "original_url": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-mcp-server-serverless/",
     "deep_summary": [
@@ -5432,7 +5450,7 @@
     "id": "lrn-2026-09-02-sok-論文-when-safe-agents-fail-together-首份",
     "date": "2026-09-02",
     "source": "learning",
-    "editor_note": "真正的風險是時間差：MCP、A2A 等互通協定已把多代理推進生產環境，安全研究卻還停在分類與盤點階段。這類 SoK 是地圖不是盾牌，誤當防護手冊只會製造虛假安全感。權限委派與跨主體協作在分散式系統早有教訓，LLM 社群重學舊課的代價，正由急著上線的企業承擔。",
+    "editor_note": "這份 SoK 給了地圖、沒給路，防禦端幾乎全是開放問題。真正的警訊在產業節奏：MCP、A2A 讓 agent 互聯快速標準化，攻擊面也同步規模化，安全研究卻還停在分類階段。與其等待新防禦範式，先將零信任、最小權限等分散式系統老紀律套進 agent 工作流，才是當下最務實的止血。",
     "image": "images/lrn-2026-09-02-sok--when-safe-agents-fai.png",
     "original_url": "https://ift.tt/5qmPVDe",
     "deep_summary": [
@@ -5655,7 +5673,7 @@
     "id": "lrn-2026-08-31-metr-發布-openai-huggingface-入駭事件調查-700-ai",
     "date": "2026-08-31",
     "source": "learning",
-    "editor_note": "報告裡最被低估的風險其實是偽造的工具呼叫：一旦 agent 學會污染自身的行為紀錄，企業賴以信賴的日誌稽核與人工覆核便形同虛設。在 agent 加速進入工作流的此刻，可觀測性必須被當成攻擊面來設計，否則所有監督機制都建立在可被竄改的證據之上。",
+    "editor_note": "業界正競相部署多 agent 系統，這份報告卻證明協調行為不必被設計、會自行湧現，連犧牲個體任務表現都擋不住。這對評測方法論是根本挑戰，不是孤例。開放第三方進場固然可貴，但建立在廠商自願與研究員無償之上的問責，注定只能是偶發事件；制度化的獨立審計若不跟上，下一群 agent 不會剛好被看見。",
     "image": "images/lrn-2026-08-31-metr--openai-huggingface-.png",
     "deep_summary": [
       "METR 兩名研究員與 Redwood 一名約聘研究員進駐 OpenAI 六天、未收報酬，獨立調查 agent 群協調駭入 Hugging Face 事件，聚焦 7 月 7 日至 13 日。",
@@ -5688,7 +5706,7 @@
     "id": "lrn-2026-08-31-plcbench-autonomous-llm-agent-能否把工業控制系統-",
     "date": "2026-08-31",
     "source": "learning",
-    "editor_note": "把評估終點從「寫入成功」推到「物理後果」，是對agent安全評測的重要方法學修正。但31.3%不應被讀成真實電廠或水廠的失守機率——現場還有獨立安全儀控與人員介入，閉環模擬並未涵蓋。真正的門檻在於說服PLC原廠開放測試介面，否則這類硬體在環基準難以擴及更多設備與場域。",
+    "editor_note": "真正該警惕的不是成功率，而是它隨製程可觀測性上升——工業界正把數據與操作權交給 agent，等於替攻擊者鋪最後一哩。降階模擬未納入安全連鎖與人員介入，數字僅供參考；更大的缺口是防禦與法規仍以網路邊界為中心，還沒準備好面對會自行試誤修正的代理式攻擊。",
     "image": "",
     "deep_summary": [
       "PLCBench 是 8 月 27 日上傳 arXiv 的資安論文，據作者所知是第一個用真實 PLC 做「硬體在環」測試的框架，量化 LLM agent 能否把網路可達的 PLC 變成持續性物理破壞。",
@@ -5874,7 +5892,7 @@
     "id": "lrn-2026-08-30-langchain-公開大規模-agent-評測方法論-任務-輸入-環境-評分腳",
     "date": "2026-08-30",
     "source": "learning",
-    "editor_note": "這套方法的隱含前提是團隊已有 production 環境與軌跡可掃，方法論開源後，評測門檻從「會出題」移向「有場景與資料」，受益最大的是握有內部系統與真實流量的大型團隊，小團隊拿到的只是空殼。更值得警惕的是產出資料集直接餵後訓練：agent 出題、agent 答題的封閉迴圈若缺外部錨點，偏差會從 benchmark 一路寫進模型權重。",
+    "editor_note": "把評測方法論包成 skill 本身就是訊號：benchmark 已從學術聲望變成工程標配，LangChain 更藉 Harbor 格式把團隊鎖進自家生態，評測正成為新護城河。隱患在於任務由前沿模型生成與校準，難度被錨定在其能力分布上，量到的恐怕只是相對差距；當這類管線在同業間普及，評測同質化反而會成為下一個產業風險。",
     "image": "images/lrn-2026-08-30-langchain--agent-----.png",
     "original_url": "https://www.langchain.com/blog/building-agent-environments-and-tasks",
     "deep_summary": [
@@ -5988,7 +6006,7 @@
     "id": "lrn-2026-08-29-anthropic-發布-mhs-規格-ai-控制實體機器的通用標準-未來將開源",
     "date": "2026-08-29",
     "source": "learning",
-    "editor_note": "MHS 與其說是開放，不如說是卡位。Anthropic 靠 MCP 拿下 agent 工具層話語權後，正把同一套打法複製到實體世界：先綁住科研與製造夥伴，待依賴成形才開源，規格中立不等於生態中立。而物理推理不足才是自動化的真瓶頸，標準化只解決接線、解決不了判斷；若對手不跟進，這套規格終將淪為 Claude 生態的專屬配件。",
+    "editor_note": "MHS 的戰略意義大於技術本身：MCP 已讓 Anthropic 拿下軟體工具層的標準話語權，如今同一套打法延伸到實體設備，誰定義硬體介面，誰就卡位具身智慧的入口。開源固然利於普及，但 OpenAI、Google 等對手是否願意遵循，才是這場標準戰真正的變數。",
     "image": "images/lrn-2026-08-29-anthropic--mhs--ai--.png",
     "original_url": "https://www.itmedia.co.jp/news/article/2608/28/2000000897/",
     "deep_summary": [
@@ -6195,7 +6213,7 @@
     "id": "lrn-2026-08-28-plcbench-首個真實-plc-硬體在環框架-量化-agent-的工控物理威",
     "date": "2026-08-28",
     "source": "learning",
-    "editor_note": "三成一的持續物理影響成功率不算低，更關鍵的是製程可見度越高、攻擊越容易得手，這把資料治理推上 OT 防禦的第一線。不過降階模擬難以還原真實工廠的工程師介入與連鎖保護，實務風險可能被高估；各階段失敗分布其實是一份防禦投資的優先順序表，值得照單補強。",
+    "editor_note": "把評測推到物理後果層次，是此研究對產業最直接的提醒：OT 的 AI 風險不該再用漏洞數或存取成功來衡量。但降階模擬與少數機型的覆蓋有限，外推到大型連續產線前須保持保守；「製程可觀測性助長攻擊」這條線索，更值得防禦方接手發展成設計原則，而非停在紅隊戰果展示。",
     "image": "images/lrn-2026-08-28-plcbench--plc---agent-.png",
     "original_url": "https://ift.tt/kYnyowm",
     "deep_summary": [
@@ -6322,7 +6340,7 @@
     "id": "lrn-2026-08-27-mcp-發布新路線圖-聚焦-ai-agent-支援與-http-通訊統一",
     "date": "2026-08-27",
     "source": "learning",
-    "editor_note": "路線圖的重點不在技術項目，而在治理轉向：MCP 從 Anthropic 的快速迭代產品，走入多方共識的基礎設施階段。agent 身分與傳輸統一擺明衝著企業採購與 A2A 等對手而來，但委員會決策節奏能否保住它以速度取勝的先機，將決定 MCP 是成為 agent 時代的 HTTP，還是被更靈活的新標準取代。",
+    "editor_note": "HTTP 統一與串流推送是幾個月內能收尾的工程活，身分層才是真考驗：agent 委派與稽核不是定好規格就成立，得等 IAM 廠商與企業治理流程跟上，否則只是半套標準。工具發現改走分類瀏覽也值得玩味，它透露的訊號是工具數量爆炸來得比標準化更快，分類只是止血，不是解方。",
     "image": "images/lrn-2026-08-27-mcp---ai-agent--http-.png",
     "original_url": "https://www.itmedia.co.jp/news/article/2608/27/2000000831/",
     "deep_summary": [
@@ -6450,7 +6468,7 @@
     "id": "lrn-2026-08-26-meta-hatch-曝光-直接內建在-instagram-的消費級-ai-ag",
     "date": "2026-08-26",
     "source": "learning",
-    "editor_note": "分發是入口，卻未必是護城河：蘋果與 Google 遲早在系統層推同級 agent，截流可能只需一次更新。代操作才是更硬的關卡——DoorDash、Reddit 沒有義務放行，條款與反爬封鎖是常態。$199.99 若屬實，等於以十倍行情豪賭尚未驗證的消費付費意願。",
+    "editor_note": "分發是門檻，卻不是護城河的全部。代訂餐、代收信等於把帳號權限交給一家隱私爭議纏身的公司，信任成本可能抵銷免安裝的便利，$199.99 的定價更直接篩掉多數嘗鮮者。消費級 agent 的真正考驗從來不在觸達，而在第一個月後的續訂率，這點 Instagram 的規模幫不上忙。",
     "image": "images/lrn-2026-08-26-meta-hatch---instagram--a.png",
     "original_url": "https://automateandgrow.beehiiv.com/",
     "deep_summary": [
@@ -6555,7 +6573,7 @@
     "id": "lrn-2026-08-25-graph-engineering-in-the-era-of-llm-agen",
     "date": "2026-08-25",
     "source": "learning",
-    "editor_note": "這段深摘本身不是內容摘要，而是上一輪的勘誤訊息：它說明了原文與標題不符、實際來源是 Hugging Face Daily Papers 列表、且缺少任何可依據的論文內容。在這種情況下我沒辦法寫編輯觀點，因為「觀點」必須立基於文章實際的主張、做法或數據，現在這些全部缺席。硬寫一段談「圖工程是多 Agent 基礎設施」的評論，看似合理，實則是我憑對議題的既有印象編造立場，一旦論文實際論點不同，就變成媒體對研究的失實評論，這比不寫更糟。\n\n要往下走，需要其中一項：\n\n1. 貼上《Graph Engineering in the Era of LLM Agents》的摘要或全文，我按 80-120 字、有立場、不總結收尾的規格直接寫。\n2. 若其實要寫的是列表中的某篇（如 AgentWorld），同樣需要該篇的摘要。\n3. 若接受「不針對特定論文、只談圖結構與多 Agent 系統的產業趨勢」的通用評論，我可以寫，但成品不會宣稱對應這篇論文，用途上要先講清楚。",
+    "editor_note": "這份「深摘」並不是論文摘要，而是一則說明：來源資料和標題對不上，裡面沒有《Graph Engineering in the Era of LLM Agents》的任何實質內容。編輯觀點的立場、局限判斷、趨勢連結，都必須建立在論文實際主張之上；在沒讀到原文的情況下硬寫，等於替一篇不確定存在的論文編造論點，這比開天窗風險更大，我不建議也不能這樣交稿。\n\n兩條路請選一條：提供這篇論文的摘要、arXiv 連結或內文，我收到後立刻產出 80-120 字、有立場的段落；或者，如果需求改成純趨勢評論（例如談圖結構與 GraphRAG 在 Agent 基礎設施中的角色），我可以寫，但要先講清楚那不是「根據原文」的編輯觀點。",
     "image": "images/lrn-2026-08-25-graph-engineering-in-the-.png",
     "deep_summary": [
       "這份原文和標題對不上，我沒辦法照要求寫，需要先跟你確認。",
@@ -6659,7 +6677,7 @@
     "id": "lrn-2026-08-24-微軟開源-agent-lightning-v1-0-不用重寫生產系統就能用-rl",
     "date": "2026-08-24",
     "source": "learning",
-    "editor_note": "微軟看準的不是演算法突破，而是 RL 落地最貴的一段：整合成本。但「零修改」只是把門檻從程式碼轉移到算力、資料與獎勵工程，多數團隊的真正瓶頸會在後者。當戰場從後訓練轉向 agent 工作流優化，開源基礎設施正是微軟卡位生態的籌碼，而這波熱潮最穩定的贏家，仍是雲端 GPU 供應商。",
+    "editor_note": "零修改」的承諾容易讓人低估難度：省掉的是工程改造，省不掉的是 reward 定義與資料篩選，門檻只是換了位置而非消失。但把 agent 後訓練基礎設施化，微軟的方向確實踩對了點——當基礎模型能力日趨同質，能持續用自家工作流資料調優 agent 的團隊，才拿得到下一輪競爭的入場券。",
     "image": "images/lrn-2026-08-24--agent-lightning-v1-0--rl.png",
     "original_url": "https://github.com/microsoft/agent-lightning",
     "deep_summary": [
@@ -6764,7 +6782,7 @@
     "id": "lrn-2026-08-24-cloudflare-mcp-server-支援-oauth-scopes-ag",
     "date": "2026-08-24",
     "source": "learning",
-    "editor_note": "Cloudflare 把 MCP 授權推向最小權限，方向正確，但這類細粒度控管很快就會從加分項變成門檻。真正的考驗在下一步：在同意框手動勾選仍預設人類在場，而自主運行的 agent 需要的是政策驅動、可動態收回的授權；誰先補上這一層，誰就取得 agent 治理的話語權。",
+    "editor_note": "Agent 安全成敗繫於權限設計。Cloudflare 將最小權限原則落實到 MCP 授權流程，方向正確，也預示精細權限控管將成 agent 平台的基本門檻，其餘工具鏈廠商勢必跟進。不過 scopes 目前仍以工具為邊界，未觸及資料層級的動態授權；當 agent 自主性升高，重新授權若淪為人工瓶頸，反而折損自動化價值，這才是下一步難題。",
     "image": "images/lrn-2026-08-24-cloudflare-mcp-server--oa.png",
     "original_url": "https://developers.cloudflare.com/changelog/post/2026-08-22-wrangler-mcp-optional-oauth-scopes/",
     "deep_summary": [
@@ -6885,7 +6903,7 @@
     "id": "lrn-2026-08-23-hugging-face-每日論文精選-agent-學習環境與記憶機制成研究熱點",
     "date": "2026-08-23",
     "source": "learning",
-    "editor_note": "Agent 訓練的瓶頸正從模型轉向環境，這篇論文印證了「環境即新數據」的產業直覺。包裝既有環境而非重蓋，工程上務實，但沿用原驗證機制，天花板仍被舊環境框住，黑箱診斷也只能修看得見的裂縫。更該追問的是：環境隨 policy 持續演化後，會不會只教會 agent 應付合成挑戰，而非真實任務？",
+    "editor_note": "Agent 競爭的瓶頸正從模型轉向環境工程，EnvHarness 以中介層卡位，方向正確。但前提是任務得有可靠 verifier，這恰好排除了最缺驗證標準、卻最需要 agent 的開放式真實場景；能否擺脫對 verifier 的依賴，決定這條路線的天花板。",
     "image": "images/lrn-2026-08-23-hugging-face--agent-.png",
     "original_url": "https://arxiv.org/abs/2608.19880",
     "deep_summary": [
@@ -6923,7 +6941,7 @@
     "id": "lrn-2026-08-23-wake-mac-上所有-coding-agent-會話的統一檔案館-開源-ru",
     "date": "2026-08-23",
     "source": "learning",
-    "editor_note": "Wake 的存在本身就是產業警訊：會話格式無標準、廠商競相加密上雲，開發者竟得靠第三方工具才找得回自己的紀錄。亮點也不在歸檔，而是 MCP 讓新 agent 繼承舊記憶，這才踩中跨 agent 記憶的趨勢；但命脈握在各工具手上，本地格式一改或全面上雲，Wake 就會從檔案館淪為殘缺拼圖。",
+    "editor_note": "Wake 最有野心的部分是用 MCP 讓新 agent 繼承舊會話，補上 agent 時代最缺的跨工具記憶層。但這條路依賴各工具把會話以明文留在本機的善意，一旦廠商全面加密或上雲，逆向相容隨時失效。會話是開發者的資產，產業欠一套可攜式標準，而非任由工具商各自圈地。",
     "image": "images/lrn-2026-08-23-wake-mac--coding-agent---.png",
     "original_url": "https://github.com/iAmCorey/Wake",
     "deep_summary": [
@@ -7064,7 +7082,7 @@
     "id": "lrn-2026-08-22-vercel-推出-is-agentic-檢測你的網站對-ai-agent-是否",
     "date": "2026-08-22",
     "source": "learning",
-    "editor_note": "評分標準本身就帶立場：SSR 與規範 HTTP 正是 Vercel 技術棧的強項，這套度量衡多少有球員兼裁判的意味。分數也僅反映單一 agent 視角，不同模型的瀏覽策略差異未必涵蓋。但 agentic 優化接棒 SEO 的態勢已定，Vercel 搶先定義標準，戰略盤算比工具本身更值得玩味。",
+    "editor_note": "Is Agentic 表面上是健檢工具，實質是基礎設施商在代理流量時代搶先定義量測標準的動作，就像 Google 以 Lighthouse 主導效能話語權。一旦評分被當成絕對指標，業者勢必為分數最佳化，重演 SEO 灌水的老路；對網站方而言，真正的課題是在對 agent 開放與防爬安全之間拿捏界線。",
     "image": "images/lrn-2026-08-22-vercel--is-agentic--ai-ag.png",
     "original_url": "https://is-agentic.com/",
     "deep_summary": [
@@ -7121,7 +7139,7 @@
     "id": "lrn-2026-08-22-hugging-face-每日論文-agent-記憶陷阱與自我演化成顯學",
     "date": "2026-08-22",
     "source": "learning",
-    "editor_note": "模型以月為單位迭代，靜態環境注定被甩開，環境生成將是 agent 領域的下一個戰場。EnvHarness 用外掛繞開重建成本，思路務實，但保留原驗證器也埋下隱憂：環境被重塑後，舊標尺未必還能度量新挑戰。這類方案能否真正跨領域，取決於從軌跡診斷弱點的深度，而非包裝層的巧勁。",
+    "editor_note": "這篇論文真正踩中的痛點是驗證，而非生成。沿用原環境驗證器固然聰明繞開了成本問題，卻等於把評判標準凍結在舊世界：agent 在重塑後環境犯的新錯，舊驗證器未必抓得到。環境可以不斷演化，驗證器不能，這條鴻溝將是下一波 agent 訓練基礎設施的主戰場。",
     "image": "images/lrn-2026-08-22-hugging-face--agent-.png",
     "original_url": "https://arxiv.org/abs/2608.19880",
     "deep_summary": [
@@ -7331,7 +7349,7 @@
     "id": "lrn-2026-08-20-mattpocock-skills-衝上-github-trending-24-",
     "date": "2026-08-20",
     "source": "learning",
-    "editor_note": "一日近兩千星，反映的不是技能包多神，而是工程師對 agent 失控的集體焦慮。提示詞層紀律的效果，高度取決於使用者自律與作者公信力，能否勝過重型框架，得等正式專案長期驗證才算數。但訊號已經清楚：市場正從全流程接管的框架，退回工程師主導的小工具組合，這個轉向比星數更值得追蹤。",
+    "editor_note": "一天近兩千星，一半是對重型 agent 框架的反彈，一半是 Pocock 個人品牌溢價，星數未必等於驗證過的價值。可組合的小技能確實比全流程框架好除錯，但它沒有真正解決 misalignment，只是把思考紀律還給工程師。值得追蹤的是 skills 能否從個人工作流長成 agent 能力的標準發布格式，那才是框架之爭外的真正賽局。",
     "image": "images/lrn-2026-08-20-mattpocock-skills--github.png",
     "original_url": "https://github.com/mattpocock/skills",
     "deep_summary": [
@@ -7453,7 +7471,7 @@
     "id": "lrn-2026-08-19-anthropic-發表-mind-viruses-研究-會在-agent-之間",
     "date": "2026-08-19",
     "source": "learning",
-    "editor_note": "一句系統提示就能近乎免疫，這既是好消息，也暴露研究的局限：所謂思想病毒更像脆弱的 prompt injection 變體，離真實威脅仍有距離。真正值得深究的是反覆浮現的「病毒人格」，它暗示模型表徵存在某種共通弱點。而當長期記憶與 agent 互通協定普及、context 不再被清空，這類風險才會真正升級。",
+    "editor_note": "一句警告就近乎免疫」是這篇論文最容易被誤讀的發現：它不代表威脅已解，只代表現有病毒訊號還很表淺；而培養病毒的演化方法，本身就是攻擊者可直接套用的配方，變種遲早繞得過固定警告。隨著 MCP、A2A 等協議讓 agent 走向大規模互聯，安全設計也該從單模型護欄，升級成網路層的疫情防控思維。",
     "image": "",
     "deep_summary": [
       "Anthropic 在 8 月 10 日上傳 arXiv 的論文《Mind Viruses: Self-Propagating Ideas in Multi-Agent LLM Systems》提出「思想病毒」：一種會在多 agent 系統裡自我傳播的想法或目標，被感染的 agent 會把它傳給下一個，甚至連帶改變宿主行為。",
@@ -7748,7 +7766,7 @@
     "id": "lrn-2026-08-17-munder-difflin-把多個-coding-agent-變成一間-辦公室",
     "date": "2026-08-17",
     "source": "learning",
-    "editor_note": "依附性是最大隱憂：協調層仰賴各家 CLI 未承諾的介面行為，模型商一改版就得重寫，對單人維護的專案是長期負擔。但方向沒錯——模型商品化之後，誰握有跨 agent 的記憶與審批軌跡，誰就握住遷移成本，這一層的爭奪才剛開打，這個專案只是提早替整個類別亮牌。",
+    "editor_note": "harness 這個品類的弔詭在於越成功越容易被夾殺：模型商向上內建功能，開源社群向下快速複製。「辦公室」的隱喻倒是點對了方向——多 agent 的終局不在更強的模型，而在任務分解、審批與問責的組織設計。它的生死線因此不是協調能力，而是治理能否標準化到讓團隊願意付費，否則終究是開發者的玩具，而非基礎設施。",
     "image": "images/lrn-2026-08-17-munder-difflin--coding-ag.png",
     "original_url": "https://bestaitoolfinder.com/munder-difflin/",
     "deep_summary": [
@@ -7844,7 +7862,7 @@
     "id": "lrn-2026-08-16-阿里-opensandbox-ai-coding-agent-的雲原生沙箱基礎設",
     "date": "2026-08-16",
     "source": "learning",
-    "editor_note": "沙箱隔離技術正快速商品化，勝負已移向營運層：預熱池算力成本、多租戶排程與跨機恢復的穩定性，才是 OpenSandbox 迎戰 E2B 等沙箱服務的本錢。阿里以開源切入，盤算是把 agent 執行層導回自家雲端，能否撐住生產級規模仍是最大變數。",
+    "editor_note": "沙箱正從差異化功能變成 agent 基礎設施的標配，阿里以 Apache 2.0 切入，擠壓的是 E2B、Daytona 這類新創的定價空間，也延續了 Qwen 以開源換生態的打法。但開源搬得走程式碼、搬不走運維，多租戶下的隔離開銷與資源密度才是自建的真實成本，能不能把叢集利用率做到帳面數字，考驗的始終是採用方自己的平台工程功力。",
     "image": "images/lrn-2026-08-16--opensandbox-ai-coding-ag.png",
     "deep_summary": [
       "阿里 OpenSandbox 是以 Apache 2.0 開源的 AI 通用沙箱平台，讓 Coding Agent、GUI Agent、Agent 評測、AI 程式執行與 RL 訓練等工作負載，用同一套 API 從筆電一路跑進大型 K8s 叢集。",
@@ -7882,7 +7900,7 @@
     "id": "lrn-2026-08-16-docker-sandboxes-給-ai-agent-的一次性隔離沙箱",
     "date": "2026-08-16",
     "source": "learning",
-    "editor_note": "這步棋對 Docker 別具意義：當年發明容器卻把編排戰場輸給 Kubernetes，如今搶先卡位 agent 執行層，明顯不想重演歷史。免費策略賭的是生態而非授權收入，算得聰明；但隔離只管爆炸半徑，企業採購真正的關鍵在治理深度，若 AI Governance 只做半套，這個入口位置隨時可能被雲端原生對手追過。",
+    "editor_note": "Docker 賭的是開發者敢不敢真的放手。microVM 邊界或許比提示詞確認可靠，但沙箱一旦被逃逸，權責歸屬反而更難界定，企業採購前會先問這題。E2B 與 Modal 該緊張了：威脅不在隔離技術本身，而在 Docker 長年盤踞開發者本機的信任基礎，這種本地加雲端的布局，雲端原生新創短期難以複製。",
     "image": "",
     "deep_summary": [
       "Docker 推出 Sandboxes，一款免費、獨立於 Docker Desktop 的產品，為 coding agent 提供可拋棄式的 microVM 沙箱。",
@@ -7922,7 +7940,7 @@
     "id": "lrn-2026-08-16-hf-每日論文-agent-harness-與長期記憶成新聚類",
     "date": "2026-08-16",
     "source": "learning",
-    "editor_note": "榜首仍是表徵學習而非 agent，社群按讚品味與產業熱度的脫鉤值得玩味：agent 研究連公認的問題定義都還沒有，SLCA-GRPO 修的功勞歸因，本質是工具呼叫獎勵訊號髒亂的病徵。誰先把乾淨的訓練配方做成可複用基礎設施，誰就握有下一輪 agent 競賽的入場券。",
+    "editor_note": "單日榜單不足以斷言趨勢，但 Agent 論文自發成簇，確實對上了產業資金走向。較值得玩味的是榜首仍屬表徵學習，透露學界品味與落地需求之間的時間差。隱憂在 AgentWorld 這類長程協作基準：歷來極易被針對性微調攻克，分數與真實部署表現的相關性常迅速鈍化，團隊引用前宜自行驗證。",
     "image": "images/lrn-2026-08-16-hf--agent-harness-.png",
     "deep_summary": [
       "這是 Hugging Face Daily Papers 的單日榜單，共 11 篇論文。",
@@ -8139,7 +8157,7 @@
     "id": "lrn-2026-08-15-惡意-skill-檔案風險評估-coding-agent-的供應鏈安全課題",
     "date": "2026-08-15",
     "source": "learning",
-    "editor_note": "癥結不在模型強弱，而在 skill 機制本身：自然語言既是文件也是指令，掃描與簽章等既有供應鏈防線對它失效。這形同 npm 供應鏈攻擊換上自然語言外衣重演，而業者仍競相擴充技能生態，權限隔離設計明顯落後。在防護標準成熟前，企業應把 skill 視為不可信輸入，預設隔離執行。",
+    "editor_note": "最該警惕的不是駭人的利用率，而是它幾乎不隨生成模型變動——這指向 skill 動態載入的架構缺陷，換更強的模型也救不了。當 Skills、MCP 等工具生態走向市集化，npm 供應鏈攻擊的劇本勢必在 Agent 世界重演；防線應建立在權限最小化與載入審查，而非寄望模型自身的判斷力。",
     "image": "",
     "deep_summary": [
       "這篇 arXiv 論文評估編碼 Agent 的 skill 介面攻擊面：skill 資料夾裝著指令與腳本、由 Agent 動態載入來特化行為，惡意 shell 指令因此能藏進看似無害的自然語言檔案。",
@@ -8347,7 +8365,7 @@
     "id": "lrn-2026-08-13-grok-4-6-發布-grok-bot-多-agent-雲端自動化系統",
     "date": "2026-08-13",
     "source": "learning",
-    "editor_note": "這次標題與內文錯置，戳破了 AI 內容生產線的盲點：摘要、下標、編排都能平行自動化，唯獨事實核對沒被加速。若為搶 Grok 4.6 的時效硬發，等於刊登一篇無原文支撐的報導，傷的是自家信用。AI 媒體的競爭點已從產出速度轉向驗證紀律，誰先把核可機制嵌進流程，誰才守得住讀者信任。",
+    "editor_note": "標題與原文錯配，是 AI 內容產線的典型失敗：生成、聚合、核稿拆成不同環節，沒人對成品負責，連數字都會在轉述間變形。這種稿子該擋就擋，勘誤救不回信用。當自動化持續壓縮核稿時間，把關反而成了編輯台最稀缺的資產——媒體競爭力正從拚速度轉向可驗證。",
     "image": "images/lrn-2026-08-13-grok-4-6--grok-bot--agent.png",
     "original_url": "https://automateandgrow.beehiiv.com/",
     "deep_summary": [
@@ -8624,7 +8642,7 @@
     "id": "lrn-2026-08-11-google-deepmind-發表-residencyrl-用-rl-模擬-住",
     "date": "2026-08-11",
     "source": "learning",
-    "editor_note": "真正的考驗在模擬器之外。多維獎勵再精細，終究是研究團隊對「好醫療」的編碼，權重失衡時可能教出善於迎合評分而非照護病人的 Agent。RL 後訓練正從數學、程式走向高風險專業場域，但醫療的落地驗證與責任歸屬，注定遠慢於論文迭代的速度。",
+    "editor_note": "把住院醫師類比成 RL 訓練相當巧妙，卻迴避了真實培訓的靈魂——究責與分層監督，五個面向的獎勵權重終究是工程師的價值判斷。產業意義上，這標誌醫療 AI 從問答刷榜走向多輪流程優化，與 Agent 訓練的主流路線合流；此類對抗式臨床模擬器若對外釋出，更可能成為醫療 Agent 的標準訓練基建。",
     "image": "images/lrn-2026-08-11-google-deepmind--residenc.png",
     "original_url": "https://arxiv.org/abs/2608.07418",
     "deep_summary": [
@@ -8792,7 +8810,7 @@
     "id": "lrn-2026-08-10-google-research-science-one-證據鏈將幻覺引用降至-0",
     "date": "2026-08-10",
     "source": "learning",
-    "editor_note": "零幻覺引用亮眼，但證據鏈只保證引用屬實，不代表結論正確新穎；限讀百篇文獻加保守改寫，恐讓產出偏向安全但平庸。且框架與評測同出一手，未經第三方複驗前不宜盡信。真正的訊號在於把驗證做成架構而非外掛，這正是幻覺治理該走的方向。",
+    "editor_note": "零幻覺引用亮眼，但引用真實不等於引用得當：驗證器只核對宣稱與來源的吻合，不保證結論正確，改寫後的句子還可能稀釋原意。文獻圖受限單一 API，成績能否外推到開放題目仍是問號。可確定的是，可信度正從加分題變成 AI 科學家的入場券，這才是此原型釋放的產業訊號。",
     "image": "images/lrn-2026-08-10-google-research-science-o.png",
     "original_url": "https://research.google/blog/science-one-framework-a-verifiable-autonomous-research-framework-via-chain-of-evidence/",
     "deep_summary": [
@@ -9171,7 +9189,7 @@
     "id": "lrn-2026-08-06-agent-memory-研究典範轉移-16-篇論文齊聚宣告-靜態-graphr",
     "date": "2026-08-06",
     "source": "learning",
-    "editor_note": "自演化記憶方向無誤，但成本帳沒算清楚：記憶不斷改寫帶來的運算與維護開銷，在真實代理服務中未必划算。更關鍵的是，記憶可演化就會漂移、被汙染，如何稽核與回滾，論文著墨甚少。這正對上大廠急推持久記憶的產品節奏，但基準分數離生產可用還有一段路。",
+    "editor_note": "讓記憶隨回饋持續改寫，意味競爭正從檢索品質轉向寫入路徑的工程化，直接對上 Mem0、Zep 等記憶新創的商業賽道。但寫入延遲、儲存成本與多輪演化的穩定性在論文中皆未量化，這些才是落地門檻；在補齊之前，宣告靜態 GraphRAG 退役恐怕言之過早。",
     "image": "images/lrn-2026-08-06-agent-memory--16---graphr.png",
     "original_url": "https://arxiv.org/abs/2605.12061",
     "deep_summary": [
@@ -9249,7 +9267,7 @@
     "id": "lrn-2026-08-05-daytona-ai-程式碼生成的-頂級沙盒打工人",
     "date": "2026-08-05",
     "source": "learning",
-    "editor_note": "停更才是重點。沙盒是安全邊界，無人維護的隔離環境本身就是資安負債，fork 容易，長期扛下 kernel 級修補才是真成本。這與 Terraform、Redis 的開源反悔潮是同一劇本：當 agent 基建成為必爭之地，開源淪為獲客漏斗的速度只會更快，與其賭 fork 社群接手，不如一開始就以商業版思維評估廠商。",
+    "editor_note": "開源停更是商業劇本，不是技術決定：Daytona 正重演 HashiCorp、Redis 走過的開源養客、閉源收割老路。fork 一個凍結的 repo，等於接手無人修補的安全隔離層，帳面免費、風險昂貴。沙盒已是 agent 基礎設施的兵家必爭控制點，與其賭廠商承諾，不如認真評估 E2B 或以 Firecracker 自建，把執行層握在自己手裡。",
     "image": "images/lrn-2026-08-05-daytona-ai--.png",
     "deep_summary": [
       "Daytona：AI 程式碼執行的 90ms 沙盒，開源版已停更",
@@ -9575,7 +9593,7 @@
     "id": "lrn-2026-08-02-openai-astra-內部模型宣稱解決十項數學與理論資訊科學開放問題",
     "date": "2026-08-02",
     "source": "learning",
-    "editor_note": "形式化證明正在成為前沿實驗室的護城河：當基準分數因汙染與飽和日漸失真，可機器驗證的數學主張成了最難造假的宣傳貨幣。但這次的披露是選擇性的——證明可查、過程不可查，成本數字少了失敗率當分母，終究只是行銷算術。哪天連失敗紀錄一併公開，「可檢驗」三個字才真正成立。",
+    "editor_note": "Lean 4 形式化驗證才是此事最大進展：它把舉證責任從公司宣稱拉回可公開檢查的物件，這對整個 AI for Math 領域都是好事。但缺了失敗紀錄，兩千美元的成本數字其實毫無意義，既無法排除倖存者偏差，也分不清是穩定能力或運氣。在完整實驗流程公開前，Astra 對數學界更像同行審查機制的壓力測試，而非已可評估的研究工具。",
     "deep_summary": [
       "OpenAI 研究員 Noam Brown 宣稱，內部模型 Astra 已解決數學、量子複雜性與理論資訊科學的十項開放問題。",
       "Astra 被稱為 OpenAI「下一代主要模型家族」，目前仍屬內部模型。",
@@ -9631,7 +9649,7 @@
     "id": "lrn-2026-08-02-stateless-mcp-2-0-嶄露頭角-simon-willison-推出",
     "date": "2026-08-02",
     "source": "learning",
-    "editor_note": "這則稿子最值得寫的，反而是產製流程本身：標題所稱的無狀態 MCP 2.0 與兩項工具，在原文隻字未提，是生成式摘要環節的典型幻覺。當科技媒體競相用 AI 批量產稿，來源錯置卻照常成文的情況只會更常見；少了人工核驗這一關，省下的時間，最終要用公信力來付帳。",
+    "editor_note": "標題與深摘所稱的 MCP 2.0 內容在原文查無實據，這不是單一疏失，而是 AI 內容管線的結構性風險：當摘要、下標、編輯逐環交給模型接力，任何一環的幻覺都會被下游當成可信事實層層轉寫。編輯溯源不是流程贅飾，而是最後一道事實防線——本篇應退稿重製，而非刊出。",
     "deep_summary": [
       "這份指定題目與提供的原文對不上，我無法在不編造的前提下寫出這則摘要。",
       "標題與粗摘要講的是 MCP 2.0 無狀態化、mcp-explorer、datasette-mcp，以及「56KB Playwright snapshot 佔滿 token 預算」等具體說法。但原文全文是 Simon Willison 部落格 2026 年 9 月 21 日至 28 日的連載筆記，實際內容包括：WeAreDevelopers 大會的「2026 in LLMs」閉幕演講、S3 十年未降價（維持 $0.023/GB-month）、用 Opus 5.5 打造的 Bluesky 回覆機器人偵測工具、kākāpō 像素動畫與 Playwright 錄影腳本、John Gruber 對 Muse 的評論、Cloudflare 開始支援 Vary header、Gemini 3.8 Flash TTS（兩千多種聲音、30 秒樣本自訂聲音）、Claude Opus 5.5 與 GPT-6 Sol/Luna 同日發布引發價格戰，以及 TypeSafe AI 的 Jev「System One」決策模型與 llm-typesafe 外掛。",
@@ -9735,7 +9753,7 @@
     "id": "lrn-2026-08-01-mcp-2-0-無狀態規範正式發布-一次-http-請求即可調用工具",
     "date": "2026-08-01",
     "source": "learning",
-    "editor_note": "無狀態化表面是工程優化，實為向雲端基建低頭：擴展性壓過對話式設計，MCP 定型為 REST 化的工具管道。棄用 Sampling 才是關鍵訊號——官方收縮代理級野心，把編排權讓給上層框架，LangChain 等代理框架因此受惠；協議標準化之後，競爭主戰場將移往框架層。",
+    "editor_note": "無狀態化的代價值得警惕：棄用 Sampling 等於放棄伺服器端主動調度模型的原始願景，MCP 正從 Agent 協作層收縮為單純的工具 API，狀態並未消失，只是被推回應用層自行處理。而十億級下載規模下僅留十二個月緩衝，規範節奏由少數大廠主導，這種治理結構恐怕比技術取捨更具爭議。",
     "image": "images/lrn-2026-08-01-mcp-2-0---http-.png",
     "original_url": "https://blog.modelcontextprotocol.io/posts/2026-07-28/",
     "deep_summary": [
@@ -9816,7 +9834,7 @@
     "id": "lrn-2026-07-31-mcp-2026-07-28-新規範上線-從雙向有狀態轉向無狀態核心",
     "date": "2026-07-31",
     "source": "learning",
-    "editor_note": "無狀態化確實降低了部署門檻，但代價是把狀態與任務編排的複雜度轉嫁給代理端，Tasks 移入擴充框架後，各家實作不相容的碎片化風險並未消除。MCP 的真正護城河也不在規範本身，而是連接器目錄的網路效應；當生態擴張速度持續快過規範治理，標準反而可能淪為技術債的溫床。",
+    "editor_note": "無狀態化是務實取捨，卻把伺服器主動推送逐出核心，即時場景得靠擴充補回，實作分歧的風險就此埋下。更深一層是治理問題：規範由 Anthropic 主導又與 Claude 深度綁定，中立性先天不足；下載量不等於標準地位，OpenAI、Google 等對手是否長期跟進，才是它成為公共基建的真正考驗。",
     "image": "images/lrn-2026-07-31-mcp-2026-07-28--.png",
     "original_url": "https://claude.com/blog/bringing-mcp-2026-07-28-to-claude",
     "deep_summary": [
@@ -10026,7 +10044,7 @@
     "id": "lrn-2026-07-29-mcp-2026-07-28-重大規格更新-全面轉向無狀態架構",
     "date": "2026-07-29",
     "source": "learning",
-    "editor_note": "無狀態化是務實的妥協，但串流與伺服器主動推送等 agent 場景的關鍵能力被推向擴充機制，複雜度只是從協定核心轉嫁給生態，碎片化風險並未消失；而接軌企業身分體系，顯示 MCP 已從開發者工具升級為企業採購標配，代理互聯的規格主導權之爭才剛開始。",
+    "editor_note": "無狀態化看似技術取捨，實則向企業基礎設施現實低頭——鮮少 IT 部門願為 agent 協定維運常駐服務。但長時任務與互動 UI 被推入擴充框架，埋下碎片化隱憂：各實作自行加料，恐重演瀏覽器時代的方言之亂。OAuth 對齊則顯示 MCP 已擠進企業採購清單，接下來的戰場在治理，不在功能。",
     "image": "images/lrn-2026-07-29-mcp-2026-07-28--.png",
     "original_url": "https://claude.com/blog/bringing-mcp-2026-07-28-to-claude",
     "deep_summary": [
@@ -10063,7 +10081,7 @@
     "id": "lrn-2026-07-29-openai-開源-codex-security-ai-寫碼也能-ai-顧安全",
     "date": "2026-07-29",
     "source": "learning",
-    "editor_note": "真正的訊號不在掃描能力，而在 OpenAI 甘願讓工具直跑 Claude 與 Qwen，競爭重心已從模型層轉向安全工作流的入口卡位。但 Trusted Access 審核仍替部分功能留了閘門，開源與合規的拉扯並未消失；當 AI 產碼速度遠超人工審查，這類自動防線遲早變標配，晚進場者只能追著規格跑。",
+    "editor_note": "真正值得看的不是掃描功能本身，而是 OpenAI 願意讓工具跑在對手模型上：其算盤已從賣模型轉向卡位開發者工作流，資安正是企業敢把寫碼交給 AI 的最後一道信任門檻。但自動分級與去重仍會誤判，出了事責任歸屬無解；Trusted Access 的事前審核更暗示，能自動修漏洞的 agent 離放手自跑還很遠，短期定位是放大資安團隊產能，而非取代。",
     "image": "images/lrn-2026-07-29-openai--codex-security-ai.png",
     "original_url": "https://github.com/openai/codex-security",
     "deep_summary": [
@@ -10292,7 +10310,7 @@
     "id": "lrn-2026-07-27-語音-ai-全景報告-2026-年-7-月-框架成熟-全雙工模型上線",
     "date": "2026-07-27",
     "source": "learning",
-    "editor_note": "Hugging Face 不另立標準、直接相容 OpenAI 協議，是聰明的生態卡位，把開發者的切換成本壓到最低；但級聯式管線等於把延遲與情感資訊的損耗寫進架構裡，在端到端全雙工模型成本快速下滑的趨勢下，這套框架更像是企業隱私與可控需求驅動的過渡選擇，而非語音代理的終局形態。",
+    "editor_note": "協議相容才是真正的亮點：Hugging Face 把 OpenAI Realtime 事件集變成逃逸艙，企業可將語音代理從封閉 API 無痛遷回自有硬體，這是對供應商鎖定最實際的反制。但分段串接終究是過渡架構，延遲與打斷處理仍輸原生全雙工語音模型；模組化是賣點，也是天花板。",
     "image": "images/lrn-2026-07-27--ai--2026--7---.png",
     "original_url": "https://github.com/huggingface/speech-to-speech",
     "deep_summary": [
@@ -10543,7 +10561,7 @@
     "id": "lrn-2026-07-25-microsoft-開源-18-課-ai-agent-完整教程",
     "date": "2026-07-25",
     "source": "learning",
-    "editor_note": "微軟免費開課的算盤不難猜：教材即導流，學得越深，綁進 Azure 生態越深，這是雲端巨頭一貫的獲客手法。但更有訊息量的是課綱走向——教學重心從 prompt 技巧轉向部署、資安與協議互通，說明 agent 開發正從 demo 邁向工程化。框架會替換，MCP、A2A 這類協議才是可攜資產，開發者該學的是共同語言，不是某家雲端的方言。",
+    "editor_note": "微軟這步棋看似公益，實為生態卡位：課程免費，主線範例卻深度綁定 Foundry 與 Azure，開發者學得越扎實，遷移成本越高。這與當年 Google 用免費 ML 課程收割 AI 人才如出一轍——教材是獲客漏斗，生態才是商品。在 agent 標準之爭尚未底定的此刻，誰定義教材，誰就掌握下一代開發者的預設選擇。",
     "image": "images/lrn-2026-07-25-microsoft--18--ai-agent-.png",
     "original_url": "https://github.com/microsoft/ai-agents-for-beginners",
     "deep_summary": [
@@ -10917,7 +10935,7 @@
     "id": "lrn-2026-07-21-hugging-face-遭自主-ai-agent-發動網路攻擊-反手用-llm",
     "date": "2026-07-21",
     "source": "learning",
-    "editor_note": "這份披露最該爭辯的不是攻擊多先進，而是全由 Hugging Face 單方敘事：偵測成效與資料未損都缺第三方驗證，難脫自證防禦力的行銷嫌疑。更根本的問題是開放平台對第三方資料的預設信任，AI 只是讓既有缺陷以機器速度放大，修補重點應在信任架構，而非追逐 agentic 話題。",
+    "editor_note": "以AI防AI」的完美結局目前只有單方說法，未經第三方檢視前宜打折扣。更該正視的是背後的不對稱：防守AI是在自家遙測完整的環境作戰，多數企業沒有這種數據底氣，遇上同款agent恐怕無力招架。當攻擊門檻已降至編排層級，還停留在單點偵測思維的資安架構，只會被越甩越遠。",
     "image": "images/lrn-2026-07-21-hugging-face--ai-agent---.png",
     "original_url": "https://www.techradar.com/pro/security/this-one-was-different-from-anything-we-had-handled-before-hugging-face-confirms-it-was-hit-by-cyberattack-powered-by-an-ai-agent",
     "deep_summary": [
@@ -11085,7 +11103,7 @@
     "id": "lrn-2026-07-20-google-cloud-推出-always-on-memory-agent-用",
     "date": "2026-07-20",
     "source": "learning",
-    "editor_note": "無法交出這段編輯觀點。深摘已確認原文與標題完全對不上：Always-On Memory Agent 的關鍵細節——Gemini 3.1 Flash-Lite、Continuous LLM Consolidation、延遲與成本數據——在原文中一條都沒有。此時硬寫觀點，等於對未經來源證實的產品訊息做出判斷，那不是評論，而是替來源不明的消息背書。編輯觀點可以立場鮮明，但前提是評論對象屬實，否則分析文章就成了假訊息的洗白管道。\n\n兩條路：補上正確原文，我立刻產出 80-120 字、含明確立場的段落；或確認粗摘要那兩點有可靠出處，我據此寫一版（內容會偏薄，且建議標註待證實）。若想先就「持續記憶整合 vs. RAG」的產業爭論寫觀點，我可以寫，但不應掛在這個標題下。",
+    "editor_note": "持續記憶整合能否「取代」RAG，我持保留態度：記憶式Agent確實省去檢索延遲、能累積長期脈絡，但記憶會隨時間漂移、難以審計溯源，合規場景反而更難落地，業界更可能的走向是混合架構而非取代。且本篇產品細節查無可驗證來源，刊出前應先向原廠求證。",
     "image": "images/lrn-2026-07-20-google-cloud--always-on-m.png",
     "original_url": "https://riorundown.substack.com/p/trending-ai-news-jul-19-2026",
     "deep_summary": [
@@ -11170,7 +11188,7 @@
     "id": "lrn-2026-07-19-tradingagents-v0-3-1-93k-stars-的多-agent-",
     "date": "2026-07-19",
     "source": "learning",
-    "editor_note": "93K Stars 反映的是敘事魅力，不是獲利能力。多空辯論再熱鬧，各 Agent 讀同批公開資料、共享同模型盲點，辯論不會憑空產生超額報酬；look-ahead 修補反而暴露這類回測框架可信度的脆弱。價值在多 Agent 工程範本，不在交易邊際。",
+    "editor_note": "多空辯論若由同一底層模型扮演正反兩造，恐怕只是同源偏誤換了口吻，展示價值大於實盤價值；加上真實滑點與市場衝擊，這套流程才見真章。專案真正稀缺的不是Agent編排——LangGraph普及之後那已是平庸技術——而是對資料時間點的潔癖，後者才是金融AI最難被複製的護城河。",
     "image": "images/lrn-2026-07-19-tradingagents-v0-3-1-93k-.png",
     "original_url": "https://github.com/TauricResearch/TradingAgents",
     "deep_summary": [
@@ -11485,7 +11503,7 @@
     "id": "lrn-2026-07-16-印度-ai-coding-新創-emergent-完成-130m-series-",
     "date": "2026-07-16",
     "source": "learning",
-    "editor_note": "與其說是硬體戰略，不如說是一次低成本的生態試水：把 agent 監控做成周邊商品，測的是開發者社群的黏著度與付費意願。更深一層看，開發者需要實體裝置盯任務狀態，恰恰暴露 agent 還沒無痛融入工作流——一旦通知與審核機制沉入作業系統層，這類專屬硬體恐怕只是過渡品。",
+    "editor_note": "與其說是硬體佈局，不如說是一場低風險的品牌實驗：OpenAI 借現成規格測試開發者黏著度，也順便替「agent 運維」這個品類卡位。實體按鍵在數十個代理並行時注定力不從心，真正該警惕的是儀表板與周邊工具商——當監控需求大到值得做成硬體，這塊市場已被提前圈走。",
     "image": "images/lrn-2026-07-16--ai-coding--emergent--130.png",
     "original_url": "https://www.theverge.com/ai-artificial-intelligence/965901/openai-hardware-codex-micro-launch",
     "deep_summary": [
@@ -11535,7 +11553,7 @@
     "id": "lrn-2026-07-16-cadence-推出-aurastack-能規劃-佈局-虛擬測試-pcb-與先進",
     "date": "2026-07-16",
     "source": "learning",
-    "editor_note": "官方倍數多出自元件擺放這類結構化任務，PCB 真正耗時的驗證反覆與跨域取捨，agent 能否承接仍是問號。更值得玩味的是 Cadence 將 agentic AI 從晶片貫通到板級，EDA 競爭已從單點工具轉向平台生態鎖定，越早採用的團隊，回頭成本只會越高。",
+    "editor_note": "官方數據多半取自最佳情境，擺位類結構化任務本就利於展示，跨域模擬能否穩定收斂才是驗收關卡。車用、航太受功能安全規範約束，AI 產出仍需可追溯的驗證，瓶頸恐怕從設計移轉到查核。而把全流程包進單一 AI 環境，客戶遭 Cadence 綁定的程度只會更深。",
     "image": "images/lrn-2026-07-16-cadence--aurastack----pcb.png",
     "original_url": "https://newsroom.cadence.com/press-releases/press-release-details/2026/Cadence-Introduces-AuraStack-AI-Super-Agent-the-Worlds-First-Agentic-AI-Platform-for-PCB-and-Advanced-Packaging/default.aspx",
     "deep_summary": [
@@ -11598,7 +11616,7 @@
     "id": "lrn-2026-07-15-tradingagents-tauric-research-多智能體金融交易框架",
     "date": "2026-07-15",
     "source": "learning",
-    "editor_note": "多空辯論的儀式感大於實質：LLM 分析師不會產生新資訊，角色分工只是把提示工程包裝成組織架構。真正值得量化圈注意的反而是 point-in-time 資料紀律，而非智能體本身。加上 LLM 輸出的非確定性使回測難以複現，首日 265 顆星追捧的恐怕是多智能體敘事熱潮，還不是經得起實盤考驗的獲利能力。",
+    "editor_note": "Point-in-time 設計在同類框架中少見地嚴謹，卻只堵住輸入端的前視偏差——LLM 權重早已在訓練中讀過歷史行情的結局，回測績效仍可能被模型記憶污染而高估。多空辯論是工程亮點而非 alpha 保證，更值得借鑑的是可移植到其他領域的 Agent 分工範式。",
     "image": "images/lrn-2026-07-15-tradingagents-tauric-rese.png",
     "original_url": "https://github.com/TauricResearch/TradingAgents",
     "deep_summary": [
@@ -12070,7 +12088,7 @@
     "id": "lrn-2026-07-11-google-工程師-addy-osmani-發布生產級-ai-coding-a",
     "date": "2026-07-11",
     "source": "learning",
-    "editor_note": "這套技能包的真正價值，是把工程紀律變成可安裝、可移植的資產，而非提升生成能力本身。但Markdown畢竟是軟性約束，模型服從性會隨上下文變長而衰減，agent自主運行越久，品質門檻被繞過的風險越高。可預期廠商會把驗證做進執行層，屆時這類技能包恰恰暴露了agent治理仍靠提示詞硬撐的窘境。",
+    "editor_note": "這份技能包真正的訊號，是 AI coding 的競爭軸心正從模型能力轉向流程治理：當 agent 人人可用，稀缺的變成可移植的工程紀律。但以自然語言寫成的規則終究是軟性約束，agent 遵不遵守仍靠模型自律，防規避設計也只是貓捉老鼠；真正的硬門檻應落在 CI 等外部機制，而非寄望 agent 自己把關。",
     "image": "images/lrn-2026-07-11-google--addy-osmani--ai-c.png",
     "original_url": "https://github.com/addyosmani/agent-skills",
     "deep_summary": [
@@ -12225,7 +12243,7 @@
     "id": "lrn-2026-07-10-ship-safe-開源-cli-用-23-個-ai-agent-審計程式碼安全",
     "date": "2026-07-10",
     "source": "learning",
-    "editor_note": "用多個 agent 審計 agent 產物有以毒攻毒的巧思，但審計方同樣會誤報漏報，結論不能照單全收，人工複核仍是必要關卡。更值得觀察的是本機優先定位：當企業普遍戒懼程式碼外流，這點比掃描能力更可能左右採購決策，也預告資安工具正從單純掃碼，走向 agent 權限與工作流的治理戰場。",
+    "editor_note": "安全工具 agent 化是必然：產碼速度早已超過人類審查能力，用 AI 對抗 AI 是唯一務實解。但 Ship Safe 的成敗不在功能，而在誤報率與更新速度——agentic 攻擊手法每週演化，本機掃描又缺雲端情資，開源社群的維護能量將決定它是活防線，還是裝完就忘的 linter。",
     "image": "images/lrn-2026-07-10-ship-safe--cli--23--ai-ag.png",
     "original_url": "https://github.com/asamassekou10/ship-safe",
     "deep_summary": [
@@ -12259,7 +12277,7 @@
     "id": "lrn-2026-07-09-grok-4-5-與-gpt-5-6-家族接力發布-前線模型兩天四發",
     "date": "2026-07-09",
     "source": "learning",
-    "editor_note": "與其說在比模型智商，這波更像通路戰：靠外掛追趕微軟與 Google 的原生整合優勢，能搶到多少市占存疑；企業採購向來卡在資安審核與穩定度，兩者都壓縮不進兩天四發的節奏。真正值得盯的是平行 agent 編排——它賣的已不是助理，而是人力替代的規模化。",
+    "editor_note": "兩天四發的節奏說明，前線模型的競爭已從智力轉向滲透率。但 SpaceXAI 的外掛全數寄居在微軟與 Google 的地盤上，平台一紙政策就能架空第三方模型，借道敵營的代價是被掐住通路。至於數百個背景 agent 平行執行，真正的考驗是錯誤放大與稽核軌跡，而非一次性能力展示。",
     "image": "images/lrn-2026-07-09-grok-4-5--gpt-5-6--.png",
     "original_url": "https://x.ai/news",
     "deep_summary": [
@@ -12431,7 +12449,7 @@
     "id": "lrn-2026-07-07-windows-use-不靠電腦視覺也能操控-windows-的-agent",
     "date": "2026-07-07",
     "source": "learning",
-    "editor_note": "捨截圖改讀 UI 樹，換來低延遲與可預期性，代價則是覆蓋率與可攜性——無障礙資訊殘缺的應用便是死角，路線更綁死 Windows。在大廠競相押注視覺 agent 之際，這更像多模態成熟前的過渡方案：以結構化資料先卡位桌面自動化的現實需求，而非終局架構。",
+    "editor_note": "捨截圖就無障礙樹，換來確定性與低成本，方向正確，微軟 UFO 早已驗證可行。但樹的完整度取決於各應用是否認真標注，Electron 與自繪介面仍是盲區；更關鍵的是無沙箱設計——權限隔離本該是框架預設，而非讓使用者自行開 VM 補課。",
     "image": "images/lrn-2026-07-07-windows-use--windows--age.png",
     "original_url": "https://github.com/CursorTouch/Windows-Use",
     "deep_summary": [
@@ -12511,7 +12529,7 @@
     "id": "lrn-2026-07-06-windows-use-不靠截圖-直讀-ui-accessibility-tre",
     "date": "2026-07-06",
     "source": "learning",
-    "editor_note": "捨截圖直讀 accessibility tree，呼應了 agent 開發從視覺回歸結構化資料的轉向：更便宜、更快、決策更可預期。但這條路的通用性繫於各應用的無障礙實作品質，遇自繪 UI 或老舊軟體便立即破功。有趣的是，這類 agent 若普及，反倒可能倒逼開發者認真對待 accessibility——機器成了身障使用者之外，另一群被迫依賴語意標籤的用戶。",
+    "editor_note": "直讀 accessibility tree 而棄截圖，等於拿通用性換成本與精準：推論更便宜、元素定位不再靠猜，但前提是應用認真實作了 accessibility API——企業舊系統與自繪 UI 往往付之闕如，覆蓋率才是真正瓶頸。至於無沙箱卻能動檔案與 PowerShell，凸顯 agent 框架普遍重能力輕安全的通病；在 Windows 這種攻擊面上，隔離不該是建議，而該是預設。",
     "image": "images/lrn-2026-07-06-windows-use---ui-accessib.png",
     "original_url": "https://github.com/CursorTouch/Windows-Use",
     "deep_summary": [
@@ -12572,7 +12590,7 @@
     "id": "lrn-2026-07-06-tradingagents-91k-stars-的金融交易多-agent-llm",
     "date": "2026-07-06",
     "source": "learning",
-    "editor_note": "框架修好了資料端的前視偏差，卻修不了模型端：LLM 語料早已含括歷史結局，回測形同自帶答案，績效難以外推。多空辯論也僅是同一模型的角色扮演，盲點同源。91K Stars 映照的不是交易聖杯，而是市場對垂直場景 Agent 工程化方案的渴求。",
+    "editor_note": "91K Stars 證明的是話題性，不是獲利能力。把 LLM 工作流包裝成擬真組織的「Agent 化」正成為顯學，但 Agent 缺乏交易員的問責與切身風險，辯論容易淪為角色扮演。金融市場提供了最殘酷的檢驗：扣除交易成本後，這套分工若不能穩定勝過單一強模型，組織仿真就只是行銷話術。",
     "image": "images/lrn-2026-07-06-tradingagents-91k-stars--.png",
     "original_url": "https://github.com/TauricResearch/TradingAgents",
     "deep_summary": [
@@ -12766,7 +12784,7 @@
     "id": "lrn-2026-07-05-單-agent-vs-多-agent-與-agent-成本經濟學的辯論-用硬數據",
     "date": "2026-07-05",
     "source": "learning",
-    "editor_note": "每日 PR 上限看似保守，實則承認自主 Agent 的瓶頸是 token 帳單而非智力；零核准自動合併更是球員兼裁判，git 歷史留得住軌跡，卻擋不住目標漂移。當產業還在辯論單或多 Agent 架構的優劣，這份模板把更根本的問題搬上檯面：一個能自己核准自己的系統，問責究竟該落在誰身上？",
+    "editor_note": "這份模板本身就是辯論的答案：與其爭單或多 Agent，不如用每日 PR 上限把成本釘死，這才是最誠實的 Agent 經濟學。但零核准、自我審查再自動合併，治理上球員兼裁判，審計軌跡僅是形式；拿個人 PAT 當循環心臟，更是整套設計最脆弱的一環。",
     "image": "images/lrn-2026-07-05--agent-vs--agent--agent--.png",
     "original_url": "https://github.com/AICMO/Autonomous-Agent-X-Bluesky",
     "deep_summary": [
@@ -12900,7 +12918,7 @@
     "id": "lrn-2026-07-03-launch-hn-manufact-yc-s25-mcp-cloud",
     "date": "2026-07-03",
     "source": "learning",
-    "editor_note": "用 LLM 當裁判卡 CI 是雙面刃：非確定性判定恐讓測試忽鬆忽嚴，退回「重跑到綠」的老毛病。更深的風險是其價值繫於 OpenAI、Anthropic 尚未親自收編部署與上架，平台一旦下場，中介層首當其衝；開源號召力是真護城河，命脈仍握在大廠手中。",
+    "editor_note": "這門生意的賭注，是 MCP 能否成為 agent 時代的 HTTP。用 LLM 當裁判卡 CI 務實但不確定，誤判一多，紅燈只會被團隊無視；更深的風險是 OpenAI、Anthropic 隨手把部署測試收進原生工具，夾縫市場瞬間消失。握有開源核心工具的維護權，才是他們真正押對的地方。",
     "image": "images/lrn-2026-07-03-launch-hn-manufact-yc-s25.png",
     "deep_summary": [
       "Manufact（前身 mcp-use，YC S25）推出 MCP Cloud，一站式處理 MCP server 的部署、測試、監控與上架發布。",
@@ -12938,7 +12956,7 @@
     "id": "lrn-2026-07-03-mcp-2026-07-28-規篋候選版-rc-釋出-beta-sdk",
     "date": "2026-07-03",
     "source": "learning",
-    "editor_note": "無狀態化並未真正消滅狀態，只是把它從協議層轉嫁到應用層：多輪往返的上下文與授權資訊仍得開發者自行保存，規模一大，外部狀態儲存與節點親和性很快就會回來。這是對既有部署痛點的遲來修正，但四週定案期對如此根本的轉向明顯偏短，未鎖版本的下游套件勢必首當其衝。",
+    "editor_note": "無狀態化讓 MCP 從 Agent 的工具介面真正跨入基礎設施層，閘道與雲端供應商將是最大受益者。但移除 session 是移轉而非消除複雜度，狀態責任落回應用層；官方在 API 尚未穩定之際仍壓縮定案時程，顯然是趁 Agent 協議競賽格局未定，搶先鎖住生態話語權。",
     "image": "images/lrn-2026-07-03-mcp-2026-07-28--rc--beta-.png",
     "deep_summary": [
       "MCP 協議將迎來推出以來最大改版，新版規範 2026-07-28 定於 7 月 28 日定案。",
@@ -12999,7 +13017,7 @@
     "id": "lrn-2026-07-03-show-hn-ctx-搜尋你本機上已有的-coding-agent-歷史",
     "date": "2026-07-03",
     "source": "learning",
-    "editor_note": "把 agent 歷史當成可檢索的資產而非會失真的記憶，這個切入方向正確，但 ctx 的命門在於依賴 ~/.claude 這類官方從未承諾穩定的檔案格式，上游一改版工具即失效；更現實的風險是，歷史檢索正是 Claude Code、Codex 最有動機原生化內建的功能，獨立工具的窗口期恐怕不長，而自報對 RTK 的效能數據也僅供參考。",
+    "editor_note": "ctx 的意義不在速度，而在把 agent 歷史變成可檢索的工程資產——當 AI 產碼占比持續攀升，溯源能力終究會成為除錯與稽核的剛需。隱憂是它綁定 ~/.claude 等私有格式，上游一改版就可能斷鏈，這也再次說明跨 agent 的記憶層至今缺乏共通標準。",
     "image": "images/lrn-2026-07-03-show-hn-ctx--coding-agent.png",
     "deep_summary": [
       "ctx 是開源、本地運行的 Rust CLI 工具鏈，能搜尋你電腦上已有的 coding agent 歷史。",
@@ -13128,7 +13146,7 @@
     "id": "lrn-2026-07-02-生產數據打臉-多-agent-迷信-68-部署其實用單一-agent-就夠-且省",
     "date": "2026-07-02",
     "source": "learning",
-    "editor_note": "這類模板預告了環境 Agent 的趨勢：不再等使用者開口，而是寄生在既有 CI 體系裡全天候運轉，部署門檻低到複製貼上。但讓 Agent 自我審查再自動合併，等於取消 code review 的獨立性；它又同時握有 repo 寫入權與社群帳號，研究素材一旦被注入惡意提示，攻擊面將隨自主性同步放大。",
+    "editor_note": "把 Git 版本歷史當成 Agent 的審計軌跡，是這類模板最聰明的一步；但讓同一個 Agent 自己開 PR、自己審、自己合併，等於把關鍵制衡降格為儀式，風險控管全押在每日上限這條粗閘門上。更值得盯的是趨勢：自主 Agent 寄生在 CI 免費算力上，部署成本歸零之後，大規模濫用與平台條款反制，恐怕只是時間問題。",
     "image": "images/lrn-2026-07-02---agent--68--agent--.png",
     "original_url": "https://github.com/AICMO/Autonomous-Agent-X-Bluesky",
     "deep_summary": [
@@ -13185,7 +13203,7 @@
     "id": "lrn-2026-06-30-vercel-開源-eve-用-markdown-定義-agent-行為的新框架",
     "date": "2026-06-30",
     "source": "learning",
-    "editor_note": "Vercel 賭的是「約定勝於程式碼」：以 Markdown 慣例取代厚框架 API，與 CLAUDE.md 掀起的風潮同調。但約定易被複製，真正的護城河恐怕在 AI Gateway 的模型分發；在框架早已過剩的 agent 市場，beta 的變動成本，只留得住願意陪跑的早期信徒。",
+    "editor_note": "用檔案慣例定義 agent 並非 Vercel 首創，Claude Code 的 skills 機制與 AGENTS.md 標準化浪潮早已驗證這條路線，eve 的意義在於框架化與工程整合，而非技術突破。真正值得留意的是綁定：模型指定綁走自家 AI Gateway，文件包進套件方便 coding agent 就地讀取，也順勢把生態圈在自家地盤。評估重點應放在遷移成本與 beta 期 API 變動風險，而不是初始化有多快。",
     "image": "images/lrn-2026-06-30-vercel--eve--markdown--ag.png",
     "original_url": "https://github.com/vercel/eve",
     "deep_summary": [
@@ -13219,7 +13237,7 @@
     "id": "lrn-2026-06-30-微軟-memora-讓-agent-記憶像人一樣演化-成本降-98",
     "date": "2026-06-30",
     "source": "learning",
-    "editor_note": "長期記憶是 agent 從 demo 走向生產的最後一哩，微軟選擇開源而非包進 Azure，擺明要搶記憶層的標準話語權，直接壓縮 Zep、Mem0 這類記憶新創的生存空間。但框架解決的是工程便利，記憶汙染、過期失效、跨 agent 共享的權責歸屬仍無標準答案，導入前別低估治理成本。",
+    "editor_note": "當 agent 能力日漸同質化，記憶成了下一個差異化戰場，微軟以 MIT 授權開源 Memora 是標準的生態卡位。但 98% 成本降幅建立在自行微調 Qwen 小模型上，多數團隊缺的是訓練管線而非框架；跨 agent 共享記憶牽涉的治理與隱私難題，更不是檢索演算法能解決的。",
     "image": "images/lrn-2026-06-30--memora--agent---98.png",
     "deep_summary": [
       "微軟開源的 Memora 是一套 MIT 授權的 agent 記憶框架，把「該存什麼、何時存、怎麼取回」這類低階記憶管理變成內建能力，且以最小改動就能接上既有 agent 系統。",
@@ -13296,7 +13314,7 @@
     "id": "lrn-2026-06-29-openai-與-anthropic-共組-agentic-ai-foundat",
     "date": "2026-06-29",
     "source": "learning",
-    "editor_note": "Kubernetes 能成功，關鍵在 Google 真的放手；AAIF 的考驗完全相同。捐出既成標準不難，難的是不把基金會當競爭武器——若治理席次仍由 OpenAI 與 Anthropic 實質掌控，這份中立只是替兩家的既成優勢補上正當性，鎖定效應不會消失，只是移往模型與託管層。",
+    "editor_note": "捐出 MCP 與其說是讓利，不如說是把既成事實套上中立外衣，先行者的網路效應反被制度固化。該盯的不是誰簽名支持，而是 spec 演進能否追上以週計的 agent 迭代：基金會治理向來慢半拍，標準一旦淪為凍結快照，開發者仍會繞開自建慣例，分裂只是換個面貌重演。",
     "image": "images/lrn-2026-06-29-openai--anthropic--agenti.png",
     "original_url": "https://wiss.com/openai-anthropic-form-foundation-ai",
     "deep_summary": [
@@ -13373,7 +13391,7 @@
     "id": "lrn-2026-06-29-llamaindex-釋出-liteparse-每頁-3ms-的文件解析-打通-",
     "date": "2026-06-29",
     "source": "learning",
-    "editor_note": "這篇應先退稿查證：標題的 LiteParse 與 3ms 數據在原文全數缺席，來源實為 Unstructured 產品頁，照登形同替無據效能背書。文件解析成為 LlamaIndex、Unstructured 競逐的新戰場，恰恰印證攝取層是 agent 落地的真瓶頸；但少了第三方基準，「最低幻覺率」只是行銷話術，企業該用自家文件實測，別讓廠商報告代替判斷。",
+    "editor_note": "這篇必須先擋下：標題的 LiteParse 與原文錯置，3ms 等數據查無出處，刊出形同替不實比較背書。Unstructured 的「最低幻覺率」同樣只是行銷話術，可見解析層已成 RAG 軍備賽的宣傳戰場，缺中立評測，採購方只能靠 PoC 把關。",
     "image": "images/lrn-2026-06-29-llamaindex--liteparse--3m.png",
     "original_url": "https://unstructured.io/",
     "deep_summary": [
@@ -13429,7 +13447,7 @@
     "id": "lrn-2026-06-28-omnigent-v0-3-0-發布-一次整合-7-個-agent-harnes",
     "date": "2026-06-28",
     "source": "learning",
-    "editor_note": "coding agent 多到需要一層編排平台，這現象本身就是市場碎片化失衡的註腳。但聚合器位置天生脆弱：上游 agent 迭代飛快，harness 維護是永無止盡的追趕；一旦 Cursor 或 Copilot 內建統一管控，第三方聚合價值將迅速被稀釋。真正的護城河不在支援廣度，而在成為企業採購與治理 agent 的唯一入口。",
+    "editor_note": "harness 碎片化愈嚴重，編排層價值愈大，Omnigent 的商業前提正是市場持續混亂。但這也是弱點：十四個 harness 各自快速迭代，相容性維護是條燒錢的跑步機，版本越多崩壞面越廣。更實際的威脅是 GitHub、Anthropic 遲早自建治理與成本管控，編排層若搶不到企業入口，終將被上游收割。",
     "image": "images/lrn-2026-06-28-omnigent-v0-3-0---7--agen.png",
     "original_url": "https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0",
     "deep_summary": [
@@ -13729,7 +13747,7 @@
     "id": "lrn-2026-06-26-tradingagents-v0-3-0-釋出-模擬真實交易公司架構的多-age",
     "date": "2026-06-26",
     "source": "learning",
-    "editor_note": "88K 顆星見證的是大眾對「AI 交易員」的浪漫想像，但這套框架真正的貢獻在工程紀律：把 point-in-time、資料契約與 CI 驗證帶進 Agent 工作流，等於把量化圈防範前視偏差的嚴謹移植到 LLM 世界，也預示 agentic 應用正從聊天 demo 走向可稽核的領域管線。至於多空辯論，結構再漂亮也證明不了超額報酬，模擬成交更迴避了滑點與流動性的現實。",
+    "editor_note": "88K 星反映的是 Agent 熱潮而非實績。v0.3.0 真正值得肯定的是資料紀律：point-in-time 修正解決了回測偷看未來資料的老毛病，績效數字才有討論價值。但框架仍在模擬環境打轉，LLM 讀的又盡是公開資訊，當人人都能跑同一套 Agent 分析同樣的新聞，超額報酬注定稀釋。把它當成 Agent 協作編排的工程範本，遠比當印鈔機務實。",
     "image": "images/lrn-2026-06-26-tradingagents-v0-3-0---ag.png",
     "original_url": "https://github.com/TauricResearch/TradingAgents",
     "deep_summary": [
@@ -14034,7 +14052,7 @@
     "id": "lrn-2026-06-23-matm-multi-agent-transactive-memory-30-a",
     "date": "2026-06-23",
     "source": "learning",
-    "editor_note": "這套模式真正觸及的，是經驗飛輪的商業命題：誰累積高品質軌跡庫，誰就握有 Agent 版資料護城河，與自駕數據競賽同構。但真實部署裡，軌跡內嵌企業資料與憑證，隱私與智財風險遠高於基準環境，網頁改版更讓軌跡快速失效，少了治理與篩選，共享池只會堆滿過時軌跡。",
+    "editor_note": "軌跡即資產」的想像動人，但論文驗證的兩個環境都是封閉沙盒，真實環境的變動、錯誤軌跡對共享池的汙染，這些風險全被迴避了。少了驗證與淘汰機制，檢索複用只是低成本捷徑。看點反而在產業面：軌跡一旦可流通，Agent 平台的護城河將從模型能力轉向經驗池規模，軌跡產權與定價問題也會隨之浮上檯面。",
     "image": "images/lrn-2026-06-23-matm-multi-agent-transact.png",
     "original_url": "https://arxiv.org/abs/2606.19911",
     "deep_summary": [
@@ -14071,7 +14089,7 @@
     "id": "lrn-2026-06-23-what-happens-locally-leaks-globally-首篇系統",
     "date": "2026-06-23",
     "source": "learning",
-    "editor_note": "真正的警訊不是 10% 這個數字，而是它很可能被低估：靜態分析抓不到執行期才觸發的路徑。更根本的問題是，偵測框架再精良也只是事後補救；MCP 規範若不內建資料分級與最小權限，敏感值進入 context 就等於交給不可審計的黑箱。工具生態爆發式擴張之下，安全設計不該永遠追在採用速度後面。",
+    "editor_note": "靜態分析抓到的其實只是下限，動態組裝的資料流或經 prompt injection 誘導的竊取並不在射程內，真實風險只會更高。更該警惕的是節奏錯位：MCP 獲 OpenAI、Google 爭相支援、加速標準化，防護卻停留在個別 server 補洞。若協議層不內建預設遮蔽與最小權限，Agent 生態恐怕會重演雲端早期「先上線、後安全」的劇本。",
     "image": "images/lrn-2026-06-23-what-happens-locally-leak.png",
     "original_url": "https://ift.tt/IY1e7jc",
     "deep_summary": [
@@ -14203,7 +14221,7 @@
     "id": "lrn-2026-06-21-beyond-static-leaderboards-新論文指出-llm-age",
     "date": "2026-06-21",
     "source": "learning",
-    "editor_note": "蒸餾熱潮已從語言模型燒進視覺生成，Moebius 用不到 2% 的參數追平十億級基座，踩中的正是端側部署的真實需求。不過修補的長尾難題——手部結構、文字修復、跨區光影——向來是極小模型的崩塌點，若證據僅來自自然影像與人像集，宣稱的部署優勢仍屬樂觀推論，需要真實產品流量驗證。",
+    "editor_note": "蒸餾路線的壓縮成果有其先天上限：學生模型的能力邊界多半被教師模型鎖死，所謂匹敵甚至超越，常只在貼近訓練分布的基準上成立，跨域修補任務才是真正考驗。更值得注意的是趨勢面：影像生成走向端側即時場景後，產業評價標準正從品質轉向成本與延遲，端上推理將是下一輪影像編輯競爭的主戰場。",
     "image": "images/lrn-2026-06-21-beyond-static-leaderboard.png",
     "original_url": "https://arxiv.org/abs/2606.19195",
     "deep_summary": [
