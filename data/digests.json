@@ -1,5 +1,96 @@
 [
   {
+    "title": "HeyGen 開源 HyperFrames：讓 coding agent 直接「寫 HTML → 出影片」",
+    "category": "工具",
+    "summary": [
+      "Apache 2.0 開源框架，用純 HTML + CSS + 可 seek 的動畫（GSAP/Lottie/Three.js 皆可），經 headless Chrome + FFmpeg 渲染成確定性的 MP4——同輸入必同輸出，適合 CI 與自動化管線。官方提供 20 個 agent skills，Claude Code / Cursor / Codex 都能直接用 `/hyperframes` 指令創作。",
+      "一週衝上 5.1K stars（總計 62.7K），對比 Remotion 的差異點是「不綁 React、零 build step」。這代表 agent 的輸出邊界又從「文字和網頁」推進到「影片」。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/heygen-com/hyperframes"
+      }
+    ],
+    "source_url": "https://github.com/heygen-com/hyperframes",
+    "source_label": "來源",
+    "id": "lrn-2026-10-15-heygen-開源-hyperframes-讓-coding-agent-直接-",
+    "date": "2026-10-15",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "真正的亮點不是開源，而是挑了 agent 最熟悉的 HTML 當影片語彙——會寫網頁就會做影片，加上輸出可版控、可進 CI，影片正式成為可自動化生產的工程產物。",
+    "image": "images/lrn-2026-10-15-heygen--hyperframes--codi.png"
+  },
+  {
+    "title": "Oracle 推出 AI Agent Memory：圖狀記憶取代平面向量檢索",
+    "category": "工具",
+    "summary": [
+      "資料庫級的 Python 記憶框架（`pip install oracleagentmemory`），特色是用有型別、有方向的關係把記憶串成 property graph——supersedes（取代）、refines（精煉）、contradicts（矛盾）、supports（支持）、duplicates（重複）。檢索時沿著關係圖走，取回的是「最新事實＋誰改了它」，而不是聲音最接近的舊 chunk。",
+      "還內建 reranker、LLM 保留/捨棄剪枝和 TTL 過期機制，直接相容 LangGraph、Claude Agent SDK、OpenAI Agents SDK。這正是昨天社群在討論的「agent 對過時記憶過度自信」痛點的官方級解法。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://blogs.oracle.com/developers/oracle-ai-agent-memory-a-governed-unified-memory-core-for-enterprise-ai-agents"
+      }
+    ],
+    "source_url": "https://blogs.oracle.com/developers/oracle-ai-agent-memory-a-governed-unified-memory-core-for-enterprise-ai-agents",
+    "source_label": "來源",
+    "id": "lrn-2026-10-15-oracle-推出-ai-agent-memory-圖狀記憶取代平面向量檢索",
+    "date": "2026-10-15",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "記憶管理的本質其實是資料治理，由資料庫老將出手格外有說服力。把「遺忘與更新」內建成能力，讓 agent 知道事實何時被推翻——這才是向量相似度之外的真正解方。",
+    "image": ""
+  },
+  {
+    "title": "Karpathy：真正的瓶頸是人類理解力，不是 AI 能力",
+    "category": "產業",
+    "summary": [
+      "Karpathy 指出：當 agent 群體每週產出數百萬行程式碼與大量論文，人類被迫對輸出做緩慢的「鑑識考古」。他自 2025 年 12 月起沒再手寫程式，改為同時指揮 10-20 個 agent。",
+      "Addy Osmani 據此提出「comprehension debt（理解債）」概念：AI 把「寫出來」變得極便宜，但「長期理解與維護」的成本一點沒降——這也呼應社群觀察：coding agent 讓 demo 暴增，可維護的開源專案卻沒變多。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://addyo.substack.com/p/the-80-problem-in-agentic-coding"
+      }
+    ],
+    "source_url": "https://addyo.substack.com/p/the-80-problem-in-agentic-coding",
+    "source_label": "來源",
+    "id": "lrn-2026-10-15-karpathy-真正的瓶頸是人類理解力-不是-ai-能力",
+    "date": "2026-10-15",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "難得有人把焦點從「AI 能不能」拉回「人類跟不跟得上」。當生成趨近免費，理解成了最貴的資源——這才是評估 AI 生產力時最該算進去的隱形成本。",
+    "image": ""
+  },
+  {
+    "title": "Agent 可觀測性落地指南：OTLP 接進 Grafana / Sentry，一條 trace 串起「工具→模型→MCP」",
+    "category": "教程",
+    "summary": [
+      "Grafana Cloud 的 Agent Observability（公測中）基於 OpenTelemetry 的 `gen_ai.*` 語意慣例：只要 instrument 遵循規範，用 OTLP 匯出即可檢視完整對話、tool call、token 成本，支援 LangChain/LangGraph/OpenAI Agents/Vercel AI SDK 自動埋點。Sentry 也提供 MCP server 一行接入的監控。",
+      "實務建議：生產告警先只導 duration/token/tool name，full content 按環境開。agent 出問題最貴的是「不知道卡在哪一步」——還沒接可觀測栈的 agent，先補這條鏈路再談加模型。",
+      "核心論點：串流 markdown 適合回答問題，但對執行複雜工作流是糟糕的 UX。架構上的解法是 Generative UI——模型用 tool call 輸出結構化 JSON，框架（如 Vercel AI SDK + RSC）攔截後動態串流可互動的 UI 元件。",
+      "例如要求 agent 分析資料庫，不該串流文字表格，而該串流帶篩選器的 D3 圖表；訂房任務直接串流確認 widget。機制：Query → Tool Call → JSON → Server-Side Render → 互動 UI。",
+      "這把 agent 輸出從「被動閱讀」變成「可立即驗證的行動」，做 agent 產品的人值得重新檢視自己的輸出層。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/KostyaAI/status/2110038569553105361"
+      }
+    ],
+    "source_url": "https://x.com/KostyaAI/status/2110038569553105361",
+    "source_label": "來源",
+    "id": "lrn-2026-10-15-agent-可觀測性落地指南-otlp-接進-grafana-sentry-一條",
+    "date": "2026-10-15",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent 除錯最貴的成本從來不是模型不夠強，而是不知道卡在哪一步；gen_ai.* 語意慣例讓可觀測性走向標準化，正是團隊從 demo 邁向生產前必修的一課。",
+    "image": "images/lrn-2026-10-15-agent--otlp--grafana-sent.png"
+  },
+  {
     "title": "Google Gemini 4 Argon 無人監督跑 11 小時，自動修復 20 萬行 agent 框架",
     "category": "工具",
     "summary": [
@@ -5635,11 +5726,7 @@
     "title": "Docker Sandboxes 支援 .sbxenv.yaml：agent 沙箱環境宣告式設定（sbx 0.39.0）",
     "category": "工具",
     "summary": [
-      "Docker Sandboxes 現在可用單一 `.sbxenv.yaml` 定義 agent、工作區、kits、secrets、registry 憑證、ports、CPU/記憶體，提交進版控後團隊一行 `sbx env run` 即可重現環境。實驗性功能，但方向明確：agent 基礎設施正在走向「環境即程式碼」。",
-      "安全議題從「掃描與警示」升級為「真實事件＋產品功能＋法律戰」：上週是 21K 無防護 MCP 伺服器的生態掃描與 Mind Viruses 研究警示；本週 HF 真的被 700 個 agent 攻破、防禦成為產品賣點（Claude Code `--restricted`、Linux Foundation TRACE 執行環境密碼學驗證、MCP 企業授權），Sony Music 與 Warner Chappell 更以每件最高 $150K 求償起訴 Anthropic——治理從道德倡議變成成本模型的一部分。",
-      "價格戰升級為「成本效率評測」：上週是半價／1/10 價的價格戰；本週 Terminal-Bench 4.0 直接以「每次成功成本」納入排行，開源權重模型靠便宜好用的組合擠進前段班——單位經濟學從宣傳口號變成可測量、可比較的指標。",
-      "上週預測命中情況：「MCP 認證層商品化」方向命中（企業授權 GA + OAuth scopes + 路線圖）；「dsh 插件生態首批安全事件」未爆大案，但 mcp-contextforge-gateway 高風險授權漏洞與 HF 事件部分印證了方向。",
-      "新聚類：實體世界（MHS／PLCBench）與消費級 agent（Meta Hatch 詳情、Instinct 三週估值 $500M→$2.5B）是本週才浮出的主題；上週的「自我演化 agent」研究本週由微軟 Agent Lightning 接棒落地（RL 後訓練讓 Qwen3.5-9B 在 SWE-Bench 從 41.8% → 56.4%）。"
+      "Docker Sandboxes 現在可用單一 `.sbxenv.yaml` 定義 agent、工作區、kits、secrets、registry 憑證、ports、CPU/記憶體，提交進版控後團隊一行 `sbx env run` 即可重現環境。實驗性功能，但方向明確：agent 基礎設施正在走向「環境即程式碼」。"
     ],
     "links": [
       {
