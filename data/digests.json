@@ -1,5 +1,141 @@
 [
   {
+    "title": "Gentlemen 勒索軟體把 MCP 當 C2 指揮通道",
+    "category": "產業",
+    "summary": [
+      "CloudSEK/RH-ISAC 公開：俄語系勒索軟體組織 The Gentlemen 的攻擊者在實戰入侵中濫用 Model Context Protocol，把 AI 編碼助手的工具介面變成命令與控制（C2）通道，執行任意命令、竊取憑證、刪除資料庫。",
+      "這是 MCP 首度被證實用於現役攻擊行動。防護建議：限制 MCP 執行權限、僅允許 loopback 連線、輪替 GitLab 歷史在內的所有 secrets。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://rhisac.org/threat-intelligence/the-gentlemen-ransomware-affiliate-utilizes-mcp-in-multi-sector-cyberattacks/"
+      }
+    ],
+    "source_url": "https://rhisac.org/threat-intelligence/the-gentlemen-ransomware-affiliate-utilizes-mcp-in-multi-sector-cyberattacks/",
+    "source_label": "來源",
+    "id": "lrn-2026-10-16-gentlemen-勒索軟體把-mcp-當-c2-指揮通道",
+    "date": "2026-10-16",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "MCP 首度實戰淪陷，宣告 AI 基礎設施已是攻擊面的一環。當企業競相導入 AI 編碼助手，權限最小化與金鑰治理不該只是附註，而是上線前提。",
+    "image": "images/lrn-2026-10-16-gentlemen--mcp--c2-.png"
+  },
+  {
+    "title": "字節火山引擎開源 OpenViking：Agent 專用「上下文資料庫」",
+    "category": "工具",
+    "summary": [
+      "把 agent 的記憶、知識 RAG、技能統一成一個虛擬檔案系統（`viking://`），agent 用 `ls`/`grep`/`read` 直接導航自己的「大腦」，每層目錄有 L0/L1 摘要可先掃再讀，避免黑盒向量庫。",
+      "支援自動會話壓縮與長期記憶萃取，主打解決長互動中的 token 膨脹與記憶漂移。已 23k+ stars，支援 GLM/Kimi/Ollama 等多種後端。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/volcengine/OpenViking"
+      }
+    ],
+    "source_url": "https://github.com/volcengine/OpenViking",
+    "source_label": "來源",
+    "id": "lrn-2026-10-16-字節火山引擎開源-openviking-agent-專用-上下文資料庫",
+    "date": "2026-10-16",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "把記憶從黑盒向量庫變成可導航的檔案系統，這個翻轉直指 agent 的信任與除錯難題；當大廠紛紛押注記憶層，agent 基礎設施的下一個戰場已然浮現。",
+    "image": "images/lrn-2026-10-16--openviking-agent--.png"
+  },
+  {
+    "title": "HybridAgent：在隱空間「思考」、用文字「行動」的混合推理 agent",
+    "category": "研究",
+    "summary": [
+      "Stanford + Together AI 論文（arXiv 2610.18861）：輕量 HybridLink 讓模型在單一生成過程中於 latent 推理與文字工具呼叫間動態切換，且隱空間思考可渲染成可讀 pseudo-text（不再是黑箱）。",
+      "11 個 benchmark 上比純文字/純 latent 方法平均提升 10.4%，token 減 35-55%、推論快 1.8-2.6 倍、成本省 2.7-3.7 倍。權重與訓練管線（HybridSFT + HybridRL）已開源。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://arxiv.org/abs/2610.18861"
+      }
+    ],
+    "source_url": "https://arxiv.org/abs/2610.18861",
+    "source_label": "來源",
+    "id": "lrn-2026-10-16-hybridagent-在隱空間-思考-用文字-行動-的混合推理-agent",
+    "date": "2026-10-16",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "效率數字固然吸睛，但更關鍵的是打破了「latent 推理等於黑箱」的宿命——當隱空間思考變得可讀、可驗證，混合架構距離真正落地部署又跨出了一大步。",
+    "image": ""
+  },
+  {
+    "title": "Kaggle 進軍 agent 評測：首屆 Bench Summit + Standardized Agent Exams",
+    "category": "產業",
+    "summary": [
+      "Kaggle 宣布在舊金山辦首屆 Bench Summit 聚焦 model evals；同時推出實驗性 SAE——agent 一個 API call 註冊、自主作答、即時上公開排行榜，零基礎設施。",
+      "意義：agent evals 正從「團隊自建 harness」走向「標準化考試」模式，降低上線前測試門檻，可能改變團隊對 eval 的投入習慣。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://kaggle.com/blog"
+      }
+    ],
+    "source_url": "https://kaggle.com/blog",
+    "source_label": "來源",
+    "id": "lrn-2026-10-16-kaggle-進軍-agent-評測-首屆-bench-summit-stand",
+    "date": "2026-10-16",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Kaggle 把打榜文化帶進 agent 評測，為充斥自評與 demo 行銷的生態補上中立第三方；但考試一旦權威化，「為考而練」的過擬合風險也隨之而來。",
+    "image": ""
+  },
+  {
+    "title": "Codex Computer Use 接本地 Qwen：桌面自動化的全本地工作流",
+    "category": "教程",
+    "summary": [
+      "實用組合：本地跑 Qwen 27B（Ollama/llama.cpp）處理推理 → OpenCodex 作為橋接 → Codex 的原生 Computer Use 執行螢幕點擊與多步驟桌面操作。",
+      "賣點是成本與隱私：截圖和 prompt 預設不出本地。代價是可靠性不如雲端旗艦模型，且對硬體記憶體有要求。適合想實驗半自動桌面 agent 的人入門。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/Oluwaphilemon1/status/2110694483310350737"
+      },
+      {
+        "label": "來源",
+        "url": "https://grafana.com/docs/grafana-cloud/observe-and-act/agent-observability/"
+      }
+    ],
+    "source_url": "https://x.com/Oluwaphilemon1/status/2110694483310350737",
+    "source_label": "來源",
+    "id": "lrn-2026-10-16-codex-computer-use-接本地-qwen-桌面自動化的全本地工作流",
+    "date": "2026-10-16",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "誰說桌面 agent 一定要上雲？這套組合證明本地開源模型已能撐起 GUI 自動化，隱私與成本誘因明確；而可靠性差距也誠實標出了本地路線現階段的位置。",
+    "image": "images/lrn-2026-10-16-codex-computer-use--qwen-.png"
+  },
+  {
+    "title": "MCP SDK 官方分級揭曉：新協議功能 TypeScript 總是早到數週",
+    "category": "研究",
+    "summary": [
+      "實測比較顯示：MCP 新協議功能總是先落在 TypeScript SDK，Go 和 Rust 隨後。官方已建立 SDK tier 制度——TypeScript、Python、C#、Go 為 Tier 1，Rust 為 Tier 2，依協議支援完整度與維護狀況分級。",
+      "啟示：選 MCP server 語言時，別先追效能，先看哪個 SDK 跟得上協議演進。協議還在快速變動期，用 Tier 1 SDK 能少踩很多相容性坑。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://modelcontextprotocol.io/docs/sdk"
+      }
+    ],
+    "source_url": "https://modelcontextprotocol.io/docs/sdk",
+    "source_label": "來源",
+    "id": "lrn-2026-10-16-mcp-sdk-官方分級揭曉-新協議功能-typescript-總是早到數週",
+    "date": "2026-10-16",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "TypeScript 總是早到，其實透露 MCP 生態重心仍在 Node 陣營；官方分級把這個現實制度化，也提醒我們：協議變動期，跟得上市比跑得快更重要。",
+    "image": "images/lrn-2026-10-16-mcp-sdk---typescript-.png"
+  },
+  {
     "title": "HeyGen 開源 HyperFrames：讓 coding agent 直接「寫 HTML → 出影片」",
     "category": "工具",
     "summary": [
