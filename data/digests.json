@@ -1,5 +1,93 @@
 [
   {
+    "title": "Doc2Harness：最強模型也只能正確建出 53% 的 coding-agent harness",
+    "category": "研究",
+    "summary": [
+      "新論文讓 19 個模型依據介面契約與設計文件從零實作完整的 coding-agent harness，再用 328 個確定性測試檢驗（模型請求、檔案系統狀態、process exit code、命令輸出）。最佳模型 53.05%、最差 27.44%。",
+      "關鍵發現：失敗集中在「跨模組邊界」的功能——單一 tool call 沒問題，但與 context 管理、process 狀態互動時就壞。寫出 agent loop 容易，讓所有元件在長時間 session 中正確協作才是真功夫。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/al3rez/status/2111268459107733706"
+      }
+    ],
+    "source_url": "https://x.com/al3rez/status/2111268459107733706",
+    "source_label": "來源",
+    "id": "lrn-2026-10-17-doc2harness-最強模型也只能正確建出-53-的-coding-agen",
+    "date": "2026-10-17",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "最諷刺的一課：最會寫程式的模型，竟蓋不好自己的 agent 骨架。難關已從單點能力移向跨模組整合與長時間狀態一致性，這正是通往可靠 agent 的下一道門檻。",
+    "image": "images/lrn-2026-10-17-doc2harness--53--coding-a.png"
+  },
+  {
+    "title": "Claude Managed Agents 推出 Dynamic Workflows：agent 自己寫程式，一個 run 指揮最多 1,000 個 agent",
+    "category": "工具",
+    "summary": [
+      "10/9 進入公開 beta。過去是 lead agent 逐輪派工給 subagent；現在 Claude 直接寫出一支 orchestration 程式，在伺服器背景分階段啟動 agent、傳遞結果、處理失敗重試，主對話還能繼續回應使用者。",
+      "限制：同時最多 64 threads、單 run 生命週期預設 24 小時、計費按 token 加每 session-hour $0.08。官方測試：workflow 在三次 run 中各找出 70 個植入 bug 中的 66 個，單 agent 只有 14–27 個。這代表 orchestration 正從開發者程式碼轉移到 agent 本身。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration"
+      }
+    ],
+    "source_url": "https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration",
+    "source_label": "來源",
+    "id": "lrn-2026-10-17-claude-managed-agents-推出-dynamic-workflo",
+    "date": "2026-10-17",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "值得關注的不是千名 agent 的規模，而是 orchestration 首次由 agent 自寫自跑——開發者角色正從設計流程轉向驗證結果，這對工程工作型態才是實質改變。",
+    "image": "images/lrn-2026-10-17-claude-managed-agents--dy.png"
+  },
+  {
+    "title": "NVIDIA App 內建 MCP server，更新後疑似預設開啟——你的顯卡軟體現在能被 AI agent 控制",
+    "category": "產業",
+    "summary": [
+      "NVIDIA App 11.0.9.565 加入本地 MCP server，官方點名支援 Hermes、OpenClaw、Perplexity 等 agent，可偵測遊戲、切換效能 preset、控制 ShadowPlay 錄影、讀取驅動狀態。只監聽 127.0.0.1，但本機任何 agent 都能連。",
+      "資安重點：VideoCardz 與多名用戶回報更新後「Allow AI agents to control NVIDIA App」預設是開的，NVIDIA 官方 release notes 卻沒提。若 agent 走雲端模型，它從 App 讀到的資料會外送。不需要的話到 Settings > Features 關掉。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/kman62/status/2111250577946825113"
+      }
+    ],
+    "source_url": "https://x.com/kman62/status/2111250577946825113",
+    "source_label": "來源",
+    "id": "lrn-2026-10-17-nvidia-app-內建-mcp-server-更新後疑似預設開啟-你的顯卡軟",
+    "date": "2026-10-17",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "NVIDIA 把 MCP 塞進顯卡軟體頗具野心，但資安敏感功能預設開啟卻隻字未提，這種先斬後奏的部署正透支使用者信任——在 AI 搶快時代，預設值本身就是一種立場。",
+    "image": "images/lrn-2026-10-17-nvidia-app--mcp-server--.png"
+  },
+  {
+    "title": "NVIDIA 開源 ASPIRE：coding agent 寫機器人程式碼，零人類示範解開實體魔術方塊",
+    "category": "工具",
+    "summary": [
+      "兩支機器手臂在無 teleoperation、無訓練資料的條件下解開真實 Rubik's Cube。流程是 AI coding agent 自己寫機器人控制碼、觀察失敗、修正、再把有效的解法存成可重用 skill。",
+      "為什麼重要：這是「agent 即工程師」的閉環示範——寫碼→執行→從物理世界回饋→累積技能庫，而不是人類先標註資料。對機器人學習與自我改進 agent 架構都是重要參考實作。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/AIRoboticsInt/status/2111267714761375815"
+      }
+    ],
+    "source_url": "https://x.com/AIRoboticsInt/status/2111267714761375815",
+    "source_label": "來源",
+    "id": "lrn-2026-10-17-nvidia-開源-aspire-coding-agent-寫機器人程式碼-零人",
+    "date": "2026-10-17",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "真正的亮點不是解開方塊，而是繞過機器人學習最貴的瓶頸——人工示範資料。當 agent 能從物理回饋自學並累積技能庫，機器人訓練的成本結構可能從此改寫。",
+    "image": "images/lrn-2026-10-17-nvidia--aspire-coding-age.png"
+  },
+  {
     "title": "Gentlemen 勒索軟體把 MCP 當 C2 指揮通道",
     "category": "產業",
     "summary": [
@@ -5649,10 +5737,6 @@
       {
         "label": "來源",
         "url": "https://x.com/hikari_signal/status/2094960806202929631"
-      },
-      {
-        "label": "來源",
-        "url": "https://x.com/NehaMuramalla/status/2094597347217142023"
       }
     ],
     "source_url": "https://x.com/hikari_signal/status/2094960806202929631",
