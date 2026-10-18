@@ -1,5 +1,132 @@
 [
   {
+    "title": "DeepSeek 發布 V4.1-Flash-1017：agent 能力躍升，MIT 授權",
+    "category": "工具",
+    "summary": [
+      "10/17 釋出的 open-weight 更新，DeepSWE v1.1 從 74.2 升到 77.0，Terminal-Bench 4.0 從 31.2 大跳到 42.3，回應更短、速度更快、API 價格不變，並新增 Search/Fetch API。低價開源模型在 agent/coding 任務上持續逼近閉源前沿，對 Claude、GPT 系形成實質壓力。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/pprownets2023/status/2111629694454141035"
+      }
+    ],
+    "source_url": "https://x.com/pprownets2023/status/2111629694454141035",
+    "source_label": "來源",
+    "id": "lrn-2026-10-18-deepseek-發布-v4-1-flash-1017-agent-能力躍升-m",
+    "date": "2026-10-18",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent 能力一向被視為閉源模型的護城河，但 MIT 授權加上價格不變，讓開源模型的進逼有了實際商用意義——當追趕速度快過差距，開發者的選型天平真的在動了。",
+    "image": "images/lrn-2026-10-18-deepseek--v4-1-flash-1017.png"
+  },
+  {
+    "title": "Reflection AI 開源 Beam：西方首個對標 DeepSeek 的 501B MoE",
+    "category": "工具",
+    "summary": [
+      "Sparse MoE 架構、501B 總參數（active 約 23B）、1M token context，Apache 2.0 授權，專為 coding、reasoning 與長程 agent 任務設計。這補上了「中國系開源模型以外」的選項，inference 效率是主要賣點。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/pprownets2023/status/2111629694454141035"
+      }
+    ],
+    "source_url": "https://x.com/pprownets2023/status/2111629694454141035",
+    "source_label": "來源",
+    "id": "lrn-2026-10-18-reflection-ai-開源-beam-西方首個對標-deepseek-的-",
+    "date": "2026-10-18",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "開源前沿長年由中國團隊領跑，Beam 讓西方陣營重返牌桌；Apache 2.0 加上高效率推理設計，對想自建 agent 的企業來說不只是備案，而是實戰選項。",
+    "image": "images/lrn-2026-10-18-reflection-ai--beam--deep.png"
+  },
+  {
+    "title": "Anthropic 內部報告：Agent 工時已是人類 6 倍",
+    "category": "產業",
+    "summary": [
+      "內部數據顯示工程師人均 code commit 是半年前的 5 倍，初階技術崗占比從 21% 掉到 14%，新進 hiring 中初階只剩 9%。關鍵瓶頸不再是寫 code，而是人類的注意力與審查帶寬——被取代的不是「工作」，是「初階執行層」。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/sharkhh/status/2111630706892022219"
+      }
+    ],
+    "source_url": "https://x.com/sharkhh/status/2111630706892022219",
+    "source_label": "來源",
+    "id": "lrn-2026-10-18-anthropic-內部報告-agent-工時已是人類-6-倍",
+    "date": "2026-10-18",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "最值得警惕的不是產能倍增，而是初階職缺萎縮背後的人才斷層——當 Agent 吃掉執行層，未來資深工程師的培育管道也正被悄悄拔除。",
+    "image": "images/lrn-2026-10-18-anthropic--agent--6-.png"
+  },
+  {
+    "title": "Callstack 開源 agent-device：讓 coding agent 直接操作手機",
+    "category": "工具",
+    "summary": [
+      "內建 MCP server + CLI + typed Node.js API，覆蓋 iOS/Android/HarmonyOS/TV/web/macOS/Linux 的模擬器與實機。agent 讀取 accessibility snapshot 後用 refs 操作，取代「看截圖猜 pixel」的燒 token 做法，讓 agent 能真正驗證 mobile app 的改動。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/BIGBULLapp/status/2111628433654456359"
+      }
+    ],
+    "source_url": "https://x.com/BIGBULLapp/status/2111628433654456359",
+    "source_label": "來源",
+    "id": "lrn-2026-10-18-callstack-開源-agent-device-讓-coding-agent",
+    "date": "2026-10-18",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "捨截圖、改讀 accessibility tree，等於把網頁 agent「讀 DOM」的成功範式搬進手機，補上 AI 自主驗證 mobile app 的最後一哩，想讓 agent 真正接手開發，這塊拼圖不能少。",
+    "image": "images/lrn-2026-10-18-callstack--agent-device--.png"
+  },
+  {
+    "title": "NVIDIA 跨模型 KV Cache 轉移：context 處理加速 2.7x–25x",
+    "category": "研究",
+    "summary": [
+      "新研究框架能把 KV cache 在不同架構的模型間轉移，讓目標模型跳過整個 prefill 階段。傳統 LLM routing 換模型就丟掉快取，這招把「靜態權重」與「動態 context 狀態」解耦——對多層 agent orchestration 的 serving 成本是大殺器。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/TechThought_org/status/2111442931575828496"
+      }
+    ],
+    "source_url": "https://x.com/TechThought_org/status/2111442931575828496",
+    "source_label": "來源",
+    "id": "lrn-2026-10-18-nvidia-跨模型-kv-cache-轉移-context-處理加速-2-7x",
+    "date": "2026-10-18",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "真正的亮點是把 context 變成「可攜資產」：快取一旦能跨模型流動，廠商靠 prompt caching 綁住客戶的邏輯也會被鬆動——這不只是加速，更是生態層級的改變。",
+    "image": ""
+  },
+  {
+    "title": "Agent memory 研究轉向：從「檢索」走向「可執行的聚合」",
+    "category": "研究",
+    "summary": [
+      "本週 arXiv 一批 memory 論文指向同一結論：單純 retrieval 不夠。華為的 TallyMem 讓模型寫「事件規格」、由確定性執行器在事件帳本上計算，MINTEval 上 exact match 從 35.2% 提升到 49.0%；TEM 用版本化事務記錄＋歷史標籤，證明「標記哪個值已過時」就能讓歷史問題命中率提升 17–56 個百分點。",
+      "共同洞見：「模型決定要算什麼，但不要讓模型自己算」。把計數、時間排序、狀態追蹤交給確定性執行，錯誤才能被定位到「選錯事件」還是「算錯」。這對自己在建的 agent memory 系統是很實用的設計原則。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://arxiv.org/html/2610.19474"
+      }
+    ],
+    "source_url": "https://arxiv.org/html/2610.19474",
+    "source_label": "來源",
+    "id": "lrn-2026-10-18-agent-memory-研究轉向-從-檢索-走向-可執行的聚合",
+    "date": "2026-10-18",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "別只看分數躍升：這批論文真正的價值，是把記憶從黑箱召回變成可歸因、可除錯的工程問題。對在建 agent 系統的人來說，「決策與計算分離」是能立即落地的設計原則。",
+    "image": ""
+  },
+  {
     "title": "Doc2Harness：最強模型也只能正確建出 53% 的 coding-agent harness",
     "category": "研究",
     "summary": [
