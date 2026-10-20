@@ -1,5 +1,114 @@
 [
   {
+    "title": "Microsoft 擴大 Project Perception：把 AI agent 當「內部威脅」管理",
+    "category": "產業",
+    "summary": [
+      "Satya Nadella 宣布擴充 Project Perception，持續評估 agent 風險、動態調整權限。核心原則：安全控制必須放在模型外面，不能指望模型自我約束——agent 可能在「完成任務」的同時做出公司從未預期的行為。",
+      "這是大型雲廠首次把零信任架構系統性套到 agent 身上，權限檢查、圍堵策略都外置於模型，跟昨天 Anthropic 報告的「監督成本上升」是同一件事的兩面。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/satyanadella/status/2112168320946634932"
+      }
+    ],
+    "source_url": "https://x.com/satyanadella/status/2112168320946634932",
+    "source_label": "來源",
+    "id": "lrn-2026-10-20-microsoft-擴大-project-perception-把-ai-age",
+    "date": "2026-10-20",
+    "source": "learning",
+    "original_url": "https://blogs.microsoft.com/blog/2026/10/19/securing-the-agentic-insider/",
+    "editor_note": "心態轉變才是重點：不再問「如何讓 agent 可靠」，而是承認它必然出錯、預設防線。微軟與 Anthropic 先後表態，治理正取代模型能力，成為企業 AI 落地的真正瓶頸。",
+    "image": "images/lrn-2026-10-20-microsoft--project-percep.png"
+  },
+  {
+    "title": "實證研究：496 個 LLM call site 裡，只有 5.3% 完全符合預期契約",
+    "category": "研究",
+    "summary": [
+      "研究分析 40 個熱門開源 agentic 系統（1,340 萬行代碼）中 496 個 LLM 呼叫點：48% 的模型輸出直接進入控制流或執行、其中 73% 不會經過人類；67% 的約束只寫在 prompt 裡「拜託模型」，整體 63% 的預期約束未被滿足。",
+      "最有價值的發現：有檢查 ≠ 檢查足夠，且 99% 的缺口來自十種重複模式，一個小型代碼修補就能堵住全部 38 種觸發機制——對所有寫 agent 的人都是可直接行動的清單。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/gastronomy/status/2112355467976405151"
+      }
+    ],
+    "source_url": "https://x.com/gastronomy/status/2112355467976405151",
+    "source_label": "來源",
+    "id": "lrn-2026-10-20-實證研究-496-個-llm-call-site-裡-只有-5-3-完全符合預期",
+    "date": "2026-10-20",
+    "source": "learning",
+    "original_url": "https://ift.tt/hvatwjl",
+    "editor_note": "這份研究把 agent 安全從「拜託模型」的玄學拉回工程紀律：約束該寫進代碼而非 prompt，而堵住 99% 缺口只需修補十種模式——做好防護，比你想的便宜得多。",
+    "image": "images/lrn-2026-10-20--496--llm-call-site---5-3.png"
+  },
+  {
+    "title": "MCP Python SDK 爆 OAuth 憑證漏洞：錯誤路徑也是信任邊界",
+    "category": "工具",
+    "summary": [
+      "SDK 的 1.9.1–1.29.1 與 2.0.0–2.1.1 版在查詢 credential 轉送地址時，收到 404 竟被當成有效回應處理，agent 的 OAuth 憑證可能被導去錯誤的地方。已於 1.30.0 / 2.2.0 修復（9/28 通告）。",
+      "教訓很直白：agent 基礎設施的錯誤處理路徑本身就是攻擊面，跑 MCP server 的人今天該檢查版本。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/hikari_signal/status/2112355119412985973"
+      }
+    ],
+    "source_url": "https://x.com/hikari_signal/status/2112355119412985973",
+    "source_label": "來源",
+    "id": "lrn-2026-10-20-mcp-python-sdk-爆-oauth-憑證漏洞-錯誤路徑也是信任邊界",
+    "date": "2026-10-20",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "最危險的漏洞從不炫技：一個被誤當有效回應的 404，就能讓憑證悄悄改道。當 MCP 逐漸成為 agent 生態的血管，SDK 裡的小疏忽，會被成千上萬個 agent 無聲放大。",
+    "image": "images/lrn-2026-10-20-mcp-python-sdk--oauth--.png"
+  },
+  {
+    "title": "doubleAI 發布「代碼執行模型」（CEM）：AI 不寫代碼，改寫機器指令",
+    "category": "產業",
+    "summary": [
+      "Mobileye 聯合創辦人 Shashua 創辦的 doubleAI 獲 2 億美元 A 輪（NVIDIA、Dell 參投），估值破 10 億。CEM 讓 AI 住進運行中的程序，即時重寫底層機器指令讓硬體跑更快——源碼一行不動，每次改寫都經數學形式化驗證，追蹤開銷 ≤2%。",
+      "實測 Whisper 轉錄在同一張 RTX 4090 上 106 秒→50 秒、輸出一字不差；收費按「幫你省下的錢」抽成。與 coding agent 是完全相反的方向：第一個為機器工作而非為程序員工作的 AI。67% 降本為公司單方數據，待獨立驗證。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/k4451849352617/status/2112354186830442609"
+      }
+    ],
+    "source_url": "https://x.com/k4451849352617/status/2112354186830442609",
+    "source_label": "來源",
+    "id": "lrn-2026-10-20-doubleai-發布-代碼執行模型-cem-ai-不寫代碼-改寫機器指令",
+    "date": "2026-10-20",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當 coding agent 賽道擠成紅海，doubleAI 反向押注「AI 為機器而非程序員工作」，定位確實高明；但 67% 降本仍是自證數據，10 億估值能否站穩，還得看獨立實測。",
+    "image": "images/lrn-2026-10-20-doubleai---cem-ai--.png"
+  },
+  {
+    "title": "Matt Pocock 開源 27 個工程級 agent skills：先讓 AI 追問需求再動手",
+    "category": "工具",
+    "summary": [
+      "mattpocock/skills（MIT、約 29.7 萬星）主打「正經工程、不是 vibe coding」：/grill-me 開工前讓 agent 逐條追問需求、/tdd 先寫失敗測試、/diagnosing-bugs 強制先穩定復現再修、/code-review 用兩個子 agent 分開審規範與需求。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/FastfixAI/status/2111992195259433152"
+      }
+    ],
+    "source_url": "https://x.com/FastfixAI/status/2111992195259433152",
+    "source_label": "來源",
+    "id": "lrn-2026-10-20-matt-pocock-開源-27-個工程級-agent-skills-先讓-a",
+    "date": "2026-10-20",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當 vibe coding 當道，這套 skills 反其道而行——讓 agent 先拷問需求、先寫失敗測試再動工。它點出一個殘酷事實：AI 生產力的瓶頸從來不是寫碼速度，而是想清楚的能力。",
+    "image": "images/lrn-2026-10-20-matt-pocock--27--agent-sk.png"
+  },
+  {
     "title": "Anthropic 內部研究：agent 用量超過人類工時 6 倍",
     "category": "產業",
     "summary": [
