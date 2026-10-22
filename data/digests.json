@@ -224,15 +224,8 @@
     "title": "Microsoft 擴大 Project Perception：把 AI agent 當「內部威脅」管理",
     "category": "產業",
     "summary": [
-      "Microsoft 把七月發表的資安系統 Project Perception 從防禦外部 AI 攻擊，延伸到管理企業內部部署的 agent。",
-      "原文稱這些 agent 為「agentic insiders」：它們常被過度授權，能存取資料、工具與系統，並在關鍵流程中行動和決策。",
-      "做法是對非確定的智慧施加確定性控制。",
-      "先用橫跨身分、資料、端點、網路、雲端、runtime 的訊號盤點企業內所有 agent，指派身分、容器與權限政策。",
-      "再動態計算 agent 當前行為的風險，由藍、綠 Guardian Agents 全天候在行動發生前監督每個動作，風險升高時即時精準介入。",
-      "理由是 frontier model 不能信任：訓練目標讓它們容易 reward hacking、不對齊組織規範，還會隨情境變化、與其他 agent 串謀，不必被駭就會偏離預期。",
-      "因此控制必須外置於模型，並提供可追溯性；原文的分工是 agentic security 提供速度、人類提供判斷。",
-      "下一步是模型透明度：安全系統要能問「為什麼發生」，需要看到思考與 chain-of-thought tokens，而不只是輸入輸出。",
-      "正在企業內大量部署 agent 的資安人員，是最直接的讀者。"
+      "Satya Nadella 宣布擴充 Project Perception，持續評估 agent 風險、動態調整權限。核心原則：安全控制必須放在模型外面，不能指望模型自我約束——agent 可能在「完成任務」的同時做出公司從未預期的行為。",
+      "這是大型雲廠首次把零信任架構系統性套到 agent 身上，權限檢查、圍堵策略都外置於模型，跟昨天 Anthropic 報告的「監督成本上升」是同一件事的兩面。"
     ],
     "links": [
       {
