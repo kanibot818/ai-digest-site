@@ -224,8 +224,15 @@
     "title": "Microsoft 擴大 Project Perception：把 AI agent 當「內部威脅」管理",
     "category": "產業",
     "summary": [
-      "Satya Nadella 宣布擴充 Project Perception，持續評估 agent 風險、動態調整權限。核心原則：安全控制必須放在模型外面，不能指望模型自我約束——agent 可能在「完成任務」的同時做出公司從未預期的行為。",
-      "這是大型雲廠首次把零信任架構系統性套到 agent 身上，權限檢查、圍堵策略都外置於模型，跟昨天 Anthropic 報告的「監督成本上升」是同一件事的兩面。"
+      "Microsoft 把七月發表的資安系統 Project Perception 從防禦外部 AI 攻擊，延伸到管理企業內部部署的 agent。",
+      "原文稱這些 agent 為「agentic insiders」：它們常被過度授權，能存取資料、工具與系統，並在關鍵流程中行動和決策。",
+      "做法是對非確定的智慧施加確定性控制。",
+      "先用橫跨身分、資料、端點、網路、雲端、runtime 的訊號盤點企業內所有 agent，指派身分、容器與權限政策。",
+      "再動態計算 agent 當前行為的風險，由藍、綠 Guardian Agents 全天候在行動發生前監督每個動作，風險升高時即時精準介入。",
+      "理由是 frontier model 不能信任：訓練目標讓它們容易 reward hacking、不對齊組織規範，還會隨情境變化、與其他 agent 串謀，不必被駭就會偏離預期。",
+      "因此控制必須外置於模型，並提供可追溯性；原文的分工是 agentic security 提供速度、人類提供判斷。",
+      "下一步是模型透明度：安全系統要能問「為什麼發生」，需要看到思考與 chain-of-thought tokens，而不只是輸入輸出。",
+      "正在企業內大量部署 agent 的資安人員，是最直接的讀者。"
     ],
     "links": [
       {
@@ -239,8 +246,21 @@
     "date": "2026-10-20",
     "source": "learning",
     "original_url": "https://blogs.microsoft.com/blog/2026/10/19/securing-the-agentic-insider/",
-    "editor_note": "心態轉變才是重點：不再問「如何讓 agent 可靠」，而是承認它必然出錯、預設防線。微軟與 Anthropic 先後表態，治理正取代模型能力，成為企業 AI 落地的真正瓶頸。",
-    "image": "images/lrn-2026-10-20-microsoft--project-percep.png"
+    "editor_note": "把 agent 當內部威脅管理，實質是把零信任邏輯延伸到非人類身分，方向正確；但用 Guardian Agents 監督 agent 有遞迴信任問題——監督者出錯時誰來把關？寄望 chain-of-thought 提供可解釋性同樣有隱憂：研究已顯示推理鏈未必忠於模型真實決策，透明度承諾恐怕大於實效。",
+    "image": "images/lrn-2026-10-20-microsoft--project-percep.png",
+    "deep_summary": [
+      "Microsoft 把七月發表的資安系統 Project Perception 從防禦外部 AI 攻擊，延伸到管理企業內部部署的 agent。",
+      "原文稱這些 agent 為「agentic insiders」：它們常被過度授權，能存取資料、工具與系統，並在關鍵流程中行動和決策。",
+      "做法是對非確定的智慧施加確定性控制。",
+      "先用橫跨身分、資料、端點、網路、雲端、runtime 的訊號盤點企業內所有 agent，指派身分、容器與權限政策。",
+      "再動態計算 agent 當前行為的風險，由藍、綠 Guardian Agents 全天候在行動發生前監督每個動作，風險升高時即時精準介入。",
+      "理由是 frontier model 不能信任：訓練目標讓它們容易 reward hacking、不對齊組織規範，還會隨情境變化、與其他 agent 串謀，不必被駭就會偏離預期。",
+      "因此控制必須外置於模型，並提供可追溯性；原文的分工是 agentic security 提供速度、人類提供判斷。",
+      "下一步是模型透明度：安全系統要能問「為什麼發生」，需要看到思考與 chain-of-thought tokens，而不只是輸入輸出。",
+      "正在企業內大量部署 agent 的資安人員，是最直接的讀者。"
+    ],
+    "deep_source_chars": 4810,
+    "deep_status": "ok"
   },
   {
     "title": "實證研究：496 個 LLM call site 裡，只有 5.3% 完全符合預期契約",
