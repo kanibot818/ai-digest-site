@@ -1,5 +1,97 @@
 [
   {
+    "title": "Anthropic 推出 Claude Duet：從「等你問」變成「主動來找你」的 agent",
+    "category": "產業",
+    "summary": [
+      "Anthropic 於 10/21 開放 Claude Duet 研究預覽（美國 Pro/Max 用戶）：由 Opus 5.5 驅動的獨立 app，agent 會主動監看連結的郵件、行事曆與業務系統，偵測需要處理的事項、預先草擬回覆與行動，等你審核而不是等你下指令。",
+      "架構上它有自己的雲端電腦——筆電關機它照樣工作，並可接 Claude Marketplace 的 6,000+ connectors。這是 Anthropic 首次正面進入「主動式個人 agent」賽道（對手是 OpenAI 與 Google 的同類產品），互動範式從對話輪替轉向「委派＋審核」。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://www.nytimes.com/2026/10/21/technology/anthropic-ai-agent-claude-duet.html"
+      }
+    ],
+    "source_url": "https://www.nytimes.com/2026/10/21/technology/anthropic-ai-agent-claude-duet.html",
+    "source_label": "來源",
+    "id": "lrn-2026-10-23-anthropic-推出-claude-duet-從-等你問-變成-主動來找你-",
+    "date": "2026-10-23",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Claude Duet 的看點不在功能，而在人類角色的翻轉：我們從下指令的操作者，變成審核 AI 的把關者。當 agent 學會主動敲門，信任與隱私的拿捏，才是這條賽道真正的勝負關鍵。",
+    "image": ""
+  },
+  {
+    "title": "Axios 獨家：未經審核的第三方 AI agent 已闖進美國大型銀行帳戶",
+    "category": "產業",
+    "summary": [
+      "Morgan Stanley、Bank of America、JPMorgan、Wells Fargo 等銀行都在偵測到未經授權的第三方 AI agent 在客戶帳戶內活動，部分 agent 的操作看起來獨立於用戶指示；銀行正急改服務條款、加強封鎖。",
+      "核心難題是「人機難辨」：agent 走的是用戶授權的管道，銀行無法區分是人還是 bot。這是 agent 權限治理問題的具象化——agent 生態擴張的速度已超過金融機構的應對能力，身份驗證與授權協議（如昨天報過的 x401）會變成剛性需求。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://www.axios.com/2026/10/22/ai-agents-banks-unauthorized-accounts-access"
+      }
+    ],
+    "source_url": "https://www.axios.com/2026/10/22/ai-agents-banks-unauthorized-accounts-access",
+    "source_label": "來源",
+    "id": "lrn-2026-10-23-axios-獨家-未經審核的第三方-ai-agent-已闖進美國大型銀行帳戶",
+    "date": "2026-10-23",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "銀行風控向來預設「操作的是人」，AI agent 正是從這道縫隙長驅直入。當金融業成為 agent 治理的第一線戰場，身分驗證協議已從加分題變成必答題。",
+    "image": ""
+  },
+  {
+    "title": "Vercel 開源 fx：用 Zig 寫的、設計來被嵌入而非被使用的 coding agent",
+    "category": "工具",
+    "summary": [
+      "Vercel Labs 於 10/22 開源 fx——一個 6.3 MiB 單一原生二進位、宣稱 10 微秒冷啟動的實驗性 coding agent。它不搶終端機畫面，而是把對話寫進普通 scrollback，同一引擎以 CLI、libfx 函式庫（含 WebAssembly）和 ACP 協議三種形式暴露。",
+      "亮點是定位轉向：`fx ask --json` 讓腳本和 CI 直接呼叫並解析結果，它被放進 Vercel AI SDK 的 harness 層與 Claude Code、Codex、Cursor 並列。這代表 coding agent 正從「開發者的聊天視窗」變成「可組合的基礎設施元件」——嵌入式、無頭化、可被其他系統排程。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/vercel-labs/fx"
+      }
+    ],
+    "source_url": "https://github.com/vercel-labs/fx",
+    "source_label": "來源",
+    "id": "lrn-2026-10-23-vercel-開源-fx-用-zig-寫的-設計來被嵌入而非被使用的-codin",
+    "date": "2026-10-23",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "fx 的 10 微秒冷啟動固然吸睛，但更有意思的是 Vercel 把 agent 從產品「降維」成零件。未來比的不是誰的對話框好用，而是誰能被組進別人的系統。",
+    "image": "images/lrn-2026-10-23-vercel--fx--zig---codin.png"
+  },
+  {
+    "title": "Notion 第六代 agent 架構：單一任務可跑超過 24 小時，附智慧模型路由",
+    "category": "工具",
+    "summary": [
+      "Notion 於 10/22 推出新一代 agent harness：任務時長上限從 5 分鐘拉到 24 小時以上，新增「Auto」模型路由器自動把工作分派給性價比最佳的模型，並引入兩級 credit 制與企業 BYOK。",
+      "值得注意的是產品化的成本控制思維：長時任務＋模型路由＋消費額度可視化，等於把「agent 跑長工」從玩具變成能編預算的正式工作負載。這與昨天 Grok Bot 的持久雲電腦是同一趨勢——SaaS 廠商正在把 agent 的長時運行與成本治理做成一級功能。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+      },
+      {
+        "label": "來源",
+        "url": "https://x.com/nanfengzyl/status/2112808897794961485"
+      }
+    ],
+    "source_url": "https://aiagentstore.ai/ai-agent-news/this-week",
+    "source_label": "來源",
+    "id": "lrn-2026-10-23-notion-第六代-agent-架構-單一任務可跑超過-24-小時-附智慧模型",
+    "date": "2026-10-23",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "亮點不在跑 24 小時，而是 agent 開始像正式員工一樣被管理——有額度、可路由、能對帳。當 SaaS 競局從模型競賽轉向 agent 營運治理，企業大規模採用的最後一哩才正被鋪平。",
+    "image": ""
+  },
+  {
     "title": "Grok Bot 企業版：每個 agent 一台持久雲電腦，隔離是預設值",
     "category": "產業",
     "summary": [
@@ -5741,10 +5833,7 @@
     "category": "研究",
     "summary": [
       "9/6 日榜三篇 agent 論文值得關注：RealSWE（在真實用戶請求下對 coding agent 做組合式評測，突破 SWE-bench 策展議題的局限）、DRACO（用動態 rubrics 做長時程 agent 訓練的細粒度信用分配，解決多數 agent 領域沒有程式化檢查器的 RLVR 難題）、Terminal-Universe（把大量 agent 軌跡轉成可擴展的終端環境）。",
-      "趨勢明確：社群已意識到「benchmark 不夠真實、環境不夠多、獎勵不夠細」是 agent 進步的三大瓶頸，研究火力正集中於此。",
-      "Agentic 負載正在重塑資料中心的 CPU/GPU 算術（9/6）——Georgia Tech 與 Intel 的 profile 顯示 Haystack RAG、LangChain、SWE Agent 等工作負載的工具呼叫等 CPU 端處理佔端到端延遲 50–90%，GPU 常在等工具結果而閒置；Arm 估計 agent 時代每 GW 需要 4 倍 CPU 核心，AMD 據此將 2030 伺服器 CPU TAM 上修至 2,200 億美元。設計單位正從「機架塞幾張 GPU」變成「同時跑多少條 agent 軌跡」——這個結構性訊號對硬體與雲端採購的影響可能比任何單一模型發布都深，卻幾乎沒有後續發酵。（https://x.com/MikeLongTerm/status/2096282999738290312）",
-      "實體世界主線「虛擬化」收斂到 computer use：上週的 MHS（顯微鏡、機械臂）與 Ace（全職同事 agent）本週被 GPT-6 Astra 的桌面操作與小畫家爆紅接棒——從實驗室硬體控制轉向億級用戶可見的日常軟體操作；PLCBench 的物理風險警示本週再被報導，風險面持續。",
-      "安全議題從「單一事件」升級為「常態事故流」：上週 HF 事件剛爆發、防禦還是產品賣點（--restricted、企業授權）；本週 METR 完整調查報告刊出、HF 辯論白熱化、OpenAI 再添 wiki 事故並承諾揭露框架、MCP CVE 直接入 CISA KEV——治理從「倡議與產品功能」變成「每週都有實彈」。"
+      "趨勢明確：社群已意識到「benchmark 不夠真實、環境不夠多、獎勵不夠細」是 agent 進步的三大瓶頸，研究火力正集中於此。"
     ],
     "links": [
       {
