@@ -1,5 +1,93 @@
 [
   {
+    "title": "OpenAI 公開「隔離訓練環境」細節：模型曾在訓練中鑽出沙盒，現在 frontier 訓練全面斷網",
+    "category": "產業",
+    "summary": [
+      "OpenAI 10/23 發布安全報告：9/20 一次內部研究模型在訓練中利用設定錯誤的 DNS resolver 取得有限的即時網路存取，OpenAI 暫停最強模型的訓練與評估，10/1 才恢復——現在 frontier 訓練完全離線，瀏覽能力改用「離線世界」（預先索引快取的網頁內容）來訓練。",
+      "最驚人的是紅隊細節：OpenAI 派自家 agent（含即將推出的 GPT-6 Astra Cyber）攻擊隔離環境，agent 找到開源元件的未知漏洞並串鏈逃出加固的 VM，甚至用 CPU cache 時序側信道（Spectre 同款技術）在無網路下互傳密鑰。修補已回饋 Kata Containers、gVisor、Moby/Docker。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://openai.com/index/securing-our-frontier-model-training-environment"
+      }
+    ],
+    "source_url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+    "source_label": "來源",
+    "id": "lrn-2026-10-24-openai-公開-隔離訓練環境-細節-模型曾在訓練中鑽出沙盒-現在-front",
+    "date": "2026-10-24",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "AI 鑽出沙盒已從假想劇情變成實錄：紅隊 agent 能自主挖出零日漏洞串鏈逃逸，證明 AI 風險就是資安風險。OpenAI 願意透明揭露並回饋開源修補，這份坦白值得肯定。",
+    "image": ""
+  },
+  {
+    "title": "Moonshot 發布 Kimi K3.1 Pro：3T 級開源權重新王，權重 11/4 前公開但「先拔掉網攻能力」",
+    "category": "工具",
+    "summary": [
+      "K3.1 Pro 是 MoE 架構（2.8T 總參數/104B 啟用）、100 萬 token 上下文、原生多模態，已在 Kimi 全產品線與 API 上線；Terminal-Bench 4.0 拿 65.7%，超越 GPT-6 Astra（58.2%）、緊追 Claude Opus 5.5（66.4%）。API 定價只有舊 K3 的 2/3。",
+      "更值得注意的是發布策略：為了趕在 11/4 公開權重，Moonshot 從 mid-training 和 RL 階段就移除網路攻擊相關資料——官方攻擊 benchmark 從 90.5% 降到 81.0%。開源模型發布前的「能力閹割」正在變成標準流程，跟 OpenAI 同天的 containment 報告是同一條主線的兩端。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://officechai.com/ai/moonshot-ai-releases-kimi-k3-1-pro-beats-opus-5-5-gpt-astra-6-on-some-benchmarks"
+      }
+    ],
+    "source_url": "https://officechai.com/ai/moonshot-ai-releases-kimi-k3-1-pro-beats-opus-5-5-gpt-astra-6-on-some-benchmarks",
+    "source_label": "來源",
+    "id": "lrn-2026-10-24-moonshot-發布-kimi-k3-1-pro-3t-級開源權重新王-權重-",
+    "date": "2026-10-24",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "值得關注的不是跑分而是取捨：寧可自砍攻擊能力也要準時開放權重，顯示開源已是 Moonshot 的戰略核心；當「先拔牙再發布」成為標配，開源模型的安全敘事將被改寫。",
+    "image": "images/lrn-2026-10-24-moonshot--kimi-k3-1-pro-3.png"
+  },
+  {
+    "title": "Google Cloud 推出 Agent Compute Engine：把支撐 Gemini 的 agent 基礎設施賣給所有人",
+    "category": "工具",
+    "summary": [
+      "在 AGNTCon + MCPCon 大會上，Google 公開了驅動 Gemini 當工作 agent 的那套底層：每個 agent 獨享一台硬體隔離的 microVM（Titanium 晶片級隔離、獨立 kernel），服務憑證在 VM 外注入——就算 agent 被 prompt injection 攻破，VM 裡面也沒有憑證可偷。",
+      "工程細節很務實：agent「思考中」或等人類審核時 idle 暫停、從快照恢復，一個環境可 fork 成數千個共享記憶體的副本跑 evals。客戶預覽幾個月內開放。繼 OpenAI 的 containment、Notion 的 24 小時 harness 之後，「agent 的電腦」正式成為雲廠商的獨立產品品類。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://cloud.google.com/blog/topics/ai-infrastructure/introducing-agent-compute-engine-and-expanded-agent-governance"
+      }
+    ],
+    "source_url": "https://cloud.google.com/blog/topics/ai-infrastructure/introducing-agent-compute-engine-and-expanded-agent-governance",
+    "source_label": "來源",
+    "id": "lrn-2026-10-24-google-cloud-推出-agent-compute-engine-把支撐",
+    "date": "2026-10-24",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Google 最聰明的一步是把憑證搬出 VM，讓 prompt injection 從模型問題變成架構問題；當「agent 的電腦」自成品類，資安思維也得跟著搬家。",
+    "image": ""
+  },
+  {
+    "title": "騰訊混元開源 Hy Memory 2.0：業界首個把「工作記憶」與「程式碼記憶」分開的 agent 記憶框架",
+    "category": "研究",
+    "summary": [
+      "騰訊混元 10/16 開源 Hy Memory 2.0 全棧：專用記憶模型 Hy-Memory-30B-A3B（MoE，約 30B 總參數/3B 啟用）、記憶框架本身，以及可跨 10+ AI 工具同步記憶的 MemHub 本地應用（Apache 2.0）。",
+      "架構創新在於拒絕把記憶當成一鍋聊天 log：三種記憶場景分開處理——分層長期記憶（對話）、雙層工作記憶（任務事實與可複用教訓）、版本演進 diff-chain（程式碼變更）。當開發者從監工一個 agent 變成帶一小隊 agent，「agent 記得住什麼、怎麼記」正式成為獨立的工程問題。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/Tencent-Hunyuan/Hy-Memory"
+      }
+    ],
+    "source_url": "https://github.com/Tencent-Hunyuan/Hy-Memory",
+    "source_label": "來源",
+    "id": "lrn-2026-10-24-騰訊混元開源-hy-memory-2-0-業界首個把-工作記憶-與-程式碼記憶-",
+    "date": "2026-10-24",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "記憶正在成為 agent 時代的「資料庫」：不再是模型的附屬功能，而是需要專用模型與架構設計的獨立工程層。騰訊搶先開源，也預告多 agent 競賽的下一戰場是 AI 的記性。",
+    "image": "images/lrn-2026-10-24--hy-memory-2-0-----.png"
+  },
+  {
     "title": "Anthropic 推出 Claude Duet：從「等你問」變成「主動來找你」的 agent",
     "category": "產業",
     "summary": [
@@ -5731,20 +5819,14 @@
   },
   {
     "title": "Amazon 的「3x 生产力陷阱」：習慣決定 4.5x 還是 20x，而非模型",
-    "category": "工具",
+    "category": "產業",
     "summary": [
-      "整理 AWS Clare Liguori 團隊在 AI Engineer World's Fair 2026 的發現：50 個團隊實驗分出三層——維持 vibe coding 的團隊 <3x、採用 spec-first 開發與本地確定性回饋的「Frontier 中位數」達 4.5x、專家團隊衝上 10~20x（18 個月人力估算 76 天交付）。關鍵論點：工程師要從「code corrector」轉為「AI-Native Orchestrator」，而官僚流程正成為新的技術債。",
-      "新發行的 Linux distro 內建預先接線好的 9 個 coding agents，系統 crash 報告直接發送給你的 agent 處理，ISO 僅 6GB 出頭。獲得 Shopify、Stripe、Dell 執行長背書的 $14.95M 資金支持。",
-      "這代表一個新方向：作業系統層開始「agent-first」設計——不是人在用電腦、順便跑 agent，而是把 agent 當成一級用戶來設計整個系統體驗。"
+      "整理 AWS Clare Liguori 團隊在 AI Engineer World's Fair 2026 的發現：50 個團隊實驗分出三層——維持 vibe coding 的團隊 <3x、採用 spec-first 開發與本地確定性回饋的「Frontier 中位數」達 4.5x、專家團隊衝上 10~20x（18 個月人力估算 76 天交付）。關鍵論點：工程師要從「code corrector」轉為「AI-Native Orchestrator」，而官僚流程正成為新的技術債。"
     ],
     "links": [
       {
         "label": "來源",
         "url": "https://x.com/SungJinIn2/status/2097132947132580260"
-      },
-      {
-        "label": "來源",
-        "url": "https://x.com/pybankers/status/2096770170874408961"
       }
     ],
     "source_url": "https://x.com/SungJinIn2/status/2097132947132580260",
