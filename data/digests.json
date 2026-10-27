@@ -1,5 +1,98 @@
 [
   {
+    "title": "OpenAI 發布 GPT-6.1 Terra：computer use 降到 Astra 十分之一價，Terminal-Bench 分數翻倍",
+    "category": "產業",
+    "summary": [
+      "OpenAI 昨晚推出 GPT-6 系列的中階模型 Terra（API ID `gpt-6.1-terra`）：定價 $1/$5 每百萬 token，比前代 GPT-5.6 Terra 便宜 50%；Terminal-Bench 4.0（max effort）從 21.5% 跳到 50.3%，tricky prompt 低 effort 錯誤率 53.6%→16.7%，computer use 能力接近旗艦 Astra 但 token 單價只有 1/10，速度約 3 倍。",
+      "重點不只是模型本身，而是價格信號：螢幕操作、表單填寫、跨 app 自動化這類「高產量」agent 工作負載，正式進入大宗商品化區間——所有踩在「模型夠貴」這個假設上的 SaaS，護城河今天又薄了一層。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://openai.com/index/introducing-gpt-6-1-terra"
+      }
+    ],
+    "source_url": "https://openai.com/index/introducing-gpt-6-1-terra",
+    "source_label": "來源",
+    "id": "lrn-2026-10-27-openai-發布-gpt-6-1-terra-computer-use-降到-",
+    "date": "2026-10-27",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "這不只是降價，而是 OpenAI 押注螢幕操作將成最大 agent 工作負載、以價格提前圈地的戰略宣言。當成本不再是門檻，競爭主軸也將從跑分轉向工作流、資料與信任的整合。",
+    "image": ""
+  },
+  {
+    "title": "前 GitHub CEO 推出 Entire：用「Trails」取代 pull request，code review 交給 eval 打分",
+    "category": "工具",
+    "summary": [
+      "Thomas Dohmke（前 GitHub CEO）的創業公司 Entire 今日正式上線完整 Git forge——hosting、review、merge、deploy 全有，但核心原語換掉：pull request 改成 Trails，保留 agent session 的「意圖與結果」、給信心分數、跑一組可自訂的 agent evals，全綠就允許合併，人類只看需要看的變更。",
+      "這是第一個把「agent 寫 code 比人審 code 快」當成設計前提的程式碼托管平台。與昨天 Walmart Agent Gateway 同構：當生產者變成 agent，瓶頸和產品價值都從「產出」滑向「驗證與授權」——review 介面就是新戰場。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://thenewstack.io/entire-trails-agentic-code-review/"
+      }
+    ],
+    "source_url": "https://thenewstack.io/entire-trails-agentic-code-review/",
+    "source_label": "來源",
+    "id": "lrn-2026-10-27-前-github-ceo-推出-entire-用-trails-取代-pull-",
+    "date": "2026-10-27",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "耐人尋味的是，動手的正是靠 pull request 建立帝國的前 GitHub CEO——連他都決定換掉這個原語，宣告開發平台的權力正從產出端滑向驗證端。",
+    "image": ""
+  },
+  {
+    "title": "Agent 記憶體 Reality Check：獨立 benchmark 顯示樸素 RAG 在 7 個測試中 6 個打贏專門記憶系統",
+    "category": "產業",
+    "summary": [
+      "一波獨立複驗正在反噬記憶體新創的 benchmark 敘事：Agent-Memory-Benchmarks 用同一組 embedding、同一個 judge 對比 Mem0、Zep、Letta 與 plain RAG，RAG 幾乎全面持平或勝出；對 Mem0 的審計發現其寫入不到 5% 是更新/刪除（近乎 append-only），把它改成純追加反而提升 LoCoMo 分數。另一篇診斷論文進一步指出：檢索方法的影響（20 分差距）遠大於寫入策略（3-8 分），零 LLM 呼叫的 raw chunk 儲存就能打平昂貴的有損壓縮。",
+      "這是對昨天 Hindsight 那類「記憶層軍備競賽」的最好制衡：廠商自評的 benchmark 優勢，很多其實是檢索品質差異，而非記憶架構本身。採購前先跑一次自己資料上的 like-for-like 對比。",
+      "這是 agentic commerce 的分水嶺：與 Amazon 封鎖第三方 agent 相反，Walmart 選擇「開放但可審計」——身份、額度、授權、撤銷，四件 agent 經濟的基礎設施一次補齊。零售通路開始把「agent 當成一種新型顧客」來設計權限系統，而不是流量。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/JustAnotherDevv/Agent-Memory-Benchmarks"
+      },
+      {
+        "label": "來源",
+        "url": "https://corporate.walmart.com/news/2026/10/Making-It-Possible-for-Agents-to-Shop-on-Behalf-of-Customers"
+      }
+    ],
+    "source_url": "https://github.com/JustAnotherDevv/Agent-Memory-Benchmarks",
+    "source_label": "來源",
+    "id": "lrn-2026-10-27-agent-記憶體-reality-check-獨立-benchmark-顯示樸",
+    "date": "2026-10-27",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當 plain RAG 在 7 場比賽拿下 6 勝，該反思的不只是新創的 benchmark 敘事，更是整個「先加層、後驗證」的 agentic 建設慣性——最樸素的基線，往往才是最誠實的對照組，採購前值得自己跑一遍。",
+    "image": ""
+  },
+  {
+    "title": "NorForge 實錘：一名駭客用 $5,000 的 agent 大軍攻破逾 100 家公司網站，Deere、SharkNinja、Cummins 都中鏢",
+    "category": "產業",
+    "summary": [
+      "安全公司 NorForge 發現 20 多個暴露在公網的 Cairn（開源多 agent 問題求解平台）控制面板，直接旁觀了整場攻擊：一名中文使用者用不到 100 個字的指令，讓混合 DeepSeek + Claude Code 的 agent 們自主探測 1,200+ 個網站，平均每次成功入侵耗時 23 小時、成本約 $50——agent 會自己找關聯基礎設施、發現面板弱點、反覆試錯後取得 RCE。",
+      "更荒謬的是攻擊者自己的面板也沒設防：NorForge 用 Trufflehog 掃出數百個 secret、11% 仍有效。這是自治攻擊 agent 的第一份規模化實證——單一惡意行為者的攻擊半徑被 agent 放大了兩個數量級，而防守方連自己的 agent 基礎設施都還不會鎖。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://norforge.com/blog/inside_cairn"
+      }
+    ],
+    "source_url": "https://norforge.com/blog/inside_cairn",
+    "source_label": "來源",
+    "id": "lrn-2026-10-27-norforge-實錘-一名駭客用-5-000-的-agent-大軍攻破逾-10",
+    "date": "2026-10-27",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "最刺眼的不只是 $50 就能攻破一家公司，而是連攻擊者自己都沒鎖好 agent 面板——整個產業對 agent 基礎設施的防護意識，遠遠追不上它們的殺傷力。",
+    "image": "images/lrn-2026-10-27-norforge---5-000--agent--.png"
+  },
+  {
     "title": "Claude Code 公測 MCP Tasks 與 Elicitations：MCP 工具呼叫從「一問一答」變成「可中斷的長工作」",
     "category": "工具",
     "summary": [
