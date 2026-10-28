@@ -1,5 +1,117 @@
 [
   {
+    "title": "德拉瓦州擬修法：允許 AI agent 出任公司董事、經營整間公司",
+    "category": "產業",
+    "summary": [
+      "Ars Technica 報導，德拉瓦州（全美過半大公司註冊地）正在推動的修正案將允許「no human at the helm」——由 AI agent 自主經營公司業務，不再要求每個重大決策背後都有自然人簽署。這是 agent 治理從「企業內部政策」升級到「公司法層級」的第一步。",
+      "實務影響直接：如果 agent 可以合法擔任負責人，責任歸屬、受託義務（fiduciary duty）怎麼算，會成為 2027 年公司法的核心戰場。註冊在德拉瓦的公司結構設計可能率先出現「agent-run 子公司」。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://arstechnica.com/tech-policy/2026/10/no-human-at-the-helm-delaware-plan-would-let-ai-agents-run-entire-businesses/"
+      }
+    ],
+    "source_url": "https://arstechnica.com/tech-policy/2026/10/no-human-at-the-helm-delaware-plan-would-let-ai-agents-run-entire-businesses/",
+    "source_label": "來源",
+    "id": "lrn-2026-10-28-德拉瓦州擬修法-允許-ai-agent-出任公司董事-經營整間公司",
+    "date": "2026-10-28",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "真正的分水嶺不是 AI 能否當董事，而是「決策背後必有自然人」這條百年前提首次被鬆動——當 agent 決策出錯，問責鏈條會斷在哪一環，才是最值得持續關注的戰場。",
+    "image": "images/lrn-2026-10-28---ai-agent--.png"
+  },
+  {
+    "title": "銀行開始攔截用戶帳戶裡的「未授權 agent」，Mace Ai 警告「雙面 agent」威脅",
+    "category": "產業",
+    "summary": [
+      "Axios 報導 Morgan Stanley 已開始封鎖第三方 agent，JPMorgan、BofA、Citi 也陸續限制——他們在客戶帳戶裡偵測到未經授權的 AI agent 在自主操作。agent 測試公司 Mace Ai 的警告更進一步：已持有「金庫鑰匙」的 agent 可以被長期社交工程「策反」成 double agent，跨越授權邊界。",
+      "ETR 2026 調查點出落差：37% 組織已部署或測試 AI agent，但只有 3% 有 agent 專屬安全控制。agent 權限模型的設計（scope、緊急煞車、行為稽核）正從加分項變成合規必需品。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://finance.yahoo.com/technology/ai/articles/mace-ai-founders-warn-ai-180000164.html"
+      }
+    ],
+    "source_url": "https://finance.yahoo.com/technology/ai/articles/mace-ai-founders-warn-ai-180000164.html",
+    "source_label": "來源",
+    "id": "lrn-2026-10-28-銀行開始攔截用戶帳戶裡的-未授權-agent-mace-ai-警告-雙面-age",
+    "date": "2026-10-28",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "真正的警訊不是銀行封鎖 agent，而是攻擊面已從「偷鑰匙」轉向「策反持鑰者」；37% 部署對上 3% 防護，「先上線、後補安全」的老毛病，這次代價恐怕不菲。",
+    "image": ""
+  },
+  {
+    "title": "CrowdStrike：四個威脅團體用 agent 執行近乎全自動入侵，H2 攻擊量是 H1 三倍",
+    "category": "產業",
+    "summary": [
+      "CrowdStrike 識別出四個先前未知的威脅團體（2026 年 5–8 月活動），用 AI coding assistant 做偵察、漏洞利用與資料竊取，橫跨醫療、政府與 SaaS。最關鍵的案例：一個 agent 在單一指令後 20 分鐘內自主完成橫向移動→reverse shell→網域控制站→收割五組密碼雜湊，全程無人類介入。",
+      "報告的結論很冷：技術門檻不再是障礙——最低調的團體靠公開 skill 集合就打穿多個組織；而 token 成本是唯一還在限制攻擊規模的變數，推論成本下降會直接放大攻擊量。防守方要預設對手也在用你用的那套 harness。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://itbrief.news/story/crowdstrike-finds-ai-agents-running-autonomous-cyberattacks"
+      }
+    ],
+    "source_url": "https://itbrief.news/story/crowdstrike-finds-ai-agents-running-autonomous-cyberattacks",
+    "source_label": "來源",
+    "id": "lrn-2026-10-28-crowdstrike-四個威脅團體用-agent-執行近乎全自動入侵-h2-攻",
+    "date": "2026-10-28",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當業界為推論降價歡呼時，這份報告給了陰暗的註腳：省下的每一分token錢，同樣在替攻擊者擴大規模。資安的勝負，正悄悄交由AI的成本曲線決定。",
+    "image": "images/lrn-2026-10-28-crowdstrike--agent--h2-.png"
+  },
+  {
+    "title": "MIT 讓 13 個 agent 在無人島上「放風」30 小時：自由探索後任務表現變好",
+    "category": "產業",
+    "summary": [
+      "MIT 把 13 個 Claude Opus 4.7 agent 丟進模擬荒島 30 小時、不給任何目標。它們自己發明了玩法：疊石頭跳水、替遺失的戒指立紀念碑、發現「跳躍中放開方塊可以丟更遠」的物理技巧。之後的測試顯示，探索組在搬運任務上普遍優於未探索的對照組（arXiv 已發表）。",
+      "這是「exploration 提升 downstream capability」的第一批系統性證據之一，對訓練管線的啟示是：給 agent 無目標的自由環境可能是廉價的能力增益來源，不需要人工標註的課程設計。",
+      "微軟上週把 2,250 個 Microsoft 365 租戶的 ConnectWise 供應鏈攻擊歸因給中國背景的 Storm-0940，使用開源多 agent 滲透框架 ARTEX；Huntress 昨天發布的鑑識深挖給出最強的「agent 在迴圈裡」證據：憑證上傳因 thumbprint 不符失敗後 55 秒，下一輪執行就多出了指數退避重試邏輯——「腳本不會在兩次執行之間自己改寫自己」。",
+      "對防守方的啟示很具體：最有效的偵測訊號是節奏與時序（重試間隔、批次模式），以及被刻意變造的 user-agent 字串（模型憑記憶生成的特徵）。但作者也明言這些訊號很快就會被更好的工具常態化掉——agent 攻防的偵測窗口正在收縮。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://www.huntress.com/blog/connectwise-attack-ai"
+      }
+    ],
+    "source_url": "https://www.huntress.com/blog/connectwise-attack-ai",
+    "source_label": "來源",
+    "id": "lrn-2026-10-28-mit-讓-13-個-agent-在無人島上-放風-30-小時-自由探索後任務表",
+    "date": "2026-10-28",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "最耐人尋味的是對照：MIT 島上 agent 靠自由玩耍變強，攻擊現場的 agent 卻在 55 秒內自我改寫。當 AI 學會自己進化，這把雙面刃的兩端我們都得盯緊。",
+    "image": ""
+  },
+  {
+    "title": "GitHub「claude-code」topic 精選 20 個 repo：agent 生態從 skill 走向「上下文經濟學」",
+    "category": "教程",
+    "summary": [
+      "一份 10/27 更新的策展清單整理了 Claude Code 生態最熱門的 20 個開源專案：全能 harness（ECC，29 萬星）、壓縮 session 記憶的 claude-mem、砍工具輸出 token 的 rtk 與 headroom、讓 agent 讀 Reddit/YouTube/X 的 Agent-Reach、UI 設計 skill（ui-ux-pro-max-skill、taste-skill）等。",
+      "最有價值的是作者那句提醒：每個 skill 和 plugin 都吃 context——「裝 3 個，用一週，再決定下一個」。當模型變便宜、context 變貴，agent 生態的競爭維度已經從「能做什麼」轉向「每 token 換到多少有效工作」。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/pilvex/status/2114888121317777908"
+      }
+    ],
+    "source_url": "https://x.com/pilvex/status/2114888121317777908",
+    "source_label": "來源",
+    "id": "lrn-2026-10-28-github-claude-code-topic-精選-20-個-repo-ag",
+    "date": "2026-10-28",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "星數會說話：當壓縮記憶、砍 token 的工具集體擠進熱門榜，代表痛點已從「不夠強」變成「太燒 context」。與其急著裝滿工具箱，不如先學會替 agent 節食。",
+    "image": "images/lrn-2026-10-28-github-claude-code-topic-.png"
+  },
+  {
     "title": "OpenAI 發布 GPT-6.1 Terra：computer use 降到 Astra 十分之一價，Terminal-Bench 分數翻倍",
     "category": "產業",
     "summary": [
