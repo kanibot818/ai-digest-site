@@ -1,5 +1,114 @@
 [
   {
+    "title": "微軟開源 Waza：agent skill 的評測 CI 框架，把「skill 品質」變成可回歸測試的工程問題",
+    "category": "工具",
+    "summary": [
+      "Waza 是一個 Go 寫的 CLI 框架，用 YAML 定義 agent skill 的評測場景（repository / CLI / MCP 任務），在 fixture 隔離的乾淨 workspace 裡跑分級試驗，內建 13 種 grader（Code、Regex、JSON Schema、LLM-as-judge 等），並可用 `waza compare` 並排比較不同模型的分數分佈。",
+      "關鍵設計是 GitHub Actions 整合：PR 自動跑 skill 評測、追蹤 token 預算、防止無聲回歸——這正好接上昨天「benchmark 自評不可信」的問題，微軟的答案是把評測做成 CI 而不是一次性分數。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/microsoft/waza"
+      }
+    ],
+    "source_url": "https://github.com/microsoft/waza",
+    "source_label": "來源",
+    "id": "lrn-2026-10-29-微軟開源-waza-agent-skill-的評測-ci-框架-把-skill-",
+    "date": "2026-10-29",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Waza 最有價值的不在評分工具本身，而在心態轉變：skill 品質該像程式碼一樣被持續驗證、防範回歸——這是 agent 開發從 demo 走向生產環境的分水嶺。",
+    "image": "images/lrn-2026-10-29--waza-agent-skill--ci---s.png"
+  },
+  {
+    "title": "Weaviate 把 MCP server 直接做進資料庫本體，1.38 正式 GA",
+    "category": "工具",
+    "summary": [
+      "Weaviate 內建的 MCP server（v1.37 預覽）在 1.38 轉正：一個環境變數開啟，跟 REST API 同埠的 Streamable HTTP endpoint（`/v1/mcp`），直接沿用既有的 API-key 認證與 RBAC——LLM 和 IDE 可以直接檢視 schema、跑混合搜尋、寫回物件，零膠水程式碼。舊的獨立 MCP server repo 已標記棄用。",
+      "這是「MCP 從外掛變基礎設施」的風向：資料庫廠商開始把 agent 協定視為第一公民功能，Query Agent 也另有一顆專屬 MCP server。對自己架 vector DB 的人來說，agent 接入成本又降了一級。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://weaviate.io/blog/weaviate-1-38-release"
+      }
+    ],
+    "source_url": "https://weaviate.io/blog/weaviate-1-38-release",
+    "source_label": "來源",
+    "id": "lrn-2026-10-29-weaviate-把-mcp-server-直接做進資料庫本體-1-38-正式-",
+    "date": "2026-10-29",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "資料庫把 MCP 當原生功能內建，就像當年 ODBC 逐步成為標準——agent 接入從工程難題變成預設值，下一輪競爭將回到檢索品質與治理細節本身。",
+    "image": "images/lrn-2026-10-29-weaviate--mcp-server--1-3.png"
+  },
+  {
+    "title": "哈佛 718 家公司實證：coding agent 讓程式碼多 30%，但「軟體產出」沒變，瓶頸全卡在 code review",
+    "category": "研究",
+    "summary": [
+      "Chen & Stratton 用 Jellyfish 的 3 億條工作紀錄（718 家公司、2021/01–2026/03）研究 agent 採用效果：人均每月程式行數 +30%、commit +20%、PR +23%，但 Jira 實際關閉的 issue/epid 沒有統計顯著變化。",
+      "更扎眼的是下游：PR 從提交到合併的時間從 7.03 天漲到約 10.5 天（+49%），被要求修改的 PR 比例接近翻倍。結論：生成的產能被人類審查瓶頸整個吸收。實務對策很具體——PR 拆小、agent 先交測試與說明、把打回率放進指標，而不是繼續數 PR 數。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/"
+      }
+    ],
+    "source_url": "https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/",
+    "source_label": "來源",
+    "id": "lrn-2026-10-29-哈佛-718-家公司實證-coding-agent-讓程式碼多-30-但-軟體產",
+    "date": "2026-10-29",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "這份大樣本實證難得潑了冷水：agent 加速寫碼，瓶頸卻移轉到人類審查。當程式碼變多不等於軟體變多，企業該重新設計的是 review 流程與衡量指標，而非急著買更多席位。",
+    "image": "images/lrn-2026-10-29--718--coding-agent--30--.png"
+  },
+  {
+    "title": "Gemini 4 Carbon 登頂 Artificial Analysis Intelligence Index v5（59 分），但只先開放給網安防禦方",
+    "category": "其他",
+    "summary": [
+      "Google 新旗艦 Gemini 4 Carbon 以 59 分拿下 AA Intelligence Index v5 第一（Claude Opus 5.5 為 58），9 項評測中奪 4 項榜首；但 Coding Agent Index 仍以 59 vs 62 居 Opus 5.5 之後。強項明顯偏向安全：SEC-bench Pro 88.2%、ExploitGym 54.8%、CWE-bench 71.0%。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/"
+      }
+    ],
+    "source_url": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/",
+    "source_label": "來源",
+    "id": "lrn-2026-10-29-gemini-4-carbon-登頂-artificial-analysis-i",
+    "date": "2026-10-29",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "登頂卻只先開放給資安防禦方，透露頂尖模型已被視為戰略資產而非人人可用的商品。當資安攻防成為新護城河，光看排行榜分數，恐怕已讀不懂這場模型競賽。",
+    "image": "images/lrn-2026-10-29-gemini-4-carbon--artifici.png"
+  },
+  {
+    "title": "Browser Agent 2026 全景：三個旗艦 agent 瀏覽器已死，價值轉向 DOM grounding 與基礎設施",
+    "category": "教程",
+    "summary": [
+      "一份 10 月更新的技術梳理回顧了 browser agent 這一年的殘酷洗牌：OpenAI Operator 併入後關閉、ChatGPT Atlas 8 月熄燈、Google Project Mariner 停止——留下來的是 Gemini Computer Use API 和 DOM/accessibility tree 路線的 browser-use（10 萬星）、Stagehand、Playwright MCP。",
+      "兩個實用結論：benchmark 自評普遍不可信（Browser Use 用自己造的 judge 對 benchmark 調優 20 輪後「報 97%」），人類評分下數字大幅縮水；以及 OpenAI 官方文件已建議 GPT-6 Astra 改寫 Playwright code 而非逐像素截圖操作——「步驟才是貴的東西，所以生少一點」。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://ajayk.sh/blog/browser-agents-computer-use-2026"
+      }
+    ],
+    "source_url": "https://ajayk.sh/blog/browser-agents-computer-use-2026",
+    "source_label": "來源",
+    "id": "lrn-2026-10-29-browser-agent-2026-全景-三個旗艦-agent-瀏覽器已死-價",
+    "date": "2026-10-29",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "旗艦退場不代表 agent 失敗，而是共識收斂：與其逐像素操作炫技，直接生成 Playwright 程式碼反而更務實。當 benchmark 普遍摻水，能否穩定跑完任務才是唯一硬指標。",
+    "image": "images/lrn-2026-10-29-browser-agent-2026---agen.png"
+  },
+  {
     "title": "德拉瓦州擬修法：允許 AI agent 出任公司董事、經營整間公司",
     "category": "產業",
     "summary": [
