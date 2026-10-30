@@ -1,5 +1,98 @@
 [
   {
+    "title": "韓國銀行竊案證實使用開源多 agent 滲透框架 ARTEX：agent 落地到攻擊端的速度比防禦端快",
+    "category": "產業",
+    "summary": [
+      "CrowdStrike 報告證實：一名攻擊者用開源 agentic 滲透工具 ARTEX（planner + worker agents 自主掃描、規劃攻擊路徑、執行工具）搭配 DeepSeek、GLM、Grok 等模型，入侵新韓、KB 國民、Hana 等七家韓國金融機構，約 6.7 萬人資料外洩。值得注意的細節：攻擊者是透過 Claude Code session 下指令，主要用周邊系統（貸款經紀入口、員工行動平台）切入，而非核心系統。",
+      "這是「agentic 攻擊」從理論變成已確認案例的第一起大規模事件——防禦方花了 30–43 小時才偵測到。安全社群開始討論的問題很實際：當滲透測試自動化到機器速度，防守端的回應速度指標也得跟著重寫。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://www.koreatimes.co.kr/business/banking-finance/20261007/explainer-how-ai-emerged-as-new-threat-in-koreas-bank-hacking-crisis"
+      }
+    ],
+    "source_url": "https://www.koreatimes.co.kr/business/banking-finance/20261007/explainer-how-ai-emerged-as-new-threat-in-koreas-bank-hacking-crisis",
+    "source_label": "來源",
+    "id": "lrn-2026-10-30-韓國銀行竊案證實使用開源多-agent-滲透框架-artex-agent-落地到",
+    "date": "2026-10-30",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "ARTEX 的警訊不在工具本身，而是頂級滲透能力正被開源商品化——單人即可發動過去需整支團隊的攻擊，30 小時的偵測落差預告了資安不對稱時代的來臨。",
+    "image": "images/lrn-2026-10-30--agent--artex-agent-.png"
+  },
+  {
+    "title": "Mistral Large 4（Le Chonk，1T 參數）正式開源權重：開放權重 coding agent 第二名，token 用量省一半",
+    "category": "產業",
+    "summary": [
+      "1.05T 總參數、52B 激活的旗艦模型開放權重下載（Apache 類授權），是中國以外最強的開放權重模型。Artificial Analysis Coding Agent Index 拿 48 分，僅以一分之差居開放權重第一的 GLM-5.3（49）之後——但每任務只用 8.5M tokens，是 GLM-5.3（15.9M）的一半多一點。",
+      "更值得注意的是效率曲線：相較三週前的 preview，輸出 token 減少 39%、任務成本降 63%，FrontierCode 2.0 和 Terminal-Bench 4.0 都站上開放權重首位。開放權重陣營的競爭已經從「分數追平」轉到「同分數下誰更便宜」。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://mistral.ai/news/mistral-large-4-oss"
+      }
+    ],
+    "source_url": "https://mistral.ai/news/mistral-large-4-oss",
+    "source_label": "來源",
+    "id": "lrn-2026-10-30-mistral-large-4-le-chonk-1t-參數-正式開源權重-開放",
+    "date": "2026-10-30",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當開放權重分數逐漸追平，效率才是真護城河——自架場景省一半 token，就是省一半 GPU 帳單。Mistral 也證明歐洲還沒退出第一梯隊。",
+    "image": "images/lrn-2026-10-30-mistral-large-4-le-chonk-.png"
+  },
+  {
+    "title": "OpenAI 推出 GPT-6.1 Terra：主打 computer use 的中階模型，價格砍半、單任務成本降到 Opus 的九分之一",
+    "category": "產業",
+    "summary": [
+      "專為視覺推理與精準 computer use 設計的中階模型，API 定價 $1/$5（百萬 tokens），是前代 GPT-5.6 Terra 的一半。OSWorld 2.1 與 Agents' Last Exam 上，medium effort 就超過前代最好成績；max effort 對比 Claude Opus 5.5 是約 9 倍低的單任務成本（token 效率 3 倍以上、單價 1/4）。",
+      "戰略意義在於 computer use 開始有專屬的價位帶：高重複性的桌面操作工作（發票錄入、表單填寫）現在便宜到可以大規模自動化。與 Mistral 的動作合起來看，模型廠正在把「agentic 工作量」明確定價。",
+      "有趣的是發行策略：目前只開放給部分網路安全防禦組織，開發者與公眾尚未可用——前沿模型開始出現「按行業分批釋放」的新常態，榜單冠軍和「你能用」之間出現了時間差。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://openai.com/index/introducing-gpt-6-1-terra/"
+      },
+      {
+        "label": "來源",
+        "url": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1"
+      }
+    ],
+    "source_url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+    "source_label": "來源",
+    "id": "lrn-2026-10-30-openai-推出-gpt-6-1-terra-主打-computer-use-",
+    "date": "2026-10-30",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當電腦操作成本壓低於人力，「數位勞工」才真正從口號變成可算的財務模型；而按行業分批開放，更暗示前沿模型的「可用性」本身正成為新的稀缺資源。",
+    "image": ""
+  },
+  {
+    "title": "清華觀點論文：Agentic Memory Management 是資訊檢索的下一個前沿",
+    "category": "研究",
+    "summary": [
+      "Qingyao Ai 的 arXiv 觀點論文主張：IR 一直假設「人類在讀檢索結果」，但 agent 是把檢索結果當成自己的內部狀態在用——這徹底改變了問題定義。他提出系統性框架，把記憶體物件分成三層：constants（事實，按內容匹配）、functions（技能與工作流，按適用性匹配）、operators（偏好與風格，按作用域匹配），配 add/update/delete/search/use 五種操作。",
+      "論文把 RAG、MemGPT、Mem0 收進同一個分類體系，並點出兩個被低估的方向：原則性的「遺忘」機制，以及記憶體污染（memory poisoning）的安全議題。對做 agent 記憶系統的人，這是一份很好的地圖。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://arxiv.org/abs/2610.32464"
+      }
+    ],
+    "source_url": "https://arxiv.org/abs/2610.32464",
+    "source_label": "來源",
+    "id": "lrn-2026-10-30-清華觀點論文-agentic-memory-management-是資訊檢索的下",
+    "date": "2026-10-30",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當檢索結果的「讀者」從人變成 agent，IR 幾十年的評估與排序假設都得重審；而論文點出的「遺忘」尤其關鍵——在人人忙著堆記憶的現在，敢刪、會忘反而是真本事。",
+    "image": ""
+  },
+  {
     "title": "微軟開源 Waza：agent skill 的評測 CI 框架，把「skill 品質」變成可回歸測試的工程問題",
     "category": "工具",
     "summary": [
