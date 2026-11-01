@@ -1,5 +1,99 @@
 [
   {
+    "title": "Vercel Labs 發布 agent-desktop：一行指令讓任何 coding agent 讀取並操作桌面應用，不需要截圖",
+    "category": "工具",
+    "summary": [
+      "Vercel Labs 開源 `agent-desktop`（Rust 實作，`npm i -g agent-desktop`）：透過 OS 無障礙樹（macOS/Windows/Linux AT-SPI）讀取任何應用的真實 UI 結構，回傳帶 ref 的 JSON snapshot，agent 對 ref 動作後再 snapshot 驗證——完全不靠像素比對與截圖，省掉大量視覺 token。二進位檔內建版本化文件，可透過 skills.sh 或 AGENTS.md 一行接入 Claude Code、Codex 等 harness。",
+      "重要之處在於它把「computer use」從「看截圖猜座標」換成「讀結構樹下精確指令」，穩定性和成本都上一個台階；跨三平台、附 C FFI binding，等於給整個 agent 生態補上了桌面這塊最後的行動面。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/vercel-labs/agent-desktop"
+      }
+    ],
+    "source_url": "https://github.com/vercel-labs/agent-desktop",
+    "source_label": "來源",
+    "id": "lrn-2026-11-01-vercel-labs-發布-agent-desktop-一行指令讓任何-cod",
+    "date": "2026-11-01",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "無障礙樹之於桌面 Agent，就像 DOM 之於網頁爬蟲——結構化存取一旦打通，生態往往隨之爆發。為身障者打造的 API 意外成了 AI 的原生眼睛，這層轉譯尤其值得玩味。",
+    "image": "images/lrn-2026-11-01-vercel-labs--agent-deskto.png"
+  },
+  {
+    "title": "DoorDash 財報現實檢查：MCP 大門全開，但外部 AI agent 累積只帶來「幾百筆」訂單",
+    "category": "產業",
+    "summary": [
+      "DoorDash Q3 2026 處理了 9.93 億筆訂單，而且對 AI agent 態度非常開放：自家的 Ask DoorDash、Text DoorDash，加上正式的 Model Context Protocol 介面供外部 agent 下單。但 CEO Tony Xu 在財報電話會上親口說，外部 AI agent 累積只產生「several hundred orders」——在單季近十億筆的盤子裡趨近於零。",
+      "這是「agentic commerce」熱潮到目前為止最誠實的一個數據點：平台端基礎設施（MCP、agent 專用通道）已經就緒，但消費者真的讓 agent 代買的行為還沒發生。對所有押注「agent 幫你消費」的團隊，這是必須直視的採用曲線起點。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://arstechnica.com/ai/2026/10/doordash-says-outside-ai-agents-have-only-led-to-hundreds-of-orders-so-far"
+      }
+    ],
+    "source_url": "https://arstechnica.com/ai/2026/10/doordash-says-outside-ai-agents-have-only-led-to-hundreds-of-orders-so-far",
+    "source_label": "來源",
+    "id": "lrn-2026-11-01-doordash-財報現實檢查-mcp-大門全開-但外部-ai-agent-累積",
+    "date": "2026-11-01",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "技術就緒、行為缺席，DoorDash 替 agentic commerce 熱潮潑了盆及時冷水。但基礎建設先行並沒有錯——真正的考題是，誰能讓消費者放心把錢包交給 agent。",
+    "image": "images/lrn-2026-11-01-doordash--mcp---ai-agent-.png"
+  },
+  {
+    "title": "微軟開源 Mage-VL-Cowork：4B 參數的混合電腦操作 agent，OSWorld-Verified 拿下 66.0%，Apache-2.0",
+    "category": "工具",
+    "summary": [
+      "微軟 10/30 在 Hugging Face 開源 Mage-VL-Cowork：單一 4B 視覺語言策略，同時學會「該點擊時點擊 GUI、該寫碼時寫碼」——把截圖操作的 computer_use 與持久化 bash/terminal 執行合進同一個 policy，不需要外部 orchestrator。在 50 步預算的 OSWorld-Verified 上達 66.0%，是 4B 級模型最佳（OS 類任務甚至到 87.5%）。",
+      "意義在雙重：一方面證明小型 VLM 加上「五階段課程 + 演化式 teacher harness」訓練法就能做複雜電腦操作，把 on-device CUA 的門檻打低；另一方面它開箱即能執行任意 shell 指令，開放權重的本地電腦操作 agent 逼近實用，安全部署議題也隨之浮上檯面。",
+      "OpenViking 是「context database」：所有 agent 知識都掛在 `viking://` 虛擬檔案系統下，agent 用 `ls`/`read`/`grep` 像操作檔案一樣檢索自己的記憶與技能，人類也能直接打開任何目錄檢查、編輯 agent 到底記了什麼——解決記憶系統黑盒問題。新發布的 Claude Code / Codex 外掛還內建「自我污染防護」：召回內容不會被回存成新記憶，避免反饋迴路。",
+      "值得跟今天的 Raw-RAG 論文對照著看：一邊說複雜記憶常常不如原始歷史，一邊用「可檢視的檔案系統」給記憶一個透明的形態。記憶基礎設計的競爭焦點正從「存什麼」轉向「怎麼讓人與 agent 都能信任並檢查它」。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://huggingface.co/microsoft/Mage-VL-Cowork"
+      },
+      {
+        "label": "來源",
+        "url": "https://github.com/volcengine/OpenViking"
+      }
+    ],
+    "source_url": "https://huggingface.co/microsoft/Mage-VL-Cowork",
+    "source_label": "來源",
+    "id": "lrn-2026-11-01-微軟開源-mage-vl-cowork-4b-參數的混合電腦操作-agent-o",
+    "date": "2026-11-01",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "4B 就能自己操作電腦，意味著 CUA 正走向人人可跑的本機時代；但開箱即執行任意指令的設計也提醒我們：能力普及之後，安全框架才是真正的門檻。",
+    "image": "images/lrn-2026-11-01--mage-vl-cowork-4b--agent.png"
+  },
+  {
+    "title": "cc-pair：讓 Claude Code 和 Codex 互為審稿人的結對工具，用共享目錄裡的編號檔案傳遞 review 往返",
+    "category": "工具",
+    "summary": [
+      "開源小工具 cc-pair：一個 agent 當 author 寫改動，另一個當 reviewer 審查，雙方透過 `~/.pair/` 下的編號 markdown 檔案交換請求與結論（approve / changes），角色對稱可互換，超過輪次上限（預設 3 輪）就升級給人類裁決。整個 review 過程都在磁碟上，不是黑盒，支援 auto 模式自動拉起 reviewer。",
+      "它代表一個正在成形的工作流模式：agent 品質保證開始「去人類化」——人類從逐行審查者退到仲裁者位置。放在今天 Anthropic 那則「專家 86% 從眾」的研究旁邊看特別有意思：我們正在把把關工作交給另一個 agent，而研究剛好告訴我們把關者多容易被帶風向。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/leonlee/cc-pair"
+      }
+    ],
+    "source_url": "https://github.com/leonlee/cc-pair",
+    "source_label": "來源",
+    "id": "lrn-2026-11-01-cc-pair-讓-claude-code-和-codex-互為審稿人的結對工具",
+    "date": "2026-11-01",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "cc-pair 最值得注意的不是功能本身，而是人類從審查者退居仲裁者的角色位移。不過當模型也容易從眾，兩個 AI 互審會不會淪為互相背書的橡皮圖章，值得持續觀察。",
+    "image": "images/lrn-2026-11-01-cc-pair--claude-code--cod.png"
+  },
+  {
     "title": "Anthropic 隨機對照實驗：50 位專業分析師 86% 悄悄採納了 agent 被隨機指派的「隱藏立場」",
     "category": "研究",
     "summary": [
@@ -5374,20 +5468,14 @@
   },
   {
     "title": "FARSIGHT 框架：15 個學術金融交易 agent，80% 魯棒性不及格、100% 有安全漏洞",
-    "category": "產業",
+    "category": "研究",
     "summary": [
-      "金融是 agent 直接掌握真實資本的高風險場域。FARSIGHT 從兩軸評估：市場動盪下的魯棒性（含閃崩模擬），以及三類攻擊（攻擊資訊源、攻擊 agent、agent 作為攻擊者）。結果顯示魯棒性與安全不可分割——判斷小失誤可自行級聯成市場崩盤，攻擊者也能以極低成本刻意觸發同樣的崩潰。對任何想讓 agent 碰真實資產的團隊都是警訊。",
-      "The New Yorker 記者週末將生活外包給 Meta 新發表的個人 agent「Muse」（自稱「世界第一個全民個人 AI agent」）：它需要存取你的 email、Amazon、行事曆、銀行、信用卡才能訂餐廳、處理包裹、買禮物、繳帳單、把收件匣做成 podcast。",
-      "搭配 HN 上關於 Muse 的討論（659 分），這是消費級 agent 的風向球：產品設計刻意走「可愛無害」路線降低戒心，但代價是前所未有的個人資料集中。個人助理大戰正式開打。"
+      "金融是 agent 直接掌握真實資本的高風險場域。FARSIGHT 從兩軸評估：市場動盪下的魯棒性（含閃崩模擬），以及三類攻擊（攻擊資訊源、攻擊 agent、agent 作為攻擊者）。結果顯示魯棒性與安全不可分割——判斷小失誤可自行級聯成市場崩盤，攻擊者也能以極低成本刻意觸發同樣的崩潰。對任何想讓 agent 碰真實資產的團隊都是警訊。"
     ],
     "links": [
       {
         "label": "來源",
         "url": "https://x.com/gastronomy/status/2100757794899063118"
-      },
-      {
-        "label": "來源",
-        "url": "https://www.newyorker.com/culture/the-weekend-essay/my-weekend-with-metas-new-ai-assistant"
       }
     ],
     "source_url": "https://x.com/gastronomy/status/2100757794899063118",
