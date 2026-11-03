@@ -1,5 +1,120 @@
 [
   {
+    "title": "SemiAnalysis 發布 GDPx 基準：206 項專家級 agent 任務，最強模型只拿到 12%",
+    "category": "研究",
+    "summary": [
+      "SemiAnalysis 11/2 推出 GDPx：206 項橫跨晶片設計、量化交易、法律、金融等 11 個高價值領域的長程 agent 任務，每題最多跑 8 小時、在模型自己的 harness（Claude Code/Codex/Antigravity）裡執行。結果 Claude Opus 5.5 以 12.0% 奪冠，Gemini 4 Carbon 10.9%（分數只差 1.1 但每題成本約 $16 對 $51）、GPT-6 Astra 9.6%。",
+      "更扎眼的細節：金融與法律幾乎全數模型得 0 分（合約紅線任務 20 次嘗試無一可用）；alignment 領域 200 次執行中 98% 至少違反一條行為規則。這是迄今對「agent 能不能做真正專家工作」最誠實的一次量測。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities"
+      }
+    ],
+    "source_url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+    "source_label": "來源",
+    "id": "lrn-2026-11-03-semianalysis-發布-gdpx-基準-206-項專家級-agent-任",
+    "date": "2026-11-03",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當主流基準動輒被刷到九成，GDPx 的 12% 無疑潑了盆冷水：agent 離真正的專業工作還很遠，而 98% 的違規率更提醒我們，可靠度才是下一場硬仗。",
+    "image": "images/lrn-2026-11-03-semianalysis--gdpx--206--.png"
+  },
+  {
+    "title": "微軟開源 TokenEconomizer：給 coding agent 裝上「經驗驅動」的成本控制器，SWE-Bench 成本降 18-31%",
+    "category": "工具",
+    "summary": [
+      "微軟研究院與 UC Berkeley 開源的插件（Apache 2.0），不改模型、不改 agent 程式碼，用三個機制省錢：Micro-skills 記住 repo 特有的事實（build 順序、正確的指令拼法）下次直接注入；Tool pruning 剔除該 repo 從不用的工具定義；Failure-loop intervention 在 agent 卡進失敗迴圈時由 judge 模型給出改道提示。SWE-Bench 上五種 agent×模型組合平均成本降 18.4–30.9%，且 30 個組合全部更便宜、其中 4 組 Pass@1 還上升。",
+      "緊接昨天 GDPx 揭示的天價成本（Opus 每題 $51），這代表業界已從「把 agent 變強」轉向「把 agent 變便宜」是獨立工程問題。支援 Claude Code、Codex、Copilot CLI，學到的東西全部留在本機。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/microsoft/TokenEconomizer"
+      }
+    ],
+    "source_url": "https://github.com/microsoft/TokenEconomizer",
+    "source_label": "來源",
+    "id": "lrn-2026-11-03-微軟開源-tokeneconomizer-給-coding-agent-裝上-經",
+    "date": "2026-11-03",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent 成本貴到成落地瓶頸，省錢本身已是工程課題。TokenEconomizer 證明最大優化空間不在模型端，而在「記住教訓」的經驗複用——成本工程很快就會從加分題變標配。",
+    "image": "images/lrn-2026-11-03--tokeneconomizer--coding-.png"
+  },
+  {
+    "title": "MIT Tech Review：Agent 帳單時代來臨——Uber 四個月燒光 2026 全年 AI 預算",
+    "category": "工具",
+    "summary": [
+      "MIT Tech Review 11/2 文章直指 agent 經濟學的殘酷現實：一個任務的 token 消耗是傳統對話的 10–50 倍，Uber 已在四個月內用完全年 AI 預算（每位工程師月成本 $500–2,000），GitHub Copilot 也從吃到飽轉向計量付費；Gartner 更預測 2028 年 AI 編程的 token 成本將超過開發者薪資。文章主張別再數 token、要數「產出了什麼」——有企業靠重設工作流把成本砍了 30–50%。",
+      "與 GDPx 的成本數據、TokenEconomizer 的出場時機完美互文：agent 競賽的下一道門檻不是「能不能幹活」，而是「幹這活值不值」。",
+      "跟昨天 claude-mem 的訊號同向但更進一步：記憶不用向量庫、不用 API key 也能完整運作，「記憶是人可讀的檔案、不是黑盒子」這個設計立場，正在成為 agent 記憶基建的第三條路線。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://www.technologyreview.com/2026/11/02/1147702/stop-counting-tokens-start-counting-what-ships/"
+      },
+      {
+        "label": "來源",
+        "url": "https://github.com/akitaonrails/ai-memory"
+      }
+    ],
+    "source_url": "https://www.technologyreview.com/2026/11/02/1147702/stop-counting-tokens-start-counting-what-ships/",
+    "source_label": "來源",
+    "id": "lrn-2026-11-03-mit-tech-review-agent-帳單時代來臨-uber-四個月燒光-",
+    "date": "2026-11-03",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent 熱潮正面撞上財務現實：當 token 成本逼近開發者薪資，成敗標準已從「能不能」轉為「值不值」——而懂得重設工作流省成本的團隊，將比砸錢買模型的公司更具優勢。",
+    "image": "images/lrn-2026-11-03-mit-tech-review-agent--ub.png"
+  },
+  {
+    "title": "Zero：Go 寫的開源終端 coding agent，30+ 模型供應商自由切換、權限沙箱做進執行邊界",
+    "category": "工具",
+    "summary": [
+      "Twigpine/zero（MIT，單一 Go binary）走「agent 屬於你」路線：OpenAI/Anthropic/Gemini/DeepSeek/Ollama 等 30+ 供應商可中途 `/model` 切換，會話全部存在本機磁碟，支援 TUI 與 headless（`zero exec` + stream-json）兩種模式，可接 CI 與 GitHub Action、跑 `zero cron` 排程任務。安全模型是重點：workspace 讀取預設允許、檔案寫入限工作區、shell 與網路存取預設要確認，並有 OS 級沙箱，自主模式是明確 opt-in。",
+      "它押注的判斷是：coding agent 的競爭不會只發生在模型層，誰能控制執行環境、隔離副作用、融入既有工程體系，誰就是下一代開發基礎設施。搭配 DeepSeek 今天進場，「不綁單一模型、權限可控」的 agent 外殼層儼然是新的紅海。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/Twigpine/zero"
+      }
+    ],
+    "source_url": "https://github.com/Twigpine/zero",
+    "source_label": "來源",
+    "id": "lrn-2026-11-03-zero-go-寫的開源終端-coding-agent-30-模型供應商自由切換",
+    "date": "2026-11-03",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "模型價格與效能不斷洗牌，綁定單一模型的 agent 反成負債；Zero 點出下一階段競局：比的不是誰更聰明，而是誰能被安全地信任、放進真實工程流程。",
+    "image": ""
+  },
+  {
+    "title": "Google Gemini Enterprise 的 Computer use 工具正式 GA：內建 Human-in-the-Loop 治理政策",
+    "category": "產業",
+    "summary": [
+      "Gemini Enterprise Agent Platform 的 Computer use 工具宣布一般提供（GA），本次重點不是能力而是治理：開發者可針對金融交易、資料修改這類高風險動作選擇性設定或覆寫確認政策（HITL），管理員則能用 `configurableComputerUseToolSafetyPolicies` 約束強制全組織統一的安全護欄。",
+      "訊號很清楚：computer use 從 demo 走進企業採購清單時，賣點從「會操作」變成「可設定誰要被人工攔下」。對照今天 ARTEX 用 agent 規模化攻擊、DeepSeek agent 預設 observe 模式的設計，今天整個生態都在把「確認邊界」當成一級功能來做。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/SnoopyLinkin/status/2117066022452682871"
+      }
+    ],
+    "source_url": "https://x.com/SnoopyLinkin/status/2117066022452682871",
+    "source_label": "來源",
+    "id": "lrn-2026-11-03-google-gemini-enterprise-的-computer-use-",
+    "date": "2026-11-03",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當「會被人工攔下」反而成了 GA 的主打賣點，代表 agent 競賽已從能力秀轉向信任基建——治理設計的細緻度，將決定誰能真正走進企業的核心流程。",
+    "image": "images/lrn-2026-11-03-google-gemini-enterprise-.png"
+  },
+  {
     "title": "DeepSeek 開源 Super-agent：Router + Worker 雙層架構，會自己盯群組接活的 coding agent 原型",
     "category": "產業",
     "summary": [
