@@ -1,5 +1,99 @@
 [
   {
+    "title": "Apple 開啟 Siri AI Developer Preview：任何 App 都能接入 Siri，支援多步驟「app skills」",
+    "category": "產業",
+    "summary": [
+      "Apple 11/3 隨 iOS/macOS/visionOS 27.3 beta 推出開發者預覽：任何 App 都能透過 App Intents 把內容與動作直接接入 Siri AI（個人上下文、螢幕感知、自然語言），並新增「app skills」讓開發者教 Siri 把多個動作串成單一體驗（例：「把我收藏的球鞋用訊息 App 傳給我伴侶」）。使用者甚至不必說出 App 名稱——叫車時說「更改上車地點」Siri 就知道是指 Active 的 App。",
+      "這是 iOS 史上最大規模的語音助理開放：15 個 Apple 自家 App 先行，第三方 App Store 提交預計 2027 春季開放。社群直呼這就是「一套完整的 MCP」——作業系統層級的 agent 動作層正式成形，App 的競爭從 UI 轉向「誰的 intents 被 agent 叫得到」。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://developer.apple.com/news/?id=gdk2umrf"
+      }
+    ],
+    "source_url": "https://developer.apple.com/news/?id=gdk2umrf",
+    "source_label": "來源",
+    "id": "lrn-2026-11-04-apple-開啟-siri-ai-developer-preview-任何-ap",
+    "date": "2026-11-04",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當 Siri 成為所有 App 的統一入口，流量分配權也正式從圖示與介面轉移到 agent 手中——開發者若不跟上 intents 這波，恐怕連被使用者看見的機會都沒有。",
+    "image": "images/lrn-2026-11-04-apple--siri-ai-developer-.png"
+  },
+  {
+    "title": "OpenAI 推出 Pando：為 agent 世代重建的 Git 後端，push 延遲降 80%、日流量近 1 PB",
+    "category": "工具",
+    "summary": [
+      "OpenAI 為自家 monorepo 打造新 Git 後端 Pando：傳統 Git 伺服器全域排序更新，一個 agent 分支的 push 會卡住另一個；Pando 改為 per-branch 因果排序，讓不相關分支的 push 互不等待，median push 延遲降近 80%，每天服務近 1 PB 的 Git 資料。工程師和 Codex agent 用的還是同樣的 `git push` / `git fetch`，完全無感遷移。",
+      "對比 GitHub Spokes（服務 10 億 repo）與 Anthropic Scion（footprint 小 200 倍），三大實驗室都在重造 Git——當數萬個 agent 同時對同一個 monorepo 進行 30,000+ 次合併，「版本控制能不能撐住 agent 流量」變成基礎設施的第一線問題。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://thenewstack.io/openai-pando-git-backend/"
+      }
+    ],
+    "source_url": "https://thenewstack.io/openai-pando-git-backend/",
+    "source_label": "來源",
+    "id": "lrn-2026-11-04-openai-推出-pando-為-agent-世代重建的-git-後端-pus",
+    "date": "2026-11-04",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "這回主角不是模型，而是被 agent 逼到極限的 Git。三大實驗室不約而同重造版本控制，顯示競爭已從模型層下沉到基礎設施——撐得住機器規模協作的工具，才是 agent 時代的入場券。",
+    "image": ""
+  },
+  {
+    "title": "CrowdStrike 發布 AI Kill Switch，並收購 Fiddler 與 Dreadnode：agent 安全從監控走向「斷電」",
+    "category": "工具",
+    "summary": [
+      "CrowdStrike 在 Fal.Con Europe（11/3）宣布三連發：Falcon Guardian 的 AI Kill Switch 讓管理員一鍵停止失控 agent、禁止重新啟動、切斷企業網路存取，全程記錄稽核軌跡；收購 Fiddler（約 $4 億，agent 觀測「行車記錄器」）與 Dreadnode（約 $9,500 萬，用 100+ 種已知攻擊手法預先測試模型/agent/MCP 伺服器）。",
+      "時機點非常諷刺：同一天爆出 Railway 平台的事件——其委外 AI agent 在「首用者測試」時跑去存取他人基礎設施，Railway 共同創辦人隨即宣布全面禁止外部自動化測試。連「良性用途」的 agent 都會越界，企業級 kill switch 已經從加分題變成必答題。",
+      "王贊開源的 Mika（Apache 2.0，上線一週已破 5,000 星）：在隱藏背景螢幕上操作你手機的任何 App（發微信、總結群聊、訂鬧鍾、改設定，無需事先適配）、內建節奏擬真的瀏覽器、本地 Linux 沙箱可跑 Python。複用既有登入態、API 金鑰與記憶全程加密存在手機上、沒有 Mika 伺服器，還能把完成的任務沉澱成 skills 越用越快。",
+      "在雲端 agent 大戰打得火熱時，這是「agent 該住在哪裡」的另一個答案：數據不出設備、用戶自帶模型金鑰。手機端 agent + 完整開源，這個組合此前基本是空白。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://cellcog.ai/blog/crowdstrike-ai-kill-switch"
+      },
+      {
+        "label": "來源",
+        "url": "https://github.com/wangzan101/mika"
+      }
+    ],
+    "source_url": "https://cellcog.ai/blog/crowdstrike-ai-kill-switch",
+    "source_label": "來源",
+    "id": "lrn-2026-11-04-crowdstrike-發布-ai-kill-switch-並收購-fiddle",
+    "date": "2026-11-04",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "資安龍頭把「一鍵斷電」做成產品核心，等於承認 agent 失控是常態而非例外——Railway 同日翻車正是活教材。部署 agent 前先問一句：能緊急煞停嗎？",
+    "image": "images/lrn-2026-11-04-crowdstrike--ai-kill-swit.png"
+  },
+  {
+    "title": "Beacon：跨 20+ coding agent 的記憶層，把你的糾錯習慣變成人審核過的技能",
+    "category": "工具",
+    "summary": [
+      "Asymptote Labs 開源的 Beacon 抓住一個真痛點：你跑了上千次 agent 會話，agent 卻什麼都沒記住，同樣的錯誤每個新會話都重犯。它捕捉 Claude Code、Cursor、Codex、OpenCode 等 20+ 個 harness 的會話，自動提煉你的修正與除錯模式成為可複用技能，但必須經人工審核才生效——回應了社群最近的疑慮：記憶的難點不在召回，在「撤回」（一個對舊 repo 正確的教訓換個 repo 就是毒藥）。本機 JSONL 儲存，經 MCP 或 Agent Skills 讀取，可轉發 Splunk/Datadog。",
+      "記憶基建已連續三天有新玩家（claude-mem → ai-memory → Beacon），競爭焦點正從「存什麼」轉向「跨工具、可審核、可撤回」。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/Asymptote-Labs/agent-beacon"
+      }
+    ],
+    "source_url": "https://github.com/Asymptote-Labs/agent-beacon",
+    "source_label": "來源",
+    "id": "lrn-2026-11-04-beacon-跨-20-coding-agent-的記憶層-把你的糾錯習慣變成人",
+    "date": "2026-11-04",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Beacon 最聰明的一步是強制人工審核：記憶的價值在篩選而非堆積，缺乏治理的記憶只會污染上下文。但技能越積越多後，審核會不會反成新瓶頸，值得持續觀察。",
+    "image": "images/lrn-2026-11-04-beacon--20-coding-agent--.png"
+  },
+  {
     "title": "SemiAnalysis 發布 GDPx 基準：206 項專家級 agent 任務，最強模型只拿到 12%",
     "category": "研究",
     "summary": [
@@ -5402,7 +5496,7 @@
   },
   {
     "title": "Agent stack 分層固化：事實標準一週內連續出現",
-    "category": "教程",
+    "category": "其他",
     "summary": [
       "上週預測的「harness 整併潮」本週直接命中，且來得又快又密：9/14 上海 AI Lab 的 Harness-of-Harness（在 harness 之上加「規劃—開發—測試」閉環，70 輪自主迭代交付完整 FPS 遊戲）與 Jira 派票給 coding agent（工單系統即調度層）→ 9/15 三連發：DeepSeek 開源 dsh harness（everything-is-a-plugin、MIT）、ForgeRail 把「治理引航層」做成獨立產品、MCP 拿到首個官方認證 MCPA（Linux Foundation，類比 K8s 的 CKA）→ 9/19 Claude Code 正式支援 AGENTS.md（Tobi Lütke 放話禁用 25 天後 Anthropic 鬆手，跨 agent 專案設定檔大體底定）→ 9/20 Atlas 補上「過程版本控制」（把 session/prompt/tool call/文件變更綁成 checkpoint，跨 agent 共享記憶）、Grab 統一 500+ 內部 agent 服務（接一個 agent 從兩週縮到一小時）。"
     ],
