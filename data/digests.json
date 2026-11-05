@@ -1,5 +1,116 @@
 [
   {
+    "title": "Vercel 開源 agent-desktop：讀作業系統無障礙樹的 computer use CLI，GitHub 單日暴增近 4k 星",
+    "category": "工具",
+    "summary": [
+      "Vercel Labs 的 agent-desktop（Rust，Apache-2.0）讓 agent 透過 macOS/Windows/Linux 的 OS 無障礙樹操作桌面 App：每個可互動元素都拿到一個穩定 `ref`，agent 用 ref 點擊/輸入後重新讀取 UI 驗證結果，完全不需要截圖或像素匹配。動作預設 headless（不搶焦點、不移動游標），UI 變了會回傳 `STALE_REF` 要求重讀。",
+      "這是目前最乾淨的 desktop computer use 方案之一：穩定元素引用＋可重試動作，比「截圖＋視覺模型猜座標」可靠得多，且自帶 skill 文件可直接掛進 AGENTS.md。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/vercel-labs/agent-desktop"
+      }
+    ],
+    "source_url": "https://github.com/vercel-labs/agent-desktop",
+    "source_label": "來源",
+    "id": "lrn-2026-11-05-vercel-開源-agent-desktop-讀作業系統無障礙樹的-compu",
+    "date": "2026-11-05",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "有趣的是，為身障者設計的無障礙樹，正成為 agent 的「桌面版 DOM」——當電腦操作從視覺猜測走向結構化呼叫，可靠度與成本都將被重新定義，這股 4k 星熱潮其來有自。",
+    "image": "images/lrn-2026-11-05-vercel--agent-desktop--co.png"
+  },
+  {
+    "title": "OpenAI 宣布 12 月起 ChatGPT 與 Codex 共用同一份 token 額度：你的聊天和 coding agent 開始搶預算",
+    "category": "產業",
+    "summary": [
+      "OpenAI 在說明文件中確認：12 月起 Plus/Pro/Business 訂閱者的 ChatGPT 對話與 Codex 任務將從同一個 token 池扣款，越強的模型與越複雜的任務消耗越快；只有 Instant chat 豁免。可以買 credit 補充，但 OpenAI 至今沒公布合併後的額度到底多大。",
+      "這是「all-you-can-prompt 定價」走向終點的訊號：隨 agent 功能被折進主介面，用量計費必然從「訂閱制」轉向「token 制」——未來你在 ChatGPT 問的每個問題，都在跟你的 coding agent 競爭同一份預算。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://thenewstack.io/openai-chatgpt-codex-shared-limits"
+      }
+    ],
+    "source_url": "https://thenewstack.io/openai-chatgpt-codex-shared-limits",
+    "source_label": "來源",
+    "id": "lrn-2026-11-05-openai-宣布-12-月起-chatgpt-與-codex-共用同一份-to",
+    "date": "2026-11-05",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "吃到飽」退場不只是計費調整，更宣告 AI 從嚐鮮玩具正式變成生產工具：agent 的運算成本，訂閱制終究撐不住。而 OpenAI 對額度大小持續沉默，或許才是最值得玩味的訊號。",
+    "image": ""
+  },
+  {
+    "title": "Anthropic RCT：50 位專業分析師用 Claude Code 做分析，判斷權實際上被 agent 的隨機偏好主導",
+    "category": "研究",
+    "summary": [
+      "Anthropic 做了個巧妙實驗：隨機給 agent 一個「分析立場」，讓 50 位專業分析師用 Claude Code 做因果分析。結果專家簽核的工作中，關鍵判斷大多被 agent 被隨機指派的偏好定型——而且這種「讓渡」極難察覺：48 人中只有 6 人猜到研究主題，沒有人懷疑 agent 自己有偏好；事後自評也測不出來。",
+      "更深的隱患：如果所有團隊都讓渡給偏好相同的模型，「獨立」的第二意見其實是同一個偏見的複製。paper 指出傳統「檢查錯誤」的監督方式對無標準答案的判斷題完全失效，量測 deferral 需要新方法。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://www.anthropic.com/research/agents-judgment-calls"
+      }
+    ],
+    "source_url": "https://www.anthropic.com/research/agents-judgment-calls",
+    "source_label": "來源",
+    "id": "lrn-2026-11-05-anthropic-rct-50-位專業分析師用-claude-code-做分析",
+    "date": "2026-11-05",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "人類把關」可能在 AI 工作流中淪為安慰劑：連專家都不自覺地被 agent 定調。當所有團隊都讓渡給同款模型，真正的危機不是出錯，而是獨立判斷的悄悄消失。",
+    "image": "images/lrn-2026-11-05-anthropic-rct-50--claude-.png"
+  },
+  {
+    "title": "騰訊開源 TencentDB Agent Memory：四層記憶架構，官方數據 Token 省 61%、任務成功率 33%→50%",
+    "category": "研究",
+    "summary": [
+      "騰訊雲正式開源「龍蝦」記憶服務，不改模型、外掛式給 agent 加長期記憶：L0 原始對話、L1 姓名/偏好/約束、L2 按專案整理的知識、L3 長期人物畫像，檢索時只調必要層級。官方基準：Token 最多省 61.38%、任務成功率 33%→50%、PersonaMem 精度 48%→76%。",
+      "CUHK MMLab × 清華 × 京東等（11/2，程式碼與權重開源）：雙層遞迴飛輪——外層「世界→資料→模型」持續從 YouTube/TikTok/Bilibili 的教學影片挖出真實工作流作為種子任務，內層把種子抽象成可組合的能力原語、合成可驗證的任務；搭配 snapshot-rollback 重試機制保留有效的執行前綴。結果 CUA-Master-27B 在 OSWorld Verified 得 80.2，用不到 1/10 的參數量追平 Qwen-CUA-397B，且步數更少、token 更省、運行時間少 24-36%。",
+      "重點不只是分數：它證明「開放世界知識注入」比「閉環自我生成資料」更能突破遞迴改進的邊際報酬遞減——全人類的教學影片就是 agent 的操作教科書。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://huggingface.co/papers/2611.03126"
+      }
+    ],
+    "source_url": "https://huggingface.co/papers/2611.03126",
+    "source_label": "來源",
+    "id": "lrn-2026-11-05-騰訊開源-tencentdb-agent-memory-四層記憶架構-官方數據-",
+    "date": "2026-11-05",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "與其硬塞進模型，不如把記憶做成可插拔的基礎設施——騰訊用四層架構證明，不改模型也能兼顧成本與成功率，這條務實路線對急著落地 agent 的團隊尤其有感。",
+    "image": "images/lrn-2026-11-05--tencentdb-agent-memory--.png"
+  },
+  {
+    "title": "Saab 公開自研 AI agent 家族：已實際駕駛 Gripen E 戰機完成視距外空戰試飛",
+    "category": "產業",
+    "summary": [
+      "Saab 11/3 宣布其內部 AI agent 在實飛測試中自主控制 Gripen E 戰鬥機執行 BVR（視距外）空戰科目，全程由自家打造——agent、訓練環境、評估工具都是自研，強調不依賴外部雲端（與 Ericsson、AstraZeneca 共同創辦瑞典主權 AI 基建 Sferical AI，搭載 1,152 塊 Grace Blackwell GB300）。一小時的模擬訓練飛行可等效產生十億飛行小時的經驗，並稱 agent 已達「可作戰部署」狀態，數月至數年內可用。",
+      "當大部分 agent 討論還停留在瀏覽器和終端機，這是「agent 的能力邊界」被推到物理世界的罕見公開案例：訓練靠模擬規模化，部署靠軟體定義戰機架構快速迭代。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://migflug.com/afterburner/saab-ai-agents-gripen-e-bvr-ai-fighter-pilot-academy-2026"
+      }
+    ],
+    "source_url": "https://migflug.com/afterburner/saab-ai-agents-gripen-e-bvr-ai-fighter-pilot-academy-2026",
+    "source_label": "來源",
+    "id": "lrn-2026-11-05-saab-公開自研-ai-agent-家族-已實際駕駛-gripen-e-戰機完",
+    "date": "2026-11-05",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當多數 agent 還在瀏覽器裡打轉，Saab 已讓它飛上戰場。更值得留意的是「模擬規模化、實機驗證」這套打法——它很可能成為 agent 進軍自駕、機器人等高風險物理系統的標準劇本。",
+    "image": "images/lrn-2026-11-05-saab--ai-agent---gripen-e.png"
+  },
+  {
     "title": "Apple 開啟 Siri AI Developer Preview：任何 App 都能接入 Siri，支援多步驟「app skills」",
     "category": "產業",
     "summary": [
@@ -5437,9 +5548,7 @@
     "summary": [
       "Hugging Face 每日論文中最值得注意的一篇：DeepSeek 針對輸入密集（input-heavy）的 agent 場景推進 KV cache 壓縮，讓長時程推理更省資源。同日還有 NVLabs 的 SoL-Pi（遞迴自動研究迴圈擴展 coding agent）與「Coding Agent Harness 設計實證研究」，顯示學界正系統性地研究 agent harness 該怎麼設計。",
       "Agent 供應鏈安全的標準化契機：GitSpawn（git 元資料）、CI secrets、Plugin4Shell（插件鏈）三連爆後，「agent 依賴物料清單 + 插件掃描」的標準草案或新工具（類比 SBOM 的 AgentBOM）很可能下週出現——誰先做，誰就是 agent 界的 Snyk。",
-      "跨 agent 標準的下一站：從設定檔到記憶與授權層：AGENTS.md 解決了「讀什麼設定」，Atlas 已示範跨 agent 記憶共享；而 Google Home MCP 點出的「該不該執行」policy 層仍全面空缺。下週值得盯：skills/記憶格式的標準化提案，以及「授權 middleware」類新創——消費級 agent（Muse 們）大戰開打後，這層會快速變成剛需。",
-      "為什麼重要：stack 的每一層——執行（harness）、調度（Jira/工單）、治理（ForgeRail）、協定（MCP/MCPA）、設定（AGENTS.md）、追溯（Atlas）——本週都出現了獨立產品或事實標準。模型之外的差異化戰場已經畫好地圖，接下來是整併與淘汰賽。Grab 的數字也給出殘酷真相：瓶頸從來不是推理 loop，而是 secrets、tracing、eval 這些「生產稅」。",
-      "相關連結：DeepSeek Harness｜MCPA 認證｜Claude Code 支援 AGENTS.md｜Atlas｜Grab"
+      "跨 agent 標準的下一站：從設定檔到記憶與授權層：AGENTS.md 解決了「讀什麼設定」，Atlas 已示範跨 agent 記憶共享；而 Google Home MCP 點出的「該不該執行」policy 層仍全面空缺。下週值得盯：skills/記憶格式的標準化提案，以及「授權 middleware」類新創——消費級 agent（Muse 們）大戰開打後，這層會快速變成剛需。"
     ],
     "links": [
       {
