@@ -1,5 +1,98 @@
 [
   {
+    "title": "開源 agentic 滲透框架 ARTEX 野火式擴散：微軟、Google、Wiz、CrowdStrike 連環出報告，國家級駭客用它 3 小時攻進雲端",
+    "category": "產業",
+    "summary": [
+      "ARTEX 是 7 月由中國開發者發布的 Go 語言多 agent 滲透測試框架：operator 給目標，Planner agent 規劃、Worker agents 跑 nmap/Impacket，整條 kill chain 後再回饋調整，幾乎不需人工介入。8 月底起被多個威脅組織採用：微軟指 Storm-0940 用它打 2,250 個 M365 tenant（密碼噴灑峰值每分鐘 2,900 次），多個案例從鎖定目標到取得雲端特權不到 3 小時；CrowdStrike 報告 Vapor Panda 用一個控制器 11 天打 200+ 組織。",
+      "關鍵訊號：攻擊的瓶頸從「人力」變成「算力」，防禦方要盯的是機器節奏（精確 1 秒間隔的密碼噴灑、秒級連發的雲端枚舉）而非單一 IOC。原作者已於 10/8 轉閉源，但 12,000+ fork 和 ScopeWeaver 等改名版仍在流傳。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks"
+      }
+    ],
+    "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks",
+    "source_label": "來源",
+    "id": "lrn-2026-11-06-開源-agentic-滲透框架-artex-野火式擴散-微軟-google-wi",
+    "date": "2026-11-06",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "ARTEX 終會被取代，但「攻擊瓶頸從人力變算力」是回不去的結構性轉變；與其追逐 IOC，防禦方更該學會讀懂機器節奏——這才是 agent 時代的偵測基本功。",
+    "image": ""
+  },
+  {
+    "title": "E2B 突破 $120M ARR：agent 自己找上門的「Agent-Led Growth」成為 B2B 新增長引擎",
+    "category": "產業",
+    "summary": [
+      "給 agent 開隔離雲端電腦的 E2B 公布首份營收數據：10 月年化營收 $120M（一年前僅 $8M），今年淨新增營收預估 $150M+，且幾乎 100% 來自 inbound——Manus 自己找上門、無任何 sales call 就 scale。Sandbox 啟動數 6 月破 10 億、10 月破 20 億，Fortune 100 有 94 家註冊。",
+      "創辦人點出結構性轉變：越來越多工具採用決策由 agent 而非人類做出，優化 AEO（給 agent 看的曝光）取代傳統廣告投放。多數營收來自「production 中的 agent」而非 RL 訓練——agent 從 demo 走進生產環境的最直接證據。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://www.businesswire.com/news/home/20261105034133/en/"
+      }
+    ],
+    "source_url": "https://www.businesswire.com/news/home/20261105034133/en/",
+    "source_label": "來源",
+    "id": "lrn-2026-11-06-e2b-突破-120m-arr-agent-自己找上門的-agent-led-g",
+    "date": "2026-11-06",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "比營收暴增更值得玩味的，是零 sales call——當採購者變成 agent，B2B 銷售邏輯正被改寫。Agent 不只走進生產環境，還會自己挑工具，這才是最該盯的新常態。",
+    "image": ""
+  },
+  {
+    "title": "Anthropic 企業安全大更新：inference hooks GA，prompt 和 tool call 可先送 DLP 檢查再執行",
+    "category": "工具",
+    "summary": [
+      "Claude Enterprise 推出安全中心（比對 Anthropic 建議配置的 posture dashboard）、集中管理主控台，以及正式 GA 的 inference hooks：prompt hooks 送出前檢查 prompt、pre-tool-call hooks 在 tool call 執行前攔檢，直接對接企業既有的 DLP 政策。另有 Admin API 一鍵登出成員、防止 shadow IT 封鎖個人帳號、在 Cowork 的本地 VM 內跑 EDR sensor。",
+      "與 ARTEX 事件對照著看特別有意義：agentic 系統在企業內側同樣需要「執行前攔截」——Anthropic 把 agent 的每個動作變成可審計、可攔截的事件，這正是治理層從「事後稽核」走向「即時管控」的樣板。",
+      "幾個月 1.5 萬星說明「agent 失憶」是真痛點——token 帳單裡最大的一塊往往是重複交代上下文。記憶層正在從插件變成 agent stack 的標準一層（同品類的 claude-mem 已長到 11 萬星、支援 Codex/OpenClaw/Hermes 等多 agent）。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://claude.com/resources/articles/claude-enterprise-security-updates"
+      },
+      {
+        "label": "來源",
+        "url": "https://github.com/Tencent/TencentDB-Agent-Memory"
+      }
+    ],
+    "source_url": "https://claude.com/resources/articles/claude-enterprise-security-updates",
+    "source_label": "來源",
+    "id": "lrn-2026-11-06-anthropic-企業安全大更新-inference-hooks-ga-pro",
+    "date": "2026-11-06",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent 治理的成敗不在「查得到」而在「攔得下」——inference hooks 把每個動作變成執行前可擋、可審計的事件，標誌企業 AI 安全正從事後稽核邁向即時管控，值得導入 agent 的企業借鏡。",
+    "image": "images/lrn-2026-11-06-anthropic--inference-hook.png"
+  },
+  {
+    "title": "Zapier AutomationBench 揭露殘酷現實：最強模型也只能正確完成約 54% 的真實業務流程",
+    "category": "產業",
+    "summary": [
+      "Zapier 基於平台 3.7M 公司、每月 20 億任務的真實工作流，用 47 個模擬 SaaS 工具、600+ 道題測 agent 的端到端業務執行：每題啟動一個模擬小公司（CRM、收件匣、日曆），只對「世界最終狀態」做確定性評分，不用 LLM-as-judge。目前榜首 Gemini 4 Carbon (High) 53.88%（$2.12/題），Finance 類最難，且所有模型都會觸發 guardrail 違規。",
+      "CEO Wade Foster 上 Cognitive Revolution 節目談到：客戶問的從來不是「模型會不會推理」，而是「能不能把工作做對」——這個基準把「產出」與「結果」分開了，順帶宣判了 seat-based 訂閱定價的死刑。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://zapier.com/benchmarks"
+      }
+    ],
+    "source_url": "https://zapier.com/benchmarks",
+    "source_label": "來源",
+    "id": "lrn-2026-11-06-zapier-automationbench-揭露殘酷現實-最強模型也只能正確完",
+    "date": "2026-11-06",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "這個 54% 劃清了 demo 與落地的界線：agent 再會推理，工作沒做完就是沒做完。更關鍵的是，評測 AI 的話語權正從實驗室轉移到握有真實業務數據的平台手中。",
+    "image": "images/lrn-2026-11-06-zapier-automationbench--.png"
+  },
+  {
     "title": "Vercel 開源 agent-desktop：讀作業系統無障礙樹的 computer use CLI，GitHub 單日暴增近 4k 星",
     "category": "工具",
     "summary": [
