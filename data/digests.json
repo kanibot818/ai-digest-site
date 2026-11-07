@@ -1,5 +1,115 @@
 [
   {
+    "title": "Perplexity 推出 Teammates：常駐型 AI 同事，領任務而非接指令",
+    "category": "產業",
+    "summary": [
+      "Perplexity 發表 Teammates：一組能「擁有持續性工作」的 AI agent，各自有獨立環境、瀏覽器 session 和持久對話串，繼承專案檔案、技能、記憶與權限。agent 之間可互相協作與委派（一個查 bug、一個準備修復），並透過 Slack 接收任務、回報進度，人類可隨時介入或接管桌面。",
+      "關鍵轉變：從「一問一答的助理」走向「assign 責任、它自己盯進度」的常駐協調層——CEO 預告未來每個組織每個人會有數百個 teammate。現階段仍是 Perplexity Max（$200/月）web 版，長時間工作流的可靠性還沒有獨立 benchmark，人工審核仍不可省。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://www.perplexity.ai/hub/products/teammate"
+      }
+    ],
+    "source_url": "https://www.perplexity.ai/hub/products/teammate",
+    "source_label": "來源",
+    "id": "lrn-2026-11-07-perplexity-推出-teammates-常駐型-ai-同事-領任務而非接",
+    "date": "2026-11-07",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "真正的突破不在功能，而在定位：當 AI 從答題助理變成會認領責任的「同事」，考驗的不再是模型能力，而是組織如何信任、管理與問責這些隊友——這是每個團隊都該提前思考的課題。",
+    "image": ""
+  },
+  {
+    "title": "Atlas：給 multi-agent 軟體工程的「責任鏈」基建——Know which prompt shipped which line",
+    "category": "工具",
+    "summary": [
+      "開源專案 tryatlas/atlas（9,000+ stars）解決多 agent 開發最危險的盲點：程式碼上線了，卻不知道是哪個 agent、根據什麼 prompt 產出的。它把每個 agent session（prompt、tool call、檔案變更）記錄成事件流，並在 commit 時自動關聯回產出它的 session——連 amend/rebase 後都能靠 patch-id 重新對上，squash 到真的無法歸因時寧可放棄也不硬猜。",
+      "另有跨 agent 共享記憶（透過 MCP server 的 memory_briefing/search/remember，本地 MiniLM 向量搜尋）、ROI dashboard（AI 花費 vs commit 產出）與密碼寫入前脫敏。核心洞察：Git 解決程式碼版本問題，Atlas 嘗試解決 AI 時代程式碼背後的責任鏈問題——當團隊同時跑幾十個 coding agent，這是進企業生產環境前必補的一層。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/tryatlas/atlas"
+      }
+    ],
+    "source_url": "https://github.com/tryatlas/atlas",
+    "source_label": "來源",
+    "id": "lrn-2026-11-07-atlas-給-multi-agent-軟體工程的-責任鏈-基建-know-wh",
+    "date": "2026-11-07",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當幾十個 agent 同時改 code，「可歸因性」正取代生成能力，成為 AI 工程落地的新瓶頸；Atlas 補上這層治理缺口，「寧缺勿猜」的設計更見工程誠實。",
+    "image": "images/lrn-2026-11-07-atlas--multi-agent----kno.png"
+  },
+  {
+    "title": "Claude Code v2.1.319：MCP 任務自動轉背景執行，權限可設定「直接拒絕」而非等人工點擊",
+    "category": "工具",
+    "summary": [
+      "兩個對自動化很關鍵的更新：① MCP tool call 以 task 方式執行時，Claude Code 會立刻移到背景跑、完成後再回報結果，長任務不再卡住對話；② 新增 `permissions.denyInsteadOfPrompting` 設定——會卡在權限詢問的 tool call 直接拒絕並讓回合繼續，適用 terminal、subagents 和 teammates，無人值守的排程 agent 不會再停在沒人會按的 prompt 上。",
+      "同版也收緊了 LLM gateway 後面的 auto mode 行為（伺服器無法檢查的呼叫改為詢問或拒絕，不再 fallback 到內建 classifier），並修掉數個權限繞過漏洞（Bash 環境前綴繞過、sed 跳過檢查、worktree 沙盒逃逸）。對跑背景 agent 的人，這版直接改變了可靠性與安全邊界。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.319"
+      }
+    ],
+    "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.319",
+    "source_label": "來源",
+    "id": "lrn-2026-11-07-claude-code-v2-1-319-mcp-任務自動轉背景執行-權限可設定",
+    "date": "2026-11-07",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "寧可拒絕也不卡住」看似小改動，實為 fail-closed 哲學的落地——自主性與安全邊界同步收緊，正是無人值守 agent 邁向可信賴的關鍵一步。",
+    "image": "images/lrn-2026-11-07-claude-code-v2-1-319-mcp-.png"
+  },
+  {
+    "title": "Claude 推出 Personal Finance beta：串銀行帳戶但權限寫死唯讀，agent 接敏感資料的權限範本",
+    "category": "工具",
+    "summary": [
+      "Anthropic 11/5 在美國對 Pro/Max/Ultra 用戶開放 Personal Finance beta：透過 Plaid 串連銀行與信用卡帳戶，用自然語言問餘額、支出、帳單，Claude 可讀最長兩年的交易紀錄，但架構上無法轉帳、投資或動錢；對話不用於訓練。",
+      "真正值得學的是權限設計模式：先只開讀取，寫入/刪除/金流等高危操作完全不開放，而不是「先全開再信任」。任何要接信箱、日曆、帳單的 agent 連接器都適用同一套原則。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://claude.com/resources/articles/introducing-personal-finance-in-claude"
+      }
+    ],
+    "source_url": "https://claude.com/resources/articles/introducing-personal-finance-in-claude",
+    "source_label": "來源",
+    "id": "lrn-2026-11-07-claude-推出-personal-finance-beta-串銀行帳戶但權限",
+    "date": "2026-11-07",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent 要走進金融，重點不是證明多能幹，而是證明動不了錢。Anthropic 把權限限制寫進架構而非服務條款，這套唯讀範本值得每個串接敏感資料的開發者直接抄。",
+    "image": "images/lrn-2026-11-07-claude--personal-finance-.png"
+  },
+  {
+    "title": "IBM/Red Hat/Google 的 llm-d 發布 1.0：Kubernetes 原生分散式推理堆疊進入生產級，agent 感知路由省下重複計算",
+    "category": "工具",
+    "summary": [
+      "CNCF Sandbox 專案 llm-d 邁出首個穩定版：基於 vLLM + Kubernetes，支援多租戶 QoS、零停機部署，以及 agent-aware 請求路由——把請求導向已持有該 context cache 的節點。IBM 實測 agentic coding 負載下 prefix-aware routing 抓到 97% 的可用 cache 重複使用，Red Hat 已將其作為 OpenShift AI 的預設分散式推理堆疊。",
+      "對跑大量 agent 的組織，這是成本結構級的改動：agent 工作負載的特徵是「同樣的前綴被反覆送進模型」，路由層把 KV cache 當一等公民調度，token 花費與延遲都能大幅下降。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://newsroom.ibm.com/2026-10-20-llm-d-1-0-advances-open,-cost-efficient-ai-inference-for-production-scale"
+      }
+    ],
+    "source_url": "https://newsroom.ibm.com/2026-10-20-llm-d-1-0-advances-open,-cost-efficient-ai-inference-for-production-scale",
+    "source_label": "來源",
+    "id": "lrn-2026-11-07-ibm-red-hat-google-的-llm-d-發布-1-0-kubern",
+    "date": "2026-11-07",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "看點不在模型而在架構：路由層把 KV cache 當成一等調度資源，等於為 agent 時代重新設計了推理基礎設施。這類系統級創新，或許比模型降價更能改寫成本曲線。",
+    "image": "images/lrn-2026-11-07-ibm-red-hat-google--llm-d.png"
+  },
+  {
     "title": "開源 agentic 滲透框架 ARTEX 野火式擴散：微軟、Google、Wiz、CrowdStrike 連環出報告，國家級駭客用它 3 小時攻進雲端",
     "category": "產業",
     "summary": [
