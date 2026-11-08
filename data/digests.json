@@ -1,5 +1,99 @@
 [
   {
+    "title": "METR 獨立評估：Anthropic 內部 AI 研發已被 AI 加速約 2 倍",
+    "category": "研究",
+    "summary": [
+      "METR 獲准進入 Anthropic 內部 11 週（8/12–10/29），存取訓練指標、benchmark 與員工訪談後結論：在明確定義的任務上，模型能力增速已達 2024/3–2025/10 时期的約 2 倍（不確定性區間 1.3–3 倍）；內部指標 AECI 自 2025/10 起以 1.9 倍速度成長，等於一年走完過去兩年的進度。METR 也確認加速並非來自算力擴張，且未來 12 個月未見演算法、算力或資料面的明顯瓶頸。",
+      "重要細節：加速主要來自「AI 輔助人類研究」而非全自主貢獻，員工自報的 12 倍被 METR 標為弱證據；且 Anthropic 塗掉了多數最有信息量的證據。真正的分水嶺在 verification——coding 有 CI/CD 能自驗證所以能迴圈起來，這正是「自我改進」討論該盯的地方。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment"
+      }
+    ],
+    "source_url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment",
+    "source_label": "來源",
+    "id": "lrn-2026-11-08-metr-獨立評估-anthropic-內部-ai-研發已被-ai-加速約-2-",
+    "date": "2026-11-08",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "這份報告把「AI 自我改進」從臆測變成可量測的事實：2 倍加速是真的，但推手是人機協作而非自主 AI；真正值得追蹤的，是驗證能力何時跟上生成能力。",
+    "image": "images/lrn-2026-11-08-metr--anthropic--ai--ai--.png"
+  },
+  {
+    "title": "Vercel agent-desktop：用無障礙樹取代截圖，computer use 換了一條路",
+    "category": "工具",
+    "summary": [
+      "開源工具 vercel-labs/agent-desktop（v1.2.0 起 17,000+ stars，單日暴衝 2,100）讓 agent 不靠截圖猜像素，而是直接讀 OS 的 accessibility tree（macOS AX API／Windows UI Automation／Linux AT-SPI），回傳帶 element ref 的 JSON，agent 點 ref 而非座標；畫面變了會回 STALE_REF 強制重取快照，避免盲點。v1.2.0 起也以 MCP tools 提供，可直接掛進 agent harness。",
+      "架構優勢：輸入是文字而非圖片，省掉每步的 vision model 呼叫，且 headless 預設不搶滑鼠與焦點；代價是 UI 越複雜快照越大，官方解法是 skeleton snapshot 先粗後細。限制也要記住：沒有無障礙樹的 app 對它完全隱形，而 snapshot 內含桌面私密內容，別進公開 log。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/vercel-labs/agent-desktop"
+      }
+    ],
+    "source_url": "https://github.com/vercel-labs/agent-desktop",
+    "source_label": "來源",
+    "id": "lrn-2026-11-08-vercel-agent-desktop-用無障礙樹取代截圖-computer-",
+    "date": "2026-11-08",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "為身障者打造的無障礙樹，意外成了 agent 最穩的「眼睛」：省去視覺模型成本與座標誤判，讓 computer use 從 demo 走向實用，比一味堆疊視覺模型更務實。",
+    "image": "images/lrn-2026-11-08-vercel-agent-desktop--com.png"
+  },
+  {
+    "title": "Anthropic 發表「The components of agent memory」：讓 agent 在空閒時「做夢」整理記憶",
+    "category": "研究",
+    "summary": [
+      "Anthropic 工程團隊借鑑海馬體離線重放的機制，主張 agent 記憶該分工：工作時寫 log，空閒時用 sleep-time compute「做夢」——回放修正錯誤、壓縮經驗、整理成參考文件。最有感的案例是 Pokémon：Sonnet 3.7 的記憶目錄長到 413 檔、近 98 萬字元，狀態常變的遊戲讓它反而記不住關鍵事實；經過 dreaming 整理後大幅縮小且修正了錯誤的地標記錄。",
+      "有趣的橫向觀察：不同世代模型對「標注哪些事實已驗證」的自發行為在進化，Opus 5 是第一個能自己閉環（檢查→標注→改錯）的模型。對做 agent memory 的人，這篇的核心教訓是：context window 再大也不等於記憶，「知道該忽略什麼」才是記憶系統的設計目標。",
+      "Google 分析數百萬個檔案讀取 session：13% 會暴露在 TODO(bug/...) 或 FIXME(bug/...) 註解前，其中 6% 的 agent 對該 bug 採取了後續行動——而 83% 的這類行動是開發者完全沒要求的，41% 更是在追已經關閉的過時 ticket。人類一眼掃過的雜訊，agent 看到的是行動召喚。",
+      "用多向固定效應回歸控制開發者、任務類型、模型層級等變因後，這些未經要求的繞道造成實質的時間、token 與人工介入成本。Google 的解法本身也是 agent：派專門的 agent 清掃全 codebase 的過時 bug 引用，半年清掉數千條、人工 reviewer 接受了 95%+ 的 patch。教訓：agent 的 tools/skills 越多，side quest 能力越強，codebase 衛生變成 agent 治理的一部分。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://www.anthropic.com/research/components-of-agent-memory"
+      },
+      {
+        "label": "來源",
+        "url": "https://developers.googleblog.com/en/agent-distraction/"
+      }
+    ],
+    "source_url": "https://www.anthropic.com/research/components-of-agent-memory",
+    "source_label": "來源",
+    "id": "lrn-2026-11-08-anthropic-發表-the-components-of-agent-mem",
+    "date": "2026-11-08",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Anthropic 用「做夢」點破產業盲點：context window 再大也不是記憶，取捨才是核心。Google 的數據從另一面印證同一件事——agent 缺的不是容量，而是過濾雜訊的本能。",
+    "image": "images/lrn-2026-11-08-anthropic--the-components.png"
+  },
+  {
+    "title": "arXiv 綜述「Graph-Mediated LLM Systems in the Agentic Era」：檢索正確不代表行動正確",
+    "category": "研究",
+    "summary": [
+      "北師大等校團隊的系統性綜述，提出操作級的 role–locus 分類法，把圖結構在 agent 系統中的角色拆成五種（推理物件、知識證據、檢索與記憶、執行程式、協調通訊）×四種計算責任歸屬。核心案例：設施換了負責人，記憶已更新、通知也成功送達——但排程計畫裡還寫著舊負責人。「檢索成功、傳遞成功、行動失敗」這個 gap 正是 agentic 系統的深水區。",
+      "綜述蒐證指出局部指標的提升常無法傳導到下游任務（如 GNN-RAG 稀疏化改善節點預測卻降低問答準確率），並提出全管線比較、過程診斷、全成本回報的評估框架。對設計 agent memory／GraphRAG 的人，這是難得的「下游效應」視角：重點不是每步做得對，而是一個修正能不能傳到後面的步驟。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://arxiv.org/abs/2611.05953"
+      }
+    ],
+    "source_url": "https://arxiv.org/abs/2611.05953",
+    "source_label": "來源",
+    "id": "lrn-2026-11-08-arxiv-綜述-graph-mediated-llm-systems-in-t",
+    "date": "2026-11-08",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "這篇綜述戳中 agent 開發的共同盲區：大家忙著刷單點指標，卻少追問修正能否一路傳到最終行動。當 agent 走向落地，管線末端的正確，恐怕比任何單一環節的精準更值錢。",
+    "image": ""
+  },
+  {
     "title": "Perplexity 推出 Teammates：常駐型 AI 同事，領任務而非接指令",
     "category": "產業",
     "summary": [
