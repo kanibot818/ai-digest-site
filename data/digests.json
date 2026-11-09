@@ -1,5 +1,169 @@
 [
   {
+    "title": "opencode 推出 Browse：讓 coding agent 直接開你的真實瀏覽器",
+    "category": "工具",
+    "summary": [
+      "Browse 由一個 MCP server 加 Chromium 擴充套件組成，讓 agent 操作你「本人的」瀏覽器——含現有分頁、登入狀態和擴充功能，支援 Chrome／Edge／Brave／Arc／Vivaldi 等。背景分頁裡 agent 自己跑；遇到登入、2FA 或付款時，它把分頁交還給你，等你點 Continue 再接手，並建議先用 allowlist 限制可訪問站點。",
+      "為什麼重要：這是「computer use」的實用主義版本——不是開一個雲端沙箱瀏覽器從零登入，而是直接復用你的 session。相容 OpenCode、Claude Code、Cursor、Codex、Zed 等所有 MCP client，等於把瀏覽器操作變成 coding agent 的標配能力。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://opencode.ai/product/browse"
+      }
+    ],
+    "source_url": "https://opencode.ai/product/browse",
+    "source_label": "來源",
+    "id": "lrn-2026-11-09-opencode-推出-browse-讓-coding-agent-直接開你的真",
+    "date": "2026-11-09",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "亮點不在工具本身，而在「借用 session 而非重建環境」的務實路線——若成主流，瀏覽器操作很快就會從賣點變成 coding agent 的基本盤。",
+    "image": "images/lrn-2026-11-09-opencode--browse--coding-.png"
+  },
+  {
+    "title": "Qualcomm 在 CIIE 實機展示：30B MoE 模型完全離線跑在手機上",
+    "category": "產業",
+    "summary": [
+      "Qualcomm 與 StepFun、無限火、江波龍合作的 StepEdge-Omni 30B-MoE 模型，在本屆上海進博會（CIIE）於 Snapdragon 8 Elite Gen 6 參考設計上實機運行：prefill 超過 330 tokens/s（比純 NPU 路徑快 30%+）、decode 超過 28 tokens/s、運行記憶體省 50% 以上，權重直接從機身 flash 載入。demo 的辦公流程——讀郵件、同步行事曆、推薦機票酒店、草擬回信——全程不呼叫雲端。",
+      "為什麼重要：MoE 架構把「總參數量」和「每次推理的計算量」解耦，30B 級模型（每次只激活約 3B）已從雲端競賽正式延伸到終端裝置。當手機能本地跑完整 agent 工作流，「手機還需要送什麼上雲」會成為 2027 年手機差異化的核心問題。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/Leon99AI/status/2119602287123325113"
+      }
+    ],
+    "source_url": "https://x.com/Leon99AI/status/2119602287123325113",
+    "source_label": "來源",
+    "id": "lrn-2026-11-09-qualcomm-在-ciie-實機展示-30b-moe-模型完全離線跑在手機上",
+    "date": "2026-11-09",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "別只看跑分：整條 agent 工作流都能留在手機裡跑，意味端側 AI 從炫技跨入實用，雲端推理的商業模式與隱私承諾都將被重新檢驗。",
+    "image": "images/lrn-2026-11-09-qualcomm--ciie--30b-moe-.png"
+  },
+  {
+    "title": "JetBrains MCP Server 週下載 65.7 萬、累計破 2,100 萬：MCP 已是 IDE 基礎設施",
+    "category": "產業",
+    "summary": [
+      "JetBrains Marketplace 數據顯示，官方 MCP Server 外掛本週新增 657.8K 下載（+3.2%），累計 21,211,833 次，排在 Marketplace 第 24 名。這代表 MCP 已經不是早期採用者的玩具，而是數百萬 IDE 用戶的日常配置。",
+      "為什麼重要：協議層的普及往往是生態爆發的前置條件——當「agent 接工具」的介面在主流 IDE 預裝級普及，工具商、企業內部系統都得開始供 MCP endpoint，就像當年大家都得支援 REST 和 OAuth 一樣。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/pluginstats/status/2119562113446183358"
+      }
+    ],
+    "source_url": "https://x.com/pluginstats/status/2119562113446183358",
+    "source_label": "來源",
+    "id": "lrn-2026-11-09-jetbrains-mcp-server-週下載-65-7-萬-累計破-2-10",
+    "date": "2026-11-09",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "下載量只是表象，真正的訊號是 agent 工作流已從嘗鮮變成開發日常。介面標準一旦底定，競爭將轉向 MCP 端點的供給品質——工具商與企業內部系統都該提前卡位。",
+    "image": "images/lrn-2026-11-09-jetbrains-mcp-server--65-.png"
+  },
+  {
+    "title": "「Agent harness 正在溶解」：記憶、驗證、共享工作區正從外掛框架被吸回模型",
+    "category": "其他",
+    "summary": [
+      "一篇引發討論的分析串梳理了近期證據鏈：Google Research 10/27 發表離線記憶固化（sleep framework）、Anthropic 11/6 的記憶研究顯示模型越來越會管理外部筆記、OpenAI 10/30 的 API 更新持續內建記憶能力。論點：今天 harness 提供的三大件——memory、shared workspaces、verification——都是手工搭建的 scaffolding，而「框架不會一夜死去，它會溶解：先是服務，然後變成模型的一部分」。",
+      "Computer use 收斂（上週第 3 主線）→ 範式已定，進入擴散期：agent-desktop 從發布燒到 17,000+ 星並 MCP 化（11-05、11-08 兩度追蹤），CUA-Master 用 27B 拿下 OSWorld 80.2 證明開源路線可行，操作面更外溢到手機（Mika）、OS（Apple Siri app skills）甚至戰鬥機（Saab）。",
+      "上週預測回顧：①「token 效率成主要賣點」命中且放大——TokenEconomizer、llm-d 97% cache、OpenAI 共用額度把成本議題推成獨立主線；Kimi K3.1 Pro 的獨立重測本週未見後續。②「Walmart vs DoorDash 需求對照」——Walmart 端無下文，反而是 E2B 從供給側補上真金白銀：production 中的 agent 已經在花錢。",
+      "本週新層：多 agent 常駐協作首次成線——DeepSeek superagent、Perplexity Teammates、Atlas 責任鏈、Claude Code 背景 MCP，agent 從「一次對話」變成「常駐同事」。",
+      "誠實的成績單：GDPx 基準 206 項專家任務，最強的 Claude Opus 5.5 只拿 12%，金融法律幾乎全 0 分（11-03）→ Zapier AutomationBench 用真實工作流測出最強模型只完成約 54% 的業務流程（11-05）。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities"
+      }
+    ],
+    "source_url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+    "source_label": "來源",
+    "id": "lrn-2026-11-09-agent-harness-正在溶解-記憶-驗證-共享工作區正從外掛框架被吸回模",
+    "date": "2026-11-09",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "溶解」是本週最值得記住的判斷：當記憶、驗證被模型內建，應用層的護城河便有了保存期限——把產品蓋在模型即將免費奉送的能力上，等於替實驗室免費做研發。",
+    "image": "images/lrn-2026-11-09-agent-harness----.png"
+  },
+  {
+    "title": "記憶層持續進化：從外掛儲存到「做夢整理」（5/7 天，連兩週最高頻主線）",
+    "category": "其他",
+    "summary": [
+      "本週記憶議題幾乎天天有新玩家：ai-memory 用 git 管理的 markdown wiki 加零 LLM 的記憶衰減（11-02）→ Beacon 把糾錯習慣提煉成「人審核過」的技能，直指記憶難點在「撤回」不在召回（11-03，至此 claude-mem → ai-memory → Beacon 連三天）→ 騰訊開源四層架構的 TencentDB Agent Memory，官方數據 token 省 61%、任務成功率 33%→50%，claude-mem 已長到 11 萬星（11-05）→ Atlas 補上跨 agent 共享記憶（11-07）→ 壓軸是 Anthropic 的「components of agent memory」研究：借鑑海馬體離線重放，讓 agent 在空閒時「做夢」整理記憶——Pokémon 案例中 413 檔、98 萬字元的記憶目錄經 dreaming 後大幅縮小還修正了錯誤（11-08）。",
+      "為什麼重要：上週的辯論是「複雜記憶架構值不值得」，本週給出了兩個方向的答案——工具面走向「跨工具、可審核、可撤回」，研究面走向「離線整理」。context window 再大也不等於記憶，「知道該忽略什麼」成為設計目標；記憶已從插件變成 agent stack 的標準一層。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://github.com/akitaonrails/ai-memory"
+      }
+    ],
+    "source_url": "https://github.com/akitaonrails/ai-memory",
+    "source_label": "來源",
+    "id": "lrn-2026-11-09-記憶層持續進化-從外掛儲存到-做夢整理-5-7-天-連兩週最高頻主線",
+    "date": "2026-11-09",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "記憶躍居 agent 標配只是表象，更有意思的是難題逆轉：不在記得更多，而在學會遺忘。Anthropic 借鏡海馬體的「做夢整理」，正暗示智慧的關鍵是篩選，不是堆疊。",
+    "image": "images/lrn-2026-11-09----5-7--.png"
+  },
+  {
+    "title": "攻防同時機器化：治理從「事後稽核」走向「執行前攔截」（4/7 天）",
+    "category": "產業",
+    "summary": [
+      "攻擊端：CrowdStrike 確認 VAPOR PANDA 用開源框架 ARTEX＋DeepSeek，11 天打穿 14 國 200+ 組織，攻擊指令從每小時 40 條暴增到 1,500 條（11-02）→ Google/微軟連環報告：Storm-0940 用 ARTEX 打 2,250 個 M365 tenant，從鎖定目標到雲端特權不到 3 小時；原作者轉閉源但 12,000+ fork 仍在流傳（11-06）。同週還有 Railway 的「良性」測試 agent 越界存取他人基礎設施（11-04）。",
+      "防禦端的回應全部產品化：CrowdStrike AI Kill Switch 一鍵斷電＋收購 Fiddler/Dreadnode（11-04）→ Anthropic inference hooks GA，prompt 和 tool call 執行前先過企業 DLP（11-06）→ Claude Personal Finance 串銀行但權限寫死唯讀（11-06）→ Claude Code 的 `denyInsteadOfPrompting` 讓無人值守 agent 不再卡死在權限詢問（11-07）。",
+      "為什麼重要：攻擊的瓶頸從人力變成算力，防禦相應從「偵測」轉向「即時管控」——每個 agent 動作都要變成可攔截、可稽核的事件。「先只開讀取、高危不開放」的權限模板，正在成為所有 agent 連接器的預設常識。",
+      "一張涵蓋 150 家公司、16 個層級的市場地圖（2026/11 數據）：兩個最大數字是模型廠直銷企業——Anthropic Claude Enterprise（估值 $965B、營收 $47B）與 OpenAI ChatGPT Enterprise（$852B、$50B）；下一層是「賣成果」的垂直 agent，如 Harvey（法律，$15.6B 估值、$400M 營收）與 Sierra（客服，$15B、$150M）。",
+      "值得注意的結構信號：computer-use／browser agent 層已出現億級 MAU 產品（Perplexity Comet ~18M、ChatGPT Atlas ~11M），而會議、email、文書、銷售、法務等層各有獨角獲利玩家——office agent 已從 demo 進入「按層計價」的成熟市場結構。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks"
+      },
+      {
+        "label": "來源",
+        "url": "https://x.com/FinanceYF5/status/2119220212742644099"
+      }
+    ],
+    "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks",
+    "source_label": "來源",
+    "id": "lrn-2026-11-09-攻防同時機器化-治理從-事後稽核-走向-執行前攔截-4-7-天",
+    "date": "2026-11-09",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "真正的轉變不是攻擊變快，而是資安勝負點從「偵測速度」移到「執行前的閘門」：權限最小化從稽核報告走進產品預設，才是 agent 時代的安全新常識。",
+    "image": ""
+  },
+  {
+    "title": "Anthropic《AI-native SDLC Playbook》：代碼不再是瓶頸之後，流程要整個重寫",
+    "category": "教程",
+    "summary": [
+      "Anthropic Applied AI 團隊的六階段 playbook（Plan→Design→Build→Test→Deploy→Maintain），核心判斷：agent 寫代碼快了 10 倍，但需求、審查、部署仍跑人類速度，所以生產力卡在 build 兩側。解法是把每階段的產出變成 version control 裡的一個 artifact（`intent.md`→`spec.md`→PR→事故記錄），下個階段從讀 artifact 開始，commit 鏈本身就是 audit trail。",
+      "具體可抄的 play：requirements 直接壓縮成一份人機可讀的 `intent.md`；制度知識分流進 CLAUDE.md／skills／hooks；測試變成織進實作的 continuous evals；部署用 hooks 當審批閘門，人類只看 agent 標記的東西；維護階段甚至 headless——production 指標越界自動生成下一份 `intent.md` 重啟迴圈。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook"
+      }
+    ],
+    "source_url": "https://claude.com/resources/articles/the-ai-native-sdlc-playbook",
+    "source_label": "來源",
+    "id": "lrn-2026-11-09-anthropic-ai-native-sdlc-playbook-代碼不再是瓶",
+    "date": "2026-11-09",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "價值不在寫碼提速，而在點破真相：只換工具、不重寫流程，產能依舊卡死。難得的是它不喊口號，而是把每步產出變成可審計的版本產物，團隊可直接照抄體檢。",
+    "image": "images/lrn-2026-11-09-anthropic-ai-native-sdlc-.png"
+  },
+  {
     "title": "METR 獨立評估：Anthropic 內部 AI 研發已被 AI 加速約 2 倍",
     "category": "研究",
     "summary": [
