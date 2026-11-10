@@ -1,5 +1,116 @@
 [
   {
+    "title": "Google Antigravity 推出「Knowledge Work」介面：coding agent 正式跨出程式碼",
+    "category": "工具",
+    "summary": [
+      "11/9 上線的新版面，讓同一個 agent（同樣的模型、本地檔案、外掛、MCP server）以研究、資料分析、文件寫作為主場：沒有 Git worktree、終端機和逐行 diff，取而代之的是進度條、白話權限提示，Focus 放在回應與交付物。Settings > General > Interface Layout 即開即用、免重啟。",
+      "為什麼重要：agent 的能力早就在那裡，Google 改變的只是「螢幕前的樣子」——這是把 coding agent 的執行力開放給不寫程式的知識工作者，agent 產品的競爭軸線正從模型轉向介面。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/CryptoNews_op/status/2119965671127925145"
+      }
+    ],
+    "source_url": "https://x.com/CryptoNews_op/status/2119965671127925145",
+    "source_label": "來源",
+    "id": "lrn-2026-11-10-google-antigravity-推出-knowledge-work-介面-",
+    "date": "2026-11-10",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Google 這次沒動模型、只換介面，就讓 agent 觸及全新用戶群——暗示 AI 普及的最後一哩路不在參數，而在體驗。當底層能力日趨同質，「誰敢用、誰看得懂」將成為 agent 產品的真正戰場。",
+    "image": "images/lrn-2026-11-10-google-antigravity--knowl.png"
+  },
+  {
+    "title": "Vercel MCP 兩連發：事件訂閱終結輪詢、任何 MCP client 免白名單即接",
+    "category": "產業",
+    "summary": [
+      "Vercel MCP 現在支援 MCP Events 規範——agent 可訂閱 deployment.succeeded、deployment.error 等事件並收 webhook 通知，不用再反覆輪詢；同時透過 Client ID Metadata Documents 開放給所有 MCP client，client 只要在自己網域放一個 JSON metadata 檔，同意畫面就會顯示名稱、logo 與 hostname。",
+      "為什麼重要：MCP 正從「聊天機器人的接頭」升級成 agent 讀取、訂閱、操作 SaaS 的共享層——事件驅動代表 agent 從「被動查詢」進化到「主動反應」，而免白名單則把信任判斷交回點下 Allow 的使用者。同一波討論也點出殘酷現實：MCP 化之後，很多付費 SaaS 本質上只是「穿風衣的資料庫」。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/AGTPinsights/status/2119952491643072770"
+      }
+    ],
+    "source_url": "https://x.com/AGTPinsights/status/2119952491643072770",
+    "source_label": "來源",
+    "id": "lrn-2026-11-10-vercel-mcp-兩連發-事件訂閱終結輪詢-任何-mcp-client-免白",
+    "date": "2026-11-10",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "從輪詢到事件訂閱、從白名單到開放接入，agent 正式升格為 SaaS 的一級公民；當串接不再是門檻，每家服務都得重新回答：除了資料，你還剩下什麼？",
+    "image": "images/lrn-2026-11-10-vercel-mcp----mcp-client-.png"
+  },
+  {
+    "title": "Claude Code v2.1.321 緊急修復：MCP OAuth refresh token 可能外流到其他主機",
+    "category": "產業",
+    "summary": [
+      "2.1.321 之前的版本，當 MCP server 發生 redirect 時可能把 OAuth refresh token 送到另一台主機；部分 Bash 指令也可能繞過 sandbox 或權限提示。未發 CVE，修復方式就是升級。",
+      "為什麼重要：agent 的權限模型建立在「你信任的 server」之上，而 redirect 這種基礎 web 漏洞在 MCP 場景會直接升級成 token 外洩。隨著 agent 接的工具越來越多（見第 2 則的免白名單趨勢），安全更新的優先級會跟著水漲船高——裝了 MCP 就該立刻檢查版本。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/superdoccimo/status/2119961021607551425"
+      }
+    ],
+    "source_url": "https://x.com/superdoccimo/status/2119961021607551425",
+    "source_label": "來源",
+    "id": "lrn-2026-11-10-claude-code-v2-1-321-緊急修復-mcp-oauth-refr",
+    "date": "2026-11-10",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "這則修復點出一個新現實：當 agent 代你持有 OAuth 憑證，平凡的 redirect 就足以讓 token 外流。安全邊界正從瀏覽器移往 agent，裝了 MCP 就該把即時升級當成習慣。",
+    "image": "images/lrn-2026-11-10-claude-code-v2-1-321--mcp.png"
+  },
+  {
+    "title": "ENGRAM 論文：把 agent 記憶「驗證後固化」進權重",
+    "category": "研究",
+    "summary": [
+      "ENGRAM 提出一條記憶→權重的訓練流程：先用儲存的經驗訓練模型，接著跑測試確認更新後的模型在「沒有那些記錄」時依然表現良好，才刪除對應的記憶檔。等於把昨天討論的「harness 溶解論」變成具體可操作的機制——記憶不是永遠存在外部儲存，而是逐步內化。",
+      "為什麼重要：這是「記憶即鷹架」的直接證據：外部記憶從長期儲存變成訓練資料的暫存區。如果這條路走通，agent 基礎設施裡的記憶層商業模式會被迫重新定義。",
+      "值得警惕的反面：目前存儲與協調仍完全由 harness 供應，模型還「吃不掉鷹架」。對做 agent 基礎設施的人，這是定位問題——你建的能力半年後會不會變成模型的原生 feature？"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/cgironda/status/2119482909551948215"
+      }
+    ],
+    "source_url": "https://x.com/cgironda/status/2119482909551948215",
+    "source_label": "來源",
+    "id": "lrn-2026-11-10-engram-論文-把-agent-記憶-驗證後固化-進權重",
+    "date": "2026-11-10",
+    "source": "learning",
+    "original_url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+    "editor_note": "最耐人尋味的是「驗證後才刪」這一步——記憶成了拋棄式教材，價值將從儲存轉向篩選與驗證，這才是做 agent 記憶層的人真正該緊張的地方。",
+    "image": "images/lrn-2026-11-10-engram---agent---.png"
+  },
+  {
+    "title": "開源語音 agent 工具鏈盤點：本地 ElevenLabs 替代品已破 10 萬星",
+    "category": "工具",
+    "summary": [
+      "一份按 GitHub stars 排序的語音 agent 開源棧：VoiceStudio（105k★，本地語音克隆／配音的 ElevenLabs 替代）、GPT-SoVITS（64.6k★，一分鐘音檔訓練 TTS）、VibeVoice（56.8k★，Microsoft 長篇多說話人 TTS＋多語 ASR）、Handy（38.1k★，離線按鍵說話即打字）、fish-speech（33.6k★）、faster-whisper（26.6k★）、pipecat（17.1k★，STT→LLM→TTS 一條龍即時語音 agent 框架）。",
+      "為什麼重要：語音是讓 agent「感覺真實」最便宜的方式，而開源側各環節（STT／TTS／克隆／即時管線）都已達可用水準——做語音 agent 不再需要綁定雲端 API，全本地管線成本趨近於零。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/METHEZONE/status/2119595488270073874"
+      }
+    ],
+    "source_url": "https://x.com/METHEZONE/status/2119595488270073874",
+    "source_label": "來源",
+    "id": "lrn-2026-11-10-開源語音-agent-工具鏈盤點-本地-elevenlabs-替代品已破-10-",
+    "date": "2026-11-10",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "10萬星不只是人氣指標，更代表本地語音克隆品質已跨過可用門檻；當語音互動成本趨零，agent 的競爭焦點將從「能不能說話」轉向延遲與對話體驗的打磨。",
+    "image": "images/lrn-2026-11-10--agent---elevenlabs--10-.png"
+  },
+  {
     "title": "opencode 推出 Browse：讓 coding agent 直接開你的真實瀏覽器",
     "category": "工具",
     "summary": [
