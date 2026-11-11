@@ -1,5 +1,114 @@
 [
   {
+    "title": "OpenAI 推出「Businesses in ChatGPT」Beta：商家可在 ChatGPT 裡被「找到」並直接接客",
+    "category": "產業",
+    "summary": [
+      "企業可在 Business Hub 認領自家商家、認證身份、更新基本資訊、上架含價格與庫存的商品 feed（Shopify 店可直接串接），並看到提及數、點擊數與引用話題分析。進一步可發布「Business Agent」讓消費者在對話中直接比較、提問——回覆會加標籤、與 ChatGPT 自己的回答分開顯示，現階段限美國 EC 與線上服務。",
+      "為什麼重要：這是把「SEO 之後的下一戰場」正式制度化——從被搜尋引擎爬，變成要「讓 AI 正確認識你」。商家內容、agent 回覆、廣告位開始在同一個對話介面裡競爭，AI 時代的商家曝光規則今天起了頭。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/OpenAI/status/2120216592395174382"
+      }
+    ],
+    "source_url": "https://x.com/OpenAI/status/2120216592395174382",
+    "source_label": "來源",
+    "id": "lrn-2026-11-11-openai-推出-businesses-in-chatgpt-beta-商家可",
+    "date": "2026-11-11",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "二十年前的 SEO 戰役將在對話框重演，但這次規則由單一平台制定。商家急著卡位之餘，或許也該想想：把曝光命脈交給一家 AI 公司，是機會還是新的依賴？",
+    "image": "images/lrn-2026-11-11-openai--businesses-in-cha.png"
+  },
+  {
+    "title": "ARTEX：開源多 agent 滲透框架已被真實入侵行動者投入實戰",
+    "category": "研究",
+    "summary": [
+      "微軟將 10 月中旬的 ConnectWise 雲端備份入侵事件歸因給中國國家級駭客組織 Storm-0940，並確認其早在 9 月就開始使用 7 月才釋出的開源框架 ARTEX：planning agent 負責繪製目標地圖、worker agent 呼叫工具，多條突破路徑並行，把發現的資產與漏洞寫入 graph。另一起 9 月事件鎖定韓國金融機構。Sophos 已發布偵測特徵（temp 檔名模式、MARKER123/ARTX123 標記、腳本化 user agent 登入）。",
+      "為什麼重要：這是「agentic AI 成為現役威脅行動者工具」的第一批具體戰場證據——攻擊側的規模化速度（數百個防護事件、快速指令序列）正是 agent 架構的特性。防禦端的獵殺起點：從 2026 年 9 月起清查 Entra ID 服務主體的憑證與角色指派。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/DFIR_Radar/status/2120231071769837597"
+      }
+    ],
+    "source_url": "https://x.com/DFIR_Radar/status/2120231071769837597",
+    "source_label": "來源",
+    "id": "lrn-2026-11-11-artex-開源多-agent-滲透框架已被真實入侵行動者投入實戰",
+    "date": "2026-11-11",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "從開源釋出到國家級駭客實戰僅隔兩個月，agentic AI 已從概念變成現役武器；與其爭論風險，防禦方更該學會辨識「機器速度」的攻擊足跡。",
+    "image": "images/lrn-2026-11-11-artex--agent-.png"
+  },
+  {
+    "title": "X MCP 新增 read-only 模式：server 層直接拒絕寫入，token 有寫入權限也沒用",
+    "category": "工具",
+    "summary": [
+      "在 X 的 hosted MCP URL 加上 `?read_only=true`，server 就只暴露讀取類工具（搜尋貼文、查用戶、看 timeline/bookmarks），隱藏所有寫入工具（發文、DM、bookmark 異動、封鎖、Ads 操作），且即使 OAuth token 本身帶寫入 scope，任何寫入嘗試都會被 server 主動拒絕。",
+      "為什麼重要：這是針對「agent 被騙或幻覺出非預期動作」的深度防禦正解——把安全邊界從「信任 client 行為」下沉到「server 物理上不提供能力」。昨天剛報過 MCP 免白名單開放接，今天就有平台補上最小權限控制，生態的安全意識正在快速對齊。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/santiagomed/status/2120282633334583387"
+      }
+    ],
+    "source_url": "https://x.com/santiagomed/status/2120282633334583387",
+    "source_label": "來源",
+    "id": "lrn-2026-11-11-x-mcp-新增-read-only-模式-server-層直接拒絕寫入-tok",
+    "date": "2026-11-11",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "與其提醒 agent 別亂來，不如讓它根本沒有能力亂來——X 把安全邊界從 client 下沉到 server，才是 agent 時代的正解。期待這種「能力不存在」式防禦成為 MCP 生態標配。",
+    "image": "images/lrn-2026-11-11-x-mcp--read-only--server-.png"
+  },
+  {
+    "title": "Grok Bot 可加入 Tailscale tailnet：agent 以「裝置」身份進入私有網路存取內部 MCP",
+    "category": "其他",
+    "summary": [
+      "Grok Bot 透過 OAuth 加入個人或公司的 tailnet，成為綁定用戶帳號的一台裝置——適用與其他裝置相同的存取政策、稽核日誌與裝置上限，不需對外公開 server、不需貼任何金鑰。Premium/Enterprise 可用裝置屬性限制 Grok Bot 只能碰到指定的 MCP server，與人類裝置權限切開。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/_reachsumit/status/2119919486967185768"
+      }
+    ],
+    "source_url": "https://x.com/_reachsumit/status/2119919486967185768",
+    "source_label": "來源",
+    "id": "lrn-2026-11-11-grok-bot-可加入-tailscale-tailnet-agent-以-裝",
+    "date": "2026-11-11",
+    "source": "learning",
+    "original_url": "https://arxiv.org/abs/2611.09472",
+    "editor_note": "真正的訊號是：AI 代理開始像員工裝置一樣納入身分治理。當 agent 擁有可稽核的網路身分與獨立權限，企業導入 AI 不必再開資安後門，這套模式值得各平台借鏡。",
+    "image": "images/lrn-2026-11-11-grok-bot--tailscale-tailn.png"
+  },
+  {
+    "title": "逆向 Instinct 的 agent 記憶：沒有向量搜尋，只有 markdown + grep",
+    "category": "研究",
+    "summary": [
+      "一篇從外部逆向 Instinct 記憶系統的分析發現：它的記憶就是 markdown 檔案加 grep——每個檔案都有別名，由一個每日 job 負責所有寫入，完全沒有 embedding 或向量資料庫。推文圈隨之追問：「embedding 對個人 agent 記憶是不是被高估了？」另有實務討論指出多數 agent 記憶 bug 其實不是檢索問題，而是「事實過期」——agent 記得對的東西，卻無從得知它已經不成立了。",
+      "為什麼重要：跟第 4 則形成漂亮對照——一端把記憶燒進權重，另一端證明純檔案系統就夠用。真正的難題不在檢索技術，而在記憶的生命週期管理（過期、撤回、可審計）。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/bychaeun/status/2119964446982582403"
+      }
+    ],
+    "source_url": "https://x.com/bychaeun/status/2119964446982582403",
+    "source_label": "來源",
+    "id": "lrn-2026-11-11-逆向-instinct-的-agent-記憶-沒有向量搜尋-只有-markdow",
+    "date": "2026-11-11",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當眾人忙著往 agent 塞向量資料庫，Instinct 卻證明 markdown 加 grep 就夠用。真正的難題從來不是記住，而是知道何時該忘記。",
+    "image": "images/lrn-2026-11-11--instinct--agent----markd.png"
+  },
+  {
     "title": "Google Antigravity 推出「Knowledge Work」介面：coding agent 正式跨出程式碼",
     "category": "工具",
     "summary": [
@@ -5302,11 +5411,7 @@
     "title": "Zapier 數據：自動化中只有 18% 的步驟真的需要 AI",
     "category": "研究",
     "summary": [
-      "Zapier 分析重度使用 AI 的公司後發現，其自動化步驟僅 18% 用到 AI，其餘 82% 是單純的規則與資料搬運。把 AI 保留給真正需要「思考」的步驟，讓這些工作流成本低了約 71%。對照今天第 3 則的 CPCT 概念：盲目把 LLM 塞進每個環節是最貴的架構決策。",
-      "相關連結：https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/ ｜ https://x.com/kii__1981/status/2102568956351668727 ｜ https://x.com/0xal0ke/status/2103918034008387674",
-      "「可安裝行為」供應鏈風險：CARBONATO 證明改一個 SOUL.md 就能劫持 agent 框架，同週 skills 生態卻衝上 29 萬星、人人忙著裝 skill pack——persona 檔與 skill 包正成為比 npm 更少人設防的攻擊面，兩件事放在一起的意義沒什麼人討論。",
-      "Jev 決策模型（Typesafe System One）：不生成文字、直接回傳帶機率與信心的型別化決策，亞百毫秒、輸出免費。把 agent 迴圈中「每次都叫 LLM」的分支判斷換成確定性分類，是很可能被低估的新品類。",
-      "Agent 身份與授權標準化：OpenAI 事故進入政府視野＋Amazon 擋 Muse 判例＋資安大廠產品齊發，下週可能出現第一波監管回應或跨廠 agent 身份協議草案；做 agent 產品的人請預先準備行為日誌與最小權限設計。"
+      "Zapier 分析重度使用 AI 的公司後發現，其自動化步驟僅 18% 用到 AI，其餘 82% 是單純的規則與資料搬運。把 AI 保留給真正需要「思考」的步驟，讓這些工作流成本低了約 71%。對照今天第 3 則的 CPCT 概念：盲目把 LLM 塞進每個環節是最貴的架構決策。"
     ],
     "links": [
       {
