@@ -1,5 +1,115 @@
 [
   {
+    "title": "AWS Emulator 正式 GA：程式碼 100% 由自治 agent 撰寫，人類一行沒寫也沒 review",
+    "category": "工具",
+    "summary": [
+      "AWS 發布本機模擬 AWS 環境的 Emulator（不需部署、不需 AWS 帳號即可在本地/CI 測試），並公開說明其程式碼由幾千個 agent 寫測試、找 bug、改代碼完成，團隊零人工 review，以 CC0 授權開源且持續更新。作者的核心心得：agent 需要「涂色本」——把邊界框死才敢放手。社群也提醒其限制：它不會像真實 AWS 一樣評估 IAM 政策，本地測試通過不代表權限設定正確。",
+      "為什麼重要：這是「guardrails 替代人力」的第一個大廠級示範——不是代碼不值錢了，而是「窄領域＋死邊界＋agent 填色＋人只簽字」的工作分工被驗證可行。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/awsdevelopers/status/2120597422929760676"
+      }
+    ],
+    "source_url": "https://x.com/awsdevelopers/status/2120597422929760676",
+    "source_label": "來源",
+    "id": "lrn-2026-11-12-aws-emulator-正式-ga-程式碼-100-由自治-agent-撰寫-",
+    "date": "2026-11-12",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "人類一行沒寫」只是吸睛標題，真正的看點是大廠驗證了新分工：人畫框、agent 著色。當程式碼日趨廉價，畫出好邊界的能力，才是工程師下一個護城河。",
+    "image": "images/lrn-2026-11-12-aws-emulator--ga--100--ag.png"
+  },
+  {
+    "title": "Adobe 宣布 Photoshop、Illustrator、Premiere Pro、After Effects 支援 MCP：agent 操作創意軟體從「走後門」變「開正門」",
+    "category": "產業",
+    "summary": [
+      "在 Adobe MAX 2026 發表，四款主力創意軟體將透過本地 MCP 連動（2027 年初私測）：agent 能以結構化資料讀取專案狀態（圖層、序列、屬性值）、呼叫官方工具操作、並以固定格式收回結果——「掌握現狀→操作→驗證」的迴圈第一次能由 agent 自己閉合，不再是依賴 ExtendScript 的盲眼後門。設計前提是人機分工：agent 做組裝型例行工作，人負責判斷與收尾。",
+      "為什麼重要：MCP 正在從「開發者工具協議」擴張成「桌面軟體的通用 agent 介面」。當 Photoshop 的圖層結構本身就是資料，「組裝」類工作大規模外移給 agent，創作者的時間會被迫向「判斷」與「收尾」集中。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/lifedesign_oki/status/2120657250637516846"
+      }
+    ],
+    "source_url": "https://x.com/lifedesign_oki/status/2120657250637516846",
+    "source_label": "來源",
+    "id": "lrn-2026-11-12-adobe-宣布-photoshop-illustrator-premiere-",
+    "date": "2026-11-12",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Adobe 親自背書，MCP 正式從開發者協議走向桌面軟體標配；當組裝工作交給 agent，創作者的身價將愈來愈取決於品味與判斷，而非操作熟練度。",
+    "image": "images/lrn-2026-11-12-adobe--photoshop-illustra.png"
+  },
+  {
+    "title": "Continual-ARC 基準測試：主流 agent 其實不會從經驗中學習",
+    "category": "研究",
+    "summary": [
+      "Unify AI 的 Daniel Latham 發布 Continual-ARC 基準，實測結論直白：包括多款知名 agent 在內，受測系統都「沒有從經驗中有意義地學習」——agent memory 只是把資訊帶到下一輪，並沒有改變解題能力本身；真正改變能力上限的仍是訓練時的 weight 更新。社群討論進一步厘清：「有記憶」和「會學習」是兩件事。",
+      "為什麼重要：在「agent memory」成為創業熱點的當下，這份基準戳破了核心假設——目前絕大多數記憶方案只是昂貴的筆記本，不是學習系統。評估記憶產品時，該問的是「錯過的題目下次會了嗎」，而不是「記住了多少」。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/AGTPinsights/status/2120561966867505566"
+      }
+    ],
+    "source_url": "https://x.com/AGTPinsights/status/2120561966867505566",
+    "source_label": "來源",
+    "id": "lrn-2026-11-12-continual-arc-基準測試-主流-agent-其實不會從經驗中學習",
+    "date": "2026-11-12",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "這份基準的價值不在唱衰記憶產品，而在把「越用越聰明」從行銷話術變成可驗證的問題；記憶與學習之間的鴻溝，或許正是下一輪 agent 競賽的分水嶺。",
+    "image": "images/lrn-2026-11-12-continual-arc---agent-.png"
+  },
+  {
+    "title": "Vercel 開源 agent-browser：Rust 原生 CLI，讓 agent 用無障礙樹「點」網頁而非看截圖猜按鈕",
+    "category": "工具",
+    "summary": [
+      "一條命令一個動作（open / snapshot / click），snapshot 把網頁壓成帶編號（如 @e1）的無障礙樹文字，agent 照編號精準操作；點不到會如實報錯、不假裝成功。npm、Homebrew、npx 皆可安裝，一天 708 星、總星近 5 萬。",
+      "為什麼重要：agent 的連網能力長期卡在「內網工具怎麼安全地接」——Tailscale 的做法是把 agent 當成一等公民裝置納入 zero-trust 網路，用現成的身分與政策體系治理，而不是另開一條 API 隧道。企業 agent 要進生產環境，這種「裝置化 agent」模式會是主流路徑之一。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/bot/status/2120279511707386263"
+      }
+    ],
+    "source_url": "https://x.com/bot/status/2120279511707386263",
+    "source_label": "來源",
+    "id": "lrn-2026-11-12-vercel-開源-agent-browser-rust-原生-cli-讓-ag",
+    "date": "2026-11-12",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當眾人押注視覺 agent，Vercel 反其道以無障礙樹取代截圖：結構化定位比像素猜測可靠，如實報錯更勝假裝成功——務實工程正是 agent 落地最缺的一環。",
+    "image": "images/lrn-2026-11-12-vercel--agent-browser-rus.png"
+  },
+  {
+    "title": "Vercel 的 agent 架構演進：六個階段，最後打敗多 agent 系統的是「一個檔案系統」",
+    "category": "教程",
+    "summary": [
+      "Maryam Miradi 整理 Vercel 的架構演講成六階段藍圖，附 19 個開源 repo：Big Prompt（AI SDK/LiteLLM/Instructor）→ 多 agent（LangGraph/CrewAI/OpenAI Agents SDK，但 handoff 丟 context）→ 單一 stateful agent（PydanticAI/Deep Agents）→ 檔案系統 + Bash（Claude Code 模式，eval 分數約翻倍）→ 可重用 skills（Anthropic Skills）→ 生產 runtime（durable execution + OpenTelemetry）。",
+      "為什麼重要：核心教訓是「更好的 context、熟悉的工具、簡單的檔案系統，可以勝過精巧的多 agent workflow」。在大家都急著堆 orchestrator 的當下，這是對架構複雜度的務實煞車：先問什麼時候該加複雜度，什麼時候該刪。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/MaryamMiradi/status/2120254602528628921"
+      }
+    ],
+    "source_url": "https://x.com/MaryamMiradi/status/2120254602528628921",
+    "source_label": "來源",
+    "id": "lrn-2026-11-12-vercel-的-agent-架構演進-六個階段-最後打敗多-agent-系統的",
+    "date": "2026-11-12",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "在人人搶搭 multi-agent 列車的此刻，Vercel 用數據證明：樸素的檔案系統反而勝出。這份藍圖最該帶走的不是工具清單，而是「先刪再加」的架構判斷力。",
+    "image": "images/lrn-2026-11-12-vercel--agent----agent-.png"
+  },
+  {
     "title": "OpenAI 推出「Businesses in ChatGPT」Beta：商家可在 ChatGPT 裡被「找到」並直接接客",
     "category": "產業",
     "summary": [
