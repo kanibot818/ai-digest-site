@@ -1,5 +1,115 @@
 [
   {
+    "title": "Chrome 聯手 Edge、Firefox 推出 Modern Web Guidance：直接給 coding agent 補「現代前端」課",
+    "category": "工具",
+    "summary": [
+      "三大瀏覽器官方聯合發布的 skills 包，把最新 Web 標準、Baseline 相容性資料直接注入 coding agent，專治「agent 愛寫五年前舊 API 和祖傳兼容代碼」的問題——根源是大模型訓練語料裡塞滿陳年老代碼。官方實測接上後代碼基準通過率從 56% 升到 88%，自帶 evals 可量化提升，一行 `npx modern-web-guidance@latest install` 即可安裝。",
+      "為什麼重要：這是「訓練資料偏誤」第一次由標準制定方親自出手修補。agent 寫前端的最大痛點不是不會寫，而是訓練截止後的知識腐爛——官方 skills 注入可能成為瀏覽器廠商影響 AI 代碼品質的新戰場。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/t20000622yy/status/2121051278570934449"
+      }
+    ],
+    "source_url": "https://x.com/t20000622yy/status/2121051278570934449",
+    "source_label": "來源",
+    "id": "lrn-2026-11-13-chrome-聯手-edge-firefox-推出-modern-web-gui",
+    "date": "2026-11-13",
+    "source": "learning",
+    "original_url": "https://github.com/GoogleChrome/modern-web-guidance",
+    "editor_note": "56% 升到 88% 說明 agent 的短板不是能力、是知識保鮮期。更值得玩味的是權力轉移：標準方親自下場餵課，瀏覽器大戰正悄悄從引擎延伸到 AI 上下文——誰餵課，誰就掌握代碼話語權。",
+    "image": "images/lrn-2026-11-13-chrome--edge-firefox--mod.png"
+  },
+  {
+    "title": "Meta 開源內部打磨 8 年的設計系統 Astryx：人和 agent 用同一套組件，7 天 +11.8k 星",
+    "category": "工具",
+    "summary": [
+      "Meta 開源其設計系統：150+ 組件、主題系統、CLI，核心賣點是「人和 agent 用同一套工具搭界面」，不鎖死樣式、可自由 swizzle。總星約 26.5k、近 7 天暴增 11.8k，登上日榜第一梯隊。",
+      "為什麼重要：agent 寫 UI 最大的痛是「生成一堆不統一的垃圾組件」——每次從零生成，風格漂移無法收斂。Astryx 把生產級設計系統做成 agent-native，等於給 agent 一套「組件界的涂色本」，與昨天 AWS Emulator 的「框死邊界」心得異曲同工。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/TidyWu/status/2121051869015634393"
+      }
+    ],
+    "source_url": "https://x.com/TidyWu/status/2121051869015634393",
+    "source_label": "來源",
+    "id": "lrn-2026-11-13-meta-開源內部打磨-8-年的設計系統-astryx-人和-agent-用同一",
+    "date": "2026-11-13",
+    "source": "learning",
+    "original_url": "https://github.com/meta/astryx",
+    "editor_note": "Astryx 看點不在組件數，而在設計系統被重新定位：從人的規範，變成 agent 的軌道。當 AI 生成 UI 的難題從「畫得出」轉為「畫得穩」，約束即品質。",
+    "image": "images/lrn-2026-11-13-meta--8--astryx--agent-.png"
+  },
+  {
+    "title": "Alibaba SPAR 框架：自進化銷售 agent 在 20 萬商家真實 A/B 測試中轉化率 +15.8%",
+    "category": "研究",
+    "summary": [
+      "Alibaba 與華南理工發布 SPAR：雙迴路自進化框架，內迴路用 episodic memory 適應單一商家，外迴路把跨商家經驗沉澱成「假設式 playbook」——每條策略是可檢驗的假設，帶證據集、信心分數與生命週期，只有被因果標記為「策略驅動」的結果才能提升信心。零參數更新，在 1688 上的 20 萬+商家實測轉化率 +15.8%、高意向商家 +35.8%。",
+      "為什麼重要：對照昨天 Continual-ARC 說「agent 不會學習」，SPAR 提供了反例——問題的解法不是 weight 更新，而是把「經驗→假設→因果歸因→策略淘汰」做成工程系統。有趣的是消融實驗：拿掉內迴路後表現比完全無記憶還差，薄記憶可能比沒記憶更有害。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/deeponailabs/status/2120972773006688269"
+      }
+    ],
+    "source_url": "https://x.com/deeponailabs/status/2120972773006688269",
+    "source_label": "來源",
+    "id": "lrn-2026-11-13-alibaba-spar-框架-自進化銷售-agent-在-20-萬商家真實-a",
+    "date": "2026-11-13",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "SPAR 最值得玩味之處：agent 的「學習」未必靠更新 weights，把經驗做成可檢驗、可淘汰的工程系統，可能才是落地正解；而薄記憶反而比沒記憶更糟的發現，更值得做記憶機制的團隊警惕。",
+    "image": "images/lrn-2026-11-13-alibaba-spar---agent--20-.png"
+  },
+  {
+    "title": "ARTEX 滲透測試框架暴露面調查：916 個 agent 控制台裸奔在美國主機上，還有帶後門的 Docker 鏡像",
+    "category": "工具",
+    "summary": [
+      "SOCRadar 調查發現：開源 LLM 自主滲透框架 ARTEX 有 916 個確認存活的管理界面暴露在美國主機上，其中 896 個走純 HTTP；另發現被植木馬的 Docker 鏡像（tomicdd/artex 等）在登入處理器藏了 pre-auth root shell。該框架已出現在南韓金融業入侵與供應鏈攻擊活動中——合法測試與真實入侵從外部看完全一樣。",
+      "為什麼重要：browser use 的兩條路線——視覺截圖 vs 結構化樹——前者燒 token 又易幻覺，後者省 token 且可驗證。Vercel 把它做成輕量 CLI 而非 framework，延續了「簡單工具勝過華麗編排」的路線；對照昨天報過的 Vercel 六階段架構論，這就是第三階段（給 agent 熟悉的工具）的具體落地。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/xiao_wang24004/status/2120690597044646352"
+      }
+    ],
+    "source_url": "https://x.com/xiao_wang24004/status/2120690597044646352",
+    "source_label": "來源",
+    "id": "lrn-2026-11-13-artex-滲透測試框架暴露面調查-916-個-agent-控制台裸奔在美國主機",
+    "date": "2026-11-13",
+    "source": "learning",
+    "original_url": "https://github.com/vercel-labs/agent-browser",
+    "editor_note": "最值得玩味的是：當合法滲透測試與真實入侵從外部無法區分，威脅偵測與歸因邏輯都得重寫；而滲透工具自己淪為供應鏈跳板，更印證安全圈的武器庫本身就是攻擊面。",
+    "image": "images/lrn-2026-11-13-artex--916--agent-.png"
+  },
+  {
+    "title": "Anthropic 警報：AI 加速自身研發已觸發 Responsible Scaling Policy 關鍵閾值",
+    "category": "產業",
+    "summary": [
+      "Anthropic 內部評估顯示，AI 對自身研發的加速已觸發 RSP 的關鍵能力閾值——按 2018–2024 的進步速度，兩年的進展被壓縮進一年（METR 的獨立觀察方向一致）。處置不是停手，而是加護欄。同一天還有兩則呼應：美聯航禁止 AI agent 代訂機票（憑據外洩與誤購風險，HN 296 分）；澳洲政府因 OpenAI 攻破 Medicare 統計入口事件，擬設「AI 危害」刑事罪名與獨立監管機構。",
+      "為什麼重要：模型能力、商業行為、法律責任三個層面在同一天同時收緊。agent 的權限面（哪些 key、哪些帳號、哪些寫入權）正在從「配置項」變成「產品功能」與「法定義務」。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/BlackManbn/status/2120687884508475514"
+      }
+    ],
+    "source_url": "https://x.com/BlackManbn/status/2120687884508475514",
+    "source_label": "來源",
+    "id": "lrn-2026-11-13-anthropic-警報-ai-加速自身研發已觸發-responsible-sc",
+    "date": "2026-11-13",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "不停手、只加護欄」的選擇比閾值本身更值得玩味：當 AI 開始加速 AI，治理也被迫切換到 AI 的時間尺度——政策不再是年度文件，而是邊跑邊修的即時工程。",
+    "image": "images/lrn-2026-11-13-anthropic--ai--responsibl.png"
+  },
+  {
     "title": "AWS Emulator 正式 GA：程式碼 100% 由自治 agent 撰寫，人類一行沒寫也沒 review",
     "category": "工具",
     "summary": [
