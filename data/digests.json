@@ -1,5 +1,98 @@
 [
   {
+    "title": "Poppy v1.0 正式發布：Meta、OpenAI、Salesforce、Visa 等 100+ 巨頭聯手給 agent 蓋「數位海關」",
+    "category": "產業",
+    "summary": [
+      "Sierra（Bret Taylor 主導）發布 Personal Agent Protocol v1.0：agent 造訪網站時先出示加密「護照」（/.well-known/poppy.json），用戶透過品牌自己的 OAuth 頁面授予細粒度權限（orders:read vs orders:write），秘密 token 完全不進 LLM 上下文以防 prompt injection。Meta Muse 對全部 1000 萬+用戶啟用、Shopify 對所有商家預設開啟；v1.0 還能用 data-poppy-user-step 標記敏感表單，強制 agent 把控制權還給人類。",
+      "為什麼重要：這結束了「agent 假裝成人類點網頁、被 Amazon 封殺」的影子戰爭——agent 從爬窗變成走正門。值得注意的是 Amazon 與 Anthropic 拒絕加入，且「v1.0」規格仍標註為 draft；新網閘門誰來守，正在即時畫出邊界。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/ethanwalkerman/status/2121367730830094469"
+      }
+    ],
+    "source_url": "https://x.com/ethanwalkerman/status/2121367730830094469",
+    "source_label": "來源",
+    "id": "lrn-2026-11-14-poppy-v1-0-正式發布-meta-openai-salesforce-v",
+    "date": "2026-11-14",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "值得關注的是設計哲學的轉向：與其期待 LLM 變得更安全，Poppy 直接讓模型碰不到秘密。這種務實主義，或許比任何模型升級更能決定 agent 何時真正落地。",
+    "image": "images/lrn-2026-11-14-poppy-v1-0--meta-openai-s.png"
+  },
+  {
+    "title": "Cognition 發布 Devin Apps：agent 的雲端電腦直接變成可分享的內部工具",
+    "category": "工具",
+    "summary": [
+      "Devin Apps 是跑在 Devin 雲端機器上的私有 Web 應用：可用任何技術棧、存取既有的 MCP、整合與代碼庫，還能呼叫 Devin API 把自己做成 Devin 的擴充。底層靠「memory snapshots」讓機器在閒時休眠、有流量時喚醒，按喚醒時間計費；App 有固定 URL、強制 Devin 登入驗證，版本部署失敗時自動回退上一版。",
+      "為什麼重要：這是 agent 產品形態的又一次跳躍——從「幫你寫代碼」變成「本身就是部署平台」，內部儀表板、審批佇列、staging 環境都由 agent 自己維護。搭配昨天 Databricks 常駐 Genie，「agent 即基礎設施」的賽道正在成形。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/jojogh_007/status/2121272759892533517"
+      }
+    ],
+    "source_url": "https://x.com/jojogh_007/status/2121272759892533517",
+    "source_label": "來源",
+    "id": "lrn-2026-11-14-cognition-發布-devin-apps-agent-的雲端電腦直接變成可",
+    "date": "2026-11-14",
+    "source": "learning",
+    "original_url": "https://devin.ai/apps",
+    "editor_note": "Devin 從「幫你寫程式」跨到「幫你營運」，agent 正從生產力工具變成基礎設施本身。值得進一步思考的是：當連平台都由 agent 維護，開發團隊的護城河該建立在哪裡？",
+    "image": "images/lrn-2026-11-14-cognition--devin-apps-age.png"
+  },
+  {
+    "title": "Amazon DISCERN 論文：agent 記憶的檢索已經夠好了，壞的是「讀取時的判斷」",
+    "category": "產業",
+    "summary": [
+      "DISCERN（arXiv 11/11）拆解 agent 持久記憶的真正瓶頸：所有像樣的系統檢索穩定事實都能拿 0.93-0.98，真正崩壞的是區分「長得像的公司名」、判斷哪個值是最新的、以及何時該說「我不知道」。做法是寫入時保留一切（相似名稱各自建檔、舊值標記過期而非覆蓋），讀取時才做決策，並把「拒答」做成顯式動作——拒答 F1 達 0.924，八個基線最高只有 0.802。",
+      "為什麼重要：對做記憶系統的人是直接的工程指引——別再捲向量檢索排序，把力氣花在答案決策層；「合併相似實體」和「新值覆蓋舊值」這兩個直覺操作正是記憶污染的元兇。讓讀者 agent 多查幾輪（最多 8 次 lookup）就把準確率從 0.33 拉到 0.89，也印證了「薄記憶比沒記憶更有害」這條昨天 SPAR 的觀察。",
+      "為什麼重要：這是「攻擊者也在用 agent」的具體化——agent 基礎設施本身正在成為攻擊面。搭配另一則開源安全基線（AMQIC）提到的觀察：掃描器已經在專門獵取 `/.claude/settings.json`、`.cursor/mcp.json` 等 AI 工具設定檔。你的 agent 設定檔和 MCP server，現在是攻擊者的清單項目。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/arkyyang/status/2121254168669364514"
+      },
+      {
+        "label": "來源",
+        "url": "https://x.com/DFIR_Radar/status/2120940343235354632"
+      }
+    ],
+    "source_url": "https://x.com/arkyyang/status/2121254168669364514",
+    "source_label": "來源",
+    "id": "lrn-2026-11-14-amazon-discern-論文-agent-記憶的檢索已經夠好了-壞的是-讀",
+    "date": "2026-11-14",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "最反直覺的是：合併相似實體、新值覆蓋舊值這些工程習慣，正是記憶污染的元兇。當檢索已近滿分，agent 記憶的勝負在讀取時的判斷，不在寫入時的聰明。",
+    "image": "images/lrn-2026-11-14-amazon-discern--agent---.png"
+  },
+  {
+    "title": "Databricks 推出 always-on 版 Genie：agent 從「回答問題」轉向「常駐跑業務流程」",
+    "category": "產業",
+    "summary": [
+      "Databricks 發布常駐版 Genie，讓 agent 自主處理複雜企業任務：監控業務交易、調查異常模式、支援決策、減少重複人工。發帖者點出核心新難題：當 agent 從被動問答變成常駐執行，「誰來監控 agent」成為企業導入的第一道門檻。",
+      "為什麼重要：「chat-first → 常駐自主」是 agent 產品形態的關鍵跳躍，但監控、歸責、審計的配套還沒跟上。這與昨天 Anthropic RSP 閾值警報、澳洲立法是同一條線的企業端版本——自主性在升級，問責機制在補課。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/AIWorldSpeaks/status/2121053036592419217"
+      }
+    ],
+    "source_url": "https://x.com/AIWorldSpeaks/status/2121053036592419217",
+    "source_label": "來源",
+    "id": "lrn-2026-11-14-databricks-推出-always-on-版-genie-agent-從-",
+    "date": "2026-11-14",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當 agent 從被動問答走向常駐執行，企業採購的已不只是工具，而是需要管理的「數位員工」；下一步決勝點恐怕不是模型能力，而是誰先把監控與歸責機制做到位。",
+    "image": "images/lrn-2026-11-14-databricks--always-on--ge.png"
+  },
+  {
     "title": "Chrome 聯手 Edge、Firefox 推出 Modern Web Guidance：直接給 coding agent 補「現代前端」課",
     "category": "工具",
     "summary": [
