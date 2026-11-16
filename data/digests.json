@@ -1,5 +1,181 @@
 [
   {
+    "title": "ARTEX 開源滲透框架變入侵引擎：FBI 發 FLASH 警報，Amazon 用假 LLM API 釣到攻擊 agent 的全部記憶",
+    "category": "產業",
+    "summary": [
+      "LLM 驅動的開源滲透框架 ARTEX（2026/7 上架 GitHub）已被實戰濫用：Microsoft 追蹤的 Storm-0940 用它自動化攻擊數百個組織、三小時內拿到特權存取，並以被竊的 ConnectWise Cloud Backup 憑證撞擊 2,250+ 個 Microsoft 365 租戶；FBI 已於 11/13 發出 FLASH 警報。另一側，Amazon 的 madpot 感測器偽裝成 chat completions 端點，10/3–11/5 期間讓跑 ARTEX 的攻擊 agent 自動把 system prompt、工具歷史、知識圖譜整份記憶送進誘餌 API——攻擊者的 LLM 後端是誰，攻擊的全貌就是誰的。",
+      "為什麼重要：這是「agentic 攻防」第一次以大規模實證數據現身——防禦方偵測的重點不再是工具名稱而是節奏（2–25 秒的任務爆發、短時間內多種偵測類型），而「agent 會把整份記憶交給任何回得像 LLM 的端點」本身就是新的洩漏面。自己的 gateway 若用過預設金鑰，該輪值換掉了。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/DFIR_Radar/status/2122028294589526396"
+      }
+    ],
+    "source_url": "https://x.com/DFIR_Radar/status/2122028294589526396",
+    "source_label": "來源",
+    "id": "lrn-2026-11-16-artex-開源滲透框架變入侵引擎-fbi-發-flash-警報-amazon-",
+    "date": "2026-11-16",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "最諷刺的轉折：攻擊者第一次被自己的 agent 出賣。agentic 時代的防禦已從攔截工具轉向解讀節奏，而你部署的 agent，恐怕也沒警覺到哪裡去。",
+    "image": ""
+  },
+  {
+    "title": "Obelisk 開源：agent memory 的 bitter lesson——朴素歷史檢索在 7 組 benchmark 拿下 6 個第一",
+    "category": "研究",
+    "summary": [
+      "近期論文（Memory Tax / Context as Infrastructure 等）驗證了三個反直覺事實：原始歷史的朴素檢索召回率普遍贏過複雜 memory 系統；把原文抽成摘要或原子事實常帶來負收益；只用 BM25 + grep 的 harness 與經典 memory 結構無顯著差異。Obelisk 因此做得極其克制：接入 11 個 harness 的原始歷史（Claude Code、Codex、Hermes Agent 等），SQLite + FTS5，不設固定查詢 API，而是讓 agent 現場寫 JS 查詢腳本；其上的 graph view 層優勢不在更準的召回，而在少讀 38% token。",
+      "為什麼重要：過去替 agent 設計 memory 靠的是類比與直覺，這是第一波從第一性原理推回去的結果——「保留回原文的路徑、原文不能丟」比任何精巧結構都重要。對所有在做 agent 長期記憶的人，這是方向性修正。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/QuantumTransf/status/2121968281968144703"
+      }
+    ],
+    "source_url": "https://x.com/QuantumTransf/status/2121968281968144703",
+    "source_label": "來源",
+    "id": "lrn-2026-11-16-obelisk-開源-agent-memory-的-bitter-lesson-",
+    "date": "2026-11-16",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "這幾乎是 agent 記憶界的 Sutton 時刻：精心設計的結構輸給原始資料加樸素檢索。與其急著疊加更花俏的記憶架構，先把原文守好，才是最務實的方向修正。",
+    "image": "images/lrn-2026-11-16-obelisk--agent-memory--bi.png"
+  },
+  {
+    "title": "清華 CoACT 獲 ICSE 2027：只壓縮 agent「看到的」，token 省 33%、通過率反升 2 個百分點",
+    "category": "其他",
+    "summary": [
+      "CoACT（Action-Preserving Observation Compression）的核心是一個很窄的定義：不改 agent 已做的決策序列，只壓縮它「看到」的內容（檔案內容、搜索結果、運行日誌），而保真標準只有一條——agent 讀完後下一步動作變沒變。在 SWE-bench Verified 200 實例、三種模型上總 token 砍 33.0%，PASS@1 反而從 69.0% 升到 71.0%；對照組激進壓縮的 LLMLingua-2 把 pass@1 從 57% 打到 50%。背景數據：這些「觀察」在 SWE-bench 上佔總 token 的 45.7%，Terminal-Bench 最高 67.8%。",
+      "Agent 經濟學（上週第 3 主線）→ 分化收斂：成績單議題兌現為規模化生產三連發（AWS 零 review、SpaceX 0.47%、ArtCraft 170 萬日下載）；帳單議題收斂成具體工具箱（litellm、claude-code-router、langfuse、codeburn），加上 SpaceX「70% token 花在驗證」的實證數據。",
+      "上週預測回顧：①「額度池合併引爆定價連鎖戰」未發酵——12 月生效前仍在觀望；②「常駐 agent 可靠性評測真空」半命中：Databricks 常駐 Genie 與 Devin Apps 把常駐產品化推進一大步，但獨立長程 benchmark 依然缺席；ARTEX 端的暴露面調查則兌現了攻擊面競賽的方向。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/ethanwalkerman/status/2121367730830094469"
+      }
+    ],
+    "source_url": "https://x.com/ethanwalkerman/status/2121367730830094469",
+    "source_label": "來源",
+    "id": "lrn-2026-11-16-清華-coact-獲-icse-2027-只壓縮-agent-看到的-token",
+    "date": "2026-11-16",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "CoACT 最漂亮的洞察，是把壓縮標準從「文字像不像」換成「動作變不變」——當觀察佔 agent token 近半，以行為保真為錨，省錢與提效竟不再是取捨。",
+    "image": "images/lrn-2026-11-16--coact--icse-2027--agent-.png"
+  },
+  {
+    "title": "「涂色本」模式被三個互不相識的團隊獨立驗證：品質上限由工程約束決定（4/7 天）",
+    "category": "其他",
+    "summary": [
+      "AWS Emulator 正式 GA，程式碼 100% 由幾千個 agent 撰寫、零人工 review、CC0 開源，作者心得就一句：agent 需要「涂色本」，框死邊界才敢放手（11-12）→ 隔天兩連發呼應：Chrome/Edge/Firebox 三巨頭官方 Modern Web Guidance skills 把 agent 前端代碼基準從 56% 拉到 88%，Meta 開源打磨 8 年的 Astryx 設計系統，等於「組件界的涂色本」（11-13）→ 週日 SpaceX 拿出最硬數據：Grok Bot 團隊單月合併 1.1 萬支 agent PR、回滾率僅 0.47%，方法是禁用壞 API、註解砍 98%、每次人工糾正固化成 lint rule、70% token 花在看截圖驗證（11-15）。",
+      "同場的 ArtCraft 用 agent 24 小時重寫出 PhotoCraft（Rust 原生、日下載 170 萬），但自報專業可用度僅 46%——分工線畫得很清楚：固定形態的桌面應用交 agent，schema、遷移、API 設計留給人（11-15）。",
+      "為什麼重要：上週 METR 說分水嶺在 verification，本週 SpaceX 給出了 verification 的帳單（70% token）與成品（0.47% 回滾）。三個團隊本週獨立收斂到同一結論：agent slop 不是模型問題，是複製環境問題——先修好迴圈再自動化。",
+      "Graphify：把代碼庫建成可遍歷、可追溯的知識圖譜（11-14）——不走向量 RAG，用 Tree-sitter 在本地解析約 40 種語言的調用圖與外鍵關係（全程不呼叫 LLM），每條關係標 EXTRACTED / INFERRED / AMBIGUOUS 三級置信度，再用 Leiden 社群發現自動切分子系統。「把事實與推斷分開標記」讓知識圖譜從玄學變成可審計的工程系統，直接命中大型 monorepo 的上下文爆炸痛點，但討論度遠低於它的工程價值。",
+      "Qualcomm 30B MoE 完全離線跑在手機上（11-09）——CIIE 實機展示：prefill 330+ tokens/s、運行記憶體省 50%，讀郵件、同步行事曆、草擬回信全程不碰雲。同週 opencode Browse 又把 agent 接回「本人的瀏覽器 session」。執行端往本地、往真實介面下沉的訊號沒被串起來討論，但「手機還需要送什麼上雲」會是 2027 年終端差異化的核心問題。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/awsdevelopers/status/2120597422929760676"
+      }
+    ],
+    "source_url": "https://x.com/awsdevelopers/status/2120597422929760676",
+    "source_label": "來源",
+    "id": "lrn-2026-11-16-涂色本-模式被三個互不相識的團隊獨立驗證-品質上限由工程約束決定-4-7-天",
+    "date": "2026-11-16",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "三個互不相識的團隊一週內收斂到「涂色本」這個答案，本身就是最強訊號：當模型能力趨於同質，勝負正移向工程紀律——會畫框線、會修驗證迴圈的團隊，才能拿到 agent 生產力的入場券。",
+    "image": "images/lrn-2026-11-16----4-7-.png"
+  },
+  {
+    "title": "記憶辯論進入「拆解時刻」：檢索已解決、判斷還沒有；「記住」不等於「學會」（5/7 天，連三週最高頻主線）",
+    "category": "其他",
+    "summary": [
+      "本週脈絡像一場完整辯證：週一「harness 溶解論」主張記憶、驗證、共享工作區終將被吸回模型（11-09）→ 週二兩極對照，ENGRAM 論文把記憶「驗證後固化」進權重，同日逆向 Instinct 發現純 markdown + grep 就夠、真正的敵人是「事實過期」（11-10）→ 週四 Continual-ARC 基準潑冷水：主流 agent 都沒有從經驗中學習，記憶只是把資訊帶到下一輪的昂貴筆記本（11-12）→ 週五 Alibaba SPAR 給出反例：零參數更新，把「經驗→假設→因果歸因→策略淘汰」做成工程系統，20 萬商家實測轉化率 +15.8%，但消融實驗警告「薄記憶比沒記憶更有害」（11-13）→ 週六 Amazon DISCERN 定調：檢索穩定事實所有系統都拿 0.93–0.98，真正崩壞在「分不清長得像的實體、不知道哪個值最新、不會說我不知道」；改為寫入時保留一切、讀取時才判斷，拒答 F1 從基線最高 0.802 拉到 0.924（11-14）。",
+      "為什麼重要：上週的辯論還停在「複雜架構 vs 簡單檔案」，本週被拆成三個可分別攻克的子問題——檢索（已解決）、記憶生命週期（過期與撤回）、讀取決策（新瓶頸）。DISCERN 給了最直接的工程指引：別再捲向量排序，把力氣花在答案決策層，而且「合併相似實體、新值覆蓋舊值」這兩個直覺操作正是記憶污染的元兇。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/AGTPinsights/status/2120561966867505566"
+      }
+    ],
+    "source_url": "https://x.com/AGTPinsights/status/2120561966867505566",
+    "source_label": "來源",
+    "id": "lrn-2026-11-16-記憶辯論進入-拆解時刻-檢索已解決-判斷還沒有-記住-不等於-學會-5-7-天-",
+    "date": "2026-11-16",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當各家檢索分數擠在 0.93–0.98，指標已不再分勝負——瓶頸正移向判斷層；而最諷刺的是，污染記憶的往往不是技術缺陷，而是工程師的直覺好習慣。",
+    "image": "images/lrn-2026-11-16--------5-7--.png"
+  },
+  {
+    "title": "Agent 拿到身份證與護照：權限治理從產品功能升級為協議制度（5/7 天）",
+    "category": "其他",
+    "summary": [
+      "制度側連環推進：OpenAI「Businesses in ChatGPT」讓商家 agent 正式進駐對話介面（11-11）→ X MCP 推 read-only 模式，即使 token 有寫入權限，server 層也物理上拒絕寫入（11-11）→ Grok Bot 以「裝置」身份加入 Tailscale tailnet，用現成的 zero-trust 身分政策治理 agent（11-11）→ 週六壓軸 Poppy v1.0：Sierra 領銜 Meta、OpenAI、Salesforce、Visa 等 100+ 巨頭給 agent 蓋「數位海關」——加密護照、細粒度 OAuth、token 完全不進 LLM 上下文防 prompt injection；但 Amazon 與 Anthropic 拒絕加入，規格仍標 draft（11-14）。",
+      "同一主線的攻擊側同步升溫：ARTEX 開源滲透框架被中國國家級駭客 Storm-0940 實戰使用（11-11）→ SOCRadar 發現 916 個 ARTEX 控制台裸奔在美國主機、Docker 鏡像藏 pre-auth root shell（11-13）→ 掃描器已專門獵取 `.claude/settings.json`、`.cursor/mcp.json`。攻擊面從「用 agent 攻擊」變成「攻擊 agent 基礎設施」。",
+      "為什麼重要：身份化、權限化、可稽核化是 agent 進入正式場域的三張入場券。上週的防禦是產品級（kill switch、唯讀模板），本週升級為協議級——但 Poppy 的陣營分裂顯示「新網閘門誰來守」還沒有定案，這會是接下來的規格之戰。"
+    ],
+    "links": [],
+    "source_url": "",
+    "source_label": "",
+    "id": "lrn-2026-11-16-agent-拿到身份證與護照-權限治理從產品功能升級為協議制度-5-7-天",
+    "date": "2026-11-16",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "攻防同步升級到協議級只是序章，真正的看點是 Poppy 的分裂——當「數位海關」的發照權成為兵家必爭，agent 治理規格之戰才正要開打。",
+    "image": ""
+  },
+  {
+    "title": "四個開源工具盯緊 agent 的 token 帳單：litellm、claude-code-router、langfuse、codeburn",
+    "category": "工具",
+    "summary": [
+      "一組實用組合拳：litellm（約 63k stars）做統一模型閘道並按 key 設花費上限；claude-code-router（約 38k stars）把每個請求路由到你選的模型，便宜任務不再燒旗艦模型；langfuse（約 37k stars）逐步呈現每個環節的 token 與成本；codeburn（約 12k stars）在本地追蹤 coding agent 的實際花費。",
+      "為什麼重要：agent 工作流的成本失控通常不是單次呼叫貴，而是重試、驗證、重複上下文累積出來的——Lauren Tan 的案例裡光驗證就吃掉 70% token。成本可觀測（langfuse）+ 按任務分級路由（router）+ 本地審計（codeburn）是把 agent 從玩具變生產力的財務側基建。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/EverydayEddie_/status/2121777792685658504"
+      }
+    ],
+    "source_url": "https://x.com/EverydayEddie_/status/2121777792685658504",
+    "source_label": "來源",
+    "id": "lrn-2026-11-16-四個開源工具盯緊-agent-的-token-帳單-litellm-claude",
+    "date": "2026-11-16",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "四款工具合計破十五萬顆 star，反映的不是單純工具熱，而是 agent 生態正式迎來自己的 FinOps 時刻——能算清每一塊錢去向的團隊，才真正有資格把 agent 推上生產線。",
+    "image": "images/lrn-2026-11-16--agent--token--litellm-cl.png"
+  },
+  {
+    "title": "三步徒手搭出第一個能幹活的 agent：大腦、工具、剎車",
+    "category": "教程",
+    "summary": [
+      "澜知 AI 把 44 萬播放的 n8n agent 教程重排成三步最小結構：①推理模型 + 會話記憶（先徒手跑通「推理→工具→回填」循環，別一上來就用框架）；②接工具（工具描述要寫清「什麼時候該用我」，入參少、錯誤顯式返回，別讓 agent 猜）；③系統提示詞寫剎車（可用工具與觸發條件、紅線、結果落盤位置、停止條件）。上線前兩個檢查：餵一句模糊輸入看它會不會先追問，以及把一輪任務的 token 數當成設計指標。",
+      "為什麼重要：「一個會選工具的循環 + 一份不失效的上下文 + 一套明確的剎車」這個骨架，正好呼應今天的 SpaceX 數據——生產級 agent 的關鍵從來是約束設計而非模型能力。三步各寫二十行，比看十小時課程更扎實。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/zg0820/status/2121777164018455014"
+      }
+    ],
+    "source_url": "https://x.com/zg0820/status/2121777164018455014",
+    "source_label": "來源",
+    "id": "lrn-2026-11-16-三步徒手搭出第一個能幹活的-agent-大腦-工具-剎車",
+    "date": "2026-11-16",
+    "source": "learning",
+    "original_url": "https://www.youtube.com/watch?v=GchXMRwuWxE",
+    "editor_note": "多數教程急著教你上框架，這篇反其道要求先徒手跑通循環，因為真正決定 agent 能否上線的不是大腦而是剎車。這種把約束設計擺第一位的入門路徑，少見而清醒。",
+    "image": "images/lrn-2026-11-16--agent---.png"
+  },
+  {
     "title": "SpaceX SI 的 Lauren Tan：單月合併 11,000 支 agent PR，回滾率僅 0.47%——五大原則公開",
     "category": "產業",
     "summary": [
