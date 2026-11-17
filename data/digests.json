@@ -310,7 +310,8 @@
     "source": "learning",
     "original_url": "https://www.youtube.com/watch?v=O_zcc6Xl12g",
     "editor_note": "Agent 不是魔法，而是放大器——你的技術債會被它忠實複製上萬次。這份實證把焦點從「等更強的模型」拉回「整理自己的 codebase」，想搭自動化快車的團隊，請先還債再上車。",
-    "image": "images/lrn-2026-11-15-spacex-si--lauren-tan--11.png"
+    "image": "images/lrn-2026-11-15-spacex-si--lauren-tan--11.png",
+    "deep_status": "no_source"
   },
   {
     "title": "DeepSeek Harness（dsh）開源：28 萬星的全插件化 agent harness，連 agent loop 本身都是插件",
@@ -366,8 +367,17 @@
     "title": "Nex-N2.6 開源：321B 電腦操作 agent 模型，把「重複推理迴圈」從 16% 壓到 1.6%",
     "category": "研究",
     "summary": [
-      "Nex-AGI 以 GLM-5.3-Flash 為底、開源 Apache 2.0 的 FP8 權重（約 321B），主打 computer use / coding 長工作流的可靠性：內部評測中推理重複率從前代 16.0% 降到 1.6%，工具清單遵循率 100%（只呼叫請求中實際宣告的工具），OSWorld 83.0 超越底模的 78.0。自帶 low/high/max 三檔推理力度，OpenRouter 已上架託管版。",
-      "為什麼重要：電腦操作 agent 最常見的失敗不是不會點，而是陷入重複動作、呼叫不存在的工具——把「可靠性」而非「跑分」當成第一優先指標是對的方向。但要留意這些是團隊自報的模型級數據，FP8 導出的獨立驗證還沒有。"
+      "Nex-AGI 開源 Nex-N2.6，這是以 GLM-5.3-Flash 為底座的多模態 agent 模型，釋出約 321B 參數的 FP8 權重。",
+      "主打電腦操作、coding 與需要多步工具呼叫的長流程任務。",
+      "內部 checkpoint-replay 評測中，推理重複率從前代 Nex-N2.5-Pro 的 16.0% 降到 1.6%，等於相對減少 90%。",
+      "工具遵循率達 100%，也就是只會呼叫請求中實際宣告的工具，前代這項是 82.2%。",
+      "OSWorld 拿下 83.0，高於前代的 82.2 與底模的 78.0。",
+      "可靠性題目來自團隊與夥伴團隊在真實任務中踩到的問題，官方也明說這版的重點是壓低重複推理、遵守環境內的工具清單。",
+      "但 Terminal-Bench 2.1 的 84.1 和 AutomationBench 的 45.7 都沒超過底模的 84.3 與 48.8。",
+      "且這些是團隊自報的模型級數據，FP8 導出沒有獨立評測。",
+      "自架可走 SGLang、vLLM 或 Docker Model Runner，chat template 內建 low/high/max 三檔 reasoning_effort，預設 max。",
+      "不想自己架，OpenRouter 已上架託管版。",
+      "適合正在開發電腦操作 agent、需要模型長時間穩定執行工具流程的工程與平台團隊。"
     ],
     "links": [
       {
@@ -381,8 +391,23 @@
     "date": "2026-11-15",
     "source": "learning",
     "original_url": "https://huggingface.co/nex-agi/Nex-N2.6",
-    "editor_note": "Agent 最怕的不是不會操作，而是原地打轉。Nex 把可靠性排在高分之前、又以 Apache 2.0 開源 321B 權重，方向可取；但自報數據仍待第三方驗證。",
-    "image": "images/lrn-2026-11-15-nex-n2-6--321b--agent----.png"
+    "editor_note": "拿分數換可靠性的取捨方向正確——agent 在迴圈裡空轉燒掉的資源，遠比零點幾分的讓分更傷。但可靠性全靠自報、FP8 匯出無第三方驗證，換個環境能否重現要打問號。當「不卡死」成了模型賣點，agent 賽道缺的是公認的可靠性評測標準，而非又一個更大的開源權重。",
+    "image": "images/lrn-2026-11-15-nex-n2-6--321b--agent----.png",
+    "deep_summary": [
+      "Nex-AGI 開源 Nex-N2.6，這是以 GLM-5.3-Flash 為底座的多模態 agent 模型，釋出約 321B 參數的 FP8 權重。",
+      "主打電腦操作、coding 與需要多步工具呼叫的長流程任務。",
+      "內部 checkpoint-replay 評測中，推理重複率從前代 Nex-N2.5-Pro 的 16.0% 降到 1.6%，等於相對減少 90%。",
+      "工具遵循率達 100%，也就是只會呼叫請求中實際宣告的工具，前代這項是 82.2%。",
+      "OSWorld 拿下 83.0，高於前代的 82.2 與底模的 78.0。",
+      "可靠性題目來自團隊與夥伴團隊在真實任務中踩到的問題，官方也明說這版的重點是壓低重複推理、遵守環境內的工具清單。",
+      "但 Terminal-Bench 2.1 的 84.1 和 AutomationBench 的 45.7 都沒超過底模的 84.3 與 48.8。",
+      "且這些是團隊自報的模型級數據，FP8 導出沒有獨立評測。",
+      "自架可走 SGLang、vLLM 或 Docker Model Runner，chat template 內建 low/high/max 三檔 reasoning_effort，預設 max。",
+      "不想自己架，OpenRouter 已上架託管版。",
+      "適合正在開發電腦操作 agent、需要模型長時間穩定執行工具流程的工程與平台團隊。"
+    ],
+    "deep_source_chars": 7390,
+    "deep_status": "ok"
   },
   {
     "title": "Poppy v1.0 正式發布：Meta、OpenAI、Salesforce、Visa 等 100+ 巨頭聯手給 agent 蓋「數位海關」",
