@@ -1,5 +1,116 @@
 [
   {
+    "title": "Google 發布 Gemini 4 Neon：coding agent 排行榜第一，主打「端到端把活幹完」",
+    "category": "工具",
+    "summary": [
+      "定位在 Hydrogen 與 Carbon 之間，Artificial Analysis 智能指數 xhigh 檔 61 分總榜第 3、Coding Agent Index 58.6 分排第 1，1M token 上下文，支援 computer use 與 URL context。定價 $3/1M 輸入、$15/1M 輸出，隱式緩存命中只要 $0.15（自稱 95% 折扣），官方稱預設 high 檔每任務成本比 Carbon 低 32%。已上 Gemini API、AI Studio、Antigravity。",
+      "為什麼重要：繼昨天的 Qwen4-Max，又一家旗艦把賣點從跑分轉向「每任務總成本」——agent 時代模型競爭的計價單位正在從 token 變成 task。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/imhaoyi/status/2123226311879520418"
+      }
+    ],
+    "source_url": "https://x.com/imhaoyi/status/2123226311879520418",
+    "source_label": "來源",
+    "id": "lrn-2026-11-19-google-發布-gemini-4-neon-coding-agent-排行榜",
+    "date": "2026-11-19",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "排行榜第一只是入場券，真正的訊號是 $0.15 快取價與「每任務省 32%」——agent 會反覆重讀上下文，能壓低重複成本的一方，才拿得到 agent 時代的定價權。",
+    "image": "images/lrn-2026-11-19-google--gemini-4-neon-cod.png"
+  },
+  {
+    "title": "OpenAI 發布內部研究加速報告：agent 自主完成率一年從 23% 升到 46%，但提升極不均衡",
+    "category": "研究",
+    "summary": [
+      "估計需人類 2–4 小時的委託任務，agent 自主完成率從 3 月的 23% 升至 10 月的 46%；4–8 小時任務從 13% 升至 35%。但分項差距巨大：監控訓練運行 79%、啟動訓練 35%、為推理/serving 栈寫代碼僅 25%。研究者 10 月日用量中位數達 $2,400（月增 62%），且官方承認 agent 仍會產出無效假設與「AI slop」式 PR。",
+      "為什麼重要：這是難得的官方縱向數據——agent 自主性確實在快速爬升，但「不均衡」才是重點：任務結構越接近「監控與回報」越能放手，越接近「創造性工程」越需要人類守在最後一環。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/Dankie/status/2123226214353850669"
+      }
+    ],
+    "source_url": "https://x.com/Dankie/status/2123226214353850669",
+    "source_label": "來源",
+    "id": "lrn-2026-11-19-openai-發布內部研究加速報告-agent-自主完成率一年從-23-升到-4",
+    "date": "2026-11-19",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "別只看自主率翻倍：真正的訊號是放手程度取決於任務可驗證性——監控類先被自動化，創造性工程仍需人類把關。想預判自己的工作何時被 agent 接手，先看成果容不容易檢驗。",
+    "image": "images/lrn-2026-11-19-openai--agent--23--4.png"
+  },
+  {
+    "title": "微軟 agent-framework 的 PyPI 套件被投毒：1.26.1/1.26.2 用 .pth 鉤子偷走 CI 憑證",
+    "category": "產業",
+    "summary": [
+      "據 Wiz 通報，惡意版本透過 .pth 啟動鉤子竊取名稱含 TOKEN、KEY、AGENT 的環境變數，目標涵蓋 Azure、GitHub Actions 等 CI 憑證，每週約 41,000 次下載中招。同日另有多 agent 供應鏈消息：裝置碼釣魚已被證實可打到 Copilot CLI——受害者批准合法 GitHub 登入後，攻擊者可操縱 session 並「毒化 agent 記憶」。",
+      "為什麼重要：昨天還在談攻擊框架，今天輪到供應鏈——agent 的憑證、記憶、session 全成了資產也全是攻擊面。版本鎖定、憑證輪換、定期審記憶條目，應該列入所有 agent 使用者的剛性成本。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/BlackManbn/status/2123223744831439093"
+      }
+    ],
+    "source_url": "https://x.com/BlackManbn/status/2123223744831439093",
+    "source_label": "來源",
+    "id": "lrn-2026-11-19-微軟-agent-framework-的-pypi-套件被投毒-1-26-1-1",
+    "date": "2026-11-19",
+    "source": "learning",
+    "original_url": "https://socket.dev/",
+    "editor_note": "攻擊者瞄準 agent 的速度，比多數團隊布防的速度還快。連微軟官方套件都能被投毒，品牌光環顯然不是安全保證，供應鏈的信任，終究得自己驗證。",
+    "image": "images/lrn-2026-11-19--agent-framework--pypi--1.png"
+  },
+  {
+    "title": "Microsoft Autopilot 開始推送：有自己身份與記憶的「常駐同事」agent",
+    "category": "產業",
+    "summary": [
+      "Ignite 大會宣布 Autopilot 擴及 Copilot、Teams 與 Outlook：不需等 prompt，可主動跟進 email、旁聽 Teams 會議、執行週期性任務，並擁有獨立身份與長期記憶，率先開放 Frontier 客戶。同一時間 OpenAI 也推出 ChatGPT for Accounting，透過 computer use 串接 QuickBooks、Xero、NetSuite 做月結與對帳。",
+      "GPT-6.2 Astra/Sol 已開放可用，方向明顯偏向非程式設計師場景：強化 computer use、3D 與機器人能力。用戶實測用 GPT-6.2 操作剪映換臉特效一次到位，Opus 5.5 多輪都卡不準幀；另有討論指出 Google Antigravity 其實早有 computer use，只是宣傳不到位。模型定位延續 Astra 系列的「操作真實軟體」路線。",
+      "為什麼重要：昨天才看到 Astra 在醫療行政大規模落地，今天 6.2 又把 computer use 往前推——桌面操作正在從「demo 技能」變成旗艦模型的標配競賽項目。當各家都把「操作任意 GUI」當基線能力，靠 computer use 建立的產品護城河會快速變薄，差異化將轉移到昨日的控制層與驗證層。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/OpenAI/status/2122750124543926515"
+      }
+    ],
+    "source_url": "https://x.com/OpenAI/status/2122750124543926515",
+    "source_label": "來源",
+    "id": "lrn-2026-11-19-microsoft-autopilot-開始推送-有自己身份與記憶的-常駐同事-",
+    "date": "2026-11-19",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當 agent 擁有身份、記憶與主動性，它便從工具變成編制內的新同事——考題不再是「會不會做」，而是企業的管理與問責機制準備好了嗎。",
+    "image": "images/lrn-2026-11-19-microsoft-autopilot----.png"
+  },
+  {
+    "title": "Google AI Studio 支援全端 Android 開發：從自然語言到上架 Google Play 一條龍",
+    "category": "工具",
+    "summary": [
+      "11 月 17 日宣布的更新讓 Build agent 用自然語言提示建置、測試並發布 Kotlin 應用：可自動配置 Cloud Firestore 資料庫、Firebase Authentication 與 Gemini API 整合，附帶支援 1200p HD 串流的加速 Android 模擬器與即時音訊輸出。開發者可截取模擬器畫面直接回傳給 coding agent 調整 UI，還能建置並簽署 Android App Bundle，直接發布到個人 Google Play 圖書館。",
+      "為什麼重要：coding agent 的戰場從「寫函數」擴張到「跑完整個產品生命週期」——後端配置、模擬器測試、簽署、上架全部變成 agent 的工具呼叫。截圖回傳調整 UI 的閉環尤其值得注意：視覺回饋正在成為 agent 的標準輸入，而不只是人類的。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/rubbletag/status/2122862867418603530"
+      }
+    ],
+    "source_url": "https://x.com/rubbletag/status/2122862867418603530",
+    "source_label": "來源",
+    "id": "lrn-2026-11-19-google-ai-studio-支援全端-android-開發-從自然語言到上",
+    "date": "2026-11-19",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Google 用一條龍 agent 把 Firebase、Gemini 到 Play 綁進自家工具鏈，降門檻的同時也悄悄築高生態護城河——當人人都能一句話上架，App 市場的洗牌才正要開始。",
+    "image": "images/lrn-2026-11-19-google-ai-studio--android.png"
+  },
+  {
     "title": "Grok Bot 團隊：一個月合併 11,000 個 AI PR，revert 率僅 0.5%——秘密是把每次糾正變成機械關卡",
     "category": "教程",
     "summary": [
