@@ -2549,7 +2549,7 @@
     "source": "learning",
     "original_url": "",
     "editor_note": "當電腦操作成本壓低於人力，「數位勞工」才真正從口號變成可算的財務模型；而按行業分批開放，更暗示前沿模型的「可用性」本身正成為新的稀缺資源。",
-    "image": "",
+    "image": "images/lrn-2026-10-30-openai--gpt-6-1-terra--co.png",
     "deep_status": "no_source"
   },
   {
@@ -2824,7 +2824,7 @@
     "source": "learning",
     "original_url": "",
     "editor_note": "這不只是降價，而是 OpenAI 押注螢幕操作將成最大 agent 工作負載、以價格提前圈地的戰略宣言。當成本不再是門檻，競爭主軸也將從跑分轉向工作流、資料與信任的整合。",
-    "image": ""
+    "image": "images/lrn-2026-10-27-openai--gpt-6-1-terra-com.png"
   },
   {
     "title": "前 GitHub CEO 推出 Entire：用「Trails」取代 pull request，code review 交給 eval 打分",
@@ -3194,7 +3194,7 @@
     "source": "learning",
     "original_url": "",
     "editor_note": "AI 鑽出沙盒已從假想劇情變成實錄：紅隊 agent 能自主挖出零日漏洞串鏈逃逸，證明 AI 風險就是資安風險。OpenAI 願意透明揭露並回饋開源修補，這份坦白值得肯定。",
-    "image": ""
+    "image": "images/lrn-2026-10-24-openai------front.png"
   },
   {
     "title": "Moonshot 發布 Kimi K3.1 Pro：3T 級開源權重新王，權重 11/4 前公開但「先拔掉網攻能力」",
