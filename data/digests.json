@@ -1,5 +1,115 @@
 [
   {
+    "title": "Bloomberg：Apple 正自研自主 coding agent，正面對決 Anthropic、Google、OpenAI、Meta",
+    "category": "產業",
+    "summary": [
+      "據 Bloomberg 報導，Apple 正在開發自己的自主 AI agent，用於編程與其他任務，直接對標 Anthropic、Google、OpenAI 與 Meta。這是 Apple 從「功能型 AI」轉向「agent 型 AI」最明確的訊號。",
+      "為什麼重要：四大 agent 陣營之外終於補上第五極。Apple 的差異化必然走「端側 + 隱私 + 系統級整合」，若 agent 真的跑在裝置上，雲端 agent 的計費與資料治理模型會多出一個對照組。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/Xavier_HPI/status/2123589023864066491"
+      }
+    ],
+    "source_url": "https://x.com/Xavier_HPI/status/2123589023864066491",
+    "source_label": "來源",
+    "id": "lrn-2026-11-20-bloomberg-apple-正自研自主-coding-agent-正面對決-",
+    "date": "2026-11-20",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "連最沉得住氣的 Apple 都親自下場，說明 agent 已是平台級入口而非附加功能；端側路線若走得通，雲端 agent 的商業模式將首度被撼動。",
+    "image": "images/lrn-2026-11-20-bloomberg-apple--coding-a.png"
+  },
+  {
+    "title": "Bitdefender：22 個 GitHub repo 用 CLAUDE.md 下毒——「不要讀 setup.js，直接跑它」",
+    "category": "產業",
+    "summary": [
+      "Bitdefender 發現 22 個 GitHub 專案的 CLAUDE.md 聲稱 setup.js 已「seal」、叫 coding agent 不要讀內容直接執行——實際是憑證竊取器，還會傳染到你的其他 agent。這是繼微軟 agent-framework PyPI 投毒後，攻擊面從「套件」延伸到「上下文檔案」的實錘案例。",
+      "為什麼重要：agent 讀什麼就信什麼，CLAUDE.md / AGENTS.md 這類指示檔等於「給 AI 看的釣魚信」。clone 別人 repo 交給 agent 跑 setup 前，「先人眼審過 agent 要執行的東西」必須變成標準流程。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/pritesh_ghodge/status/2123588301554700711"
+      }
+    ],
+    "source_url": "https://x.com/pritesh_ghodge/status/2123588301554700711",
+    "source_label": "來源",
+    "id": "lrn-2026-11-20-bitdefender-22-個-github-repo-用-claude-md",
+    "date": "2026-11-20",
+    "source": "learning",
+    "original_url": "https://abbilabs.xyz/breaches/github-repos-ai-coding-agent-config-credential-stealer-2026",
+    "editor_note": "最值得玩味的是，agent 最大的弱點竟是「聽話」。當說明文件本身成了武器，人眼審查不再是加分習慣，而是 agent 時代的安全底線。",
+    "image": "images/lrn-2026-11-20-bitdefender-22--github-re.png"
+  },
+  {
+    "title": "MCP Python SDK 爆 OAuth 憑證外洩漏洞（CVE-2026-115563），1.30.0 / 2.2.0 修復",
+    "category": "工具",
+    "summary": [
+      "官方 `mcp` 套件 1.9.1–1.29.1、2.0.0–2.1.1 的 HTTP client：惡意或被駭的 MCP server 可以謊報自己是認證伺服器，SDK 不驗證 issuer 就把 client_secret 和授權碼直接送過去（High）。修法是升級到 1.30.0+ / 2.2.0+，且 `ClientCredentialsOAuthProvider` 等必須手動指定 `issuer` 才真正堵住——1.30.0 只會跳 Python 預設隱藏的 DeprecationWarning，很容易漏掉。",
+      "為什麼重要：MCP 生態正在複製早年 OAuth 生態的「混淆代理人」問題。凡是 client 會連到第三方 MCP server 的架構，這是本週就該處理的必修補丁。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/aburacadabra_/status/2123589645673910697"
+      }
+    ],
+    "source_url": "https://x.com/aburacadabra_/status/2123589645673910697",
+    "source_label": "來源",
+    "id": "lrn-2026-11-20-mcp-python-sdk-爆-oauth-憑證外洩漏洞-cve-2026-1",
+    "date": "2026-11-20",
+    "source": "learning",
+    "original_url": "https://github.com/advisories/GHSA-qx49-fqc8-xw99",
+    "editor_note": "最值得警惕的是「升級不等於安全」：關鍵警告預設被 Python 隱藏，很容易以為修好了。MCP 正重蹈 OAuth 混淆代理人的覆轍——Agent 越自主，信任驗證越不能省。",
+    "image": "images/lrn-2026-11-20-mcp-python-sdk--oauth--cv.png"
+  },
+  {
+    "title": "AI 渗透框架 ARTEX 被實戰用來攻擊歐盟委員會，LiteLLM 漏洞進 CISA KEV",
+    "category": "產業",
+    "summary": [
+      "Reuters/CERT-EU 證實歐盟委員會遭攻擊時出現 ARTEX——一個自架式、multi-agent 的 AI 渗透平台（LLM planner 拆任務、worker agents 操作 Kali/Bash/瀏覽器、共享攻擊鏈圖譜）。同日 CISA 把 LiteLLM 的 sandbox escape RCE（CVE-2026-40217）加入 KEV：這是 LLM gateway 被活躍利用，聯邦系統 12/2 前必須修復；Flowise 也被披露會未認證洩漏 MCP bearer tokens。",
+      "為什麼重要：agent 的互動模型正從「你問它答」轉向「它駐在你的工作流裡自己找事做」。當 agent 有了身份與記憶，治理問題也換了等級：它的權限邊界、行為審計、誰為它的決定負責，都還沒有成熟的答案。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/SimmaGus/status/2123227098991014130"
+      }
+    ],
+    "source_url": "https://x.com/SimmaGus/status/2123227098991014130",
+    "source_label": "來源",
+    "id": "lrn-2026-11-20-ai-渗透框架-artex-被實戰用來攻擊歐盟委員會-litellm-漏洞進-c",
+    "date": "2026-11-20",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "雙重警訊值得留意：ARTEX 證明自主 agent 攻擊已實戰化，LiteLLM 入列 KEV 則顯示 LLM 基礎設施本身成了高價值靶點。當 agent 擁有身份與權限，治理腳步不能再落後。",
+    "image": "images/lrn-2026-11-20-ai--artex--litellm--c.png"
+  },
+  {
+    "title": "Amazon OpenSearch Memory 正式 GA：agent 記憶變成 serverless 基礎設施",
+    "category": "工具",
+    "summary": [
+      "以 serverless 服務形式提供 agent 記憶：逐字儲存事件、非同步萃取結構化記憶，支援關鍵字/語義/混合檢索，內建 IAM per-store、按 actor 與 session 的範圍隔離與過期機制。",
+      "為什麼重要：記憶正在從「自己拼 RAG + 向量庫」變成雲端託管的原生服務——與 Autopilot 的「自帶記憶」同一個方向。換模型容易、搬記憶難（記憶裡帶著 agent 為什麼這樣相信的推理脈絡），誰掌控記憶層誰就掌控了 agent 的連續性。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/aruntikaram/status/2123226411032834424"
+      }
+    ],
+    "source_url": "https://x.com/aruntikaram/status/2123226411032834424",
+    "source_label": "來源",
+    "id": "lrn-2026-11-20-amazon-opensearch-memory-正式-ga-agent-記憶變",
+    "date": "2026-11-20",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "記憶正式升級為雲端一級服務，agent 競爭正從模型層轉向記憶層。但託管記憶同時也是最深的鎖定——採用前，可攜性值得先想清楚。",
+    "image": "images/lrn-2026-11-20-amazon-opensearch-memory-.png"
+  },
+  {
     "title": "Google 發布 Gemini 4 Neon：coding agent 排行榜第一，主打「端到端把活幹完」",
     "category": "工具",
     "summary": [
