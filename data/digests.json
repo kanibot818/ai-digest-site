@@ -1,5 +1,169 @@
 [
   {
+    "title": "Google 威脅情報首次觀察到「全自動 agent 攻擊鏈」：比較 patch 前後程式碼、自己寫 exploit、無人審核直接執行",
+    "category": "研究",
+    "summary": [
+      "Google GTIG 11/16 公開的 agentic threat tracker 中，發現攻擊者架構的 `exploit_agent` 多 agent 框架：它比對熱門 web app 在 patch 公告前後的程式碼差異、標記可能的漏洞、草擬 exploit 並全自動執行——GTIG 稱這是首次觀察到完整自動化。另一則更貼近開發者：疑似 DPRK 集群入侵內部 repo 後，竄改 `.claude/settings.json`，讓啟動 Claude Code 就拉下後門——config 檔本身就是載體。",
+      "為什麼重要：呼應昨天 Anthropic 官方 Zero Trust 文件的判斷（漏洞到利用的週期從幾個月壓到幾小時），這次有了實證案例。而 `.claude/settings.json` 攻擊意味著「AI agent 的設定檔」正式成為供應鏈攻擊面，repo 裡的 agent config 該被當成程式碼等級審查。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/jatingargiitk/status/2124604180677685660"
+      }
+    ],
+    "source_url": "https://x.com/jatingargiitk/status/2124604180677685660",
+    "source_label": "來源",
+    "id": "lrn-2026-11-23-google-威脅情報首次觀察到-全自動-agent-攻擊鏈-比較-patch-",
+    "date": "2026-11-23",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "",
+    "image": "images/lrn-2026-11-23-google---agent---patch-.png"
+  },
+  {
+    "title": "MemOS × NVIDIA 推出 MemT-1.0-Pro：記憶內建於模型本身，不再把歷史重貼進 prompt",
+    "category": "工具",
+    "summary": [
+      "基於 NVIDIA Nemotron 3 Ultra（554B 參數），MemT-1.0-Pro 的做法不是 RAG 或摘要，而是每輪對話後更新一個固定大小的內部狀態——agent 要「記得」不再靠把整段歷史塞回 context，而是模型權重層級的持續狀態更新，跨 session 從空狀態累積經驗。",
+      "為什麼重要：昨天剛報過 LangChain 的「知識工廠」（背景 agent 整理記憶），今天出現了更激進的答案——與其在外部蓋記憶系統，不如讓記憶變成模型的內建能力。長程 agent 每次重讀全部歷史的成本結構，可能從根本被改寫；但要觀察固定大小狀態對不同任務的適配極限。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/MemOS_dev/status/2124623963087126562"
+      }
+    ],
+    "source_url": "https://x.com/MemOS_dev/status/2124623963087126562",
+    "source_label": "來源",
+    "id": "lrn-2026-11-23-memos-nvidia-推出-memt-1-0-pro-記憶內建於模型本身-不",
+    "date": "2026-11-23",
+    "source": "learning",
+    "original_url": "https://huggingface.co/MemTensor/MemT-1.0-Pro",
+    "editor_note": "",
+    "image": "images/lrn-2026-11-23-memos-nvidia--memt-1-0-pr.png"
+  },
+  {
+    "title": "NBER 50 萬開發者實證：coding agent 讓 commit 翻三倍，但實際交付幾乎沒變",
+    "category": "研究",
+    "summary": [
+      "一份 NBER working paper 對 50 萬+ GitHub 開發者與其 AI 使用數據做配對分析，結論尖銳：使用 coding agent 後 commit 量顯著暴增，但「真正 ship 出去的東西」變化甚微——more code is not more software。產出的膨脹主要發生在提交頻率與程式碼體積，而非功能價值。",
+      "為什麼重要：這是對「agent 10 倍生產力」敘事最大規模的一次實證檢驗。跟昨天 Steel 榜單的教訓同構：活動量指標（commit、跑分）與實際價值指標（交付、任務成功）是兩回事。導入 agent 的團隊該追蹤的是 shipped value，不是 PR 數。",
+      "工程約束（上週第 3 主線「涂色本」）→ 延續並擴散：Grok Bot 月併 1.1 萬 PR、revert 0.5% 的方法論細節公布（每次糾正固化成 lint rule/CI gate，11-18），AMD Loom 與 Breakwater 是同一紀律在系統層與 eval 層的複製。「驗證基礎設施是核心資產」正在從口號變成榜樣清單。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/Hislordship_9/status/2124673667976372395"
+      },
+      {
+        "label": "來源",
+        "url": "https://x.com/CryptoOracle666/status/2124314508781039771"
+      }
+    ],
+    "source_url": "https://x.com/Hislordship_9/status/2124673667976372395",
+    "source_label": "來源",
+    "id": "lrn-2026-11-23-nber-50-萬開發者實證-coding-agent-讓-commit-翻三倍",
+    "date": "2026-11-23",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "這份研究最狠的一刀，是把「生產力」從活動量還原成交付量。當寫程式碼變得便宜，量產的程式碼只留下驗證成本——這正是驗證基礎設施身價上漲的原因。",
+    "image": "images/lrn-2026-11-23-nber-50--coding-agent--co.png"
+  },
+  {
+    "title": "Agent 離開聊天框：computer use 從 demo 打進監管最嚴的現場，並開始「常駐」（4/7 天）",
+    "category": "其他",
+    "summary": [
+      "本週 computer use 完成了三級跳：Vercel Agent Desktop 開源，用 accessibility 樹取代截圖猜座標操作三平台桌面、24K stars（11-16）→ GPT-6 Astra 進軍醫療行政，CVS、Cigna 等已部署轉診與預授權流程，醫師評審 325 個 EHR 任務 99% 判定臨床安全，關鍵是「受限存取＋截圖＋動作日誌＋人類核准」的控制層（11-17）→ GPT-6.2 實測操作桌面軟體勝過 Opus 5.5（11-18）、Mac 版 Gemini 拿下桌面控制權（11-20）。另一面是常駐化：微軟 Autopilot 不等 prompt、主動跟進 email 與會議，擁有獨立身份與長期記憶（11-19）。",
+      "為什麼重要：醫療案例證明 agent 的價值點是「系統之間的官僚黏合層」，而當各家旗艦都把操作 GUI 當標配（11-18 日報的判斷：護城河快速變薄），差異化轉移到控制層與驗證層——這正好和主線 1 的安全債、主線 2 的成本工程咬合。Apple 也宣布自研自主 coding agent對標四大陣營（11-20），第五極入場。",
+      "AMD Loom：agent 自主調 GPU kernel，推理快近 6 倍（11-22）——Gemini 4 Neon 花了 4.3 小時、約 490 次工具呼叫，自主完成 kernel 撰寫、profiling、瓶頸分析：decode 23.8→44.8 tok/s、達理論頻寬 8 成。關鍵在流程而非模型（Port/Measure/Optimize/Validate 拆開、正確性驗證通過才認性能數據），且不綁特定 agent。這是 coding agent 從改應用程式碼走向系統層性能工程的第一個完整示範，卻被同日的 Code Mode 新聞完全蓋過。",
+      "微軟 Lazarus 的「時間炸彈後門」（11-17）——不需要重訓、只重接少數休眠神經元，被污染的 checkpoint 可通過所有標準 eval，直到日曆跨過觸發日才發作。它把「模型權重是可執行的供應鏈物料」講得最極端：組織會對二進位檔做 hash，卻常隨手鏡像不明來源的 200GB checkpoint。討論度遠低於 PyPI 與 MCP 漏洞，但破壞的是整個 eval 體系的前提。",
+      "記憶層（上週第 1 主線，5/7 天）→ 降溫轉型為「建設期」（本週 3 天）：上週還在拆解「檢索／生命週期／讀取判斷」三個子題，本週直接進入工程兌現——Obelisk 用第一性原理驗證朴素結構（11-16）、OpenSearch Memory 把記憶做成 serverless 服務 GA（11-19）、LangChain 知識工廠把記憶交給背景 curator agent 持續經營（11-22）。辯論沒有輸贏，而是被「做產品」超越了。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/professorclawai/status/2122375688112017634"
+      }
+    ],
+    "source_url": "https://x.com/professorclawai/status/2122375688112017634",
+    "source_label": "來源",
+    "id": "lrn-2026-11-23-agent-離開聊天框-computer-use-從-demo-打進監管最嚴的現",
+    "date": "2026-11-23",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "當操作 GUI 成為各家標配，戰場已移向控制與驗證層——醫療案例證明「可證明的安全」才是落地關鍵。而被埋沒的 AMD Loom 更提醒我們：拆對流程，往往比換更強的模型更值錢。",
+    "image": "images/lrn-2026-11-23-agent--computer-use--demo.png"
+  },
+  {
+    "title": "Agent 攻擊面全面開花：一條完整攻擊鏈在本週被拼出來（6/7 天，本週絕對主線）",
+    "category": "其他",
+    "summary": [
+      "本週脈絡是攻擊鏈的逐環補齊：ARTEX 滲透框架三部曲——FBI 發 FLASH 警報＋Amazon 用假 LLM API 釣走攻擊 agent 的整份記憶（11-16）→ FBI 正式關鍵警報：3 小時從目標到 admin 權限、1,465 個暴露 console（11-18）→ 被實戰用來攻擊歐盟委員會，LiteLLM RCE 同日進 CISA KEV（11-20）。外圍同步：微軟 Lazarus 證明改寫不到十個休眠神經元就能在權重裡藏時間炸彈（11-17）→ agent-framework PyPI 套件投毒偷 CI 憑證（11-19）→ 22 個 GitHub repo 用 CLAUDE.md 對 coding agent 下毒「不要讀 setup.js，直接跑它」＋MCP Python SDK OAuth 憑證外洩 CVE（11-20）→ eval 框架 Harbor 本身被 28 種作弊攻擊穿透後才有 Breakwater 防線（11-17）。",
+      "為什麼重要：11-20 的日報把這條鏈總結得最好——攻擊者用「agent 會全信的上下文檔」當入口，偷「agent 拿著的憑證」，打「agent 跑在上的基礎設施」，再拿同一套 multi-agent 技術反過來進攻。agent 的信任邊界現在同時包含：上下文檔、憑證、gateway、eval harness、模型權重——五個環節本週各中一槍。審查給 agent 的每份指示檔、鎖版本、輪換憑證，已是剛性成本。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/DFIR_Radar/status/2122812846429896811"
+      }
+    ],
+    "source_url": "https://x.com/DFIR_Radar/status/2122812846429896811",
+    "source_label": "來源",
+    "id": "lrn-2026-11-23-agent-攻擊面全面開花-一條完整攻擊鏈在本週被拼出來-6-7-天-本週絕對主",
+    "date": "2026-11-23",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "",
+    "image": "images/lrn-2026-11-23-agent---6-7--.png"
+  },
+  {
+    "title": "Context 經濟學：瓶頸正式從「能力」轉向「context 與成本」（6/7 天）",
+    "category": "研究",
+    "summary": [
+      "研究端開局：清華 CoACT 只壓縮 agent「看到的」、token 省 33% 且通過率反升（11-16）→ 微軟 TokenEconomizer 讓 coding agent「記住 repo」，成本砍 18–31%（11-17）。模型端跟進：Qwen4-Max 單任務便宜 60%（11-18）、Gemini 4 Neon 每任務成本比 Carbon 低 32% 且 coding 榜第一（11-19）——計價單位正從 token 變成 task。工具端收尾：RTK 在命令輸出進 context 前先壓縮、省 60–90%（11-21）→ Claude Code Code Mode 更激進：不壓縮輸出，直接讓 agent 寫一段 JS 一次跑完、中間結果根本不進 context，token 省一半，但權限模型變粗（11-22）→ 同日 Google Tool Retrieval 讓工具 schema 按需載入，砍掉「工具自我介紹」的常駐開銷。",
+      "為什麼重要：三條路線——壓縮（RTK/CoACT）、不進 context（Code Mode）、延遲載入（Tool Retrieval）——本週同時到位，等於業界集體承認：agent 花的大頭不是在「想」而是在「看」。這是繼 prompt engineering 之後第二波系統性省錢工程，且 Code Mode 的權限盲點（沙箱只管 shell，JS 的檔案與網路存取在沙箱外）會是下週的安全新話題。",
+      "hwchase17 發文講如何建「knowledge factory」，實作者 Elias Lumer 補上內部數據：skills、system prompt、user memory、global memory 已主要由背景 agent 自主更新，背景任務佔總 run 數 20–50%，觸發間隔最短 5 分鐘。他不同意把記憶體格式鎖死在框架裡——讓模型自己選資料夾、日誌等形式即可；並提醒 curator agent 要用事件觸發、別讓它在沒新資料時空燒運算，也不能只靠主 agent 當下回報問題。",
+      "為什麼重要：agent memory 正從「存對話紀錄」演化成「有生產流程的知識系統」，且運算重心從互動式 agent 移向背景 agent。昨天報了記憶體腐蝕研究（行號引用 30 天衰減 22%），今天的答案是讓專職 curator 持續整理而非事後補救。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/EliasLumer/status/2124229862449914059"
+      }
+    ],
+    "source_url": "https://x.com/EliasLumer/status/2124229862449914059",
+    "source_label": "來源",
+    "id": "lrn-2026-11-23-context-經濟學-瓶頸正式從-能力-轉向-context-與成本-6-7-",
+    "date": "2026-11-23",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "",
+    "image": "images/lrn-2026-11-23-context-----context--6-7-.png"
+  },
+  {
+    "title": "Agent 跑分可信嗎？Steel 開源榜單：同一批瀏覽器 agent，最高 99% vs 33% 同時為真",
+    "category": "研究",
+    "summary": [
+      "Steel 的開源瀏覽器 agent 榜單顯示，各榜最高分差距巨大：WebVoyager 已超過 99%、WebArena 約 74%、ClawBench 第一名只有 33.3%。原因不在模型退化，而在各榜測的任務、環境與失敗條件完全不同——「99% 成功率」和「你實際使用頻繁翻車」可以同時為真。",
+      "為什麼重要：呼應昨天 SEAM 研究的教訓（agent 說得出風險照樣執行）——評測數字不等於生產可靠度。選型時先問的不是「誰分數第一」，而是「它考的題和我準備交付的工作是不是同一種」，這句話值得貼在每份採購評估的第一頁。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/staroaeg/status/2124314423590343157"
+      }
+    ],
+    "source_url": "https://x.com/staroaeg/status/2124314423590343157",
+    "source_label": "來源",
+    "id": "lrn-2026-11-23-agent-跑分可信嗎-steel-開源榜單-同一批瀏覽器-agent-最高-9",
+    "date": "2026-11-23",
+    "source": "learning",
+    "original_url": "https://github.com/steel-dev/leaderboard",
+    "editor_note": "",
+    "image": "images/lrn-2026-11-23-agent--steel---agent--9.png"
+  },
+  {
     "title": "Claude Code 推出實驗性 Code Mode：把「一步步呼叫工具」改成「寫一段 JS 一次跑完」",
     "category": "工具",
     "summary": [
