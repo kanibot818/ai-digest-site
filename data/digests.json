@@ -18,7 +18,7 @@
     "date": "2026-11-23",
     "source": "learning",
     "original_url": "",
-    "editor_note": "",
+    "editor_note": "漏洞利用正式進入機器對機器時代：當攻擊端全自動、無人審核，人工排程的修補節奏只會緩不濟急。該問的已不是要不要用 AI 防禦，而是跟不跟得上。",
     "image": "images/lrn-2026-11-23-google---agent---patch-.png"
   },
   {
@@ -40,7 +40,7 @@
     "date": "2026-11-23",
     "source": "learning",
     "original_url": "https://huggingface.co/MemTensor/MemT-1.0-Pro",
-    "editor_note": "",
+    "editor_note": "記憶賽道正上演「模型吃掉堆疊」的戲碼：若內建記憶真的可行，RAG 與記憶框架廠商的護城河首當其衝；而固定容量狀態的取捨智慧，才是接下來真正的看點。",
     "image": "images/lrn-2026-11-23-memos-nvidia--memt-1-0-pr.png"
   },
   {
@@ -114,7 +114,7 @@
     "date": "2026-11-23",
     "source": "learning",
     "original_url": "",
-    "editor_note": "",
+    "editor_note": "重點不是單一漏洞多嚴重，而是整條攻擊鏈七天內就被拼齊——防禦還在頭痛醫頭，攻擊者已握有完整作戰圖。這種體系化對單點修補的速度差，才是 agent 時代真正的安全課題。",
     "image": "images/lrn-2026-11-23-agent---6-7--.png"
   },
   {
@@ -138,7 +138,7 @@
     "date": "2026-11-23",
     "source": "learning",
     "original_url": "",
-    "editor_note": "",
+    "editor_note": "三條路線同時到位，等於業界承認 agent 的錢主要花在「看」而非「想」。計價從 token 轉向 task 不只是降價，更是 Agent 單位經濟學的重寫——context 工程正成為新的護城河。",
     "image": "images/lrn-2026-11-23-context-----context--6-7-.png"
   },
   {
@@ -160,7 +160,7 @@
     "date": "2026-11-23",
     "source": "learning",
     "original_url": "https://github.com/steel-dev/leaderboard",
-    "editor_note": "",
+    "editor_note": "當分數能從 99% 分歧到 33%，真正暴露的不是模型優劣，而是產業的評測盲區。學會看「考什麼」而非「考幾分」，是每個 agent 選型者的第一課。",
     "image": "images/lrn-2026-11-23-agent--steel---agent--9.png"
   },
   {
