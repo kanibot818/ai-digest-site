@@ -54,4 +54,3 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           error_count: 40
-          retry_interval: 15
