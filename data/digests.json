@@ -1,5 +1,116 @@
 [
   {
+    "title": "AWS WAF 正式推出 LLM、MCP、A2A 端點的自動發現與防護（GA）",
+    "category": "工具",
+    "summary": [
+      "AWS 宣布自動化 AI 端點防護正式可用：自動發現組織內的 LLM API、Model Context Protocol（MCP）與 Agent-to-Agent（A2A）端點，並掛上 Amazon Bedrock Guardrails 做防護。MCP/A2A 第一次被放進 WAF 這種「預設基礎設施」層級的產品。",
+      "為什麼重要：昨天剛報過 agent 設定檔成為攻擊載體、企業靠 Owner 開關治理；今天是同一條線的基礎設施版——當 MCP 端點需要 WAF 保護，代表 agent 流量已被當成一級攻擊面，「agent 安全」正從文件建議變成雲廠的預設產品規格。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/awswhatsnew/status/2125003619590422828"
+      }
+    ],
+    "source_url": "https://x.com/awswhatsnew/status/2125003619590422828",
+    "source_label": "來源",
+    "id": "lrn-2026-11-24-aws-waf-正式推出-llm-mcp-a2a-端點的自動發現與防護-ga",
+    "date": "2026-11-24",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "亮點不在功能，而在「預設」二字：AWS 把 agent 防護拉進 WAF 基礎設施層，等於宣告 MCP 流量已是標準攻擊面，agent 安全也從選配建議變成出廠剛需。",
+    "image": "images/lrn-2026-11-24-aws-waf--llm-mcp-a2a--ga.png"
+  },
+  {
+    "title": "中國電信開源 Xing4.1-Preview：285B 參數、全程在華為昇騰晶片上訓練，主打 agentic coding 與 1M context",
+    "category": "工具",
+    "summary": [
+      "中國電信開源 285B 總參數（17B 活躍）MoE 模型，宣稱預訓練完全沒用 NVIDIA GPU——8,192 顆華為昇騰晶片完成，Apache 2.0 開放權重。架構結合 MLA 與 DeepSeek Sparse Attention，原生 1M token context，明確為 agentic coding 與長程任務設計；官方數據顯示 long-context 設計帶來最高 4.68× prefill 吞吐提升。",
+      "為什麼重要：訊號有兩層——一是「國產算力訓練前沿開源模型」首次完整跑通，二是 agent 能力（長 context、function calling、long-horizon 任務）已成為開源模型的標配賣點。不過其 agent benchmark 尚落後 GLM-5.3-Flash 等對手，實戰能力仍待驗證。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/TeksEdge/status/2125039197061038170"
+      }
+    ],
+    "source_url": "https://x.com/TeksEdge/status/2125039197061038170",
+    "source_label": "來源",
+    "id": "lrn-2026-11-24-中國電信開源-xing4-1-preview-285b-參數-全程在華為昇騰晶片",
+    "date": "2026-11-24",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "與其糾結分數，更該關注 8 千顆昇騰首次端到端跑通 285B 開源模型訓練——「零 NVIDIA」已從口號變成工程事實，這個訊號比 benchmark 排名更值得長期追蹤。",
+    "image": "images/lrn-2026-11-24--xing4-1-preview-285b--.png"
+  },
+  {
+    "title": "開源瀏覽器 agent Karpo-Browser：LLM 規劃器 + 專用動作模型，89% 任務成功率、平均每任務 $0.096",
+    "category": "工具",
+    "summary": [
+      "Karpo-Browser 採「規劃器 + 動作模型」分工架構，在 Browserbase 測試中回報 89% 任務成功率、平均每任務模型成本僅 $0.096，框架、權重與評測工具全部開源。",
+      "為什麼重要：browser agent 的競爭維度正從「能不能做到」轉向「單位成本下做到」——不到 10 美分完成一次網頁任務，讓高頻次的商業自動化（表單、爬取、客服流程）開始有經濟可行性。架構上「規劃與動作分離」也是對單一大模型端到端操控路線的一次實證挑戰。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/tussiwe/status/2124908864982442263"
+      }
+    ],
+    "source_url": "https://x.com/tussiwe/status/2124908864982442263",
+    "source_label": "來源",
+    "id": "lrn-2026-11-24-開源瀏覽器-agent-karpo-browser-llm-規劃器-專用動作模型",
+    "date": "2026-11-24",
+    "source": "learning",
+    "original_url": "https://github.com/machinepulse-ai/karpo-browser",
+    "editor_note": "真正關鍵的不是 89% 成功率，而是「10 美分＋全開源」的組合拳：當 browser agent 便宜到能放心大規模部署，閉源廠商剛築好的護城河，可能很快就被填平。",
+    "image": "images/lrn-2026-11-24--agent-karpo-browser-llm-.png"
+  },
+  {
+    "title": "歸藏 Game Skill：用 Agent Skill 把 Claude Code / Codex 變成 3D 遊戲工作室，一個 HTML 檔交付完整動作遊戲",
+    "category": "工具",
+    "summary": [
+      "開源技能「Guizang Game Skill」為 Claude Code、OpenAI Codex 等 coding agent 提供結構化工作流：AI 生成角色與 3D 美術（Tripo 等）、實作連招/格擋/多階段 Boss 戰、Three.js 場景光影、自動截圖迭代測試，最後打包成約 33MB 單一 HTML 檔。附帶已可玩的中文奇幻動作遊戲 demo《霧鎖山門》。",
+      "Anthropic 11/20 發布說明：Computer Use 從個人 Pro/Max/Ultra 擴大到 Team 與 Enterprise 組織，開啟後 Claude 可在 Desktop 內查看螢幕並操作授權的桌面應用（macOS 14+/Windows）。治理設計值得注意：預設關閉、只有組織 Owner 能開、管理員可按角色與應用白名單/黑名單限制；Anthropic 明確警告電腦操作與應用之間沒有沙箱隔離。",
+      "為什麼重要：企業級 computer use 的重點已經不是「能不能操作」，而是「誰有權開、能開到哪個 app」。對照第 1 則的自動化攻擊鏈，權限治理正變成 agent 產品的第一優先設計項——「預設最小權限 + Owner 開關 + 白名單」可能成為企業 agent 的標準配置範本。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/ReZigong/status/2124676036541694398"
+      }
+    ],
+    "source_url": "https://x.com/ReZigong/status/2124676036541694398",
+    "source_label": "來源",
+    "id": "lrn-2026-11-24-歸藏-game-skill-用-agent-skill-把-claude-cod",
+    "date": "2026-11-24",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Agent 能力正在兩端同步推進：一端讓一個人變身遊戲工作室，另一端則得管好企業桌面操作權。當「做得到」已不是問題，「誰能做、做到哪」才是下一個戰場。",
+    "image": "images/lrn-2026-11-24--game-skill--agent-skill-.png"
+  },
+  {
+    "title": "Nadella 親口承認：「打中我們的是 Claude Code」，VS Code 十年統治六個月內被邊緣化",
+    "category": "產業",
+    "summary": [
+      "Nadella 在受訪中承認，微軟統治十年的 VS Code 在 Claude Code 面前六個月內被邊緣化，部分開發者表示已經不再打開 VS Code。同期 signal：OpenAI 內部調查顯示 agent 只佔科研總算力約 2%，但受訪研究員寧願拿出團隊 30% 算力換三個月前沿 coding agent 使用權——內部共識是「讓 AI 幫自己研究」的槓桿比堆 GPU 更高。",
+      "為什麼重要：開發工具的護城河第一次被 agent 介面正面攻破，且是由競爭對手 CEO 親口確認。疊加 OpenAI 內部數據，方向很清楚：下一輪競爭的關鍵資源配置是「多少算力拿去餵 agent 迭代自己」，而不是全部拿去訓練模型。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/BlackManbn/status/2124674542492934466"
+      }
+    ],
+    "source_url": "https://x.com/BlackManbn/status/2124674542492934466",
+    "source_label": "來源",
+    "id": "lrn-2026-11-24-nadella-親口承認-打中我們的是-claude-code-vs-code-",
+    "date": "2026-11-24",
+    "source": "learning",
+    "original_url": "https://together.ai/",
+    "editor_note": "Nadella 公開認輸本身就是最強訊號：開發者的忠誠對象已從工具轉向 agent。當 IDE 不再是入口，十年堆出的生態護城河，恐怕比我們以為的更脆弱。",
+    "image": "images/lrn-2026-11-24-nadella---claude-code-vs-.png"
+  },
+  {
     "title": "Google 威脅情報首次觀察到「全自動 agent 攻擊鏈」：比較 patch 前後程式碼、自己寫 exploit、無人審核直接執行",
     "category": "研究",
     "summary": [
@@ -4842,18 +4953,12 @@
     "summary": [
       "IACF 團隊為 DELMIA Apriso（製造執行系統）打造 MCP server + Claude Code skills，共 102 個工具：AI 能直接產出可匯入 GPM 的真實 .gpm 套件，不是偽代碼。",
       "亮點是「先驗證再生成」（65+ 條規則檢查）、內建 2,763 個 Business Component 方法目錄與各版本 DB schema 做 grounding，還能用 SF 模擬器在瀏覽器本地預覽成果。",
-      "對 MCP 生態的啟示：MCP 最有價值的場景不在通用工具，而是把深耕多年的垂直領域知識（製造、MES）封裝成 agent 可用的原生 artifact 管線。",
-      "微軟第三代自研 AI 晶片，計畫 2027 投產，目標成為其產品線主力推理平台。優化重點直指 agent 工作負載：長上下文、低延遲對話、多步驟 agent 任務。宣稱每兆瓦 token 交付量比領先 GPU 高 40%，Maia 200 已在美歐澳部署支撐 Teams 與 Copilot。",
-      "訊號明確：雲端巨頭開始為「agent 的 token 消耗曲線」專門設計硬體，推理成本戰從軟體延伸到矽。"
+      "對 MCP 生態的啟示：MCP 最有價值的場景不在通用工具，而是把深耕多年的垂直領域知識（製造、MES）封裝成 agent 可用的原生 artifact 管線。"
     ],
     "links": [
       {
         "label": "來源",
         "url": "https://x.com/Rocwng/status/2110176829797769271"
-      },
-      {
-        "label": "來源",
-        "url": "https://x.com/Awesome_AI_News/status/2109818922820407641"
       }
     ],
     "source_url": "https://x.com/Rocwng/status/2110176829797769271",
