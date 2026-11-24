@@ -37,6 +37,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Auto-update digests $(date -u '+%Y-%m-%d %H:%M')"
+            git pull --rebase origin main
             git push
           fi
 
@@ -51,3 +52,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          error_count: 40
+          retry_interval: 15
