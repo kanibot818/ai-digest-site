@@ -51,6 +51,8 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: Wandalen/wretry.action@v3
         with:
-          error_count: 40
+          action: actions/deploy-pages@v4
+          attempt_limit: 5
+          attempt_delay: 60000
