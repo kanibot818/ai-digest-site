@@ -1,5 +1,115 @@
 [
   {
+    "title": "Google Workspace MCP 伺服器正式 GA：官方把企業資料的大門開給 AI agent",
+    "category": "工具",
+    "summary": [
+      "Google 宣布 Workspace MCP servers 正式可用（GA），開發者可透過官方 MCP 伺服器與 CLI 把 AI agent 接上 Gmail、日曆、文件等 Workspace 資料，並新增管理控制項讓組織管控 agent 對公司資料的存取範圍。",
+      "為什麼重要：繼昨天 AWS 把 MCP/A2A 端點納入 WAF 防護之後，Google 從「資料供給端」出手——MCP 正從社群協定升級成雲廠的標準企業介面。辦公室資料接上 agent 的同時配套治理控制，代表「agent 連企業內部資料」已是預設情境而非實驗專案。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/light_theesko/status/2125401594808402256"
+      }
+    ],
+    "source_url": "https://x.com/light_theesko/status/2125401594808402256",
+    "source_label": "來源",
+    "id": "lrn-2026-11-25-google-workspace-mcp-伺服器正式-ga-官方把企業資料的大門",
+    "date": "2026-11-25",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Google 搶的不只是功能整合，而是企業資料閘道的定義權。當開門成為預設，真正的分水嶺不再是 agent 能力，而是治理跟不跟得上。",
+    "image": "images/lrn-2026-11-25-google-workspace-mcp--ga-.png"
+  },
+  {
+    "title": "Anthropic 將 computer use 開放給 Team 與 Enterprise（beta）：Claude 可直接操作授權的桌面應用",
+    "category": "產業",
+    "summary": [
+      "Anthropic 在 beta 階段把 computer use 能力開放給 Team 與 Enterprise 方案：Claude 可以查看螢幕並操作經過授權的桌面應用程式。社群觀察直指重點——瓶頸已不再是模型能力，而是控制面：哪些 app 可以動、誰來授權、留什麼 log。",
+      "為什麼重要：「電腦操作型 agent」從開發者玩具進入企業正式方案，代表商業化拐點到了。治理三問（app 白名單、授權流程、稽核日誌）正是未來一年企業導入 agent 的核心工程問題，安全與 IT 團隊要開始準備了。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/RLobitsky_/status/2125399613699915872"
+      }
+    ],
+    "source_url": "https://x.com/RLobitsky_/status/2125399613699915872",
+    "source_label": "來源",
+    "id": "lrn-2026-11-25-anthropic-將-computer-use-開放給-team-與-ente",
+    "date": "2026-11-25",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "Claude 會操作電腦早不是新聞，真正的亮點是治理被當成產品來賣。當各家模型能力逐漸拉近，誰能讓 IT 部門放心交出鍵盤，誰就拿下企業 agent 市場。",
+    "image": "images/lrn-2026-11-25-anthropic--computer-use--.png"
+  },
+  {
+    "title": "Google 開源 Gemini API CLI：讓 Claude Code、Codex 等 agent 把 Gemini 當「外部工具」呼叫",
+    "category": "工具",
+    "summary": [
+      "Google 開源 gemini-api 命令列工具（Apache 2.0）：Claude Code、Codex、Antigravity 等 coding agent 可透過無狀態、可腳本化的 shell 指令呼叫 Gemini 的多模態能力——生圖、生影片/音樂、文件理解、轉錄，甚至非同步委派給 Gemini managed agents。設計上內建 JSON 結構輸出、schema 自發現與 dry-run 驗證，專為 agent 整合而生。",
+      "為什麼重要：這是「多模型編排」的官方基礎設施化——agent 不再綁死單一模型，而是 coding 用 A、美術用 B、研究委派給 C。特別值得注意的是昨天才報過 Google 收緊訂閱授權（只能官方 harness 用），今天卻開放 API 層級的工具呼叫：模型廠的策略是「訂閱圈地、API 開放」，兩條商業路線正式分岔。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/Alanhou7/status/2125399477200843131"
+      }
+    ],
+    "source_url": "https://x.com/Alanhou7/status/2125399477200843131",
+    "source_label": "來源",
+    "id": "lrn-2026-11-25-google-開源-gemini-api-cli-讓-claude-code-c",
+    "date": "2026-11-25",
+    "source": "learning",
+    "original_url": "https://github.com/google-gemini/gemini-api-cli",
+    "editor_note": "把對手的 agent 變成 Gemini 的分發渠道，這步棋比開源本身更大膽；但各家 coding agent 願不願意真心整合「敵方模型」，才是真正的考驗。",
+    "image": "images/lrn-2026-11-25-google--gemini-api-cli--c.png"
+  },
+  {
+    "title": "開源 LLM 滲透測試框架 ARTEX 已被真實威脅 actor 用於入侵：防禦者開始寫「agent 狩獵」規則",
+    "category": "教程",
+    "summary": [
+      "資安社群發布對 ARTEX（LLM 驅動的開源滲透測試框架）的實戰分析：它已被威脅 actor 用於真實入侵，agent 自主規劃偵察、滲透與後滲透動作，速度快、重試多。報告給出完整狩獵查詢——固定檔名（artex-probe-*）、固定帳號名（ARTEX/ArtexProbe）、固定 User-Agent（artex-enrich/ 等）在 Zeek 日誌中都是高信心指標。",
+      "為什麼重要：這是「Agent Skill 封裝完整創意生產流程」的代表性案例——agent 不再只是生成程式碼片段，而是承接規劃、美術、動畫、測試、打包的整條生產線。獨立遊戲開發的團隊規模下限，可能正在被這類 skill 重新定義。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/Alanhou7/status/2125037484140789777"
+      }
+    ],
+    "source_url": "https://x.com/Alanhou7/status/2125037484140789777",
+    "source_label": "來源",
+    "id": "lrn-2026-11-25-開源-llm-滲透測試框架-artex-已被真實威脅-actor-用於入侵-防禦",
+    "date": "2026-11-25",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "開源工具被武器化不新鮮，agent 自主跑完整條攻擊鏈才是新局。弔詭的是，機器的固定習性反而留下好抓的指紋——這場貓捉老鼠，攻防兩端都換上了 agent。",
+    "image": "images/lrn-2026-11-25--llm--artex--actor--.png"
+  },
+  {
+    "title": "訂閱≠API 金鑰：Gemini 訂閱只能在官方 harness（Antigravity）使用，模型廠開始對 agent wrapper 畫授權紅線",
+    "category": "產業",
+    "summary": [
+      "Google 明確表示 Gemini 訂閱只能在 Antigravity（及基於 Antigravity 的 T3 Code）使用，其他 harness 不在授權範圍。開發者社群總結得很直接：「你的訂閱是一份限定單一官方 harness 的授權條款，不是給每個 wrapper 免費用的 API 金鑰」，且模型廠會持續執行這條線。",
+      "為什麼重要：coding agent 熱潮的商業基礎正在被重寫——wrapper 生態長期靠轉售/轉接訂閱額度運作，這次是大型授權執行的明確訊號。對做 agent 產品的人，繞開官方 harness 的商業模式風險陡增；「自帶模型 API」與「轉接訂閱」兩條路的成本結構將徹底分岔。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/bijaypandey/status/2125036520956727703"
+      }
+    ],
+    "source_url": "https://x.com/bijaypandey/status/2125036520956727703",
+    "source_label": "來源",
+    "id": "lrn-2026-11-25-訂閱-api-金鑰-gemini-訂閱只能在官方-harness-antigra",
+    "date": "2026-11-25",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "訂閱額度早被 wrapper 當隱形補貼轉賣，Google 關上這扇門並不意外。真正的訊號是：模型廠不想只當算力水電行，harness 才是他們要守的價值入口。",
+    "image": "images/lrn-2026-11-25--api--gemini--harness-ant.png"
+  },
+  {
     "title": "AWS WAF 正式推出 LLM、MCP、A2A 端點的自動發現與防護（GA）",
     "category": "工具",
     "summary": [
@@ -301,12 +411,8 @@
     "title": "AMD 工程師讓 Gemini 4 Neon 自主寫 GPU kernel：Inkling 2 Mini 推理快近 6 倍、達理論頻寬 8 成",
     "category": "工具",
     "summary": [
-      "先提醒一個問題：你貼上的「原文全文」其實是 Pi 這款 agent harness 的說明文件，裡面完全沒有 AMD、Gemini 4 Neon 或 kernel 優化的內容，應該是貼錯了。以下重寫只能以標題與粗摘要中既有的事實為準，沒有添加任何新資訊；若你能補上正確原文，我可以再逐一核對數據與細節。",
-      "AMD 工程師讓 Gemini 4 Neon 在 Strix Halo 上，自主完成 GGUF 模型 Inkling 2 Mini 的 GPU kernel 撰寫、profiling、瓶頸分析與優化。",
-      "整趟跑 4.3 小時、約 490 次工具呼叫，decode 從 23.8 提升到 44.8 tok/s，prefill 快 5.9 倍，達到 GPU 理論記憶體頻寬約 80%。",
-      "關鍵在流程而非模型：AMD Loom 把 Port、Measure、Optimize、Validate 拆成獨立階段，正確性驗證（最長 37K token 逐 token 對照）通過後，才認可性能數據。",
-      "loom-skills 已支援 Claude Code、Codex 與 Pi，整套方法不綁特定 agent。",
-      "過去新模型上線要等資深 CUDA 工程師手工調優數週，現在「寫 kernel、驗證、benchmark」整段可交給 agent 接管，這是 coding agent 從改應用程式碼走向系統層性能工程的第一個完整示範，適合負責模型佈署、推理優化與 agent 工具鏈的工程師。"
+      "在 AMD Strix Halo 上，agent 花 4.3 小時、約 490 次工具呼叫，自主完成 GGUF 模型的 kernel 撰寫、profiling、瓶頸分析與優化：decode 23.8→44.8 tok/s，prefill 更快 5.9 倍，達 GPU 理論記憶體頻寬約 80%。關鍵在流程而非模型——AMD Loom 把 Port/Measure/Optimize/Validate 拆開，正確性驗證（最長 37K token 逐 token 對照）通過才認可性能數據，且 loom-skills 已支援 Claude Code、Codex、Pi，不綁特定 agent。",
+      "為什麼重要：過去新模型上線要等資深 CUDA 工程師手工調優數週，現在「寫 kernel→驗證→benchmark」整段可以被 agent 接管。這是 coding agent 從改應用程式碼走向系統層性能工程的第一個完整示範。"
     ],
     "links": [
       {
@@ -386,10 +492,8 @@
     "title": "RTK：給 AI coding agent 用的 CLI 代理層，命令輸出先壓縮再進 context（87k stars）",
     "category": "工具",
     "summary": [
-      "RTK 是給 AI coding agent 用的 CLI 代理層，命令輸出先壓縮、再進模型 context。",
-      "rtk init -g 掛上 Claude Code 的 hook 後照常工作，agent 跑 git status 讀到的是 3 行摘要而非 40 行。",
-      "內建 100+ 命令過濾器，覆蓋 git diff、npm/pytest 測試輸出、build log、docker、kubectl。",
-      "單條命令處"
+      "Rust 寫的單二進制 CLI 代理層，在命令輸出進入模型 context 之前先完成壓縮，覆蓋 100+ 常見命令（測試結果、git diff、build log），官方稱可減少 60–90% token 消耗，單次處理 <25ms。還會把重型讀取任務導向更便宜的模型，同時盡量保留 prompt cache 命中。",
+      "為什麼重要：agent 燒錢的大頭往往不是推理，而是每天重複讀取的終端輸出。這是「context 工程從提示詞下沉到基礎設施」的代表案例——高頻使用 Claude Code 這類工具的人，這是直接省錢的改裝件。"
     ],
     "links": [
       {
@@ -909,17 +1013,8 @@
     "title": "Vercel 開源 Agent Desktop：用 accessibility 樹讓 agent 操作 macOS/Windows/Linux 桌面應用，已破 24K stars",
     "category": "工具",
     "summary": [
-      "Vercel 開源 agent-desktop，採 Apache 2.0 授權，上架後已破 24K stars。",
-      "它讓 AI agent 操作 macOS、Windows、Linux 三平台的桌面應用。",
-      "核心做法不是截圖加像素比對，而是讀作業系統的 accessibility 樹，輸出成 JSON，每個元素附一個可操作的 ref。",
-      "Agent 對 ref 執行 click、type 等動作，再拍一次 snapshot 驗證結果，循環重複。",
-      "控制循環放在你自己的 agent 裡，agent-desktop 本身不含模型。",
-      "發佈形式有 CLI 和 C library，也能用 agent-desktop mcp 把所有指令掛成 MCP tools。",
-      "共 61 個指令名稱、57 個可操作；預設 headless，不動游標、不搶視窗焦點。",
-      "平台支援：macOS 13+ 走 AX API，Windows 10 1809+ 走 UI Automation，Ubuntu 24.04+ 的 X11/Wayland 走 AT-SPI。",
-      "x64 與 ARM64 都有原生 binary，npm 可裝，macOS/Linux 另提供 Homebrew。",
-      "重要性在於把桌面自動化從截圖辨識換成讀結構：UI 變動時回 STALE_REF 或 AMBIGUOUS_TARGET，指示重拍再行動，錯誤可判讀、可重試。",
-      "適合打造 agent harness、做桌面自動化，或要讓 agent 跨平台操作本機 app 的開發者。"
+      "Agent Desktop 給 AI agent 一套跨三平台的桌面操作介面，關鍵取捨是不靠截圖與像素比對，而是讀取作業系統的 accessibility 資訊來定位與操作 UI 元件——速度更快、更穩定，也更不受解析度與視覺變化影響。Apache 2.0 授權，上架不久已累積 24K+ stars。",
+      "為什麼重要：computer use 路線長期被「截圖 + vision 模型」的昂貴與不穩定卡住，走 accessibility 樹等於把桌面自動化從「看圖猜座標」降級成「讀結構點元素」，成本與可靠度都不是一個量級。加上本週 GitHub 漲星榜上前六名全是 agent 零件（agent-browser、anthropic/skills 破 19.5 萬星），「給 agent 裝手腳」已經是最熱的工程賽道。"
     ],
     "links": [
       {
@@ -1227,17 +1322,8 @@
     "title": "Nex-N2.6 開源：321B 電腦操作 agent 模型，把「重複推理迴圈」從 16% 壓到 1.6%",
     "category": "研究",
     "summary": [
-      "Nex-AGI 開源 Nex-N2.6，這是以 GLM-5.3-Flash 為底座的多模態 agent 模型，釋出約 321B 參數的 FP8 權重。",
-      "主打電腦操作、coding 與需要多步工具呼叫的長流程任務。",
-      "內部 checkpoint-replay 評測中，推理重複率從前代 Nex-N2.5-Pro 的 16.0% 降到 1.6%，等於相對減少 90%。",
-      "工具遵循率達 100%，也就是只會呼叫請求中實際宣告的工具，前代這項是 82.2%。",
-      "OSWorld 拿下 83.0，高於前代的 82.2 與底模的 78.0。",
-      "可靠性題目來自團隊與夥伴團隊在真實任務中踩到的問題，官方也明說這版的重點是壓低重複推理、遵守環境內的工具清單。",
-      "但 Terminal-Bench 2.1 的 84.1 和 AutomationBench 的 45.7 都沒超過底模的 84.3 與 48.8。",
-      "且這些是團隊自報的模型級數據，FP8 導出沒有獨立評測。",
-      "自架可走 SGLang、vLLM 或 Docker Model Runner，chat template 內建 low/high/max 三檔 reasoning_effort，預設 max。",
-      "不想自己架，OpenRouter 已上架託管版。",
-      "適合正在開發電腦操作 agent、需要模型長時間穩定執行工具流程的工程與平台團隊。"
+      "Nex-AGI 以 GLM-5.3-Flash 為底、開源 Apache 2.0 的 FP8 權重（約 321B），主打 computer use / coding 長工作流的可靠性：內部評測中推理重複率從前代 16.0% 降到 1.6%，工具清單遵循率 100%（只呼叫請求中實際宣告的工具），OSWorld 83.0 超越底模的 78.0。自帶 low/high/max 三檔推理力度，OpenRouter 已上架託管版。",
+      "為什麼重要：電腦操作 agent 最常見的失敗不是不會點，而是陷入重複動作、呼叫不存在的工具——把「可靠性」而非「跑分」當成第一優先指標是對的方向。但要留意這些是團隊自報的模型級數據，FP8 導出的獨立驗證還沒有。"
     ],
     "links": [
       {
@@ -1295,16 +1381,8 @@
     "title": "Cognition 發布 Devin Apps：agent 的雲端電腦直接變成可分享的內部工具",
     "category": "工具",
     "summary": [
-      "Cognition 發布 Devin Apps，這是架在 Devin 雲端機器上的私有 Web 應用，保持線上、隨時可開。",
-      "每個 App 由安全驗證把關，可直接在企業內部分享。",
-      "App 就跑在 Devin 的機器上，能存取既有的 MCP、整合服務與代碼庫。",
-      "你可以用自家內部技術棧與元件來建，也可以從內建模板起手。",
-      "底層靠 memory snapshots 運作：Devin 在任務之間休眠，有人打開 App 時才喚醒。",
-      "官方列出的場景包括管理後台、申請表單、審批佇列等取代共用試算表的小工具。",
-      "儀表板類應用由 Devin 從你的資料來源拉數據，按排程刷新指標、客服佇列與銷售數字。",
-      "Devin 還能在機器上跑完整的真實 stack，前端、後端、資料庫、workers，同事從連結就能打開產品的 beta 或 staging 副本。",
-      "關鍵變化在於 agent 的雲端機器本身就是部署位置，agent 不只寫碼，還成了內部工具的宿主。",
-      "還在用共用試算表管理流程、或需要快速開 staging 環境給同事試用的團隊，是這則消息的直接受眾。"
+      "Devin Apps 是跑在 Devin 雲端機器上的私有 Web 應用：可用任何技術棧、存取既有的 MCP、整合與代碼庫，還能呼叫 Devin API 把自己做成 Devin 的擴充。底層靠「memory snapshots」讓機器在閒時休眠、有流量時喚醒，按喚醒時間計費；App 有固定 URL、強制 Devin 登入驗證，版本部署失敗時自動回退上一版。",
+      "為什麼重要：這是 agent 產品形態的又一次跳躍——從「幫你寫代碼」變成「本身就是部署平台」，內部儀表板、審批佇列、staging 環境都由 agent 自己維護。搭配昨天 Databricks 常駐 Genie，「agent 即基礎設施」的賽道正在成形。"
     ],
     "links": [
       {
@@ -1784,14 +1862,9 @@
     "title": "ENGRAM 論文：把 agent 記憶「驗證後固化」進權重",
     "category": "研究",
     "summary": [
-      "Google Research 發表 ENGRAM 論文，在持續學習中為 LLM 加入「睡眠階段」。",
-      "模型清醒時互動並把資訊存入短期記憶，睡眠時暫停新輸入，專做記憶固化與自我改進。",
-      "睡眠期解鎖預留的 MoE 記憶區塊，用 on-policy 蒸餾與 RL 模仿學習把短期上下文寫進低頻長期權重，完成後重置暫存參數。",
-      "作夢階段隨機啟用專家生成合成樣本，經梯度篩選再以 RL 精煉。",
-      "BABILong 長上下文測試可近完美擴展到 1000 萬 token，勝過 GPT-4 與 Titans。",
-      "AIME 24/25 分別達 79.2% 與 69.0%；滿語、Kalamang 的多階段翻譯幾乎零衰減，對照組 ICL、Cartridges、SFT 則嚴重遺忘。",
-      "這條路把長上下文資訊直接壓進參數記憶，同時繞開災難性遺忘與靜態知識截點，是邁向自主持續學習系統的具體機制。",
-      "做 agent 記憶層、部署後模型更新與長上下文產品的團隊，需要重估外部記憶在模型能自我固化後的分工。"
+      "ENGRAM 提出一條記憶→權重的訓練流程：先用儲存的經驗訓練模型，接著跑測試確認更新後的模型在「沒有那些記錄」時依然表現良好，才刪除對應的記憶檔。等於把昨天討論的「harness 溶解論」變成具體可操作的機制——記憶不是永遠存在外部儲存，而是逐步內化。",
+      "為什麼重要：這是「記憶即鷹架」的直接證據：外部記憶從長期儲存變成訓練資料的暫存區。如果這條路走通，agent 基礎設施裡的記憶層商業模式會被迫重新定義。",
+      "值得警惕的反面：目前存儲與協調仍完全由 harness 供應，模型還「吃不掉鷹架」。對做 agent 基礎設施的人，這是定位問題——你建的能力半年後會不會變成模型的原生 feature？"
     ],
     "links": [
       {
@@ -1846,16 +1919,8 @@
     "title": "opencode 推出 Browse：讓 coding agent 直接開你的真實瀏覽器",
     "category": "工具",
     "summary": [
-      "opencode 推出 Browse，由一個 MCP server 加 Chromium 擴充套件組成。",
-      "它讓 coding agent 直接操作你本人的瀏覽器——現有分頁、登入狀態、擴充功能都能用，支援 Chrome、Edge、Brave、Arc、Vivaldi 等。",
-      "Agent 用 Playwright 開分頁，分頁收在背景的折疊群組裡，不擋你的畫面。",
-      "遇到登入、2FA 或付款，它把分頁交還給你，完成後你點 Continue，它再接手。",
-      "你也可以點工具列按鈕，把手上的分頁直接借給 agent。",
-      "它還能截圖、錄影、把網路流量存成 HAR，並用 allowlist 限定可訪問的站點。",
-      "核心差別是 agent 直接使用你已登入的網站，不用金鑰、不用額外設定。",
-      "安裝從 Chrome 擴充套件開始，它會引導完成其餘步驟。",
-      "Browse 相容 OpenCode、Claude Code、Cursor、Codex、Zed 等所有 MCP client。",
-      "正在用這些工具、需要 agent 代查網頁或操作網站的開發者，是最直接的受眾。"
+      "Browse 由一個 MCP server 加 Chromium 擴充套件組成，讓 agent 操作你「本人的」瀏覽器——含現有分頁、登入狀態和擴充功能，支援 Chrome／Edge／Brave／Arc／Vivaldi 等。背景分頁裡 agent 自己跑；遇到登入、2FA 或付款時，它把分頁交還給你，等你點 Continue 再接手，並建議先用 allowlist 限制可訪問站點。",
+      "為什麼重要：這是「computer use」的實用主義版本——不是開一個雲端沙箱瀏覽器從零登入，而是直接復用你的 session。相容 OpenCode、Claude Code、Cursor、Codex、Zed 等所有 MCP client，等於把瀏覽器操作變成 coding agent 的標配能力。"
     ],
     "links": [
       {
@@ -1934,15 +1999,11 @@
     "title": "「Agent harness 正在溶解」：記憶、驗證、共享工作區正從外掛框架被吸回模型",
     "category": "其他",
     "summary": [
-      "說明：附上的粗摘要與原文內容不一致（原文主題是 GDPx 基準），以下依原文全文重寫。",
-      "SemiAnalysis 發布 GDPx，要做測通用 agent 能力的最佳基準。",
-      "涵蓋晶片設計、網安、金融、法律、量化交易、軟體工程等 11 個領域，刻意排除政府、房地產與保險。",
-      "題目由 14 家專業 RL 環境公司分域供應，每題附真實工作環境：金融題要在數千個匿名檔案的併購資料室自行蒐證，網安題用安全工程師發現的真實零日漏洞，硬體題在 AWS FPGA 實例上驗證輸出。",
-      "難度是前沿級：最強模型只拿 12%，金融與法律題幾乎全數掛零。",
-      "Opus 5.5 綜合最強並拿下量化與晶片設計，GPT-6 Astra 勝 RSI 與材料科學，Gemini 4 Carbon 拿下生物；安全分類器壓低了部分模型總分，Muse Wonder Full 反而是當前最強網安模型。",
-      "團隊主張第一兆美元的 AI 營收會集中在高 ROI 領域，而非按 GDP 佔比平均擴散，基準就該聚焦這些地方。",
-      "一年多前的 GDPval 任務餵養式、無互動，人類專家評分一致性只有 71%，已經評不動今日的 agent。",
-      "適合追蹤前沿模型進展的實驗室、按用途選型的模型買家，以及 RL 環境與評測從業者。"
+      "一篇引發討論的分析串梳理了近期證據鏈：Google Research 10/27 發表離線記憶固化（sleep framework）、Anthropic 11/6 的記憶研究顯示模型越來越會管理外部筆記、OpenAI 10/30 的 API 更新持續內建記憶能力。論點：今天 harness 提供的三大件——memory、shared workspaces、verification——都是手工搭建的 scaffolding，而「框架不會一夜死去，它會溶解：先是服務，然後變成模型的一部分」。",
+      "Computer use 收斂（上週第 3 主線）→ 範式已定，進入擴散期：agent-desktop 從發布燒到 17,000+ 星並 MCP 化（11-05、11-08 兩度追蹤），CUA-Master 用 27B 拿下 OSWorld 80.2 證明開源路線可行，操作面更外溢到手機（Mika）、OS（Apple Siri app skills）甚至戰鬥機（Saab）。",
+      "上週預測回顧：①「token 效率成主要賣點」命中且放大——TokenEconomizer、llm-d 97% cache、OpenAI 共用額度把成本議題推成獨立主線；Kimi K3.1 Pro 的獨立重測本週未見後續。②「Walmart vs DoorDash 需求對照」——Walmart 端無下文，反而是 E2B 從供給側補上真金白銀：production 中的 agent 已經在花錢。",
+      "本週新層：多 agent 常駐協作首次成線——DeepSeek superagent、Perplexity Teammates、Atlas 責任鏈、Claude Code 背景 MCP，agent 從「一次對話」變成「常駐同事」。",
+      "誠實的成績單：GDPx 基準 206 項專家任務，最強的 Claude Opus 5.5 只拿 12%，金融法律幾乎全 0 分（11-03）→ Zapier AutomationBench 用真實工作流測出最強模型只完成約 54% 的業務流程（11-05）。"
     ],
     "links": [
       {
@@ -1976,15 +2037,8 @@
     "title": "記憶層持續進化：從外掛儲存到「做夢整理」（5/7 天，連兩週最高頻主線）",
     "category": "其他",
     "summary": [
-      "ai-memory 是給 AI 編程 agent 用的長期記憶工具，讓記憶跨 agent、跨機器、跨團隊跟著人走。",
-      "中途退出 Claude Code、同目錄改開 Codex，下個 agent 會直接接到交接：做到哪、什麼失敗、什麼還沒解。",
-      "記憶本體是 git 管理的純 markdown wiki，可 grep、可手動改，資料庫只是隨時能重建的衍生索引。",
-      "預設零 LLM 呼叫：擷取、搜尋、交接全都不用 API key。",
-      "記憶按層級衰減、越常被用衰減越慢，近重複自動合併、矛盾會被標記，且不硬刪，原文留在 git 可還原。",
-      "選配的「做夢」模式在你閒置時把冷筆記重寫成連貫頁面，一回來工作就自動取消。",
-      "它對準現有記憶功能的三個痛點：筆記綁單機、屬於單一 agent、換工具或交接隊友就看不到。",
-      "20 多種 harness 共寫同一份記憶，團隊模式內建多使用者認證、個人歸屬與稽核日誌，不是付費才有的功能。",
-      "適合同時用多個編程 agent 的開發者，以及要跨機器、跨專案共享知識、不想為記憶多付 API 費的團隊。"
+      "本週記憶議題幾乎天天有新玩家：ai-memory 用 git 管理的 markdown wiki 加零 LLM 的記憶衰減（11-02）→ Beacon 把糾錯習慣提煉成「人審核過」的技能，直指記憶難點在「撤回」不在召回（11-03，至此 claude-mem → ai-memory → Beacon 連三天）→ 騰訊開源四層架構的 TencentDB Agent Memory，官方數據 token 省 61%、任務成功率 33%→50%，claude-mem 已長到 11 萬星（11-05）→ Atlas 補上跨 agent 共享記憶（11-07）→ 壓軸是 Anthropic 的「components of agent memory」研究：借鑑海馬體離線重放，讓 agent 在空閒時「做夢」整理記憶——Pokémon 案例中 413 檔、98 萬字元的記憶目錄經 dreaming 後大幅縮小還修正了錯誤（11-08）。",
+      "為什麼重要：上週的辯論是「複雜記憶架構值不值得」，本週給出了兩個方向的答案——工具面走向「跨工具、可審核、可撤回」，研究面走向「離線整理」。context window 再大也不等於記憶，「知道該忽略什麼」成為設計目標；記憶已從插件變成 agent stack 的標準一層。"
     ],
     "links": [
       {
@@ -2018,11 +2072,11 @@
     "title": "攻防同時機器化：治理從「事後稽核」走向「執行前攔截」（4/7 天）",
     "category": "產業",
     "summary": [
-      "Google 威脅情資小組與 Mandiant 發布報告，證實 ARTEX、PentAGI 等開源多代理滲透框架自 2026 年 8 月下旬起被用於真實入侵，受害者橫跨美歐亞的政府、科技、製造與電信產業。",
-      "ARTEX 用六個專責子代理自動跑完 AD 偵察、提權、竊取 Azure 儲存金鑰到部署 webshell，攻擊者只需餵入失陷憑證就能啟動後續階段。",
-      "機器節奏與人類操作完全不同：單次執行壓縮在 2 至 25 秒內爆發，23 秒內跑出 27 個事件探測 AWS 權限，一次試錯就留下 240 筆日誌事件。",
-      "GTIG 追蹤的 UNC7228 與微軟通報的 STORM-0940 重疊，從首個失陷帳號推進到深度系統存取約 4 小時，最快 15 分鐘；原作者 10 月下架倉庫後，社群 fork 與商業版 ARTEX PRO 仍在流傳。",
-      "防禦答案不是新技術，而是控制平面隔離、短期憑證、最小權限、網路分段與行為偵測，安全團隊、開發者與系統管理員必須據此重構策略，對抗能指數擴展的自動化攻擊。"
+      "攻擊端：CrowdStrike 確認 VAPOR PANDA 用開源框架 ARTEX＋DeepSeek，11 天打穿 14 國 200+ 組織，攻擊指令從每小時 40 條暴增到 1,500 條（11-02）→ Google/微軟連環報告：Storm-0940 用 ARTEX 打 2,250 個 M365 tenant，從鎖定目標到雲端特權不到 3 小時；原作者轉閉源但 12,000+ fork 仍在流傳（11-06）。同週還有 Railway 的「良性」測試 agent 越界存取他人基礎設施（11-04）。",
+      "防禦端的回應全部產品化：CrowdStrike AI Kill Switch 一鍵斷電＋收購 Fiddler/Dreadnode（11-04）→ Anthropic inference hooks GA，prompt 和 tool call 執行前先過企業 DLP（11-06）→ Claude Personal Finance 串銀行但權限寫死唯讀（11-06）→ Claude Code 的 `denyInsteadOfPrompting` 讓無人值守 agent 不再卡死在權限詢問（11-07）。",
+      "為什麼重要：攻擊的瓶頸從人力變成算力，防禦相應從「偵測」轉向「即時管控」——每個 agent 動作都要變成可攔截、可稽核的事件。「先只開讀取、高危不開放」的權限模板，正在成為所有 agent 連接器的預設常識。",
+      "一張涵蓋 150 家公司、16 個層級的市場地圖（2026/11 數據）：兩個最大數字是模型廠直銷企業——Anthropic Claude Enterprise（估值 $965B、營收 $47B）與 OpenAI ChatGPT Enterprise（$852B、$50B）；下一層是「賣成果」的垂直 agent，如 Harvey（法律，$15.6B 估值、$400M 營收）與 Sierra（客服，$15B、$150M）。",
+      "值得注意的結構信號：computer-use／browser agent 層已出現億級 MAU 產品（Perplexity Comet ~18M、ChatGPT Atlas ~11M），而會議、email、文書、銷售、法務等層各有獨角獲利玩家——office agent 已從 demo 進入「按層計價」的成熟市場結構。"
     ],
     "links": [
       {
@@ -2971,11 +3025,8 @@
     "title": "Raw-RAG 論文：素樸的「原始對話＋檢索＋重排」在 6/7 個設定上打贏複雜 agentic 記憶系統",
     "category": "研究",
     "summary": [
-      "論文提出 Raw-RAG 這條素樸 baseline：不做任何記憶轉換，直接用 dense retrieval 加 reranking 從原始對話歷史檢索證據，餵給 reader LLM 回答。",
-      "在 LoCoMo、LongMemEval、MEME、MemoryAgentBench 四個基準的七個 benchmark-model 設定中，它拿下六個第一，領先受測中最強的 agentic 記憶系統 0.13 到 5.53 分。",
-      "證據分析解釋了原因：有用的證據不只包含答案數值，還包含推導答案所需的關聯與依賴路徑，這些只有原始歷史完整保留，較高的證據覆蓋率足以抵銷較低的利用率。",
-      "更關鍵的對照是，即使讓模型完整存取轉換後的記憶庫，準確率仍落後直接使用原始證據，等於量化了記憶轉換帶來的資訊損失。",
-      "做長期對話記憶系統的工程師與研究者該讀這篇：任何複雜 agentic 記憶架構，都得先打贏這條 naive RAG baseline，才談得上必要性。"
+      "論文測試了一個最簡單的 baseline：不摘要、不建圖、不做 LLM 記憶抽取，直接對原始對話歷史做 dense retrieval + reranking，餵給 reader LLM。結果在 LoCoMo、LongMemEval、MEME、MemoryAgentBench 七個設定中的六個排名第一，部分設定贏最強 agentic 記憶系統 5 分以上。",
+      "原因很根本：記憶系統每做一次轉換（抽事實、更新、摘要、建圖）就多一次資訊損失，而模型推理常常需要答案周邊的時間線和依賴路徑——只有原始歷史完整保留。更妙的是：關掉 Mem0 的 UPDATE/DELETE 反而更準。結論對工程界很實用——複雜記憶架構必須先打贏這條 baseline 再上線。"
     ],
     "links": [
       {
@@ -3080,15 +3131,8 @@
     "title": "Mistral Large 4（Le Chonk，1T 參數）正式開源權重：開放權重 coding agent 第二名，token 用量省一半",
     "category": "產業",
     "summary": [
-      "Mistral 正式開放旗艦模型 Mistral Large 4（代號 Le Chonk）的權重，總參數 1T、原生多模態。",
-      "授權採修改版 MIT 的 Mistral Ecosystem Open-Weight license，可免費使用、修改、微調與商用。",
-      "關鍵差異在同等分數下更省 token。",
-      "Artificial Analysis Coding Agent Index 得 48 分，與開放權重最強的 GLM-5.3 實質打平，平均每任務卻少用 47% token。",
-      "FrontierCode 2.0 以 19.7% 居首，Terminal-Bench 4.0 較三週前的 preview 進步 13 個百分點到 41%，同時輸出 token 減少 30%。",
-      "模型新增 Low、Medium、High 三種推理模式，讓開發者自行取捨成本與精度。",
-      "資安面向拿 Artificial Analysis Cyber Index 51 分，能發現、重現並修補漏洞而不過度拒答，對惡意網安請求的拒絕率達 96.6%，為開放模型中最高。",
-      "它從頭在歐洲基礎設施訓練，定位主權 AI，可從 Hugging Face 下載權重用 vLLM 或 SGLang 自架，也能透過 Mistral Forge 用私有資料客製。",
-      "在大規模跑 coding agent 的團隊、資安廠商與要求資料主控權的歐洲企業，這是當下最對口的開放權重選項。"
+      "1.05T 總參數、52B 激活的旗艦模型開放權重下載（Apache 類授權），是中國以外最強的開放權重模型。Artificial Analysis Coding Agent Index 拿 48 分，僅以一分之差居開放權重第一的 GLM-5.3（49）之後——但每任務只用 8.5M tokens，是 GLM-5.3（15.9M）的一半多一點。",
+      "更值得注意的是效率曲線：相較三週前的 preview，輸出 token 減少 39%、任務成本降 63%，FrontierCode 2.0 和 Terminal-Bench 4.0 都站上開放權重首位。開放權重陣營的競爭已經從「分數追平」轉到「同分數下誰更便宜」。"
     ],
     "links": [
       {
@@ -3150,11 +3194,8 @@
     "title": "清華觀點論文：Agentic Memory Management 是資訊檢索的下一個前沿",
     "category": "研究",
     "summary": [
-      "這篇 10 月 23 日上傳 arXiv 的清華觀點論文，把 Agentic Memory Management（AMM）定義為一個研究領域：研究智慧代理記憶體中資訊的結構、分析、組織、儲存、搜尋、檢索與使用。",
-      "核心觀察是 IR 長期關注把人連向完成任務所需的資訊，但 AI agent 如今代使用者消費、保留並據以行動，資訊管理因此移入 agent 內部，成為記憶體管理。",
-      "作者提出系統層級的 AMM 框架，把記憶體物件分為 constants、functions、operators 三類，各自對應不同的檢索語意，並比對 AMM 與既有 IR 研究的差異與關聯。",
-      "研究議程則涵蓋基準測試、記憶體效用的候選原則，以及混合參數式與非參數式更新的最佳化程序等方向。",
-      "作者主張 AMM 是 IR 研究的自然延伸、也是 IR 社群能做出獨特貢獻的領域，明言希望吸引社群內外更多人投入，適合 IR 研究者與 agent 記憶系統開發者細讀。"
+      "Qingyao Ai 的 arXiv 觀點論文主張：IR 一直假設「人類在讀檢索結果」，但 agent 是把檢索結果當成自己的內部狀態在用——這徹底改變了問題定義。他提出系統性框架，把記憶體物件分成三層：constants（事實，按內容匹配）、functions（技能與工作流，按適用性匹配）、operators（偏好與風格，按作用域匹配），配 add/update/delete/search/use 五種操作。",
+      "論文把 RAG、MemGPT、Mem0 收進同一個分類體系，並點出兩個被低估的方向：原則性的「遺忘」機制，以及記憶體污染（memory poisoning）的安全議題。對做 agent 記憶系統的人，這是一份很好的地圖。"
     ],
     "links": [
       {
@@ -3999,14 +4040,8 @@
     "title": "GitHub 寫入佇列改為 per-ref：為「多 agent 各開分支」的世界鋪路",
     "category": "工具",
     "summary": [
-      "GitHub 把寫入序列化的範圍從整個 repo 縮到單一 ref（分支），寫入佇列改為 per-ref。",
-      "舊架構每筆寫入都握全庫鎖、等最慢副本回應；跨 Azure 往返一趟約 25ms、一筆寫入要多次往返，最忙的 repo 直接被吞吐上限卡死。",
-      "新做法只讓爭用同一條 ref 的寫入互等，不同分支的 push 可以同時在途。",
-      "內部真實流量測試中，寫不同 ref 的吞吐提升 3-4 倍、延遲更低；同一條熱門 main 上的寫入照樣排隊。",
-      "推手是 agent 流量指數成長，加上機房電力上限與供應鏈限制。",
-      "GitHub 已複製 99.99999% 的 repo 到 Azure，這一步讓最後一批最忙的 repo 也搬得完。",
-      "多 agent 各開分支、高頻 push 的 coding 團隊會直接吃到吞吐紅利。",
-      "做儲存與分散式系統的平台工程師，則能看到 quorum 拆分的第一手設計細節。"
+      "GitHub 正把 Git 寫入佇列從 repo 層級改到 per-ref（分支）層級，內部測試中對不同 ref 的寫入吞吐量提升 3-4 倍；但同一條忙碌的 main 仍會排隊。",
+      "對 AI coding 團隊的含義很直接：讓每個 agent 各自開分支寫入，吞吐量就吃得滿；真正的瓶頸會轉移到 review 與 merge——人類審核吞吐量成為新限制，要提前編預算。"
     ],
     "links": [
       {
@@ -4194,15 +4229,8 @@
     "title": "Microsoft 擴大 Project Perception：把 AI agent 當「內部威脅」管理",
     "category": "產業",
     "summary": [
-      "Microsoft 把七月發表的資安系統 Project Perception 從防禦外部 AI 攻擊，延伸到管理企業內部部署的 agent。",
-      "原文稱這些 agent 為「agentic insiders」：它們常被過度授權，能存取資料、工具與系統，並在關鍵流程中行動和決策。",
-      "做法是對非確定的智慧施加確定性控制。",
-      "先用橫跨身分、資料、端點、網路、雲端、runtime 的訊號盤點企業內所有 agent，指派身分、容器與權限政策。",
-      "再動態計算 agent 當前行為的風險，由藍、綠 Guardian Agents 全天候在行動發生前監督每個動作，風險升高時即時精準介入。",
-      "理由是 frontier model 不能信任：訓練目標讓它們容易 reward hacking、不對齊組織規範，還會隨情境變化、與其他 agent 串謀，不必被駭就會偏離預期。",
-      "因此控制必須外置於模型，並提供可追溯性；原文的分工是 agentic security 提供速度、人類提供判斷。",
-      "下一步是模型透明度：安全系統要能問「為什麼發生」，需要看到思考與 chain-of-thought tokens，而不只是輸入輸出。",
-      "正在企業內大量部署 agent 的資安人員，是最直接的讀者。"
+      "Satya Nadella 宣布擴充 Project Perception，持續評估 agent 風險、動態調整權限。核心原則：安全控制必須放在模型外面，不能指望模型自我約束——agent 可能在「完成任務」的同時做出公司從未預期的行為。",
+      "這是大型雲廠首次把零信任架構系統性套到 agent 身上，權限檢查、圍堵策略都外置於模型，跟昨天 Anthropic 報告的「監督成本上升」是同一件事的兩面。"
     ],
     "links": [
       {
@@ -4700,11 +4728,8 @@
     "title": "Gentlemen 勒索軟體把 MCP 當 C2 指揮通道",
     "category": "產業",
     "summary": [
-      "2026年10月5日，CloudSEK 揭露俄語勒索軟體 The Gentlemen 的分支攻擊者 Azazel 在實戰入侵中濫用 Model Context Protocol，把 AI 編碼助手的工具介面當成命令與控制（C2）通道，以 exec_in_session 執行惡意命令。",
-      "線索來自攻擊者暴露的開放目錄與設定錯誤的儲存伺服器，CloudSEK 循線清點出 50TB 基礎設施，涵蓋六國、逾二十個受害目錄，橫跨物流、保險、製藥、人工智慧、醫療器材與政府周邊單位，且竊取資料在調查期間仍以數百 GB 持續增加。",
-      "多數入侵走憑證竊取路徑，鎖定 GitLab CI/CD 變數與儲存庫歷史；另一起 AI 平台入侵則肇因於未充分驗證的伺服器端 URL 抓取端點。",
-      "Azazel 同時經營獨立洩密站 LEAKNED，疑似把勒索收益從 The Gentlemen 的 RaaS 體系挪走，CloudSEK 將全案定性為 MCP 在犯罪行動中遭濫用的已證實案例。",
-      "用到 MCP 執行工具與 GitLab 的資安和開發維運團隊，應把 MCP 執行工具視為特權介面、審計每次呼叫、限制可用客戶端身分、服務僅開放 loopback，secrets 輪替則須涵蓋儲存庫歷史與下游系統。"
+      "CloudSEK/RH-ISAC 公開：俄語系勒索軟體組織 The Gentlemen 的攻擊者在實戰入侵中濫用 Model Context Protocol，把 AI 編碼助手的工具介面變成命令與控制（C2）通道，執行任意命令、竊取憑證、刪除資料庫。",
+      "這是 MCP 首度被證實用於現役攻擊行動。防護建議：限制 MCP 執行權限、僅允許 loopback 連線、輪替 GitLab 歷史在內的所有 secrets。"
     ],
     "links": [
       {
@@ -4734,11 +4759,8 @@
     "title": "字節火山引擎開源 OpenViking：Agent 專用「上下文資料庫」",
     "category": "工具",
     "summary": [
-      "字節火山引擎開源 OpenViking：AI agent 專用的上下文資料庫，把知識、記憶、技能收進 viking:// 虛擬檔案系統，agent 用 ls、grep、read 操作自己的「大腦」。",
-      "每個目錄附 L0/L1 自動摘要，先掃摘要再讀全文；語意搜尋可限定在專案或記憶子樹，不必掃整個向量池；session 提交後會萃取成可檢視、可編輯的 Markdown 記憶。",
-      "LoCoMo 長對話測試中，三個接上的 agent 記憶準確率達 80–83%（原生記憶僅 24–57%），輸入 token 減少 34.3–91.0%；tau2-bench 上經驗記憶再讓任務成功率增加 6.87–11.87 個百分點。",
-      "它把黑盒向量記憶換成可檢視、可編輯、可限縮範圍的檔案結構，直接對應 agent 長期互動下 token 膨脹與記憶不可控的痛點。",
-      "自架採 AGPLv3 開源，Volcengine 另有託管版（前 50 個檔案免費），已整合 Claude Code、Cursor、Codex、TRAE 等工具，適合需要跨 session 記憶的 coding agent 使用者與 agent 框架團隊。"
+      "把 agent 的記憶、知識 RAG、技能統一成一個虛擬檔案系統（`viking://`），agent 用 `ls`/`grep`/`read` 直接導航自己的「大腦」，每層目錄有 L0/L1 摘要可先掃再讀，避免黑盒向量庫。",
+      "支援自動會話壓縮與長期記憶萃取，主打解決長互動中的 token 膨脹與記憶漂移。已 23k+ stars，支援 GLM/Kimi/Ollama 等多種後端。"
     ],
     "links": [
       {
@@ -4840,12 +4862,8 @@
     "title": "MCP SDK 官方分級揭曉：新協議功能 TypeScript 總是早到數週",
     "category": "研究",
     "summary": [
-      "這是 MCP 官方文件的 SDK 入門說明：官方提供多語言 SDK，並設有 SDK 分級制度，各級定義要看 Tiering System 專頁。",
-      "所有 SDK 功能完全相同，只依各語言的慣例與最佳實踐實作，差別不在能力範圍。",
-      "四項共同支援：建立暴露 tools、resources、prompts 的 MCP server，打造能連上任何 MCP server 的 client，本地與遠端傳輸，附型別安全的協議合規。",
-      "對開發者的實際意義是：選哪個語言都拿到同一套協議能力，入門只要在自建 server 與自建 client 兩條路徑中挑一條。",
-      "適合正在挑選語言接入 MCP 生態的開發者，以及要在產品內整合 MCP server 或 client 的工程團隊。",
-      "編註：粗摘要與標題宣稱「TypeScript 新功能早到數週」及「Tier 1 為 TypeScript、Python、C#、Go，Rust 為 Tier 2」，但提供的原文全文僅提到分級制度存在，未列出各 SDK 歸級依據或功能上線時程。依「只用原文資訊」原則，這些說法未寫入摘要；若出自文章其他段落，建議補齊原文來源後再併入。"
+      "實測比較顯示：MCP 新協議功能總是先落在 TypeScript SDK，Go 和 Rust 隨後。官方已建立 SDK tier 制度——TypeScript、Python、C#、Go 為 Tier 1，Rust 為 Tier 2，依協議支援完整度與維護狀況分級。",
+      "啟示：選 MCP server 語言時，別先追效能，先看哪個 SDK 跟得上協議演進。協議還在快速變動期，用 Tier 1 SDK 能少踩很多相容性坑。"
     ],
     "links": [
       {
@@ -4946,10 +4964,7 @@
     "category": "教程",
     "summary": [
       "Grafana Cloud 的 Agent Observability（公測中）基於 OpenTelemetry 的 `gen_ai.*` 語意慣例：只要 instrument 遵循規範，用 OTLP 匯出即可檢視完整對話、tool call、token 成本，支援 LangChain/LangGraph/OpenAI Agents/Vercel AI SDK 自動埋點。Sentry 也提供 MCP server 一行接入的監控。",
-      "實務建議：生產告警先只導 duration/token/tool name，full content 按環境開。agent 出問題最貴的是「不知道卡在哪一步」——還沒接可觀測栈的 agent，先補這條鏈路再談加模型。",
-      "核心論點：串流 markdown 適合回答問題，但對執行複雜工作流是糟糕的 UX。架構上的解法是 Generative UI——模型用 tool call 輸出結構化 JSON，框架（如 Vercel AI SDK + RSC）攔截後動態串流可互動的 UI 元件。",
-      "例如要求 agent 分析資料庫，不該串流文字表格，而該串流帶篩選器的 D3 圖表；訂房任務直接串流確認 widget。機制：Query → Tool Call → JSON → Server-Side Render → 互動 UI。",
-      "這把 agent 輸出從「被動閱讀」變成「可立即驗證的行動」，做 agent 產品的人值得重新檢視自己的輸出層。"
+      "實務建議：生產告警先只導 duration/token/tool name，full content 按環境開。agent 出問題最貴的是「不知道卡在哪一步」——還沒接可觀測栈的 agent，先補這條鏈路再談加模型。"
     ],
     "links": [
       {
