@@ -173,7 +173,8 @@
     "source": "learning",
     "original_url": "https://github.com/machinepulse-ai/karpo-browser",
     "editor_note": "真正關鍵的不是 89% 成功率，而是「10 美分＋全開源」的組合拳：當 browser agent 便宜到能放心大規模部署，閉源廠商剛築好的護城河，可能很快就被填平。",
-    "image": "images/lrn-2026-11-24--agent-karpo-browser-llm-.png"
+    "image": "images/lrn-2026-11-24--agent-karpo-browser-llm-.png",
+    "deep_status": "no_source"
   },
   {
     "title": "歸藏 Game Skill：用 Agent Skill 把 Claude Code / Codex 變成 3D 遊戲工作室，一個 HTML 檔交付完整動作遊戲",
@@ -202,8 +203,13 @@
     "title": "Nadella 親口承認：「打中我們的是 Claude Code」，VS Code 十年統治六個月內被邊緣化",
     "category": "產業",
     "summary": [
-      "Nadella 在受訪中承認，微軟統治十年的 VS Code 在 Claude Code 面前六個月內被邊緣化，部分開發者表示已經不再打開 VS Code。同期 signal：OpenAI 內部調查顯示 agent 只佔科研總算力約 2%，但受訪研究員寧願拿出團隊 30% 算力換三個月前沿 coding agent 使用權——內部共識是「讓 AI 幫自己研究」的槓桿比堆 GPU 更高。",
-      "為什麼重要：開發工具的護城河第一次被 agent 介面正面攻破，且是由競爭對手 CEO 親口確認。疊加 OpenAI 內部數據，方向很清楚：下一輪競爭的關鍵資源配置是「多少算力拿去餵 agent 迭代自己」，而不是全部拿去訓練模型。"
+      "先擋一下：這份「原文全文」和標題對不上。",
+      "貼上的內容是 Together AI 的產品行銷頁，講的是開源模型推理、Serverless 批次處理、專用 GPU 部署、程式沙箱、模型微調這些雲端平台服務。全文沒有出現 Nadella、VS Code、Claude Code，也沒有 OpenAI 內部算力調查的任何內容。",
+      "按照你定的規則「只用原文有的資訊，原文沒有的不要編」，我無法從這份文本寫出標題承諾的摘要。如果硬寫，所有關鍵事實（誰說了什麼、六個月、2%、30%）都得從粗摘要或標題倒推，等於憑空補稿源，這正是那條規則要防的事。",
+      "兩個處理方式，看你要哪個：",
+      "一、如果你要的是 Nadella 那篇，請補上實際的報導全文或連結，我照 200-300 字、3-5 段短句的格式重寫，只用稿內事實。",
+      "二、如果你其實要摘要的是這份 Together AI 頁面，我也可以照同樣格式寫，但標題和「產業」分類得重訂，因為這是一則產品介紹，不是產業新聞。",
+      "另外建議：如果這是走發稿流程的素材，來源錯置本身值得在編輯台記一筆，標題聳動但稿源是廣告頁的情況，上線前抓到比上線後被抓到便宜得多。"
     ],
     "links": [
       {
@@ -218,7 +224,18 @@
     "source": "learning",
     "original_url": "https://together.ai/",
     "editor_note": "Nadella 公開認輸本身就是最強訊號：開發者的忠誠對象已從工具轉向 agent。當 IDE 不再是入口，十年堆出的生態護城河，恐怕比我們以為的更脆弱。",
-    "image": "images/lrn-2026-11-24-nadella---claude-code-vs-.png"
+    "image": "images/lrn-2026-11-24-nadella---claude-code-vs-.png",
+    "deep_summary": [
+      "先擋一下：這份「原文全文」和標題對不上。",
+      "貼上的內容是 Together AI 的產品行銷頁，講的是開源模型推理、Serverless 批次處理、專用 GPU 部署、程式沙箱、模型微調這些雲端平台服務。全文沒有出現 Nadella、VS Code、Claude Code，也沒有 OpenAI 內部算力調查的任何內容。",
+      "按照你定的規則「只用原文有的資訊，原文沒有的不要編」，我無法從這份文本寫出標題承諾的摘要。如果硬寫，所有關鍵事實（誰說了什麼、六個月、2%、30%）都得從粗摘要或標題倒推，等於憑空補稿源，這正是那條規則要防的事。",
+      "兩個處理方式，看你要哪個：",
+      "一、如果你要的是 Nadella 那篇，請補上實際的報導全文或連結，我照 200-300 字、3-5 段短句的格式重寫，只用稿內事實。",
+      "二、如果你其實要摘要的是這份 Together AI 頁面，我也可以照同樣格式寫，但標題和「產業」分類得重訂，因為這是一則產品介紹，不是產業新聞。",
+      "另外建議：如果這是走發稿流程的素材，來源錯置本身值得在編輯台記一筆，標題聳動但稿源是廣告頁的情況，上線前抓到比上線後被抓到便宜得多。"
+    ],
+    "deep_source_chars": 1882,
+    "deep_status": "ok"
   },
   {
     "title": "Google 威脅情報首次觀察到「全自動 agent 攻擊鏈」：比較 patch 前後程式碼、自己寫 exploit、無人審核直接執行",
