@@ -1,5 +1,98 @@
 [
   {
+    "title": "electerm 內建 MCP Server 爆 DNS rebinding 未認證 RCE（CVE-2026-136630，CVSS 7.7）：本地 MCP 的安全模式該重新檢視",
+    "category": "工具",
+    "summary": [
+      "VulnCheck 於 11/25 公開 CVE：開源終端機客戶端 electerm（約 16k stars）內建的 MCP Server widget（< 5.9.0）未驗證 Host/Origin header，攻擊者可用 DNS rebinding 讓瀏覽器直達 127.0.0.1:30837，無需認證即可呼叫 `execute_electerm_command` 執行本機命令，甚至操作已開啟的 SSH session 與 SFTP 讀檔。修復已在 v5.9.0（Host 白名單、Origin 顯式允許、常數時間 API key 比較）。",
+      "為什麼重要：這是「把終端機用 MCP 接給 AI」這類熱門用法的真實攻擊面——只靠「不加 CORS header」擋瀏覽器是不夠的。凡是本地跑 MCP server 的工具都值得自查 Host/Origin 驗證與預設空 API key 的問題。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/superdoccimo/status/2125737670336983324"
+      }
+    ],
+    "source_url": "https://x.com/superdoccimo/status/2125737670336983324",
+    "source_label": "來源",
+    "id": "lrn-2026-11-26-electerm-內建-mcp-server-爆-dns-rebinding-未",
+    "date": "2026-11-26",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "DNS rebinding 是十幾年的老攻擊，卻照樣打穿最新的 AI 工具鏈——該檢討的不是 MCP 協議本身，而是「localhost 很安全」的僥倖心態正隨 AI 整合熱潮悄悄擴散。",
+    "image": "images/lrn-2026-11-26-electerm--mcp-server--dns.png"
+  },
+  {
+    "title": "Google Research 開源「可驗證社會推理」評測框架：AI 助理聽信用戶片面之詞的問題第一次被量化",
+    "category": "研究",
+    "summary": [
+      "Google Research 發表《Verifiable Social Reasoning for LLM Assistants》：在多 agent 模擬中給目標角色一個隱藏動機，模擬用戶向 AI 助理求助後，看助理能否推斷出真實動機（有可驗證的正確答案）。評測 12 個模型發現：直接「目睹」事件比只聽用戶轉述準得多，且模型常採納用戶的偏見框架、聊天越長越被錨定。框架與 2 萬+ 筆資料集開源。",
+      "為什麼重要：數億人每天跟 AI 聊人際困擾，一個只會附和「同事是不是針對我」的助理可能把人推向錯誤決定。這是 agent 評測從「任務完成率」延伸到「社會推理品質」的代表作，且因為有隱藏動機設計，評測結果可驗證、不流於主觀。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/2logics/status/2125708325127881207"
+      }
+    ],
+    "source_url": "https://x.com/2logics/status/2125708325127881207",
+    "source_label": "來源",
+    "id": "lrn-2026-11-26-google-research-開源-可驗證社會推理-評測框架-ai-助理聽信用",
+    "date": "2026-11-26",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "最值得注意的是「聊越久越被錨定」：我們以為多講幾輪 AI 會更懂狀況，實際上偏見反而被放大。把「諂媚」從主觀抱怨變成可驗證數據，正是 agent 評測邁向社會判斷領域的關鍵一步。",
+    "image": "images/lrn-2026-11-26-google-research----ai-.png"
+  },
+  {
+    "title": "MCP 官方路線圖轉向「漸進式工具發現」：80 個 tool defs 塞進每次呼叫被正式認定為協定問題",
+    "category": "研究",
+    "summary": [
+      "MCP 的 roadmap 現在把「工具清單過載」當成協定層問題處理：把 80 個工具定義全部塞進每次 agent 呼叫，會先繳一筆 context 稅、並在模型看到問題之前就傷害工具選擇的準確度。方向是 progressive discovery（漸進發現），而非一次傾倒上百個工具。",
+      "為什麼重要：工具越接越多是 MCP 生態的必然，而「工具檢索/發現」正成為 agent 系統新的工程層——類似資料庫的索引問題。做 agent 平台的人接下來要比較的不是「支援幾個 MCP server」，而是 context 預算下的工具選擇品質。",
+      "為什麼重要：攻擊面從「人類駭客用 agent」變成「agent 自主攻擊」，防禦邏輯必須跟著改：IP/網域情報會快速失效，但工具的預設痕跡（檔名、帳號、UA）存活更久。同一批開源 agentic 框架（HexStrike、PentAGI）各有指紋，「agent 流量鑑識」正在成為資安的新子領域。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/LoopKernel/status/2125734121263829059"
+      },
+      {
+        "label": "來源",
+        "url": "https://x.com/DFIR_Radar/status/2125394913785200703"
+      }
+    ],
+    "source_url": "https://x.com/LoopKernel/status/2125734121263829059",
+    "source_label": "來源",
+    "id": "lrn-2026-11-26-mcp-官方路線圖轉向-漸進式工具發現-80-個-tool-defs-塞進每次呼",
+    "date": "2026-11-26",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "MCP 幾乎被自己的成功反噬：生態越熱、context 稅越重。把工具檢索下沉到協定層，等於宣告這已是基礎設施級課題，不再是各平台自行 hack 的工程細節。",
+    "image": "images/lrn-2026-11-26-mcp---80--tool-defs-.png"
+  },
+  {
+    "title": "Dell Q3 財報：agentic 工作負載成長最快，「harness 是 CPU 的活」——agent 經濟開始反映在硬體帳單上",
+    "category": "產業",
+    "summary": [
+      "Dell 財報顯示傳統伺服器營收年增 235%，管理層明確指出 inference 與 agentic 工作負載是成長最快的部分：「harness 做的工作其實是 CPU 任務」——容器管理、沙箱、I/O、排程都是 agent 的基礎開銷。同時 agent memory/state、日誌、檢索語料推動非結構化儲存連三季三位數成長。",
+      "為什麼重要：這是第一次從大型硬體商的財報數字直接看到 agent 的成本結構——跑 agent 不只燒 GPU token，還要 CPU 編排與持久的狀態儲存，而後者會「跨任務累積、任務結束後還留著」。對評估 agent 產品毛利的人，這代表單位成本要算 CPU + 儲存 + token 三層，不是只算模型呼叫。"
+    ],
+    "links": [
+      {
+        "label": "來源",
+        "url": "https://x.com/TheValueist/status/2125389193966944602"
+      }
+    ],
+    "source_url": "https://x.com/TheValueist/status/2125389193966944602",
+    "source_label": "來源",
+    "id": "lrn-2026-11-26-dell-q3-財報-agentic-工作負載成長最快-harness-是-cp",
+    "date": "2026-11-26",
+    "source": "learning",
+    "original_url": "",
+    "editor_note": "最值得注意的是：當 token 價格持續下探，CPU 編排與狀態儲存這些不會消失的固定成本只會愈顯眼——只盯 GPU 用量估算 agent 成本的人，是時候重新按計算機了。",
+    "image": "images/lrn-2026-11-26-dell-q3--agentic--harness.png"
+  },
+  {
     "title": "Google Workspace MCP 伺服器正式 GA：官方把企業資料的大門開給 AI agent",
     "category": "工具",
     "summary": [
@@ -203,13 +296,8 @@
     "title": "Nadella 親口承認：「打中我們的是 Claude Code」，VS Code 十年統治六個月內被邊緣化",
     "category": "產業",
     "summary": [
-      "先擋一下：這份「原文全文」和標題對不上。",
-      "貼上的內容是 Together AI 的產品行銷頁，講的是開源模型推理、Serverless 批次處理、專用 GPU 部署、程式沙箱、模型微調這些雲端平台服務。全文沒有出現 Nadella、VS Code、Claude Code，也沒有 OpenAI 內部算力調查的任何內容。",
-      "按照你定的規則「只用原文有的資訊，原文沒有的不要編」，我無法從這份文本寫出標題承諾的摘要。如果硬寫，所有關鍵事實（誰說了什麼、六個月、2%、30%）都得從粗摘要或標題倒推，等於憑空補稿源，這正是那條規則要防的事。",
-      "兩個處理方式，看你要哪個：",
-      "一、如果你要的是 Nadella 那篇，請補上實際的報導全文或連結，我照 200-300 字、3-5 段短句的格式重寫，只用稿內事實。",
-      "二、如果你其實要摘要的是這份 Together AI 頁面，我也可以照同樣格式寫，但標題和「產業」分類得重訂，因為這是一則產品介紹，不是產業新聞。",
-      "另外建議：如果這是走發稿流程的素材，來源錯置本身值得在編輯台記一筆，標題聳動但稿源是廣告頁的情況，上線前抓到比上線後被抓到便宜得多。"
+      "Nadella 在受訪中承認，微軟統治十年的 VS Code 在 Claude Code 面前六個月內被邊緣化，部分開發者表示已經不再打開 VS Code。同期 signal：OpenAI 內部調查顯示 agent 只佔科研總算力約 2%，但受訪研究員寧願拿出團隊 30% 算力換三個月前沿 coding agent 使用權——內部共識是「讓 AI 幫自己研究」的槓桿比堆 GPU 更高。",
+      "為什麼重要：開發工具的護城河第一次被 agent 介面正面攻破，且是由競爭對手 CEO 親口確認。疊加 OpenAI 內部數據，方向很清楚：下一輪競爭的關鍵資源配置是「多少算力拿去餵 agent 迭代自己」，而不是全部拿去訓練模型。"
     ],
     "links": [
       {
@@ -4860,10 +4948,6 @@
       {
         "label": "來源",
         "url": "https://x.com/Oluwaphilemon1/status/2110694483310350737"
-      },
-      {
-        "label": "來源",
-        "url": "https://grafana.com/docs/grafana-cloud/observe-and-act/agent-observability/"
       }
     ],
     "source_url": "https://x.com/Oluwaphilemon1/status/2110694483310350737",
